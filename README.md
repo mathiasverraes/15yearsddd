@@ -10,7 +10,7 @@ A lot of details are still to be decided, but we'll work them out as we go along
 
 The only real constraint is that your submission should have some link to DDD. 
 
-It can be new material, or you can adapt an existing blog post, a paper, or an excerpt from a book you've written. It can have illustrations. It can be anywhere from 1 page to, say, about 20 pages, but we can go longer if the material justifies it. It can be about modelling, design, technical, architecture, detailed or high level, it can be personal, a case study, general advice, or a formal paper. You get the picture. 
+It can be new material, or you can adapt an existing blog post, a paper, an excerpt from a book you've written, or a transcript of a talk. It can have illustrations. It can be anywhere from 1 page to, say, about 20 pages, but we can go longer if the material justifies it. It can be about modelling, design, technical, architecture, detailed or high level, it can be personal, a case study, general advice, or a formal paper. You get the picture. 
 
 ## Submitting
 
