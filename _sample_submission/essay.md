@@ -6,6 +6,8 @@ Some text...
 
 ### A subsection
 
-Some more text. 
+Some more text. An image:
+
+![This is the Image Caption](images/ddd.jpeg)
 
 See https://leanpub.com/help/manual#leanpub-auto-markdown-the-easiest-way-to-format-your-text-for-e-publishing for more about formatting.
