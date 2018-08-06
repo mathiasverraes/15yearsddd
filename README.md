@@ -12,6 +12,8 @@ The only real constraint is that your submission should have some link to DDD.
 
 It can be new material, or you can adapt an existing blog post, a paper, an excerpt from a book you've written, or a transcript of a talk. It can have illustrations. It can be anywhere from 1 page to, say, about 20 pages, but we can go longer if the material justifies it. It can be about modelling, design, technical, architecture, detailed or high level, it can be personal, a case study, general advice, or a formal paper. You get the picture. 
 
+Please include the original date of the essay. For older material, it might make sense to add a short introduction for context.
+
 ## Submitting
 
 Make a folder in this repository with your name. Inside, put the essay in markdown format, all images in high quality, a 1 to 3 line biography, and a license. See `/_sample_submission`.
