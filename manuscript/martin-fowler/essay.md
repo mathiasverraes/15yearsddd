@@ -25,7 +25,7 @@ So far, however, it seems that the data modeling community is only beginning to 
 
 Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD's strategic design section which is all about dealing with large models and teams. DDD deals with large models by dividing them into different Bounded Contexts and being explicit about their interrelationships.
 
-![A diagram of Context Map](martin-fowler/contextmap.png)
+![A diagram of Context Map](contextmap.png)
 
 DDD is about designing software based on models of the underlying domain. A model acts as a [UbiquitousLanguage](https://martinfowler.com/bliki/UbiquitousLanguage.html) to help communication between software developers and domain experts. It also acts as the conceptual foundation for the design of the software itself - how it's broken down into objects or functions. To be effective, a model needs to be unified - that is to be internally consistent so that there are no contradictions within it.
 

@@ -16,7 +16,7 @@ Please include the original date of the essay. For older material, it might make
 
 ## Submitting
 
-Make a folder in this repository with your name. Inside, put the essay in markdown format, all images in high quality, a 1 to 3 line biography, and a license. See `/_sample_submission`.
+Make a folder in this repository called /manuscript/your-name. Inside, put the essay in markdown format, all images in high quality, a 1 to 3 line biography, and a license. See `/manuscript/_sample_submission`.
 
 ## Editing process.
 
