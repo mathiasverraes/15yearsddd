@@ -16,7 +16,7 @@ Please include the original date of the essay. For older material, it might make
 
 ## Submitting
 
-Make a folder in this repository called /manuscript/your-name. Inside, put the essay in markdown format, all images in high quality, a 1 to 3 line biography, and a license. See `/manuscript/_sample_submission`.
+Please submit your essay in [Leanpub-style Markdown](https://leanpub.com/help/manual#leanpub-auto-leanpub-flavoured-markdown-and-markua). Include your images in high quality, a 1 to 3 line biography, and a license. You can submit by email to contact@dddeurope.com, or commit it in Github. Don't worry too miuch about details like getting the image dimensions right, we'll take care of that.
 
 ## Editing process.
 
@@ -28,7 +28,8 @@ Also TBD. The current plan:
 
 - DDD Europe will take care of the logistics. 
 - It will be print+digital. 
-- It will be publicly for sale, and after costs are covered, the proceeds will go to charity, most likely something involving childrens' programming education. Suggestions welcome.
+- It will be either for free, sponsored by DDD Europe;
+- or it will be publicly for sale, and after costs are covered, the proceeds will go to charity, most likely something involving childrens' programming education. Suggestions are welcome.
 
 ## License
 
