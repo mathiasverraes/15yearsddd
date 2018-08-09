@@ -22,21 +22,21 @@ I usually explain monoids through glasses of beer, but here I will use plumbery 
 
     "The set of pipes with a hole this size”
 
-![image alt text](image_0.png)
+![image alt text](images/cyrille-martraire/image_0.png)
 
 Given this definition of our set, now we can test if various elements belong to it or not. 
 
-![image alt text](image_1.png)
+![image alt text](images/cyrille-martraire/image_1.png)
 
 On top of this set, we define an operation, that we can call "combine",  "append", "merge", or "add", that takes two elements and combines them.
 
-![image alt text](image_2.png)
+![image alt text](images/cyrille-martraire/image_2.png)
 
 One funny thing we notice now is that given two elements from the set, the result is always... in the set too! That sounds like nothing, but that's what Closure of Operations is all about: the set is closed under this operation. It matters. We have a little system that's all about itself, always. That's cool.
 
 But there's more to it. If you first combine the first two pipes together, then combine the result with the third pipe, or if you first combine the last two pipes then you combine the first pipe with it, then you end up with the exact same result. We're not talking about changing the ordering of the pipes, just the ordering of combining them. It's like putting the parenthesis anywhere doesn't change the result. This is called Associativity, and is important.
 
-![image alt text](image_3.png)
+![image alt text](images/cyrille-martraire/image_3.png)
 
 By the way changing the ordering of the pipes would be called Commutativity, and we have it if they all are identical, but this property is not as frequent.
 
@@ -46,7 +46,7 @@ And voilà! A set, an operation, closure of this operation, associativity, and n
 
 Ok at this point, you are perhaps like:
 
-![image alt text](image_4.png)
+![image alt text](images/cyrille-martraire/image_4.png)
 
 But stay with me, we'll see how this really closely relates to your daily job.
 
@@ -62,19 +62,19 @@ You probably know the old joke in programming:
 
 That's so true. But this also illustrates a very common kind of diversity we face all the time: the singular, the plural, and the absence. Monoids naturally represent the singular, with the elements of the set. It also deals with the plural, thanks to the *combine* operation that can take a plural and turn it back into an element as usual. And the neutral element takes care of the absence case, and it also belongs to the set. So monoids encapsulate this diversity inside their structure, so that from the outside you don't have to care about it. That's a great idea to fight the battle against complexity.
 
-![image alt text](image_5.jpg)
+![image alt text](images/cyrille-martraire/image_5.jpg)
 
 In the wild real life problems that we have, if we're not careful, we have to deal with various concepts, each potentially having their own diversity of being either singular, plural, or nothing. In the worst case, you'd end up with the cartesian product of all cases. It doesn't scale well.
 
-![image alt text](image_6.jpg)
+![image alt text](images/cyrille-martraire/image_6.jpg)
 
 Once you encapsulate this diversity inside a monoid for each concept, then you only have one case for each, and together it remains one single case.
 
-![image alt text](image_7.jpg)
+![image alt text](images/cyrille-martraire/image_7.jpg)
 
 If you apply that often, then you can deal with high levels of complexity with ease. Monoids help scale in complexity. In fact, if you're comfortable in object-oriented programming, you may recognize something familiar you're doing already: for a given interface, I often find myself using the Composite pattern to deal with the plural, and the NullObject pattern to deal with the absence. These patterns help deal with singular, plural and absence consistently, so that the caller code doesn't even have to know. That's similar in purpose.
 
-![image alt text](image_8.jpg)
+![image alt text](images/cyrille-martraire/image_8.jpg)
 
 ## Examples Please!
 
@@ -124,7 +124,7 @@ Let's start with the good old Money analysis pattern, from Martin Fowler: (EUR, 
 
 Our money class would be defined in UML like this:
 
-![image alt text](image_9.jpg)
+![image alt text](images/cyrille-martraire/image_9.jpg)
 
 The Money pattern is indeed a special case of the more general Quantity analysis pattern: "Representing dimensioned values with both their amount and their unit" (Fowler).
 
@@ -140,7 +140,7 @@ Now that we have a money amount, we can make it into a cashflow, by adding a dat
 
 And again we could throw an exception if the dates don't match.
 
-![image alt text](image_10.jpg)
+![image alt text](images/cyrille-martraire/image_10.jpg)
 
 Looking at the UML class diagram, it's striking that the class only refers to its own type, or primitives (in the constructor, not shown here). Methods take Cashflow as parameter, and return Cashflow, and nothing else.
 
@@ -148,7 +148,7 @@ This is what Closure of Operation means in code. This type is egotistic, it only
 
 But why stop there? We typically deal with many cashflows that go together, and we also think of them as stuff we can add: 
 
-![image alt text](image_11.jpg)
+![image alt text](images/cyrille-martraire/image_11.jpg)
 
 So once again, we want to be able to write the code the exact same way: 
 
@@ -252,7 +252,7 @@ public MonoidMap append(
 
 But we can go further if all values are also monoids, and let each value make its own monoidal magic: 
 
-![image alt text](image_12.jpg)
+![image alt text](images/cyrille-martraire/image_12.jpg)
 
 In our example, colors are combined by an OVERWRITE operation (last value wins), Enable values are combined by a logical OR operation, while Timeout values are combined by an integer MIN operation. You can see here that all the value are monoids by themselves with these operations. By defining the map-level combine operation (here noted +) by delegating to the monoid operation of each value, in parallel for each key, then we also have the configuration maps as monoids. Their neutral element could be either an empty map, or a map with all the neutral elements of each type of value.
 
@@ -440,7 +440,7 @@ public class Ratio {
 
 Over the years I've grown the confidence that anything can be made into a monoid, with these kinds of tricks. Histograms with fixed buckets naturally combine, bucket by bucket:
 
-![image alt text](image_13.png)
+![image alt text](images/cyrille-martraire/image_13.png)
 
 The corresponding code for the add operation adds the number of elements in each respective bucket:
 
@@ -494,7 +494,7 @@ This ability to compose stuff is part of our mental models, and as such can be p
 
 Which we could sketch like this, as ranges with some union operation:
 
-![image alt text](image_14.png)
+![image alt text](images/cyrille-martraire/image_14.png)
 
 The code for the operation would just take the min and max of both dates and check they share one date. It would probably be a commutative operation in this case.
 
@@ -502,7 +502,7 @@ Using monoids helps having a more declarative style in our code, another point t
 
 Let's consider another example of price plans of mobile phones. There's a potential fixed monthly fee, a potential annual fee for things like insurance, some potential one-off fees for extra options that you pay when you activate it etc. For a given price plan for a given customer, you have to select the cash flows sequences that match, then add them to create the invoice. We could draw the domain problem like this:
 
-![image alt text](image_15.jpg)
+![image alt text](images/cyrille-martraire/image_15.jpg)
 
 Unfortunately then developers tend to implement this kind of problem with an accumulation of special cases:
 
@@ -570,7 +570,7 @@ Another reason is that you don't have to document them yourself. Just refer to t
 
 So if we want to document the fact that we implement a monoid, we could create a specific Java annotation @Monoid(String neutralElement), that could then be used to annotate a combine method on some class:
 
-![image alt text](image_16.jpg)
+![image alt text](images/cyrille-martraire/image_16.jpg)
 
 Alternatively since Java 8 you could define a class-level annotation 
 
@@ -648,7 +648,7 @@ This idea was proposed by Ward Cunningham as the Whole Object pattern from his C
 
 In the case of ranges with the union operation, you may want to introduce a special element NotARange to represent the error case of the union of disjoint ranges:
 
-![image alt text](image_17.png)
+![image alt text](images/cyrille-martraire/image_17.png)
 
 In the case of natural integers and subtraction, the way to make the function total is to extend the set with negative integers (which at the same time will promote the monoid into a group with inverses) The way to make the square root function (nothing to do with a monoid) a total function would be to extend the set from real numbers to the superset of complex numbers.
 

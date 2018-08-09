@@ -1,3 +1,3 @@
-_sample_submission/essay.md
+_sample-submission/essay.md
 martin-fowler/essay.md
 cyrille-martraire/essay.md
