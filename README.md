@@ -16,7 +16,9 @@ Please include the original date of the essay. For older material, it might make
 
 ## Submitting
 
-Please submit your essay in [Leanpub-style Markdown](https://leanpub.com/help/manual#leanpub-auto-leanpub-flavoured-markdown-and-markua). Include your images in high quality, a 1 to 3 line biography, and a license. You can submit by email to contact@dddeurope.com, or commit it in Github. Don't worry too miuch about details like getting the image dimensions right, we'll take care of that.
+Deadline: November 1st 2018
+
+Please submit your essay in [Leanpub-style Markdown](https://leanpub.com/help/manual#leanpub-auto-leanpub-flavoured-markdown-and-markua). Include your images in high quality, a 1 to 3 line biography, and a license. You can submit by email to contact@dddeurope.com, or commit it in Github. Don't worry too miuch about details like getting the image dimensions right, we'll take care of that. 
 
 ## Editing process.
 
