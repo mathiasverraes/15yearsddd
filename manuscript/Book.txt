@@ -1,3 +1,5 @@
 _sample-submission/essay.md
 martin-fowler/essay.md
 cyrille-martraire/essay.md
+indu-alagarsamy/essay.md
+james-coplien/essay.md

@@ -35,15 +35,6 @@ Yet if you talk to a post-2000 new age nerd, they will refer back to the Fowler 
 
 I think Eric tried to show us a North Star called a _domain_ that should serve as the oracle for our design decisions. One shouldn't casually change a DSL without consulting a domain. I feel that Eric's domains, for whatever reason, are more conventions than laws, and I have always liked the traditional domain analysis community (think Neighbors, Lai, Weiss, Parnas, and others) for being close to the almost immovable foundations of the businesses their software served. But they are certainly more axiomatic than a developer's daily sense of a term's importance, of how much they need to type to express a concept. and of the new age DSLs that seem little more than macros on steroids. And if his notion of domain missed the mark, his notion of ubiquitous language hits the bullseye — even if it is only about a vocabulary. Words mean things, and I think few people understand that like Eric does.
 
-
-## A section
-
-### A subsection
-
-Some more text. An image:
-
-![This is the Image Caption](images/ddd.jpg)
-
 ## Reflections
 ### Guild not the lily
 I  spoke above of my f´rurstation in not being able to find a theoretic grounding for DDD ideas. It brings to mind a radical proposition: Perhaps, in fact, there is no theoretical grounding to program structure, any more than there is a formal grounding for structuring a building. Sure, a building must stand, and a program must compile and link, but those are more engineering concerns that concerns of science. Even from an empirical perspective it is difficult to tease out theories and principles of good design. And the book _does_ underscore those that we agree about, such as separation of concerns and attentiveness to APIs.
@@ -113,4 +104,4 @@ Sometimes, disjoint bounded contexts are just the ticket. While nothing in the u
 Yet things are messy in between, and the symmetry breaks. We need both heuristics and design formalisms to decide when to create new entities and when to use more sophisticated approaches such as DCI. Sometimes culture wins out and what is in reality an entangled concept deserves its own identity because of how it matches human mental models. Perhaps such situations should cause us to cast Occam's Razor aside for the sake of pragmatics abd the power of software maintainability that comes with comprehension. A true story is useless if it cannot be understood, and even untrue stories (fables, myths) convey great power.
 
 
-See https://leanpub.com/help/manual#leanpub-auto-markdown-the-easiest-way-to-format-your-text-for-e-publishing for more about formatting.
+
