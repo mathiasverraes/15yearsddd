@@ -7,25 +7,19 @@ Developers could be found arguing over Java vs  C# and applications was still ma
 
 Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics and machine learning has become part of our professional vocabulary. New programming languages such as Swift, Scala and Go has come into existence and old languages such as Python have resurrected to dominates data science. 
 
-The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so. At the same time, new needs and new technology has enabled new patterns to be discovered. 
+The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so. At the same time, new needs and new technology has enabled new insights. 
 
-We are in many ways in pool position to take software engineering to the next level and to support that journey with what I like to call Domain Driven Design 4.0 where we extend the ubiquitous language with new concepts and pattern's. 
+We are in many ways in pool position to take software engineering to the next level and to support that journey with what I like to call Domain Driven Design 4.0, addressing new and unresolved aspects of domain modelling. 
 
-Let's start by looking back. DDD sprang out from Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by quality products.
+Let's start our journey by looking back. Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by quality products.
 
-Success was most often found in the projects where the team had invested a sufficient amount of time digging into the domain  and bringing the core domain concepts into the code. The crux was to establish a common language that supported the communication between developers and domain experts. Moving the dialogue away from databases, tables and rows and talk about transfers of money, settlement of orders and cargo lifiting.
+Success was most often found in projects where the team had invested a sufficient amount of time digging into the domain  and bringing the core domain concepts into the code. The crux was to establish a common language that supported the communication between developers and domain experts. Moving the dialogue away from databases, tables and rows and talk about transfers of money, settlement of orders and cargo lifiting.
 
-Another aspect was the architectural and technological landscape at the time. The PC had favoured a software architecture where a fat or rich clients accessed data stored in a relational database running on a server. 
+Another aspect was the architectural and technological landscape at the time. The PC had favoured a software architecture where a fat or rich clients accessed data stored in a relational database. Data gravity ensured that applications that started out small grew until the entropy got out of hand. It was always easier to add a new table than starting from scratch. Retrofitting old applications to work on the web using frameworks such as Enterprise Java din not help. In many ways they made things worse, moving focus away from the domain and to the technology.  
 
-Data gravity ensured that applications that started out small grew until the entropy got out of hand. It was always easier to add a new table than starting from scratch. Retrofitting old applications to work on the web using frameworks such as Enterprise Java din not help. In many ways they made things worse, moving focus away from the domain and to the technology.  
+The programming styles emerging from the rich Windows clients propagated to the server side, following what Martin Fowler so brilliantly called the transactional script. These are GUI event handlers that tries to bring the effect of a mouse click to the database. To boost performance, critical business logic was moved from the client to the database using stored procedures maintaining the same programming style. I personally know systems where the database contain more than 1.5 million lines of PLSQL and have stored procedures more than 10.000 lines long.
 
-The programming styles from the fat clients was adopted on the server side followed what Martin Fowler so brilliantly called transactional script. These are GUI event handlers that are thousands of lines long. To boost performance, critical business logic was moved from the client to the database using stored procedures written as transactional scripts.
-
-I personally know systems where the database contain more than 1.5 million lines of PLSQL and have stored procedures more than 10.000 lines long.
-
-Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity.
-
-The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code. 
+Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code. 
 
 # Domain-Driven Design 4.0
 Based on the profound changes we have experienced in computing over the last 15 years, I find three things that should be addressed in an updated version of Domain-Driven Design.
@@ -39,7 +33,7 @@ Thirdly, new modern programming languages such as Swift unites object oriented p
 With the scene set, let's roll.
 
 ## The master data repository
-The problem most businesses face is that their master data is not cohesively managed. Both identity and lineage is broken and left for the humans to figure out outside the applications. This is not good enough when the business goes digital. Below two examples to illustrate the point.
+The problem most businesses face is that their master data is not cohesively managed. Both identity and lineage is broken and left for the humans to fix out outside the applications. This is not good enough when the business goes digital. Below two examples to illustrate the point.
 
 In the upstream oil and gas industry "Well" is one of the central master data objects with lifespans measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and codings. Seen from the enterprise level, lineage and identity is broken.
 
@@ -47,24 +41,22 @@ In healthcare "Patient" comes with similar challenge. It would be beneficial if 
 
 Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across the business. The master data objects are the entry points where we track identity and lineage.
 
-Entities are objects that are defined by their identity and their thread of continuity or lineage. They are often spread across different representations or databases. Working with entities implies addressing who they are, not what they are and they will most often have context specific state models.
+In Domain-Driven Design is Entities objects that are defined by their identity and their thread of continuity or lineage. They are often spread across different representations or databases. Working with entities implies addressing who they are, not what they are. They will have context defined state models.
 
-As we see, master data and entities are about the same thing. The big difference is that master data is seen as a global entity, while Domain-Driven Design refers to the local or application specific concerns working with master data. 
+As we see, master data and entities are about the same thing. The big difference is that master data represents a global perspective, while Domain-Driven Design entities refers to the local or application specific concerns working with master data in context of an application. 
 
-The proposed solution to this challenge is what we have called the data separation pattern implemented by creating a master data repository that provide a context independent home for the master data, maintaining lineage (immutability and versioning) and holding references to attributes, life-events and decisions. This mean that management of identity and lineage is moved to the repository, simplifying the concerns at the application level. At the same time, it's important for developers to understand what objects are master data.
+The proposed solution to this challenge is what we have called the data separation pattern. It can be implemented by creating a master data repository that provide a context independent home for the master data, maintaining lineage (immutability and versioning) and holding references to attributes, life-events and decisions. This mean that management of identity and lineage is moved out of the applications and to the repository, simplifying the concerns at the application level.
 
-The master data repository API provide services for Ingestion, Search and Delivery. The internal representation of the repository is a graph where the entity's life events are tracked and versioned accordingly with reference to where the actual data is stored. 
-
-The master data repository ingestion and delivery service operates with aggregates. An aggregate is understood as a clusters of entities and value objects with consistent boundaries that are managed as a whole.
+The master data repository API provide services for Ingestion, Search and Delivery. The internal representation of the repository is a graph where the entity's life events are tracked and versioned accordingly with reference to where the actual data is stored. The master data repository ingestion and delivery service operates with aggregates. An aggregate is understood as a clusters of entities and value objects with consistent boundaries that are managed as a whole.
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on workflows and the dynamic properties of the domain at hand working with entities and value objects without being bothered with lineage and versioning.
  
 ## Process controllers
 The real world consists of asynchronous, concurrent and dynamic processes, sometimes competing other times collaborating. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
 
-We choose to call these objects who's role is to perform work, not to store data or represent value for Process Controllers. A process controller will process events and dependent of its internal state, update the state and execute tasks. What task to choose as respons to an event is state dependent.
+We choose to call these objects who's role is to perform work, not to store data or represent value for Process Controllers. A process controller will process events and dependent of its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. 
 
-This leaves us with four new modelling concepts:
+By introducing dynamic domain modelleing we have four new concepts:
 - Process controller, object responsible for processing event and performing tasks based on internal state.
 - Domain events capturing the occurrences of something that happens in the domain (Vernon).
 - Domain tasks capturing the work to be performed by the process controller as response to a domain event.
@@ -76,17 +68,16 @@ The internal model of an object that processes events and performs task can be r
 
 To support the design and implementations of these workhorses of your domain the GoF book provide several useful patterns such as: Chain of responsibility, Command, Observer and State. To study these patterns and others is highly recommended. For those who want to take it one step further "Doing hard time" (Douglas) is a good read.
 
-Lastly, process controllers can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread or an Ada task.
-
-Value objects are immutable objects that are distinguishable through their value. They are object that describe tings and we do not care about their identity or lineage. The can be extremely complex and they can be implemented as functions (transforming distance from meters to feet) dependent on programming language.
-
+Lastly, process controllers can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a cron job.
 
 ## New programming languages
 Swift is a modern programming languages that unites object oriented and functional programming. It also make a clear distinction between reference types aka class and value types such as enumeration, struct and tuple.
 
-Value types keeps a unique copy of its data. Reference types share a copy of the same instance. Value objects as defined i DDD share the properties defined bye DDD value objects. 
+Value types keeps a unique copy of its data. Reference types share a copy of the same instance. Value objects as defined in Domain-Driven Design share most of the properties defined by value types. They are immutable objects that are distinguishable through their value, they describe tings and we do not care about their identity or lineage. Value objects can be extremely complex and they can be implemented as functions (transforming distance from meters to feet) dependent on programming language.
 
 Reference type share some of the properties defined by entities, but not all. Entities have lineage and identity defined in terms of the business. Objects defined by class are reference objects in the sense of memory management. That is a huge difference. That said, entities and aggregate roots will most often be implemented as a class.
+
+In a functional language functions are first oreder citisens. 
 
 Well designed software is characterised by a few very recognisable properties:
 
@@ -98,7 +89,7 @@ Types: A well designed functional program makes careful use of types. More than 
 
 These are all known properties advocated in Domain Driven Design. Domain concepts are expressed using rich types, modularity and careful state management using value objects.
 
-It's beyond the scope of this text to delve into code examples, but I hope the point is made.
+It's beyond the scope of this text to delve into code examples, but I hope the point is made. (NB not finished)
 
 # References
 GoF, Design patterns, Elements of reusable object oriented software.
