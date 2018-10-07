@@ -1,0 +1,2 @@
+© 2018 Einar Landre ALL RIGHTS RESERVED
+
