@@ -76,7 +76,9 @@ Since 2003 several new modern programming languages that supports both object or
 Swift make a clear distinction between reference types (class) and value types (enumerations, structs and tuples). Objects created as a reference type share a copy of the same instance.
 
 class A { }
+
 var a: A()
+
 var b : A = a
 
 Here both an and b refer to the same instance of A. The effect is that a change to variable a will impact variable b and vice versa.
@@ -84,7 +86,9 @@ Here both an and b refer to the same instance of A. The effect is that a change 
 Value types keeps a unique copy of its data.
 
 struct B {}
+
 var b: B()
+
 var c : B = b
 
 In this case variable c is made a copy of b and they can be independently changed.
@@ -92,18 +96,27 @@ In this case variable c is made a copy of b and they can be independently change
 With functions as first class citizens we can create structures like this:
 
 typealias Output = (Int) -> Int
+
 typealias Input = (Int, String, float) -> Bool
+
 func doSomething(Input) -> (SomeType) { }
+
+A final property with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides as an example a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming has proved to be.
 
 Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
 
 struct Identity {}
+
 Protocol Entity {
+
 	func ==(Entity) -> Bool
+	
 }
 
 class Well: Identity {
+
 	func  ==(Entity) -> Bool { .. }
+
 }
 
 Value objects on the other hand are just values, and can be implemented using class, struct, enumeration, tuple and function. This mean that we have a much richer toolkit when designing them than we had back in 2003 and its something we need to dig into and develop good design practices for.
