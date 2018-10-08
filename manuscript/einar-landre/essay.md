@@ -68,28 +68,55 @@ The internal model of an object that processes events and performs task can be r
 
 To support the design and implementations of these workhorses of your domain the GoF book provide several useful patterns such as: Chain of responsibility, Command, Observer and State. To study these patterns and others is highly recommended. For those who want to take it one step further "Doing hard time" (Douglas) is a good read.
 
-Lastly, process controllers can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a cron job.
+Lastly, process controllers can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a Unix cron job.
 
-## New programming languages
-Swift is a modern programming languages that unites object oriented and functional programming. It also make a clear distinction between reference types aka class and value types such as enumeration, struct and tuple.
+## Object-Funcinal languages
+Since 2003 several new modern programming languages that supports both object oriented and functional programming has emerged. One of these languages is Swift, others are Scala and Go. I will use Swift as the basis. In functional languages functions are first class citizens. Being a first class citizen enables the developers to use functions and methods like any other object or value. Functions can be passed as values, stored in properties and be returned as output from another functions.
 
-Value types keeps a unique copy of its data. Reference types share a copy of the same instance. Value objects as defined in Domain-Driven Design share most of the properties defined by value types. They are immutable objects that are distinguishable through their value, they describe tings and we do not care about their identity or lineage. Value objects can be extremely complex and they can be implemented as functions (transforming distance from meters to feet) dependent on programming language.
+Swift make a clear distinction between reference types (class) and value types (enumerations, structs and tuples). Objects created as a reference type share a copy of the same instance.
 
-Reference type share some of the properties defined by entities, but not all. Entities have lineage and identity defined in terms of the business. Objects defined by class are reference objects in the sense of memory management. That is a huge difference. That said, entities and aggregate roots will most often be implemented as a class.
+class A { }
+var a: A()
+var b : A = a
 
-In a functional language functions are first oreder citisens. 
+Here both an and b refer to the same instance of A. The effect is that a change to variable a will impact variable b and vice versa.
 
-Well designed software is characterised by a few very recognisable properties:
+Value types keeps a unique copy of its data.
 
-Modularity: In stead of thinking of a program as a sequence of assignments and method calls (imperative styre), functional programmers emphasise that each program can be repeatably broken into smaller and smaller pieces that can be assembled using function applications to define the complete program. This only works if we can avoid sharing state between the individual components, that takes us to the next point.
+struct B {}
+var b: B()
+var c : B = b
 
-Managing mutable state: While object oriented programming focuses on the design of objects, each with their own encapsulated state functional programming emphasises programming  with values, free of mutable state and other side effects. By avoiding mutable state, functional programs can be much more easily combined than their object oriented siblings.
+In this case variable c is made a copy of b and they can be independently changed.
 
-Types: A well designed functional program makes careful use of types. More than any programming concepts, such as class, methods and variables.
+With functions as first class citizens we can create structures like this:
 
-These are all known properties advocated in Domain Driven Design. Domain concepts are expressed using rich types, modularity and careful state management using value objects.
+typealias Output = (Int) -> Int
+typealias Input = (Int, String, float) -> Bool
+func doSomething(Input) -> (SomeType) { }
 
-It's beyond the scope of this text to delve into code examples, but I hope the point is made. (NB not finished)
+Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
+
+struct Identity {}
+Protocol Entity {
+	func ==(Entity) -> Bool
+}
+
+class Well: Identity {
+	func  ==(Entity) -> Bool { .. }
+}
+
+Value objects on the other hand are just values, and can be implemented using class, struct, enumeration, tuple and function. This mean that we have a much richer toolkit when designing them than we had back in 2003 and its something we need to dig into and develop good design practices for.
+
+Well designed software is characterised by a few very recognisable properties such as:
+
+- Modularity: In stead of thinking of a program as a sequence of assignments and method calls (imperative styre), functional programmers emphasise that each program can be repeatably broken into smaller and smaller pieces that can be assembled using function applications to define the complete program. This only works if we can avoid sharing state between the individual components, that takes us to the next point.
+
+- Managing mutable state: While object oriented programming focuses on the design of objects, each with their own encapsulated state functional programming emphasises programming  with values, free of mutable state and other side effects. By avoiding mutable state, functional programs can be much more easily combined than their object oriented siblings.
+
+- Types: A well designed functional program makes careful use of types. More than any programming concepts, such as class, methods and variables.
+
+With a richer toolkit we need to learn how to embrace and use the toolkit to build better software, and to make the richer toolkit part of Domain-Driven Design. 
 
 # References
 GoF, Design patterns, Elements of reusable object oriented software.
