@@ -108,15 +108,19 @@ class Well: Identity {
 
 Value objects on the other hand are just values, and can be implemented using class, struct, enumeration, tuple and function. This mean that we have a much richer toolkit when designing them than we had back in 2003 and its something we need to dig into and develop good design practices for.
 
-Well designed software is characterised by a few very recognisable properties such as:
+Well designed software is characterised by a few very recognisable properties and with languages where functions and objects are both first class citizens, it become important to map the characteristics of good software to the new language paradigm:
 
-- Modularity: In stead of thinking of a program as a sequence of assignments and method calls (imperative styre), functional programmers emphasise that each program can be repeatably broken into smaller and smaller pieces that can be assembled using function applications to define the complete program. This only works if we can avoid sharing state between the individual components, that takes us to the next point.
+- Modularity: In stead of thinking of a program as a sequence of assignments and method calls (imperative style), functional programmers emphasise that each program can be repeatably broken into smaller and smaller pieces that can be assembled using function applications to define the complete program. This only works if we can avoid sharing state between the individual components, that takes us to the next point.
 
 - Managing mutable state: While object oriented programming focuses on the design of objects, each with their own encapsulated state functional programming emphasises programming  with values, free of mutable state and other side effects. By avoiding mutable state, functional programs can be much more easily combined than their object oriented siblings.
 
 - Types: A well designed functional program makes careful use of types. More than any programming concepts, such as class, methods and variables.
 
-With a richer toolkit we need to learn how to embrace and use the toolkit to build better software, and to make the richer toolkit part of Domain-Driven Design. 
+With a richer toolkit we need to learn how to embrace and use the toolkit to build better software, and to make the richer toolkit part of Domain-Driven Design.
+
+# Conclusion
+I have tried to illustrate some of the bigger changes that have taken place since Eric's seminal book came into being 15 years ago, and I have tried to put forward arguments for new strategic patterns (master data repository), direct support for dynamic domains where the core is the processes, not the data and finally illustrate that new programming languages such as Swift that unites object oriented and functional programming paradigms create a new opportunity space for architects and programmers alike.
+
 
 # References
 GoF, Design patterns, Elements of reusable object oriented software.
