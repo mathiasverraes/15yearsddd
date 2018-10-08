@@ -1,4 +1,4 @@
-# New capabilities for the future
+# New capabilities for a different present and future
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
 Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Since then a lot has happened. Back then there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled as the enterprise data store.
