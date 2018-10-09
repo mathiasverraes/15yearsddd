@@ -22,7 +22,7 @@ The programming styles emerging from the rich Windows clients propagated to the 
 Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code. 
 
 # Domain-Driven Design 4.0
-Based on the profound changes we have experienced in computing over the last 15 years, I find three things that should be addressed in an updated version of Domain-Driven Design.
+Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from beeing addressed in context of Domain-Driven Design.
 
 Firstly, the cloud enables us to separate data from application, and to free us from the relational data model was the only storage model of business data. It s now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake, and by doing so we are able to reduce the data gravity cost. This change will have a huge impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
 
