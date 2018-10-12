@@ -1,0 +1,19 @@
+@startuml
+
+!include Shared.puml
+
+
+class MoneyFormatter {
+    + format(Money) : String
+}
+
+class Money {
+  + getAmount() : float
+  + getCurrency() : Currency
+}
+
+
+MoneyFormatter --o Money
+
+
+@enduml

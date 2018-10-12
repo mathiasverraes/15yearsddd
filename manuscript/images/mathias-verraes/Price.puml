@@ -1,0 +1,26 @@
+@startuml
+
+!include Shared.puml
+
+interface PreciseMoney {
+}
+class VATRate {
+}
+
+class Price {
+   amount : PreciseMoney
+   vat : VATRate
+
+   getSubTotal() : PreciseMoney
+   getTotal() : PreciseMoney
+}
+
+class ProductPrice {
+   prices : Map<Int, Price>
+}
+
+Price --o PreciseMoney
+Price --o VATRate
+ProductPrice --o Price
+
+@enduml

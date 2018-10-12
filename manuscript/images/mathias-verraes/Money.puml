@@ -1,0 +1,20 @@
+@startuml
+
+!include Shared.puml
+
+class Money {
+  - amount : Float
+  - currency : Currency
+  +add(Money) : Money
+  +multiply(operand) : Money
+}
+
+class Currency {
+   value : string
+}
+
+
+Money -o Currency
+
+
+@enduml

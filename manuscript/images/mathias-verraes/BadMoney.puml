@@ -1,0 +1,14 @@
+@startuml
+
+!include Shared.puml
+
+interface Money
+class PreciseMoney
+class RoundedMoney
+
+PreciseMoney --|> Money
+RoundedMoney --|> Money
+
+note  "Don't do this!" as N2 #red
+Money . N2
+@enduml
