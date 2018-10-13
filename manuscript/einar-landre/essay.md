@@ -51,13 +51,13 @@ The master data repository API provide services for Ingestion, Search and Delive
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on workflows and the dynamic properties of the domain at hand working with entities and value objects without being bothered with lineage and versioning.
  
-## Process controllers
+## Processes, events and tasks
 The real world consists of asynchronous, concurrent and dynamic processes, sometimes competing other times collaborating. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
 
 We choose to call these objects who's role is to perform work, not to store data or represent value for Process Controllers. A process controller will process events and dependent of its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. 
 
 By introducing dynamic domain modelleing we have four new concepts:
-- Process controller, object responsible for processing event and performing tasks based on internal state.
+- Domain processes are designated objects that represents a larger piece of work. It might provide domain services, but are more often associated with events processing and execution of tasks.
 - Domain events capturing the occurrences of something that happens in the domain (Vernon).
 - Domain tasks capturing the work to be performed by the process controller as response to a domain event.
 - Domain state capturing the state guiding the process controllers selection of task on events.
