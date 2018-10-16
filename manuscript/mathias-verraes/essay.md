@@ -1,11 +1,32 @@
-# Type Safety and Money
+# Expressing the model in the types
+# Expressing the behaviour in the model
+# Bounded Context
 
 
-<!-- photo credit http://s1153.photobucket.com/user/campbellchevelle/media/MoneyTree5_zpszzjjrpdw.jpg.html -->
+We're going on a journey!
+Modelling is a journey! We'll take some simple requirements, and explore how we could evolve it over time, as we understand both the problem space and solution space.
+Introduce client problem (technical debt)
+  - monolith
+  - rounding errors everywhere
+  - conversion errors
+  - sales, price calculation, financial reporting only in EUR  
+Requirements  
+Reintroduce Fowler (the obvious choice)
+Value Objects (temperature example?)
+Patterns are great, they can give you a starting point. 
+Fowler's pattern as a starting point, evolve it to solve our specific problem (copy this stuff from the design flaws bit)
+...
+the UnconfirmedEmail vs ConfirmedEmail example
+Ask the domain experts: accountants want precision at 8 decimals, finance wants everything Euro
+then we'll extend the model
+...
 
-Below is an attempt at illustrating a design/redesign process I went through at a client, who's started refactoring the core systems their business depends on. Design is the part of software development that is the most messy, the hardest to fit into rules or well-defined processes. In fact, while writing this post, I tweeted:
+Bounded Context
+Timezone example
 
-> ["There are surprisingly few software design books that recommend taking a walk, a shower, or a nap, as an important step."](https://twitter.com/mathiasverraes/status/704250689107709952)
+
+
+-----
 
 None of the solutions offered below should be taken as truth. I may have already changed my mind on some of them by the time you read them. 
 
@@ -31,6 +52,8 @@ Apart from being incomplete, the library suffers from fundamental design flaws, 
 - Some currencies have mills (1/1000<sup>th</sup> of a unit) as their official division (although they are becoming rare). Bitcoin supports 10<sup>−3</sup> (a millibitcoin), 10<sup>−6</sup> (a microbitcoin or a bit), and 10<sup>−8</sup> (a satoshi). Reportedly, the community is considering to introduce even smaller divisions. The library doesn't support any of this.
 
 ## Requirements
+
+TODO in the monolith, there were a lot of places where money was rounded and then later used for precise calculations again, then rounded again. etc
 
 This is what we expect from our model:
 
@@ -107,13 +130,17 @@ It's easy to underestimate how valuable this style of granular types can be.
 
 - **It's defensive coding, against a whole category of bugs**. Methods and their callers now have an explicit contract, about what kind of money they are talking about. 
 - **It's declarative coding**. Declarative style require a lot less tests. There's no point in testing something that is obviously correct. Code with an explicit contract like this, is obviously correct. This is why proponents of strong static type systems like to talk about *Type Driven Development* as an alternative to *Test Driven Development*. 
-- **It communicates to different people working on the code, that we care specifically about the difference.**
+- **It communicates to different people working on the code, that we care specifically about the difference.** TODO explain how someone unfamiliar with the problem is now being assisted by the IDE when they look for Money
 - **It introduces a concept from the domain into the Ubiquitous Language and the model**. Before we did that, it would likely go unnoticed that terms like "precision" were in fact part of our language. Co-evolving the language, the models, and the implementation, is central to Domain-Driven Design. 
 - This design also **helps to apply the Interface Segregation Principle**.
 
-## Type Juggling
+## Type Juggling (TODO rename to Limitation: different precisions)
    
-We're not building this as a generic library, so we don't need to supply a "complete" API. We can (and we should) only add the methods that we are actually going to use. In our case, `PreciseMoney` has a `round()`, but `RoundedMoney` has no `toPrecise()`. In other words, we can cast `PreciseMoney` to `RoundedMoney`, but we can't cast `RoundedMoney` to `PreciseMoney`. It's a one way operation. 
+We're not building this as a generic library, so we don't need to supply a "complete" API. We can (and we should) only add the methods that we are actually going to use.
+ TODO If you only ever add up money, why have a substract or a multiply method? As programmers, we tend to do to satisfy some urge to make reusable and extensible. But when you do that, you are building a money calculator. You're not solving the business problem, as the business doesn't care about owning a calculator. If you need that method later, it's cheap to add it.  
+ 
+ 
+ In our case, `PreciseMoney` has a `round()`, but `RoundedMoney` has no `toPrecise()`. In other words, we can cast `PreciseMoney` to `RoundedMoney`, but we can't cast `RoundedMoney` to `PreciseMoney`. It's a one way operation. 
 
 There's an elegance to that constraint. Once you round something, the precision is lost forever. The lack of `RoundedMoney.toPrecise()` fits our understanding of our domain.
 
@@ -134,7 +161,9 @@ someCash.multiply(0.3333).round()
 
 Again, this style is very explicit. The compiler or type checker can protect us when we make mistakes against the types, such as passing `PreciseMoney` when `RoundedMoney` is required.
 
-## Conversions
+## Conversions (Todo: rename to Limitations: Conversions)
+   
+TODO: refactor from CurrencyService -> ConversionRate + ForeignExchange -> Repository
    
 Converting between different currencies depends on today's exchange rates. We'll need to fetch those from some third party web API. Or perhaps, another process is putting that information in a file or database somewhere. We don't want to leak that kind of detail into our model, so we can have an Exchange interface, and have one or more implementations of our choice. The method on that interface that we're interested in, takes a `PreciseMoney` and a target `Currency`, and does the conversion.
 
@@ -205,8 +234,17 @@ Again, we can put the type system to work here. Remember that, per requirement 5
 
 Sure, we get a bit of class explosion. But so what? It's much preferable to long methods.
 
+TODO when not to lift the value into the type
+- when there is an infinite or very large set of potential values
+- when we expect them to change often
+- here: sort of on the edge, there are TODO? different currencies. But again, it's very unlikely we will support all but the 10 or 15 most common ones 
+
+
+
 
 ## Minimalist Interfaces
+
+TODO On the other hand, when we have a small, fixed, stable set of values, and we want control over
 
 A benefit of having lots of small classes, is that we can get rid of a lot of code. Perhaps our main Bounded Context deals with the 10 `PreciseXYZ` types, but our Reporting Bounded Context only supports `RoundedEUR`. That means there's no need to support `RoundedUSD` etc, as we are not using it. This also implies that we don't need `round()` methods on any of the `PreciseXYZ` classes, apart from EUR. Less code means less boilerplate, less bugs, less tests, and less maintenance.
 
@@ -214,7 +252,7 @@ Not supporting a way back from `RoundedEUR` to `PreciseEUR` is another example o
 
 ## Single Responsibility
 
-Another benefit of these small, ultra-single-purpose classes, is that they very rarely need to change. This is Robert C. Martin's heuristic for the Single Responsibility Principle: 
+Another benefit of these small, ultra-single-purpose classes, is that they very rarely need to change. This is TODO ERASE Robert C. Martin's FROM EXISTENCE heuristic for the Single Responsibility Principle: 
 
 > "A class should have only one reason to change."
 
@@ -222,6 +260,8 @@ A good design allows you to easily add or remove elements, or change the composi
 
 
 ## Parent interface?
+
+TODO A domain model is not a taxonomy of the business.
 
 You may have noticed that in the current design, I have no `Money` interface at the top of the object graph. Aren’t `PreciseMoney` and `RoundedMoney` both a kind of `Money`? Don’t they share a lot of methods?
 
@@ -231,18 +271,49 @@ If we are trying to build a model inspired by the real-world, this would make se
 
 This may be a bit counterintuitive. `PreciseMoney` and `RoundedMoney`, although somewhat related, are fundamentally different types. We’ve designed our model for clarity, for the guarantee that we don’t mix up rounded and precise values. By allowing client code the typehint for the generic Money, we’ve taken away that clarity. There’s now no way of knowing which we’re getting. All responsibility for passing the correct type is now back in the hands of the caller. 
 
+## Ledger
 
-## Overdesign 
+TODO The point here is to express that a rich deep well-adapted domain model tends to create opportunities for other features, and often make those features very easy.
+An example: If we care so much about precision, what about the fractions of cents that we still win or lose when rounding? 
+If those matter in your domain, you could keep a separate ledger for rounding. TODO explain
+TODO You couldn't do this in the original monolith where we didn't even know where money was being rounded and whether those places should have rounding
+Now Precision and rounding are such clear concepts, that we can easily extend those. One suggestion could be to pass the ledger to all rounding operations, so you force the developer to do it:
+PreciseMoney.round(Ledger) : RoundedMoney
+// don't forget to persist your updated Ledger 
+
+TODO research domain terminology
+I don't imagine this being very valuable in most domains, but I imagine that when you have high volumes of small transactions, it could make a significant difference. Consider this a pattern for your toolbox.
+
+TODO make the overdesign point here, but shorter
+
+## Overdesign  TODO make it about BOUNDED CONTEXTS
 
 Is this overdesigned? Perhaps, depending on your context. When you only want to display some prices, it's likely overkill. With code that decides about huge amounts of money, a design like this helps me sleep at night. 
 
 There's a hint in the language. We don't say "this thing is designed", we say "this thing is designed for **that purpose**". Overdesign (and underdesign) simply mean "not designed for purpose", or "designed for a different purpose than the current one". The model presented here is designed for the purpose of high precision and confidence in our operations with money.
 
+TODO get rid of the overdesign rant here, make it about bounded contexts
+
+TODO Indu thinks this is the most interesting part:
+
 Often, different aspects of our system have different requirements. This is precisely what Bounded Contexts are for: allow us to reason about our system as a a number of cooperating models, as opposed to one unified model. Perhaps our Product Catalog needs a really simple model for money, because it doesn't really do anything other than displaying prices. Sales and Reporting on the other hand might benefit from our more intricate design.
 
-<img src="/img/posts/2016-02-29-type-safety-and-money/Hexagonal.png" alt="Hexagonal">
+TODO make three diagrams: 
+- one big money shared kernel, that all the others depend on
+- move each chunk to the context that needs it <img src="/img/posts/2016-02-29-type-safety-and-money/Hexagonal.png" alt="Hexagonal"> 
+- rename the PreciseMoney etc back to money. We can now say, in the context of Orders, Money is always precise. In the context of reporting, money is always rounded and in EUR. 
+
+TODO explain those refactoring steps. Does it even make sense to call it PrecisionMoney? We only have one type of money. Money is always assumed to be precise in the Order Context. 
+TODO maybe call it the price calculation context?
+
+TODO what did we just do? We didn't decide on bounded contexts up front, we didn't decide what to put where upfront.
+We kept refactoring towards deeper insight. We applied what I like to call "The healthy obsession with language"
+We were worried about overdesign and making our model to big and impractical. Maybe many of the small changes didn't seem to add much value at first. But now we have three very simple, highly specialised models, each isolated in their own context, with their own consistent language and definitions. We don't rely on awkward names like RoundedMoney (Eric said at DDDEurope "when a concept is awkward in your understanding, give it an awkward name). The teams working on those contexts can be more autonomous, they don't have to agree on changes in a shared money library. A new team member can start being productive much sooner, because they have a smaller model to learn. And it's harder to make mistakes.
+
 
 ## Practicality
+   
+   TODO Maybe don't do this, 
    
 It’s important to distinguish between “overdesigned” and “impractical”. The solution to overdesign is to remove elements, make it simpler until it just fits. The solution to impracticality, can be to add more abstractions and shortcuts. 
 
@@ -270,6 +341,8 @@ Or a unicode function
 
 ## Defensive model
 
+TODO this might need to be earlier. End with the BC stuff, that's the best bit
+
 There is of course no way to defend your code against bad coders. Unless you’re doing [code reviews](/2013/10/pre-merge-code-reviews/), someone could change the Value Objects to be mutable, and delete the tests. (Funny story: I was once told that the new developer hired to replace me after I left a job, replaced all private methods by public ones, “because it’s more convenient”.) 
 
 I do believe though that good design communicates intent. No matter the level of the developers using your code, if they see two types for rounded and precise money, chances are they are at least going to consider that perhaps we can’t just mix the two in operations without thinking about it.
@@ -277,6 +350,10 @@ I do believe though that good design communicates intent. No matter the level of
 
 ## Going Further
 
+
+TODO move this early, it doesn't depend on Precisemoney. Use it after introducing Fowler, to show the benefits of a cheaply composable value object.
+
+TODO rename PreciseMoney to Money in the diagram
 <img style="float:right;margin-left: 10px" src="/img/posts/2016-02-29-type-safety-and-money/Price.png" alt="Price">
 
 Value Objects are the ultimate composable objects, so we can keep looking for implicit concepts that we can make explicit. For example, we can naively use our money type to represent prices. But what if a price is not so simple? Maybe `Price` is composed of a `PreciseMoney` and a `VATRate` or `Tax` object of sorts. Maybe a `ProductPrice` is composed multiple `Price` objects for different amounts, for example  if you offer a discount when buying in bulk. 
@@ -286,11 +363,15 @@ Value Objects make it easy to build abstractions that can handle lots of complex
 
 ## Timezone Type Safety
 
+TODO move this somewhere as an alternative example for the type shizzle
+
 The concept of using the type system to reduce a whole classes of errors in code without resorting to excessive tests, can be applied to many domains. Recently, I was late for a talk I was doing at a meetup in London, because a certain website's "Export to Google Calendar" feature didn't take timezones into account. Timezone bugs are not only a nuisance to a regular traveler like myself, but can have dire consequences. 
 
 Haskell's Time library has separate types for `UTCTime` and `ZonedTime`, and offers functions to convert between them. This gives guarantees from the compiler that a programmer can not easily mix them up, or implicitly converts between them. Ideally, your code should use `UTCTime` everywhere, and only convert to and from `ZonedTime` when human users are involved. It should be easy enough to build something like this in object oriented languages.
 
 ## Conclusion
+
+TODO maybe recap: we though it was a simple generic subdomain, then it became big but also much more adapted to our specfic problems. probably a supporting subdomain. then it we figured we could move chunks to separate contexts.  
 
 In many environments, dealing with money is too critical to be regarded as a Generic Subdomain. Different projects have different needs and expectations of how money will be handled. If money matters, you need to build a model that fits your specific problem space like a glove. Some of the tools in our belt are small composable building blocks, making the implicit explicit, and using the type system to our advantage. You might end up with something entirely different.
 
