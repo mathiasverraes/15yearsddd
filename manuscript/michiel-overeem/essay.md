@@ -9,7 +9,6 @@ We needed to tackle the complexity in ERP software. Through our discovery of CQR
 [^joel]: <https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/>
 [^dhh]: <https://signalvnoise.com/posts/3856-the-big-rewrite-revisited>
 
-
 ## The three challenges we faced
 
 The first challenge is that ERP software has **a lot of repetitive logic**. There are numerous parts that look very similar. For instance, the maintenance of a product catalog is not that different from the maintenance of a list of organizations, from a technical point of view. In a large software system, if you are not careful, the two will be developed in isolation, and will work inconsistent. This inconsistency will bother end-users, because they have certain expectations of the usability of the system. Evolution of one of the maintenance components will also require extra work, because similar parts of the system need to be kept consistent. Obviously, ERP systems gain a lot from re-use and standards.
@@ -28,7 +27,7 @@ We knew that if we would do a straight-forward rewrite of the ERP system, we wou
 
 We found a solution for our challenges in the utilization of model-driven development (MDD). Model-driven development is claimed to increase both productivity and quality, while lowering complexity by raising the level of abstraction. By creating a meta-model[^meta] of the domain, instances of that meta-model can be created to describe the software on a higher level. An automated process, or generator, then translates this model into running software.
 
-[^meta] A meta-model in MDD is like a domain specific language, but does not need a concrete syntax.
+[^meta]: A meta-model in MDD is like a domain specific language, but does not need a concrete syntax.
 
 The domain of the software itself is expressed in the meta-model and is thus pulled out of the actual source code. This allows us to bring our code re-use to a new level, because many instances of a single pattern can be translated into running software by a single transformation. It also enables a new level of variability: by changing the model the system changes. Variability is at the core of the system. Finally, it enables us to separate functionality and technology, and let them evolve at different rates.
 
@@ -46,7 +45,7 @@ Second, we are not trying to build an MDD platform that allows you to build a la
 
 In the remaining of this article we will discuss the big lesson we learned so far: our discovery of the bounded context. One of the biggest inspirations that we have found in DDD was the concept of bounded contexts, of different sub-domains, and the idea that the DRY (don’t repeat yourself) rule should only be used within a bounded context[^boundaries].
 
-[^boundaries] <https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55>
+[^boundaries]: <https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55>
 
 *Disclaimer: although we have quite a journey behind us, we have not arrived yet. The software is not yet in production, and our experiences come solely from testing the system in simulated environments.*
 
@@ -60,7 +59,7 @@ We also had a single monolithic generator that translated the complete model. Th
 1. introducing abstraction (*as we all know; every problem can be solved by adding more indirection[^indirection]*). 
 2. refactoring our generator into a multi-stage generator. The parsed model was transformed, extended, simplified, translated into intermediate models, before generating the final output. 
 
-[^indirection] "Any problem in computer science can be solved with another level of indirection." is attributed to David Wheeler by **Diomidis Spinellis**. [Another level of indirection](https://www2.dmst.aueb.gr/dds/pubs/inbook/beautiful_code/html/Spi07g.html). In Andy Oram and Greg Wilson, editors, Beautiful Code: Leading Programmers Explain How They Think, chapter 17, pages 279–291. O'Reilly and Associates, Sebastopol, CA, 2007.
+[^indirection]: "Any problem in computer science can be solved with another level of indirection." is attributed to David Wheeler by **Diomidis Spinellis**. [Another level of indirection](https://www2.dmst.aueb.gr/dds/pubs/inbook/beautiful_code/html/Spi07g.html). In Andy Oram and Greg Wilson, editors, Beautiful Code: Leading Programmers Explain How They Think, chapter 17, pages 279–291. O'Reilly and Associates, Sebastopol, CA, 2007.
 
 In the long run this did not work out. We still had a single transformation pipeline on which the whole team was working. The development work was not scaling, because we were getting in the way of each other. There was no real code ownership, so no team felt responsible. And finally, it made it hard to implement an incremental generation flow. 
 
