@@ -1,19 +1,21 @@
-# New capabilities for a different present and future
+# On objects, processes and data
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
 Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Since then a lot has happened. Back then there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled as the enterprise data store.
 
 Developers could be found arguing over Java vs  C# and applications was still made in tools like Microsoft Access. Martin Fowlers Patterns of Enterprise Application Architecture was less than a year old and the GoF Design Patterns, Elements of reusable object-oriented software had just turned 9.
 
-Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics and machine learning has become part of our professional vocabulary. New programming languages such as Swift, Scala and Go has come into existence and old languages such as Python have resurrected to dominates data science. 
+Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics and machine learning has become part of our professional vocabulary. New programming languages such as Swift, Scala and Go has entered the scene and old languages such as Python have resurrected to dominates data science. 
 
-The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so. At the same time, new needs and new technology has enabled new insights. 
+The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built on data with software.
 
-We are in many ways in pool position to take software engineering to the next level and to support that journey with what I like to call Domain Driven Design 4.0, addressing new and unresolved aspects of domain modelling. 
+While the needs in many ways are the same, the technology has enabled new oportunities that will demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require understanding and mastery of concurrency, the SQL database is replaced by a multitude of storate oportunities and so on. 
 
-Let's start our journey by looking back. Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by quality products.
+So, for domain driven design to stay relevant and still be a driving force it need to embrace the new reality that surrounds us. With that I would like to say welcome to what I like to call Domain-Driven Design 4.0. 
 
-Success was most often found in projects where the team had invested a sufficient amount of time digging into the domain  and bringing the core domain concepts into the code. The crux was to establish a common language that supported the communication between developers and domain experts. Moving the dialogue away from databases, tables and rows and talk about transfers of money, settlement of orders and cargo lifiting.
+Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed, and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by a quality products.
+
+Success was most often found in projects where the team had invested time digging into the domain and implemented the core domain concepts the products code base. The crux was to establish a common language that supported the communication between developers and domain experts. The developers stopped talking about database tables and rows and began talking about transfers of money, settlement of orders and cargo lifiting.
 
 Another aspect was the architectural and technological landscape at the time. The PC had favoured a software architecture where a fat or rich clients accessed data stored in a relational database. Data gravity ensured that applications that started out small grew until the entropy got out of hand. It was always easier to add a new table than starting from scratch. Retrofitting old applications to work on the web using frameworks such as Enterprise Java din not help. In many ways they made things worse, moving focus away from the domain and to the technology.  
 
@@ -32,37 +34,33 @@ Thirdly, new modern programming languages such as Swift unites object oriented p
  
 With the scene set, let's roll.
 
-## The master data repository
-The problem most businesses face is that their master data is not cohesively managed. Both identity and lineage is broken and left for the humans to fix out outside the applications. This is not good enough when the business goes digital. Below two examples to illustrate the point.
+## Separating data from the applications
+Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. The master data objects are the bearers of identity and lineage. In Domain-Driven Design is it the Entities that has this responsibility. Working with entities or master data objects implies working with who they are, more than what they are and maintaining their identity and lineage accross different bounded contexts.
 
-In the upstream oil and gas industry "Well" is one of the central master data objects with lifespans measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and codings. Seen from the enterprise level, lineage and identity is broken.
+The biggest difference between an Entity and a master data object is that when we work with an Entity our primary concerns are the Entities role in a specific bounded context, while a master data object involves maintaining identity and lineage accross multiple bounded contexts.
 
-In healthcare "Patient" comes with similar challenge. It would be beneficial if we where able to track tests, diagnoses, treatments and their effects over a "Patients" lifespan independent of where the treatment took place.
+In the upstream oil and gas "Well" is one of the core master data objects with a lifespan measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and codings. Seen from the enterprise level, lineage and identity is easily broken and keeping it intact is very expensive. In healtcare Patient is a master data object and the same can be said about Item in retail.
 
-Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across the business. The master data objects are the entry points where we track identity and lineage.
+Based on work we have done in collaboration with other oil companies we discovered that the best way forward was to separate lifecycle management of master data objects from the applications. We have called this the application data separation pattern.
 
-In Domain-Driven Design is Entities objects that are defined by their identity and their thread of continuity or lineage. They are often spread across different representations or databases. Working with entities implies addressing who they are, not what they are. They will have context defined state models.
+It can be implemented by creating a master data repository that provide a context independent home for the master data objects, maintaining lineage (immutability and versioning) and holding references to attributes, life-events and decisions. This mean that management of identity and lineage is moved out of the applications and to the repository, simplifying the concerns at the application level.
 
-As we see, master data and entities are about the same thing. The big difference is that master data represents a global perspective, while Domain-Driven Design entities refers to the local or application specific concerns working with master data in context of an application. 
+The master data repository API provide services for Ingestion, Search and Delivery. The internal representation of the repository matches best with a graph, where the objects life events are tracked and versioned accordingly with reference to where member data is stored. The master data repository ingestion and delivery service operates with aggregates. An aggregate understood as a clusters of entities and value objects with consistent boundaries that are managed as a whole.
 
-The proposed solution to this challenge is what we have called the data separation pattern. It can be implemented by creating a master data repository that provide a context independent home for the master data, maintaining lineage (immutability and versioning) and holding references to attributes, life-events and decisions. This mean that management of identity and lineage is moved out of the applications and to the repository, simplifying the concerns at the application level.
-
-The master data repository API provide services for Ingestion, Search and Delivery. The internal representation of the repository is a graph where the entity's life events are tracked and versioned accordingly with reference to where the actual data is stored. The master data repository ingestion and delivery service operates with aggregates. An aggregate is understood as a clusters of entities and value objects with consistent boundaries that are managed as a whole.
-
-On the client side, this makes a lot of things easier. The consuming contexts can focus on workflows and the dynamic properties of the domain at hand working with entities and value objects without being bothered with lineage and versioning.
+On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
 ## Processes, events and tasks
 The real world consists of asynchronous, concurrent and dynamic processes, sometimes competing other times collaborating. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
 
-We choose to call these objects who's role is to perform work, not to store data or represent value for Process Controllers. A process controller will process events and dependent of its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. 
+We choose to call these objects or functions who's role it is to perform work for process controllers. A process controller will process events in line with its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. Process controllers might often be the home for a domain service. 
 
-By introducing dynamic domain modelleing we have four new concepts:
-- Domain processes are designated objects that represents a larger piece of work. It might provide domain services, but are more often associated with events processing and execution of tasks.
+By maiking dynamic domain modelling explicit we end up with four new concepts:
+- Domain processes and process controllers are designated objects that represents a larger piece of work. It might provide domain services, but are more often associated with events processing and execution of tasks.
 - Domain events capturing the occurrences of something that happens in the domain (Vernon).
 - Domain tasks capturing the work to be performed by the process controller as response to a domain event.
 - Domain state capturing the state guiding the process controllers selection of task on events.
 
-These building blocks are similar to what we find in the multi-agent design paradigme and its also strongly influenced by that domains thinking.
+These building blocks are similar to what we find in the multi-agent design paradigme. 
 
 The internal model of an object that processes events and performs task can be rather complicated. Think of the model in a  smart phone application following the model-view-controller pattern. It will most likely consists of multiple modules (packages) and depend on external libraries.
 
