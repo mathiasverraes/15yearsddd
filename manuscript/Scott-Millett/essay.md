@@ -64,6 +64,7 @@
 
 ## Reduce the cost of software by simplifying problems so that you can produce simpler solution models
 
+ * Teams should be rewarded for developing simple solutions that enable business capability at a low cost/overhead
  * Modelling 
  * Simplify the problem. Change business process to make software dev easy
  * You can get to simple problem by immersing yourself in the problem domain
@@ -71,18 +72,21 @@
 
 ## Don’t focus on requirements collaborate on viable solutions
 
- * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirements
+ * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for oppurtunities.
  * Be accountable - Don’t delegate solution design to the business
  * It’s not someone else’s problem, it’s yours.
  * What is the definirtion of an Analyst programmer
  * If you  not making a difference then what are you doing 
  * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
+ * IT has a greater amount of power and influence than before. New busines models can be developed through leveraging technology. Teams should act like commerically and be business (domain) focused.
  * Be empowered
  * Domain experts are not system experts. Learn and discover with them
  * Look for IT + Domain experts + decision makers = solutions
  * Don’t settle for meetings without meaning and that won’t progress your understanding. Get decisions made. 
 
 ## Learn to collaborate
+
+ * IT Team should be embedded in the business department that they are providing capability for rather than sit in a central IT org structure.
 
 ### Facilication in distillation
 
