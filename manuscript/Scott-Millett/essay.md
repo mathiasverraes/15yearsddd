@@ -2,7 +2,7 @@
 
 ## The fundamental concepts of DDD
 
-## Keep an eye on the big picture when you are in the detail
+## Keep an eye on the goal
 
 ## Have an explicit passion for the problem space
 
