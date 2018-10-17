@@ -25,6 +25,10 @@ A> My personal context
 ### Software development is about people. People are complex
 
  * 
+ 
+### First Principles of DDD
+
+* Show mind map/image of first principles.
 
 ## Keeping a focus on the goal
 
