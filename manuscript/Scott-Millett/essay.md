@@ -71,6 +71,8 @@
  * Simplify the problem. Change business process to make software dev easy
  * You can get to simple problem by immersing yourself in the problem domain
  * Writing software is expensive
+ * Jurassic Park - Just because you can doesn't mean you should
+ * Curiosity and a genuine desire to learn about a problem space is vital to produce good solutions and meaningful software. In that you can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless
 
 ## Don’t focus on requirements collaborate on viable solutions
 
@@ -132,3 +134,4 @@
 ## To the next 15 years and the continued reinvention of DDD
 
 * DDD is now an uncontrollable force. Even if you were to cut the head Evans, it would still continue to grow :)
+* Future if DDD much more blending between developers and business people. Knowledgable IT people will turn into business decision makers
