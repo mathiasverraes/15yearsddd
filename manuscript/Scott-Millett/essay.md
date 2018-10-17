@@ -54,3 +54,5 @@
 ## Have patience 
 
 ## To the next 15 years and the continued reinvention of DDD
+
+* DDD is now an uncontrollable force. Even if you were to cut the head Evans, it would still continue to grow :)
