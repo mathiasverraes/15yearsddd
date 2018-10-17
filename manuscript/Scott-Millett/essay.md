@@ -1,8 +1,8 @@
 # First principles of DDD: Focus, passion, collaboration, clarity and patience
 
-A> ## Disclaimer
-A>
-A> My personal context
+* My personal context, introduction and experience of DDD in my domains, my DDD journey
+* Why I am not a jedi master
+* Why its hard to answer the "Can I see an example of a DDD project?" questions 
 
 ## The fundamental concepts of DDD
 
