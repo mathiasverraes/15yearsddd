@@ -1,6 +1,12 @@
 # First principles of DDD: Focus, passion, collaboration, clarity and patience
 
+A> ## Disclaimer
+A>
+A> My personal context
+
 ## The fundamental concepts of DDD
+
+> Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
 
 ### Distill the Problem Domain to Reveal What Is Important
 
@@ -26,7 +32,7 @@
 
 ### Collaboration in managing dependencies of the system flow
 
-## CClear, Concise and Regular Communication is Key
+## Clear, Concise and Regular Communication is Key
 
 ## Have patience 
 
