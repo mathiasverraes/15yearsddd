@@ -20,6 +20,8 @@ A> My personal context
 
 ## So what? I already knew this stuff
 
+### Software development is about people. People are complex
+
 ## Keeping a focus on the goal
 
 ### The Theory of Constraints
