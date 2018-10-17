@@ -14,13 +14,19 @@
 
 ## So what? I already knew this stuff
 
-## Keep an eye on the goal
+## Keeping a focus on the goal
 
-## Have an explicit passion for the problem space
+### The Theory of Constraints
+
+## Learn to love your problem space
 
 ## Don’t underestimate the importance of Collaboration and Facilitation
 
-## Clear, Concise and Regular Communication is Key
+### Facilication in distillation
+
+### Collaboration in managing dependencies of the system flow
+
+## CClear, Concise and Regular Communication is Key
 
 ## Have patience 
 
