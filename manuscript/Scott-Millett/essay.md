@@ -38,6 +38,8 @@ A> My personal context
 
 ### Collaboration in managing dependencies of the system flow
 
+ 1. People and code Relationships
+
 ## Clear, Concise and Regular Communication is Key
 
 ## Have patience 
