@@ -34,8 +34,8 @@ Thirdly, new modern programming languages such as Swift unites object oriented p
  
 With the scene set, let's roll.
 
-## Separating data from the applications
-Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. Master data objects are the bearers of identity and lineage. In Domain-Driven Design is it the Entities that has this responsibility. Working with entities or master data objects implies working with who they are, more than what they are and maintaining their identity and lineage accross different bounded contexts.
+## Masterdata, entities and repositories
+Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. Master data objects are the bearers of identity and lineage. In Domain-Driven Design Entities has this responsibility. Working with entities or master data objects implies working with who they are, not what they are and maintaining their identity and lineage accross different bounded contexts.
 
 The main difference between an entity and a master data object is that the scope of an entity is the local context, often defined by the boundary of an application. The scope of a master data object is enterprise wide and involves maintaining identity and lineage accross multiple bounded contexts. The practical effect of this is that the footprint of the object is kept at a bare minimum. We could think of it as the super class every context specific instance inherits from. In many ways the top level generalisation.
 
