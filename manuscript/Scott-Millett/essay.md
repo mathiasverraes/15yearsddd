@@ -28,6 +28,8 @@ A> My personal context
 
 ### Delivering Business Outcomes over code output
 
+### Balance and Trade offs
+
 ## Learn to love your problem space
 
 ## Don’t underestimate the importance of Collaboration and Facilitation
