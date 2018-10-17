@@ -1,4 +1,4 @@
-# DDD values: Passion, collaboration, persistence, and patience
+# First principles of DDD: Focus, passion, collaboration, clarity and patience
 
 ## The fundamental concepts of DDD
 
