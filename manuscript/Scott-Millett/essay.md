@@ -64,6 +64,8 @@
 
 ## Reduce the cost of software by simplifying problems so that you can produce simpler solution models
 
+> “Technology can bring benefits if, and only if, it diminishes a limitation.” —Eli Goldratt
+
  * Teams should be rewarded for developing simple solutions that enable business capability at a low cost/overhead
  * Modelling 
  * Simplify the problem. Change business process to make software dev easy
