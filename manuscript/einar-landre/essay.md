@@ -1,7 +1,7 @@
 # On objects, processes and data
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
-Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Since then a lot has happened. Back then there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled as the enterprise data store.
+Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Since then a lot has happened. Back then there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
 
 Developers could be found arguing over Java vs  C# and applications was still made in tools like Microsoft Access. Martin Fowlers Patterns of Enterprise Application Architecture was less than a year old and the GoF Design Patterns, Elements of reusable object-oriented software had just turned 9.
 
