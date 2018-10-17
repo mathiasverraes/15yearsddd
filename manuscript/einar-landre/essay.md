@@ -80,7 +80,7 @@ To support the design and implementations of these behavioural workhorses of you
 
 Lastly, processes can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a Unix cron job or whatever mechanism is provided by your platform of choice.
 
-## Object-Funcinal languages
+## Object-Functional languages
 Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to the imperative and object oriented paradigme (Wikipedia).
 
 Since 2003 several modern programming languages that supports both object oriented and functional programming has emerged and gained popularity. In addition to JavaScript we find Swift, Go and Scala to have mentioned some of them. I will use Swift as my foundation. 
