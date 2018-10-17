@@ -1,4 +1,4 @@
-# How to make DDD work: Passion, collaboration, persistence, and patience
+# DDD values: Passion, collaboration, persistence, and patience
 
 ## The fundamental concepts of DDD
 
