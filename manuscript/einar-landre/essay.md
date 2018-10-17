@@ -7,7 +7,7 @@ Developers could be found arguing over Java vs  C# and applications was still ma
 
 Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics and machine learning has become part of our professional vocabulary. New programming languages such as Swift, Scala and Go has entered the scene and old languages such as Python have resurrected to dominates data science. 
 
-The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built on data with software.
+The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built with software.
 
 While the needs in many ways are the same, the technology has enabled new oportunities that will demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require understanding and mastery of concurrency, the SQL database is replaced by a multitude of storate oportunities and so on. 
 
@@ -35,15 +35,15 @@ Thirdly, new modern programming languages such as Swift unites object oriented p
 With the scene set, let's roll.
 
 ## Separating data from the applications
-Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. The master data objects are the bearers of identity and lineage. In Domain-Driven Design is it the Entities that has this responsibility. Working with entities or master data objects implies working with who they are, more than what they are and maintaining their identity and lineage accross different bounded contexts.
+Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. Master data objects are the bearers of identity and lineage. In Domain-Driven Design is it the Entities that has this responsibility. Working with entities or master data objects implies working with who they are, more than what they are and maintaining their identity and lineage accross different bounded contexts.
 
-The biggest difference between an Entity and a master data object is that when we work with an Entity our primary concerns are the Entities role in a specific bounded context, while a master data object involves maintaining identity and lineage accross multiple bounded contexts.
+The main difference between an entity and a master data object is that the scope of an entity is the local context, often defined by the boundary of an application. The scope of a master data object is enterprise wide and involves maintaining identity and lineage accross multiple bounded contexts. The practical effect of this is that the footprint of the object is kept at a bare minimum. We could think of it as the super class every context specific instance inherits from. In many ways the top level generalisation.
 
-In the upstream oil and gas "Well" is one of the core master data objects with a lifespan measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and codings. Seen from the enterprise level, lineage and identity is easily broken and keeping it intact is very expensive. In healtcare Patient is a master data object and the same can be said about Item in retail.
+In the upstream oil and gas "Well" is one of the core master data objects with a lifespan measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and encodings. This leads to a situation where identity and lineage is easily broken and keeping it intact become very expensive. 
 
-Based on work we have done in collaboration with other oil companies we discovered that the best way forward was to separate lifecycle management of master data objects from the applications. We have called this the application data separation pattern.
+Based on discussions with other oil companies we think the best way forward is to separate lifecycle management of master data objects from the applications using what we call a master data repository.
 
-It can be implemented by creating a master data repository that provide a context independent home for the master data objects, maintaining lineage (immutability and versioning) and holding references to attributes, life-events and decisions. This mean that management of identity and lineage is moved out of the applications and to the repository, simplifying the concerns at the application level.
+A master data repository provides a context independent home for the master data objects, maintaining its identity and lineage. In addition it will also hold meta data and reference data attributes, life-events and decisions. This move the management of identity and lineage out of the applications and to the repository, simplifying the concerns addressed by the  applications.
 
 The master data repository API provide services for Ingestion, Search and Delivery. The internal representation of the repository matches best with a graph, where the objects life events are tracked and versioned accordingly with reference to where member data is stored. The master data repository ingestion and delivery service operates with aggregates. An aggregate understood as a clusters of entities and value objects with consistent boundaries that are managed as a whole.
 
@@ -145,5 +145,7 @@ Evans, Domain-Driven Design
 Vernon, Implementing Domain Drive Design
 
 Eidhof et al, Functional Swift
+
+Thanks to Alan Doniger, Shell for sharing his experience and thoughts on data management.
 
 
