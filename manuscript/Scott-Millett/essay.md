@@ -1,4 +1,4 @@
-# First principles of DDD: Focus, passion, collaboration, clarity and patience
+# Distilling DDD into first principles
 
 * My personal context, introduction and experience of DDD in my domains, my DDD journey
 * Why I am not a jedi master
@@ -20,7 +20,7 @@
 
 ## So what? I already knew this stuff
 
- * Majority of effort lies outside of the technical realm
+ * Clear to see that the majority of effort lies outside of the technical realm
 
 ### Software development is about people. People are complex
 
@@ -32,7 +32,11 @@
 * Brief introduction of core principles
 * Goes without saying you need to be able to code
 
-## Keeping a focus on the goal
+## Don’t lose track of the goal
+
+ * Sub domains can help with focus
+ * Distill the problem domain to find the goal    
+ * Look for Find interesting problems 
 
 ### The Theory of Constraints
 
@@ -40,20 +44,82 @@
 
 ### Balance and Trade offs
 
-## Learn to love your problem space
+ * Don’t solve all the problem
+ * Master the art of saying no. This will give you more time to focus on the strategic high value initiatives 
 
-## Don’t underestimate the importance of Collaboration and Facilitation
+## Be clear on how you deliver business value.
+
+  * Core sub domain
+  * Value solutions over software
+  * It’s not about being a code monkey it’s about getting results
+  * Helps to identify if a problem is worth solving / valuable 
+  * Look for the money / how does it shift the KPI
+
+## Show a professional passion for the problem domain
+
+  * You are a professional. You are paid well.
+  * Be humble
+  * Be proactive, be curious 
+  * Don’t just except mediocrity
+
+## Reduce the cost of software by simplifying problems so that you can produce simpler solution models
+
+ * Modelling 
+ * Simplify the problem. Change business process to make software dev easy
+ * You can get to simple problem by immersing yourself in the problem domain
+ * Writing software is expensive
+
+## Don’t focus on requirements collaborate on viable solutions
+
+ * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirements
+ * Be accountable - Don’t delegate solution design to the business
+ * It’s not someone else’s problem, it’s yours.
+ * What is the definirtion of an Analyst programmer
+ * If you  not making a difference then what are you doing 
+ * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
+ * Be empowered
+ * Domain experts are not system experts. Learn and discover with them
+ * Look for IT + Domain experts + decision makers = solutions
+ * Don’t settle for meetings without meaning and that won’t progress your understanding. Get decisions made. 
+
+## Learn to collaborate
 
 ### Facilication in distillation
 
 ### Collaboration in managing dependencies of the system flow
 
- * People and code Relationships
- * Managing the white space
+  * People relationships and code relationships
+  * Managing the white space / process in between
+  * Complex systems will have many moving parts. No man is an island.
+  * This is a team sport
+  * Be humble 
+  * Take personal feelings out of it and attack the problem. Be angry at the problem not the person.
+  * Learn to negotiation 
+  * Dependencies are everywhere learn how to work with other teams
+  * Play well with others. People make systems
+  * Turn head phones off and interact
+  * Pick up the phone and have a conversation with internal and external people - we are ultimately on the same team - even external vendors
+  * So many collaboration tools and so little collaboration happening 
+  * Learn to collaborate
+  * Learn to facilitate, to get the best out of people
 
-## Clear, Concise and Regular Communication is Key
+## Understand how you fit into to the  system
+  
+  * Bounded contexts and context Map
+  * TOC: in complex systems you are one model and part of a bigger model.
+  * Understand dependencies and work with others to unblock flow for the big picture
+  * How does your context/model fit in with others. How does your mode contribute to overall system and deliver value
+  * Social architecture - simplify relationships. The more we remove dependencies and simplify the easier life becomes.
 
-## Have patience 
+
+## Visualise the problem domain and solution models
+  * explicit, clear and concise
+  * Again collaborate 
+  * Ubiquitous Language 
+  * Visualise the model
+  * Language
+  * Definition  
+  * Alignment - bring the whole team with you 
 
 ## To the next 15 years and the continued reinvention of DDD
 
