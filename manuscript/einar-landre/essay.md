@@ -81,7 +81,11 @@ To support the design and implementations of these behavioural workhorses of you
 Lastly, processes can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a Unix cron job or whatever mechanism is provided by your platform of choice.
 
 ## Object-Funcinal languages
-Since 2003 several new modern programming languages that supports both object oriented and functional programming has emerged. One of these languages is Swift, others are Scala and Go. I will use Swift as the basis. In functional languages functions are first class citizens. Being a first class citizen enables the developers to use functions and methods like any other object or value. Functions can be passed as values, stored in properties and be returned as output from another functions.
+Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to the imperative and object oriented paradigme (Wikipedia).
+
+Since 2003 several modern programming languages that supports both object oriented and functional programming has emerged and gained popularity. In addition to JavaScript we find Swift, Go and Scala to have mentioned some of them. I will use Swift as my foundation. 
+
+In a functional language functions are first class citizens. Being a first class citizen enables the developers to use functions and methods like any other object or value. Functions can be passed as values, stored in properties and be returned as output from another functions. 
 
 Swift make a clear distinction between reference types (class) and value types (enumerations, structs and tuples). Objects created as a reference type share a copy of the same instance.
 
@@ -101,17 +105,17 @@ var b: B()
 
 var c : B = b
 
-In this case variable c is made a copy of b and they can be independently changed.
+In this case variable c is made as a copy of b and they can be independently changed.
 
-With functions as first class citizens we can create structures like this:
+With functions as first class citizens they are just types and we can create structures where a function takes a function as input and returns a function as its output.
 
-typealias Output = (Int) -> Int
+typealias Output = (Int) -> Int 
 
 typealias Input = (Int, String, float) -> Bool
 
 func doSomething(Input) -> (SomeType) { }
 
-A final property with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides as an example a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming has proved to be.
+Another nice property that comes with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides as an example a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming has proved to be.
 
 Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
 
@@ -148,18 +152,18 @@ I have tried to illustrate some of the bigger changes that have taken place sinc
 # References
 GoF, Design patterns, Elements of reusable object oriented software.
 
-Fowler, Patterns of Enterprise Applications
+Fowler, Patterns of Enterprise Applications.
 
-Douglas, Doing hard time, Developing real-time systems with UML, Objects, Frameworks and Patterns
+Douglas, Doing hard time, Developing real-time systems with UML, Objects, Frameworks and Patterns.
 
-Evans, Domain-Driven Design
+Evans, Domain-Driven Design.
 
-Vernon, Implementing Domain Drive Design
+Vernon, Implementing Domain Drive Design.
 
-Eidhof et al, Functional Swift
+Eidhof et al, Functional Swift.
 
 Hitchins, Advanced systems, thinking, engieering and management.
 
-Thanks to Alan Doniger, Shell for sharing his experience and thoughts on data management.
+Thanks to Alan Doniger, Shell for all interesting talks and discussions on data lifecycle management. The master data repository had not been possible without your contributions.
 
 
