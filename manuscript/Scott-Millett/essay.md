@@ -38,7 +38,8 @@ A> My personal context
 
 ### Collaboration in managing dependencies of the system flow
 
- 1. People and code Relationships
+ * People and code Relationships
+ * Managing the white space
 
 ## Clear, Concise and Regular Communication is Key
 
