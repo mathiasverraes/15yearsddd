@@ -50,7 +50,9 @@ The master data repository API provide services for Ingestion, Search and Delive
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
 ## Processes, events and tasks
-The real world consists of asynchronous, concurrent and dynamic processes, sometimes competing other times collaborating. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
+The real world consists of asynchronous, concurrent, competing and collaborating dynamic processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
+
+According to late profesor Kristen Nygaard (father of OOP) comes processes with a basic set of qualities. They have substance, state, transitions and structure. The substance of a resturant is defined by guests, waiters, gatekeeper, cachier, bills, menues, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available money, food names, queue length, expected waiting time and lastly the actions performed by the objects to trigger and perform state changes. Transitions referes to things like seating, ordering, serving, eating. Structure referes to the permanent properties of the process. 
 
 We choose to call these objects or functions who's role it is to perform work for process controllers. A process controller will process events in line with its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. Process controllers might often be the home for a domain service. 
 
