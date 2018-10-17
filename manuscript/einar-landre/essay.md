@@ -52,7 +52,13 @@ On the client side, this makes a lot of things easier. The consuming contexts ca
 ## Processes, events and tasks
 The real world consists of asynchronous, concurrent, competing and collaborating dynamic processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
 
-According to late profesor Kristen Nygaard (father of OOP) comes processes with a basic set of qualities. They have substance, state, transitions and structure. The substance of a resturant is defined by guests, waiters, gatekeeper, cachier, bills, menues, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available money, food names, queue length, expected waiting time and lastly the actions performed by the objects to trigger and perform state changes. Transitions referes to things like seating, ordering, serving, eating. Structure referes to the permanent properties of the process. 
+Processes has according to late profesor Kristen Nygaard (father of OOP) a basic set of qualities: Substance, state, transitions and structure. Using his own Cafe' Objecta as example, the substance is defined by guests, waiters, gatekeeper, cachier, bills, menues, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions referes to things like seating, ordering, serving, eating and structure referes to the permanent properties of the process. 
+
+The original book is weak on processes. We have entities representing identity and lineage and we have value objects representing values and domain services representing the domain models public interfaces. Vernon in his Implementing Domain-Driven design supplements the toolkit with domain events, responsible for capturing something that happends in the domain. Calling a method on an aggregate root will of cause initiate a process inside the aggregate, a process that might propagate to other aggregates. The limitation of this approach is that it only covers linear processes as the ones we find in transactions.
+
+Using the resturant example, its hard to capture the autonomous properties embedded in a waiter and a guest. A guest might be triggered by an external event that impacts the interaction with the waiter or vice versa. The challenge as I see it is that we do not have the language to talk about these things. One way to approach it is to lend our selves to systems engineering (Htchins) and the fact that there are always two systems in play: creating and created. A oil plattform is a creating system that makes oil products with defined quality. A car manafacturing line is also a creating system that makes cars.
+
+With the danger of becomming too philosphical, traditional OOP and later DDD does not address this in a good way at the level of domain modelling and implementation in code. We need to extend our language with a notion of processes as a placeholder for work to be done as resonse to events.
 
 We choose to call these objects or functions who's role it is to perform work for process controllers. A process controller will process events in line with its internal state, update its internal state and execute tasks. What task to choose as respons to an event is state dependent. Process controller state might be persisted, and the controllers themselves might be managed as entities. Process controllers might often be the home for a domain service. 
 
@@ -147,6 +153,8 @@ Evans, Domain-Driven Design
 Vernon, Implementing Domain Drive Design
 
 Eidhof et al, Functional Swift
+
+Hitchins, Advanced systems, thinking, engieering and management.
 
 Thanks to Alan Doniger, Shell for sharing his experience and thoughts on data management.
 
