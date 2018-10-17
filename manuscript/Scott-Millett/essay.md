@@ -72,6 +72,8 @@
 
 ## Don’t focus on requirements collaborate on viable solutions
 
+> "It's better to be approximately right than precisely wrong." —Eli Goldratt 
+
  * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for oppurtunities.
  * Be accountable - Don’t delegate solution design to the business
  * It’s not someone else’s problem, it’s yours.
