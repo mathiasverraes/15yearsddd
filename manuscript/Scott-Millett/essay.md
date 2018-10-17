@@ -24,6 +24,8 @@ A> My personal context
 
 ### The Theory of Constraints
 
+### Delivering Business Outcomes over code output
+
 ## Learn to love your problem space
 
 ## Don’t underestimate the importance of Collaboration and Facilitation
