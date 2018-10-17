@@ -20,7 +20,11 @@ A> My personal context
 
 ## So what? I already knew this stuff
 
+ * Majority of effort lies outside of the technical realm
+
 ### Software development is about people. People are complex
+
+ * 
 
 ## Keeping a focus on the goal
 
