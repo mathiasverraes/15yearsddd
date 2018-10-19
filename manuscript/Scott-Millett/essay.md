@@ -24,10 +24,6 @@
 
 ### Software development is about people. People are complex
 
- * 
- 
-### First Principles of DDD
-
 * Show mind map/image of first principles.
 * Brief introduction of core principles
 * Goes without saying you need to be able to code
