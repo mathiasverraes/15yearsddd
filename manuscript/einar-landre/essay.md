@@ -49,7 +49,7 @@ The master data repository API provide services for Ingestion, Search and Delive
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
-## Processes, behaviour, events and tasks
+## Processes, agents and behaviour
 It is possible to view the world as a infinit collection of asynchronous, concurrent, competing and collaborating processes a.k.a. as a dynamic system. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
 Having worked for years with multi-agent based systems its more and more clear that domain complexity comes in two flavours. The first flavour is static and structural. This is the complexity we find in product structures such as an airplane, an oil well and a retail asortment hierarchy or project plan. This is the complexities that shaped domain-driven design in the first place.
