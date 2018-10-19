@@ -26,9 +26,9 @@ Domain-Driven Design was born at a point in time where there was a strong belief
 # Domain-Driven Design 4.0
 Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from beeing addressed in context of Domain-Driven Design.
 
-Firstly, the cloud enables us to separate data from application, and to free us from the relational data model was the only storage model of business data. It s now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake, and by doing so we are able to reduce the data gravity cost. This change will have a huge impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
+Firstly, the cloud enables us to separate data from application, and to free us from the relational data model as the only storage model of business data. It's now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake, and by doing so we are able to reduce the data gravity cost. This change will have a huge impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
 
-Secondly, the real world consist of dynamic systems. Object oriented programming itself was created for the purpose of analysis of such systems. Business software developers has historically been spared from the challenges that comes with real-time dynamic systems, that was the realm of the system programmers. The Internet of Things changes this. Back-office processes must be able to respond to events at the edge, and they must be able to send new instructions to the edge process and devices. Architecturally this is solved using publish-subscribe and event processing. We can call the pattern concurrent and asynchronous processes.
+Secondly, the real world consist of dynamic systems. Object oriented programming was created to  analysis of such systems. Business software developers has historically been spared from the challenges that comes from such systems. The closest they came was transaction processing. The Internet of Things changes this. Back-office processes must be able to respond to events at the edge, and they must be able to send new instructions to the edge process and devices. Architecturally this is solved using publish-subscribe and event processing.
 
 Thirdly, new modern programming languages such as Swift unites object oriented programming and functional programming in ways that both supports and simplifies DDD. Remember, objects has state and functions are stateless. These properties become crucial when we are aiming at implementations of master data repository and concurrent asynchronous processes in a distributed environment. We need to implement rich domain models at both the edge and in the cloud.
  
@@ -49,10 +49,14 @@ The master data repository API provide services for Ingestion, Search and Delive
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
-## Processes, events and tasks
-The real world consists of asynchronous, concurrent, competing and collaborating dynamic processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components (objects).
+## Processes, behaviour, events and tasks
+It is possible to view the world as a infinit collection of asynchronous, concurrent, competing and collaborating processes a.k.a. as a dynamic system. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
-Processes has according to late profesor Kristen Nygaard (father of OOP) a basic set of qualities: Substance, state, transitions and structure. Using his own Cafe' Objecta as example, the substance is defined by guests, waiters, gatekeeper, cachier, bills, menues, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions referes to things like seating, ordering, serving, eating and structure referes to the permanent properties of the process.
+Having worked for years with multi-agent based systems its more and more clear that domain complexity comes in two flavours. The first flavour is static and structural. This is the complexity we find in product structures such as an airplane, an oil well and a retail asortment hierarchy or project plan. This is the complexities that shaped domain-driven design in the first place.
+
+The other type of complexity is the result of dynamic intercourses between autonomous entities. This is the complexities we see in advarsary games, on the battlefield and in human societies and systems. Entities come and go, they might be lost to enemy action or loss of connectivity. One of the main contributions in this field is Bratman's BDI (Belief-Desire-Intention) programming model for software agents. In the simplest form: an agent have goals and execute plans to achive those goals. Said in a simpler way, the agent execute actions as the response to external events. The hard part is the implementation of the agents reasoning leading to choosing the best possible action among many.
+
+When late professor Kristen Nyggaard whas theaching object oriented programming in his elder days, he used a resturant as his example of a system and where he argued that processes in such system has a set of basic qualities: Substance, state, transitions and structure. Using his own Cafe' Objecta as example, the substance is defined by guests, waiters, gatekeeper, cachier, bills, menues, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions referes to things like seating, ordering, serving, eating and structure referes to the permanent properties of the process.
 
 It can be argued that in any domain we find four types of objects, the object that does interesting things, the passive objects that provides basic services such as linked lists, queues and stacks. Then we have the objects that represents master data maintaining identity and lineage over time and lastly the objects that represents values and describe things ie. the value objects. The original book is weak when it comes to the objects that does interesting things, these are the objects that first and foremost represents processes, the objects that respond to events and performs actions or tasks.
 
@@ -163,6 +167,8 @@ Vernon, Implementing Domain Drive Design.
 Eidhof et al, Functional Swift.
 
 Hitchins, Advanced systems, thinking, engieering and management.
+
+Jarvis et al, Multiagent Systems and Applications: Volume 2: Development Using the GORITE BDI Framework.
 
 Thanks to Alan Doniger, Shell for all interesting talks and discussions on data lifecycle management. The master data repository had not been possible without your contributions.
 
