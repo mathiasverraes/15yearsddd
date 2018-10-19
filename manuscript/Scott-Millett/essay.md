@@ -57,10 +57,13 @@
 
 ## Show a professional passion for the problem domain
 
+  > “I don’t have talent, so I just get up earlier.” —Henry Rollins
+
   * You are a professional. You are paid well.
   * Be humble
   * Be proactive, be curious 
   * Don’t just except mediocrity
+ 
 
 ## Reduce the cost of software by simplifying problems so that you can produce simpler solution models
 
@@ -71,7 +74,10 @@
  * Simplify the problem. Change business process to make software dev easy
  * You can get to simple problem by immersing yourself in the problem domain
  * Writing software is expensive
- * Jurassic Park - Just because you can doesn't mean you should
+ 
+ ### The Jurassic Park Principle
+ 
+ * Just because you can doesn't mean you should
  * Curiosity and a genuine desire to learn about a problem space is vital to produce good solutions and meaningful software. In that you can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless
 
 ## Don’t focus on requirements collaborate on viable solutions
@@ -93,6 +99,7 @@
 ## Learn to collaborate
 
  * IT Team should be embedded in the business department that they are providing capability for rather than sit in a central IT org structure.
+ * Easy if you have alignment in what you are doing
 
 ### Facilication in distillation
 
@@ -102,6 +109,7 @@
   * Managing the white space / process in between
   * Complex systems will have many moving parts. No man is an island.
   * This is a team sport
+  * Take personal feelings out of it and attack the problem. Be angry at the problem not the person.
   * Be humble 
   * Take personal feelings out of it and attack the problem. Be angry at the problem not the person.
   * Learn to negotiation 
