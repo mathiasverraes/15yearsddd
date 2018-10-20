@@ -2,6 +2,7 @@
 
 * My personal context, introduction and experience of DDD in my domains, my DDD journey
 * Why I am not a jedi master - I only know the domains I know
+* First principle - DDD - Drive all design decisions based on the rule “will this help achieve the goal?”
 
 ## The fundamental concepts of DDD
 
