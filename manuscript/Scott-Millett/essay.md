@@ -103,6 +103,7 @@
 
 * Always keep a eye on the goal/bottle neck
 * Context Maps important but also use process maps to understand system flow
+* Ensure all teams are aligned by understanding the goal,  collaborate together on a solution and understand how they fit into the bigger picture 
 
 ## Values
 
