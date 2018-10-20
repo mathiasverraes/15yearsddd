@@ -86,7 +86,7 @@
  > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
  * Avoid local optimisations at expense of improving the system
- * Don’t solve all the problem
+of * Don’t solve all the problem
  * Master the art of saying no. This will give you more time to focus on the strategic high value initiatives 
 
 ### Reduce the cost of software 
@@ -108,9 +108,12 @@
 
 ### Manage the solution team organisational design for autonomy 
 
+  * Product Teams
+  * Capability Teams
+  
 ### Identify constraints in delivering the solution 
 
-* Constraints outside of IT, vendors and business colleagues
+* Constraints outside  IT, vendors and business colleagues
 
 ### Collaborate to solve the big picture
 
