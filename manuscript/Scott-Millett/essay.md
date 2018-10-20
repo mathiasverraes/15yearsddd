@@ -40,13 +40,16 @@
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
 
+ * Understand the business big picture (problems, constraints, opportunities)
  * Distilling large problem into sub domains 
  * Core domain, the goal, or impediment is revealed to give focus.    
  * Look for Find interesting problems - sometimes we don't know the exact details of the problem or how to solve it. We must work with no technical people to look for oppurtunity. For example - problem is we are 10% down on budget.
  
  ### Applying the Theory of Constraints to reveal impediments to business value throughput
 
- * Intro on TOC
+ * Shift focus from local optimisations to increasing the flow of the system
+ * For example 2nd class shipping postage may save money but is uncompetitive and will lose sales and hit revenue line.
+
 
 ### Be clear on how you deliver business value
 
