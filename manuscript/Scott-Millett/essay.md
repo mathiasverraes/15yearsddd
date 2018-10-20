@@ -60,7 +60,12 @@
 
 ## Gain agreement that the solution solves the core problem
 
+ > “Technology can bring benefits if, and only if, it diminishes a limitation.” —Eli Goldratt
+
+
 ### The Jurassic Park Principle
+
+ > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
  * Avoid local optimisations at expense of improving the system
  * Don’t solve all the problem
@@ -76,9 +81,11 @@
 
 ## Optimize for the Overall System 
 
+ > “A company could put a top man at every position and be swallowed by a competitor with people only half as good, but who are working together.” W. Edwards Deming
+
  * Not the Individual Components
 
-### Manage organisational design for autonomy 
+### Manage the solution team organisational design for autonomy 
 
 ### Identify constraints in delivering the solution 
 
