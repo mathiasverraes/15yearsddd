@@ -61,6 +61,7 @@
 
 ### Show a professional passion for the problem domain
 
+ * You cannot being to be useful to solve a problem or look for oppurtunity if you don't really understand the domain you are working in to a sufficently deep level
  * You are a professional. You are paid well.
  * Be proactive, be curious 
  * Delibertate discovery at the constraint/bottleneck
