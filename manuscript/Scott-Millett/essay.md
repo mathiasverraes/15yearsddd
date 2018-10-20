@@ -64,7 +64,7 @@
  * Be proactive, be curious 
  * Delibertate discovery at the constraint/bottleneck
 
-### Don’t focus on requirements collaborate on viable solutions
+### Collaborate on viable solutions rather than looking for requirements 
 
  * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for opportunities.
  * Be accountable - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
