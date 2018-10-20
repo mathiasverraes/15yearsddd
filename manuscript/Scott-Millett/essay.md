@@ -101,6 +101,9 @@
 
 ### Collaborate to solve the big picture
 
+* Always keep a eye on the goal/bottle neck
+* Context Maps important but also use process maps to understand system flow
+
 ## Values
 
 
