@@ -127,7 +127,7 @@ of * Don’t solve all the problem
 
 * Have patience and humility
 * respect others
-* 
+* Avoid blaming
 
 ## To the next 15 years and the continued reinvention of DDD
 
