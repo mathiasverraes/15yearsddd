@@ -110,7 +110,7 @@
 
 ### Identify constraints in delivering the solution 
 
-* Simplify
+* Constraints outside of IT, vendors and business colleagues
 
 ### Collaborate to solve the big picture
 
