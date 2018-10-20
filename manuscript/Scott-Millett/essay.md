@@ -110,7 +110,9 @@
  > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
  * Avoid local optimisations at expense of improving the system
-of * Don’t solve all the problem
+of 
+ * Don’t solve all the problem
+ * Will your output produce meaningful outcomes
  * Master the art of saying no. This will give you more time to focus on the strategic high value initiatives 
 
 ### Reduce the cost of software 
