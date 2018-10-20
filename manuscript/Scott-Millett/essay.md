@@ -120,6 +120,9 @@
 
 ## Values
 
+* Have patience and humility
+* respect others
+* 
 
 ## To the next 15 years and the continued reinvention of DDD
 
