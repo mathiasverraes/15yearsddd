@@ -83,6 +83,14 @@
  * Be accountable, don't be lazy - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
  * IT is the business
  * Domain experts are not system experts. Learn and discover with them. IT + Domain experts + decision makers = solutions
+ * If you not making a difference then what are you doing
+ * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
+ * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
+ * Be empowered
+ * Domain experts are not system experts. Learn and discover with them
+ * IT + Domain experts + decision makers = solutions
+ * Don’t settle for meetings without meaning and that won’t progress your understanding. Get decisions made.
+
 
 ### Learn to Facilitate Problem exploration
 
