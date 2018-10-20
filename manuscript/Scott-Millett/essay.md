@@ -67,7 +67,8 @@
 ### Collaborate on viable solutions rather than looking for requirements 
 
  * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for opportunities.
- * Be accountable - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
+ * Be accountable, don't be lazy - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
+ * IT is the business
  * Domain experts are not system experts. Learn and discover with them. IT + Domain experts + decision makers = solutions
 
 ### Learn to Facilitate Problem exploration
