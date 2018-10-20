@@ -53,9 +53,7 @@
 
 ### Don’t focus on requirements collaborate on viable solutions
 
-### Learn to collaborate
-
-### Learn to Facilitate
+### Learn to Facilitate Problem exploration
 
 
 ## Gain agreement that the solution solves the core problem
@@ -91,7 +89,7 @@
 
 * Simplify
 
-### Collaboration in managing dependencies of the system flow
+### Collaborate to solve the big picture
 
 ## Values
 
