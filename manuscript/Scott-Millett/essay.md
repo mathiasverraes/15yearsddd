@@ -90,7 +90,7 @@
  * Domain experts are not system experts. Learn and discover with them
  * IT + Domain experts + decision makers = solutions
  * Don’t settle for meetings without meaning and that won’t progress your understanding. Get decisions made.
-
+ * I have often found it the case that domain experts don’t know how current system. They are domain experts, experts in there fields, but not business process engineers, not systems experts 
 
 ### Learn to Facilitate Problem exploration
 
