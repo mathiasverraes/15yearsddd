@@ -73,9 +73,9 @@
 
 * Simplify problems so that you can produce simpler solution models
 
-### Understand the Balance and Trade offs of alternative models
+### Explore alternative models
 
-
+* Understand the Balance and Trade offs of 
 
 ## Optimize for the Overall System 
 
