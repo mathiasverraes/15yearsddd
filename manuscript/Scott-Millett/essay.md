@@ -49,7 +49,7 @@
 
  * Shift focus from local optimisations to increasing the flow of the system
  * For example 2nd class shipping postage may save money but is uncompetitive and will lose sales and hit revenue line.
-
+ * Remove impediments to producing business value
 
 ### Be clear on how you deliver business value
 
