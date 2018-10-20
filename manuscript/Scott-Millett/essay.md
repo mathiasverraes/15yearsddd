@@ -50,6 +50,9 @@
 
 ### Be clear on how you deliver business value
 
+ * Value solutions over software. It’s not about being a code monkey it’s about getting results
+ * Being clear on what business value is helps to identify if a problem is worth solving or is valuable
+ * Look for the money / how does it shift the KPI
  * People don't want to buy a quarter-inch drill, they want a quarter-inch hole - no body cares how we crafted your code is unless is makes money
  * Look for the money / how does it shift the KPI / where is the bottleneck to business throughput
  * Delivering Business Outcomes over code output / Value solutions over software /  It’s not about being a code monkey it’s about getting results
