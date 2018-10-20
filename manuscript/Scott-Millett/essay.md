@@ -111,6 +111,7 @@ of * Don’t solve all the problem
 
   * Product Teams
   * Capability Teams
+  * Ownership and accountability
   
 ### Identify constraints in delivering the solution 
 
