@@ -44,7 +44,7 @@
  * Core domain, the goal, or impediment is revealed to give focus.    
  * Look for Find interesting problems - sometimes we don't know the exact details of the problem or how to solve it. We must work with no technical people to look for oppurtunity. For example - problem is we are 10% down on budget.
  
- ### Applying the Theory of Constraints
+ ### Applying the Theory of Constraints to reveal impediments to business value throughput
 
  * Intro on TOC
 
