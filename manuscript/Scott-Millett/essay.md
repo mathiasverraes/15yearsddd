@@ -132,4 +132,4 @@ of * Don’t solve all the problem
 ## To the next 15 years and the continued reinvention of DDD
 
 * DDD is now an uncontrollable force. Even if you were to cut the head Evans, it would still continue to grow :)
-* Future if DDD much more blending between developers and business people. Knowledgable IT people will turn into business decision makers
+* Future of DDD much more blending between developers and business people. Knowledgable IT people will turn into business decision makers
