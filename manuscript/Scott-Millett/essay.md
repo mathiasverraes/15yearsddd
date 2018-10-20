@@ -69,9 +69,13 @@
 ### Show a professional passion for the problem domain
 
  * You cannot being to be useful to solve a problem or look for oppurtunity if you don't really understand the domain you are working in to a sufficently deep level
- * You are a professional. You are paid well.
- * Be proactive, be curious 
- * Delibertate discovery at the constraint/bottleneck
+ * Have passion for the problem space - this will make it easier to find solutions and more importantly opportunities
+ * Focused Deliberate Discovery at the constraint/bottleneck
+ * You are a professional. You are paid well. You have a responsibility to understand the domain you are in.
+ * You don’t need to show empathy, you need to enable your business!
+ * Be proactive, be curious
+ * Don’t accept mediocrity in business process
+
 
 ### Collaborate on viable solutions rather than looking for requirements 
 
