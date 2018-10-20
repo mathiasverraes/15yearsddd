@@ -94,6 +94,8 @@
 
 ### Learn to Facilitate Problem exploration
 
+ > “Engagement is more important than precision.” Alberto Brandolini on Event Storming
+
  * Visualise and reveal with Process mapping or event storming big picture
  * Requires decision makers and domain experts
  * You don't need to be smartest, need to enable
