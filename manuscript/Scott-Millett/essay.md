@@ -10,13 +10,25 @@
 
 ### Distill the Problem Domain to Reveal What Is Important
 
+ * Core domain and sub domains
+
 ### Create models to solve problems
+
+ * Model-driven design
 
 ### Apply Bounded Contexts to Isolate Models from Ambiguity and Corruption
 
+ * Bounded contexts 
+
 ### Understanding the Relationships between Contexts
 
+ * Contexts Map
+ * Tech relationships
+ * People relationships
+
 ### Employ tactical patterns to separate technical complexity from domain logic complexity in the code model
+
+ * Code patterns
 
 ## So what? I already knew this stuff
 
