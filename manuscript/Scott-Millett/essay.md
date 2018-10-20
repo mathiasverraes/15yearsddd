@@ -54,6 +54,7 @@
  * Delivering Business Outcomes over code output / Value solutions over software /  It’s not about being a code monkey it’s about getting results
  * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
  * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
+ * Avoid software being what developers understand from the business - developers ARE the business.
 
 
 ## Collaborate on the direction for a solution
