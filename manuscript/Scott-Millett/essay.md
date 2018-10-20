@@ -112,6 +112,7 @@ of * Don’t solve all the problem
   * Product Teams
   * Capability Teams
   * Ownership and accountability
+  * Loosely coupled but highliy cohesive -  understanding of the business capabilities
   
 ### Identify constraints in delivering the solution 
 
