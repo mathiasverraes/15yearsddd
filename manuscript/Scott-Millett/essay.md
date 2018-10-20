@@ -114,6 +114,7 @@ of
  * Don’t solve all the problem
  * Will your output produce meaningful outcomes
  * Master the art of saying no. This will give you more time to focus on the strategic high value initiatives 
+ * Curiosity and a genuine desire to learn about a problem space is vital to produce good solutions and meaningful software. In that you can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless
 
 ### Reduce the cost of software 
 
