@@ -80,6 +80,8 @@
 ### Reduce the cost of software 
 
 * Simplify problems so that you can produce simpler solution models
+* Don't gold plate software, good is often good enough - remember the goal.
+* Nothing wrong with a hack if you excplicity understand the trade offs - story about EZY testing costs
 
 ### Explore alternative models
 
