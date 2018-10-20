@@ -85,7 +85,8 @@
 
 ### Explore alternative models
 
-* Understand the Balance and Trade offs of 
+* Understand the Balance and Trade offs of alternative models - don't discount anything - outsource/data temps story
+* Never say I know or stop at the first model
 
 ## Optimize for the Overall System 
 
