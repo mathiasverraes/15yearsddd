@@ -21,7 +21,8 @@
 ## So what? I already knew this stuff
 
  * Clear to see that the majority of effort lies outside of the technical realm
- * First principles distill the non technical skills require to apply DDD
+ * First principles distill the non technical skills required to apply DDD
+ * You still have to be good a tech!
 
 ## Gain agreement on the problem
 
