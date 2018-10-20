@@ -75,7 +75,7 @@
  * You don’t need to show empathy, you need to enable your business!
  * Be proactive, be curious
  * Don’t accept mediocrity in business process
-
+ * Programming is understanding and translating into a software specific language. The software proves our understanding.
 
 ### Collaborate on viable solutions rather than looking for requirements 
 
