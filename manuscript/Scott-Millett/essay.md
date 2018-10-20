@@ -21,40 +21,47 @@
 ## So what? I already knew this stuff
 
  * Clear to see that the majority of effort lies outside of the technical realm
+ * First principles distill the non technical skills require to apply DDD
 
 ## Gain agreement on the problem
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
 
- * Sub domains can help with focus
- * Distill the problem domain to find the goal    
+ * Distilling large problem into sub domains 
+ * Core domain, the goal, or impediment is revealed to give focus.    
  * Look for Find interesting problems 
+ 
+ ### Applying the Theory of Constraints
+
+ * Intro on TOC
 
 ### Be clear on how you deliver business value
 
-  * Core sub domain
-  * Value solutions over software
-  * It’s not about being a code monkey it’s about getting results
-  * Helps to identify if a problem is worth solving / valuable 
-  * Look for the money / how does it shift the KPI
+ * Look for the money / how does it shift the KPI / where is the bottleneck to business throughput
+ * Delivering Business Outcomes over code output / Value solutions over software /  It’s not about being a code monkey it’s about getting results
+ * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
+ * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
 
-### Applying the Theory of Constraints
-
-### Delivering Business Outcomes over code output
 
 ## Collaborate on the direction for a solution
 
 ### Show a professional passion for the problem domain
 
-  * You are a professional. You are paid well.
-  * Be humble
-  * Be proactive, be curious 
-  * Don’t just except mediocrity
+ * You are a professional. You are paid well.
+ * Be proactive, be curious 
+ * Delibertate discovery at the constraint/bottleneck
 
 ### Don’t focus on requirements collaborate on viable solutions
 
+ * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for opportunities.
+ * Be accountable - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
+ * Domain experts are not system experts. Learn and discover with them. IT + Domain experts + decision makers = solutions
+
 ### Learn to Facilitate Problem exploration
 
+ * Visualise and reveal with Process mapping or event storming big picture
+ * Requires decision makers and domain experts
+ * You don't need to be smartest, need to enable
 
 ## Gain agreement that the solution solves the core problem
 
