@@ -1,8 +1,7 @@
 # Distilling DDD into first principles
 
 * My personal context, introduction and experience of DDD in my domains, my DDD journey
-* Why I am not a jedi master
-* Why its hard to answer the "Can I see an example of a DDD project?" questions 
+* Why I am not a jedi master - I only know the domains I know
 
 ## The fundamental concepts of DDD
 
@@ -35,6 +34,7 @@
  * Clear to see that the majority of effort lies outside of the technical realm
  * First principles distill the non technical skills required to apply DDD
  * You still have to be good a tech!
+ * Why its hard to answer the "Can I see an example of a DDD project?" questions 
 
 ## Gain agreement on the problem
 
