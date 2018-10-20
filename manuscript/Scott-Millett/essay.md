@@ -115,6 +115,8 @@ of * Don’t solve all the problem
 
 ### Reduce the cost of software 
 
+ > “All good solutions have one thing in common: they are obvious but only in hindsight." Eli Goldratt
+
 * Simplify problems so that you can produce simpler solution models
 * Don't gold plate software, good is often good enough - remember the goal.
 * Nothing wrong with a hack if you excplicity understand the trade offs - story about EZY testing costs
