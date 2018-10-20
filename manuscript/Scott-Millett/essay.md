@@ -126,7 +126,7 @@ of * Don’t solve all the problem
 ## Values
 
 * Have patience and humility
-* respect others
+* respect others - people are good
 * Avoid blaming
 
 ## To the next 15 years and the continued reinvention of DDD
