@@ -26,9 +26,10 @@ Domain-Driven Design was born at a point in time where there was a strong belief
 ## Domain complexity
 The British system thinker Derek Hitchins argue that complexity is perceived as a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered.
 
-Based on my experience as software architect and developer I will argue that we can argue that Hitchins wisdom materialises in what I will call structural and dynamic complexity. Structural domain complexity is the complexity we find in product hierarchies, in master data structures such as items in a retail assortment hierarchy and when calculating the best route between two places in a map.
+Based on my experience as software architect and developer I will argue that we can argue that Hitchins wisdom materialises in what I will call structural and dynamic complexity. Structural domain complexity is the complexity we find in product structures suchas as an airplane, oil-rig, a retail assortment hierarchy or a project plan where we seek to find the critical path.
 
-Dynamic domain complexity is the complexity we observe in adversary games, in warfare and enterprise work patterns. Here, objects collaborate, compete, form teams and even fight each other with effects that directly impacts their own and other objects possible courses of action.
+Dynamic domain complexity is s the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Entities come and go, they might be lost to enemy action or connectivity loss.
+the complexity we observe in adversary games, in warfare and enterprise work patterns. Here, objects collaborate, compete, form teams and even fight each other with effects that directly impacts their own and other objects possible courses of action.
 
 The original DDD addresses structural domain complexity very well, but there is no directly expressed support for how to model dynamic domain behaviour. With IoT, AI and digitalisation and with the wish for DDD to be relevant in the future Domain-Driven design need to address both.
 
