@@ -9,13 +9,11 @@ However, _single purpose_ is not a very actionable criteria for finding boundari
 
 In general, we can't assume the business side to know about bounded contexts. They are mostly a software development problem, and the learning loop about them will be closed in software development first.
 
-Put in another way, the business stakeholder are not a reliable source of direct information about bounded contexts. _Asking_ about bounded context will get some information, that could not be trusted blindly.
+Put in another way, the business stakeholders are not a reliable source of direct information about bounded contexts. _Asking_ about bounded context will get some information, that could not be trusted blindly.
 
 ## Enter EventStorming
 
-EventStorming is a flexible workshop format that allows a massive collaborative exploration of a very complex domain. There are now several recipes[^ESR], but the one that better fits
-
-
+EventStorming is a flexible workshop format that allows a massive collaborative exploration of a very complex domain. There are now several recipes[^ESR], but the one that better fits our need to discover context boundaries is the **Big Picture EventStorming**: a large scale workshop (usually involving 15-20 people, but I facilitated workhsops with more than 30) where software people and business people are building together a behavioral model of the entire business.
 
 At the very root the recipe is really simple:
 
@@ -23,9 +21,34 @@ At the very root the recipe is really simple:
 * provide them with an unlimited modelling surface (usually a paper roll on a long straight wall plus some hundreds of coloured sticky notes);
 * have them model the entire business flow with **Domain Events** along a timeline.
 
-![The output of a Big Picture EventStorming](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
+With a little facilitation magic, in a few hours we end up with a big behavioural model of the entire organization: something like the one in the picture below.
+
+![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
 
 ### A subsection
+
+
+![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
+
+### Using Pivotal Events
+
+
+![Pivotal Events are a great source of information](images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
+
+#### Look at the business
+
+#### Look at the people
+
+#### Look at the body language
+
+#### Look at the language (or _listen_)
+
+### Using Swimlanes
+
+
+## When to draw our context map
+
+
 
 
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [http://www.eventstorming.com](!http://www.eventstorming.com) 
