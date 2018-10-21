@@ -21,10 +21,19 @@ Another aspect was the architectural and technological landscape at the time. Th
 
 The programming styles emerging from the rich Windows clients propagated to the server side, following what Martin Fowler so brilliantly called the transactional script. These are GUI event handlers that tries to bring the effect of a mouse click to the database. To boost performance, critical business logic was moved from the client to the database using stored procedures maintaining the same programming style. I personally know systems where the database contain more than 1.5 million lines of PLSQL and have stored procedures more than 10.000 lines long.
 
-Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code. 
+Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code.
+
+## Domain complexity
+The British system thinker Derek Hitchins argue that complexity is perceived as a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered.
+
+Based on my experience as software architect and developer I will argue that we can argue that Hitchins wisdom materialises in what I will call structural and dynamic complexity. Structural domain complexity is the complexity we find in product hierarchies, in master data structures such as items in a retail assortment hierarchy and when calculating the best route between two places in a map.
+
+Dynamic domain complexity is the complexity we observe in adversary games, in warfare and enterprise work patterns. Here, objects collaborate, compete, form teams and even fight each other with effects that directly impacts their own and other objects possible courses of action.
+
+The original DDD addresses structural domain complexity very well, but there is no directly expressed support for how to model dynamic domain behaviour. With IoT, AI and digitalisation and with the wish for DDD to be relevant in the future Domain-Driven design need to address both.
 
 # Domain-Driven Design 4.0
-Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from beeing addressed in context of Domain-Driven Design.
+Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from being addressed in context of Domain-Driven Design.
 
 Firstly, the cloud enables us to separate data from application, and to free us from the relational data model as the only storage model of business data. It's now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake, and by doing so we are able to reduce the data gravity cost. This change will have a huge impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
 
@@ -35,9 +44,9 @@ Thirdly, new modern programming languages such as Swift unites object oriented p
 With the scene set, let's roll.
 
 ## Masterdata, entities and repositories
-Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. Master data objects are the bearers of identity and lineage. In Domain-Driven Design Entities has this responsibility. Working with entities or master data objects implies working with who they are, not what they are and maintaining their identity and lineage accross different bounded contexts.
+Master data is defined as the business objects that contain the most valuable, agreed upon information that is shared across a business. Master data objects are the bearers of identity and lineage. In Domain-Driven Design Entities has this responsibility. Working with entities or master data objects implies working with who they are, not what they are and maintaining their identity and lineage across different bounded contexts.
 
-The main difference between an entity and a master data object is that the scope of an entity is the local context, often defined by the boundary of an application. The scope of a master data object is enterprise wide and involves maintaining identity and lineage accross multiple bounded contexts. The practical effect of this is that the footprint of the object is kept at a bare minimum. We could think of it as the super class every context specific instance inherits from. In many ways the top level generalisation.
+The main difference between an entity and a master data object is that the scope of an entity is the local context, often defined by the boundary of an application. The scope of a master data object is enterprise wide and involves maintaining identity and lineage across multiple bounded contexts. The practical effect of this is that the footprint of the object is kept at a bare minimum. We could think of it as the super class every context specific instance inherits from. In many ways the top level generalisation.
 
 In the upstream oil and gas "Well" is one of the core master data objects with a lifespan measured in decades. Well data is typically scattered over multiple data stores, each store using its own conventions, standards and encodings. This leads to a situation where identity and lineage is easily broken and keeping it intact become very expensive. 
 
