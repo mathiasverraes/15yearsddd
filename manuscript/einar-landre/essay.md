@@ -1,13 +1,13 @@
 # On objects, processes and data
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
-Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Since then a lot has happened. Back then there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
+Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Think of it this way: there was no iPhone, no Facebook, no Netflix and Amazon had run with profitt for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
 
 Developers could be found arguing over Java vs  C# and applications was still made in tools like Microsoft Access. Martin Fowlers Patterns of Enterprise Application Architecture was less than a year old and the GoF Design Patterns, Elements of reusable object-oriented software had just turned 9.
 
-Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics and machine learning has become part of our professional vocabulary. New programming languages such as Swift, Scala and Go has entered the scene and old languages such as Python have resurrected to dominates data science. 
+Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics, machine learning and artificial intelligence has become part of our professions vocabulary. New programming languages such as Swift, Scala and Go has entered the scene and old languages such as Python have resurrected to dominates data science. 
 
-The effects of all this is that computing itself has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built with software.
+In many ways, computing has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built with software.
 
 While the needs in many ways are the same, the technology has enabled new oportunities that will demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require understanding and mastery of concurrency, the SQL database is replaced by a multitude of storate oportunities and so on. 
 
