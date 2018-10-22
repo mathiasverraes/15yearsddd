@@ -72,17 +72,11 @@ The best way to illustrate the relationship between objects and agents is the Ja
 
 	public class Agent implements Runnable {
 	    public void run() {
-    
 		while true {
-	
 	   	  // observe environemt
-	   
 	   	  // Select and execute action
-	   
 		}
-
 	    }
-    
 	}
 
 The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many.
