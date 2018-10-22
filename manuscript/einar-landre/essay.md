@@ -68,7 +68,8 @@ In 1983 John Laired and Allen Newell created Soar, a cognitive agent architectur
 
 An intelligent software agent is a program that solves problems,  a program who performs work, it's a program that can act in a role and it is a program that can collaborate and interact with other agents or humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents. Objects as defined by class are passive components whose execution part are invoked by the embedding program.
 
-The best way to illustrate the relationship between objects and agents is the Java code below. That is how an agent can be made.
+
+The best way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Availale multi-agent frameworks such as JACK, BDI4Jade and Gorite implements BDI on top of Java. 
 
 	public class Agent implements Runnable {
 	    public void run() {
@@ -79,11 +80,7 @@ The best way to illustrate the relationship between objects and agents is the Ja
 	    }
 	}
 
-The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many.
-
-When late professor Kristen Nyggaard was teaching object oriented programming in his elder days, he used a restaurant as his example of a system and where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. 
-
-Using his own Cafe' Objecta as example, the substance is defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions refers to things like seating, ordering, serving, eating and structure refers to the permanent properties of the process.
+When late professor Kristen Nyggaard was teaching object oriented programming he used a restaurant as his example of a system and where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. In his Cafe' Objecta substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions refers to things like seating, ordering, serving, eating and structure refers to the permanent properties of the process.
 
 It can be argued that in any domain we find four types of objects, the object that does interesting things, the passive objects that provides basic services such as linked lists, queues and stacks. Then we have the objects that represents master data maintaining identity and lineage over time and lastly the objects that represents values and describe things ie. the value objects. The original book is weak when it comes to the objects that does interesting things, these are the objects that first and foremost represents processes, the objects that respond to events and performs actions or tasks.
 
@@ -119,49 +116,39 @@ In a functional language functions are first class citizens. Being a first class
 
 Swift make a clear distinction between reference types (class) and value types (enumerations, structs and tuples). Objects created as a reference type share a copy of the same instance.
 
-class A { }
-
-var a: A()
-
-var b : A = a
+	class A { }
+	var a: A()
+	var b : A = a
 
 Here both an and b refer to the same instance of A. The effect is that a change to variable a will impact variable b and vice versa.
 
 Value types keeps a unique copy of its data.
 
-struct B {}
-
-var b: B()
-
-var c : B = b
+	struct B {}
+	var b: B()
+	var c : B = b
 
 In this case variable c is made as a copy of b and they can be independently changed.
 
 With functions as first class citizens they are just types and we can create structures where a function takes a function as input and returns a function as its output.
 
-typealias Output = (Int) -> Int 
-
-typealias Input = (Int, String, float) -> Bool
-
-func doSomething(Input) -> (SomeType) { }
+	typealias Output = (Int) -> Int 
+	typealias Input = (Int, String, float) -> Bool
+	func doSomething(Input) -> (SomeType) { }
 
 Another nice property that comes with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides as an example a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming has proved to be.
 
 Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
 
-struct Identity {}
+	struct Identity {}
 
-Protocol Entity {
+	Protocol Entity {
+	    func ==(Entity) -> Bool
+	}
 
-	func ==(Entity) -> Bool
-	
-}
-
-class Well: Identity {
-
-	func  ==(Entity) -> Bool { .. }
-
-}
+	class Well: Identity {
+	   func  ==(Entity) -> Bool { .. }
+	}
 
 Value objects on the other hand are just values, and can be implemented using class, struct, enumeration, tuple and function. This mean that we have a much richer toolkit when designing them than we had back in 2003 and its something we need to dig into and develop good design practices for.
 
