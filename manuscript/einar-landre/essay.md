@@ -9,35 +9,35 @@ Since then, cloud computing, big-data, mobile-apps, internet of things, edge ana
 
 It is easy to argue that our profession is profoundly changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as industry and society is digitalized and new business capabilities and models are built with software.
 
-Technology has created new oportunities, oportunities that demands more from both developers and domain experts than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
+Technology has created new oportunities, oportunities that demands more from both developers and domain experts. There are more devices to program, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of NOSQL storage oportunities. Open source software is used and found everywhere and the domain problems attacted with software are more suptle. 
 
-My claim is that shall Domain-Driven Design prosper and be a driving force over the next 15 years must it be adopt to the ever changing reality we live in. It's time for what I like to call Domain-Driven Design 4.0. The forces driving it are domain complexity and technology. More on that later.
+For Domain-Driven Design to prosper and to be a driving force into the future must it be adapted to the changing reality of domain modelling. The time has come for what I like to call Domain-Driven Design 4.0. The forces driving this are found in increasing domain complexity in combination with evovling technology. More on that later. First a look at where we came from.
 
-Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed, and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by a quality products.
+Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed, and that developers very often fell in love with the  technology, loosing out on the inherent domain complexity. The result was poor software quality, software that lacked the conceptual integrity required by a quality product.
 
-Success was most often found in projects where the team had invested time digging into the domain and implemented the core domain concepts the products code base. The crux was to establish a common language that supported the communication between developers and domain experts. The developers stopped talking about database tables and rows and began talking about transfers of money, settlement of orders and cargo lifiting.
+Success was most often found in projects where the team had invested in digging into the domain and implemented the core domain concepts in the products code base. The crux was to establish a common language that supported the communication between developers and domain experts. The developers stopped talking about database tables and rows and began talking about transfers of money, settlement of orders and cargo lifiting.
 
-Another aspect was the architectural and technological landscape at the time. The PC had favoured a software architecture where a fat or rich clients accessed data stored in a relational database. Data gravity ensured that applications that started out small grew until the entropy got out of hand. It was always easier to add a new table than starting from scratch. Retrofitting old applications to work on the web using frameworks such as Enterprise Java din not help. In many ways they made things worse, moving focus away from the domain and to the technology.  
+Another aspect was the architectural and technological landscape at the time. The PC had favoured a software architecture where a fat client accessed data stored in a relational database. Data gravity ensured that applications that started out small grew until the entropy got out of hand. It was always easier to add a new table than starting from scratch. Retrofitting old applications to work on the web did not help. In many ways they made things worse, moving focus away from the domain and to the technology and the complexities found in those frameworks.  
 
-The programming styles emerging from the rich Windows clients propagated to the server side, following what Martin Fowler so brilliantly called the transactional script. These are GUI event handlers that tries to bring the effect of a mouse click to the database. To boost performance, critical business logic was moved from the client to the database using stored procedures maintaining the same programming style. I personally know systems where the database contain more than 1.5 million lines of PLSQL and have stored procedures more than 10.000 lines long.
+The programming styles from the rich Windows clients propagated to the server side, following what Martin Fowler so brilliantly called the transactional script. These are GUI event handlers that tries to bring the effect of a mouse click to the database. To boost performance, critical business logic was moved from the client to the database using stored procedures, while maintaining the same programming style. I personally seen stored database procedures more than 10.000 lines long.
 
-Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code.
+Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming was a silver bullet that would help reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good tools in the hands of those willing to invest in bringing the domain model into the code.
 
 ## Domain complexity
-The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered. Based on my own experience I will argue that Hitchins wisdom materialises as structural and dynamic domain complexity. 
+The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered. 
 
-Structural domain complexity is the complexity we find in product structures such as as an airplane, in a retail assortment hierarchy where we want to calculate margins, placements of items and item profitability, or in a project plan where we seek to find the critical path.
+Having seen a multitude of domains over the years, I tend to think that domain complexity comes in two flavours; structural and dynamic, both deeply impacted by Hitchins thoughs on variety, connectedness and disorder. The big difference is where and how they materialises.  
+
+Structural domain complexity is the complexity we find in product structures such as as an airplane, in a retail assortment hierarchy where we want to calculate margins, placements of items and item profitability, or in a project plan where we seek to find the critical path. This is problems that Domain-Driven Design was created to address and does very well.
 
 Dynamic domain complexity is the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Objects come and go, they might be lost to enemy action or connectivity loss. They might collaborate, compete, form teams and the actions performed by one object have direct impact on other objects available options.
 
-Traditional Domain-Driven design was made to deal with the static domain complexity.
-
 # Domain-Driven Design 4.0
-Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from being addressed in context of Domain-Driven Design.
+From the profound changes that have taken place since the book was written in 2003, there are three additional concerns that Domain-Driven Design need to address to stay relevant into the future. 
 
-Firstly, the cloud enables us to separate data from application, and to free us from the relational data model as the only storage model of business data. It's now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake, and by doing so we are able to reduce the data gravity cost. This change will have a huge impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
+Firstly, the cloud enables us to separate data from application, and to free us from the relational data model as the only storage model of business data. It's now possible to store data in fit for purpose data stores, it be graphs, key-value, relational or lake. By doing so we are able to reduce the data gravity cost and it will impact on how we address entities, value objects, repositories and aggregates. We can call this the data separation pattern or the master data repository.
 
-Secondly, the real world consist of dynamic systems. Object oriented programming was created to  analysis of such systems. Business software developers has historically been spared from the challenges that comes from such systems. The closest they came was transaction processing. The Internet of Things changes this. Back-office processes must be able to respond to events at the edge, and they must be able to send new instructions to the edge process and devices. Architecturally this is solved using publish-subscribe and event processing.
+Secondly, the real world consist of dynamic systems. Object oriented programming was created to  analysis of such systems. Business software developers has historically been spared from the challenges that comes from such systems. The closest they came was transaction processing. The Internet of Things changes this. Back-office processes must be able to respond to events at the edge, and they must be able to send new instructions to the edge process and devices.
 
 Thirdly, new modern programming languages such as Swift unites object oriented programming and functional programming in ways that both supports and simplifies DDD. Remember, objects has state and functions are stateless. These properties become crucial when we are aiming at implementations of master data repository and concurrent asynchronous processes in a distributed environment. We need to implement rich domain models at both the edge and in the cloud.
  
@@ -58,17 +58,28 @@ The master data repository API provide services for Ingestion, Search and Delive
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
-Processes, agents and dynamic domain modelling
+## Processes, agents and dynamic domain modelling
 
-Dynamic domain complexity can be seen as a collection of asynchronous, concurrent, competing and collaborating processes. 
+Dynamic domain complexity can be seen as a collection of asynchronous, concurrent, competing and collaborating processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
-Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
+Looking bakc, it looks like the development of object oriented thinking stopped. A lot of effort went into object wiring and decoupling techniques such as dependency inversion, adoptation of class in existing and new programming languages and by all means into language features. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect  was that the object world lost the connection with its origin. Very few think of agents as objects on steroids. Objects are bound to the programming language "class" construct.
 
-For many reasons, it looks like the evolution of object oriented thinking stopped. The study of dynamic systems was left to the control theory community and artificial intelligence. The effect  was that the object world lost its connection with its origin.
+In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, refered to as BDI (Beliefs, Desires and Intentions), a programming model for software agents.
 
-In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture, and in 1991 Michael Bratman released his theory of human practical reasoning, also refers to as the BDI (Beliefs, Desires and Intentions) programming model for software agents.
+An intelligent software agent is a program that solves problems,  a program who performs work, it's a program that can act in a role and it is a program that can collaborate and interact with other agents or humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents. Objects as defined by class are passive components whose execution part are invoked by the embedding program.
 
-In the simplest form: an agent have goals and execute plans to achieve those goals. Said in a simpler way, the agent execute actions as the response to external events. The hard part is the implementation of the agents reasoning leading to choosing the best possible action among many.
+The best way to illustrate the relationship between objects and agents is the Java code below. That is how an agent can be made.
+
+public class Agent implements Runnable {
+    public void run() {
+	while true {
+	   // observe environemt
+	   // Select and execute action
+	}
+    }
+}
+
+The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many.
 
 When late professor Kristen Nyggaard was teaching object oriented programming in his elder days, he used a restaurant as his example of a system and where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. 
 
