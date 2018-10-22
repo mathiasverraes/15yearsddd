@@ -7,11 +7,11 @@ Developers could be found arguing over Java vs  C# and applications was still ma
 
 Since then, cloud computing, big-data, mobile-apps, internet of things, edge analytics, machine learning and artificial intelligence has become part of our professions vocabulary. New programming languages such as Swift, Scala and Go has entered the scene and old languages such as Python have resurrected to dominates data science. 
 
-In many ways, computing has changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as business capabilities are built with software.
+It is easy to argue that our profession is profoundly changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as industry and society is digitalized and new business capabilities and models are built with software.
 
-While the needs in many ways are the same, the technology has enabled new oportunities that will demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require understanding and mastery of concurrency, the SQL database is replaced by a multitude of storate oportunities and so on. 
+The technology has created new oportunities that demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
 
-So, for domain driven design to stay relevant and still be a driving force it need to embrace the new reality that surrounds us. With that I would like to say welcome to what I like to call Domain-Driven Design 4.0. 
+My claim is that shall Domain-Driven Design prosper and be a driving force into the next 15 years must we how love it adopt it to the ever changing reality we live in. It's time for what I like to call Domain-Driven Design 4.0. The forces driving it are domain complexity and technology. More on that later.
 
 Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed, and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by a quality products.
 
