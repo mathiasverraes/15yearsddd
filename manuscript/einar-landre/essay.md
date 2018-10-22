@@ -70,21 +70,21 @@ An intelligent software agent is a program that solves problems,  a program who 
 
 The best way to illustrate the relationship between objects and agents is the Java code below. That is how an agent can be made.
 
-public class Agent implements Runnable {
+	public class Agent implements Runnable {
 
-    public void run() {
+    	    public void run() {
     
-	while true {
+		while true {
 	
-	   // observe environemt
+	   	  // observe environemt
 	   
-	   // Select and execute action
+	   	  // Select and execute action
 	   
+		}
+	
+    	   }
+    
 	}
-	
-    }
-    
-}
 
 The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many.
 
