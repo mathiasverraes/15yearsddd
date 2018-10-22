@@ -58,7 +58,7 @@ The master data repository API provide services for Ingestion, Search and Delive
 
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
-## Processes, agents and dynamic domain modelling
+## Dynamic domain modelling
 
 Dynamic domain complexity can be seen as a collection of asynchronous, concurrent, competing and collaborating processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
@@ -67,7 +67,6 @@ Looking bakc, it looks like the development of object oriented thinking stopped.
 In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, refered to as BDI (Beliefs, Desires and Intentions), a programming model for software agents.
 
 An intelligent software agent is a program that solves problems,  a program who performs work, it's a program that can act in a role and it is a program that can collaborate and interact with other agents or humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents. Objects as defined by class are passive components whose execution part are invoked by the embedding program.
-
 
 The best way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the language found in the cognitive architecture.  
 
@@ -80,21 +79,21 @@ The best way to illustrate the relationship between objects and agents is the Ja
 	    }
 	}
 
-When late professor Kristen Nyggaard was teaching object oriented programming he used a restaurant as his example of a system where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. Applied on Cafe' Objecta we ended up with the following:
+When late professor Kristen Nyggaard was teaching object oriented programming he used Cafe' Objectas as an example of a system built from processes with a set of basic qualities: Substance, state, transitions and structure.
 - Substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. 
 - State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
 - Transitions refers to things like seating, ordering, serving, eating. 
 - Structure refers to the permanent properties of the process.
 
-It can be argued that in any domain we find four types of objects, the object that does interesting things, the passive objects that provides basic services such as linked lists, queues and stacks. Then we have the objects that represents master data maintaining identity and lineage over time and lastly the objects that represents values and describe things ie. the value objects. The original book is weak when it comes to the objects that does interesting things, these are the objects that first and foremost represents processes, the objects that respond to events and performs actions or tasks.
+It can be argued that every domain have two types of objects; the object that do interesting things and the objects that describe and define things. The latter group relates to structural complexity and is very well addressed by entities and value objects. The first group that relates to dynamic domain modelling is none existent with one exception, domain events (Vernon). 
 
-Behaviour comes in four flavours. Firstly, we have simple behaviour represented by memoryless functions such as square root or an instruments measurement reading or sending an event. Secondly, we have state driven behaviours that most often are built on top of finite state machines. Thirdly, we have continuous behaviour found in digital filters, mathematical control systems, fuzzy logic and neural networks where the memory of historical events play a central role. Lastly, we have objects that have their own will, objects that controls their own thread of execution independent of the will of other objects. This group of objects are known as intelligent agents, they might represent roles and they might form organisational structures or teams that collaborate to achieve greater goals.
+The proposal is therefore to introduce Agent's as the name of the objects that represents processes, whoes primary function it is to do work. An agents behaviour capabilities comes in four flavours. Firstly, we have simple behaviour represented by memoryless functions such as square root or an instruments measurement reading or sending an event. Secondly, we have state driven behaviours that most often are built on top of finite state machines. Thirdly, we have continuous behaviour found in digital filters, mathematical control systems, fuzzy logic and neural networks, behaviours where the memory of historical events play a central role. Lastly, we have behavoir built using cognitive architectures such as BDI or Soar.
+
+WE ARE HERE
 
 Architecturally behaviour could be modelled as a tasking model (Douglas) by asking the following questions. What are the work threads to be performed, what events triggers the work and what activities are performed as response to the triggers. What threads need to run concurrently and what type of race conditions and deadlocks might occur. The next step involves mapping tasks to objects. Doing that, we often end up with objects that have roles such as controllers, planners, observers or sensors. Two other concepts that might be helpful here is bounded contexts and micro-services as their unit of implementation.
 
-It's beyond the scope of this essay to dig into the art of behavioural domain modelling beyond identifying its need and suggest some building blocks that might simplify the process as we move along.
 
-Vernon in his Implementing Domain-Driven design supplements the toolkit with domain events, responsible for capturing something that happens in the domain. Calling a method on an aggregate root will of cause initiate a process inside the aggregate, a process that might propagate to other aggregates. This covers what we has identified as simple and state based behaviour.
 
 In addition to the events we need the task model identifying the work items to be performed and we need to assign that work to objects responsible for making sure the work is performed. These objects comes in the flavour as controllers, planners, observers, sensors and even agents. The task model might also be a good start point for understanding what could be master data objects with identity and lineage. One way to approach that challenge is to adopt systems engineering (Hitchins) and the fact that there are always two systems in play: creating and created. We have the process of making a car and we have the car itself. Both might be master data objects that we want to track over time.
 
