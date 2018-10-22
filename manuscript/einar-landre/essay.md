@@ -24,14 +24,13 @@ The programming styles emerging from the rich Windows clients propagated to the 
 Domain-Driven Design was born at a point in time where there was a strong belief in that object oriented programming thee mean to reduce complexity and boost developer productivity. The result we know, the ubiquitous language, context maps, core domain, supporting domain, entities, value objects, repositories, domain service, repository, factory, aggregates are all good helpers for those who was willing to invest in domain modelling and to bring the domain model into the code.
 
 ## Domain complexity
-The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered.
+The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled in stead of ordered. Based on my own experience I will argue that Hitchins wisdom materialises as structural and dynamic domain complexity. 
 
-Based on my own experience as software architect and developer I will argue that we can argue that Hitchins wisdom materialises in what I will call structural and dynamic complexity. Structural domain complexity is the complexity we find in product structures such as as an airplane, a oil-rig, a retail assortment hierarchy or a project plan where we seek to find the critical path. This is also the concerns of traditional domain modelling.
+Structural domain complexity is the complexity we find in product structures such as as an airplane, in a retail assortment hierarchy where we want to calculate margins, placements of items and item profitability, or in a project plan where we seek to find the critical path.
 
-Dynamic domain complexity is s the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Entities come and go, they might be lost to enemy action or connectivity loss.
-the complexity we observe in adversary games, in warfare and enterprise work patterns. Here, objects collaborate, compete, form teams and even fight each other with effects that directly impacts their own and other objects possible courses of action.
+Dynamic domain complexity is the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Objects come and go, they might be lost to enemy action or connectivity loss. They might collaborate, compete, form teams and the actions performed by one object have direct impact on other objects available options.
 
-The original DDD addresses structural domain complexity very well, but there is no directly expressed support for how to model dynamic domain behaviour. With IoT, AI and digitalisation and with the wish for DDD to be relevant in the future Domain-Driven design need to address both.
+Traditional Domain-Driven design was made to deal with the static domain complexity.
 
 # Domain-Driven Design 4.0
 Computing has experienced a profound change over the last 15 years, and there are at least three concerns that would benefit from being addressed in context of Domain-Driven Design.
