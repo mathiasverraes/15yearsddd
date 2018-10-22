@@ -1,5 +1,5 @@
 # On objects, processes and data
-#### From here to there and back again, Bilbo Baggins
+#### From here to there and back again, Bilbo Baggins (Lord of the Rings)
 ## Introduction
 Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
 
@@ -9,9 +9,9 @@ Since then, cloud computing, big-data, mobile-apps, internet of things, edge ana
 
 It is easy to argue that our profession is profoundly changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as industry and society is digitalized and new business capabilities and models are built with software.
 
-The technology has created new oportunities that demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
+Technology has created new, oportunities, oportunities that demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
 
-My claim is that shall Domain-Driven Design prosper and be a driving force into the next 15 years must we how love it adopt it to the ever changing reality we live in. It's time for what I like to call Domain-Driven Design 4.0. The forces driving it are domain complexity and technology. More on that later.
+My claim is that shall Domain-Driven Design prosper and be a driving force over the next 15 years must it be adopt to the ever changing reality we live in. It's time for what I like to call Domain-Driven Design 4.0. The forces driving it are domain complexity and technology. More on that later.
 
 Domain-Driven Design sprang out of Eric's experience developing business systems using object oriented languages during the late 1990ties. His experience was that developers and domain experts needed a common language to succeed, and that developers very often fell in love with the  technology, loosing out on the inherent complexity found in the domain at hand. The result was poor software quality, software that lacked the conceptual integrity required by a quality products.
 
