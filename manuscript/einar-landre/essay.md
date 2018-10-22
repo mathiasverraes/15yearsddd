@@ -69,7 +69,7 @@ In 1983 John Laired and Allen Newell created Soar, a cognitive agent architectur
 An intelligent software agent is a program that solves problems,  a program who performs work, it's a program that can act in a role and it is a program that can collaborate and interact with other agents or humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents. Objects as defined by class are passive components whose execution part are invoked by the embedding program.
 
 
-The best way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Availale multi-agent frameworks such as JACK, BDI4Jade and Gorite implements BDI on top of Java. 
+The best way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the language found in the cognitive architecture.  
 
 	public class Agent implements Runnable {
 	    public void run() {
@@ -80,7 +80,11 @@ The best way to illustrate the relationship between objects and agents is the Ja
 	    }
 	}
 
-When late professor Kristen Nyggaard was teaching object oriented programming he used a restaurant as his example of a system and where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. In his Cafe' Objecta substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. State refer to things like my table, my waiter, next in queue as well as a guests available funds, food names, queue lengths, expected waiting time and the actions performed by the objects to trigger and perform state changes. Transitions refers to things like seating, ordering, serving, eating and structure refers to the permanent properties of the process.
+When late professor Kristen Nyggaard was teaching object oriented programming he used a restaurant as his example of a system where he pointed out that processes has a set of basic qualities: Substance, state, transitions and structure. Applied on Cafe' Objecta we ended up with the following:
+- Substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. 
+- State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
+- Transitions refers to things like seating, ordering, serving, eating. 
+- Structure refers to the permanent properties of the process.
 
 It can be argued that in any domain we find four types of objects, the object that does interesting things, the passive objects that provides basic services such as linked lists, queues and stacks. Then we have the objects that represents master data maintaining identity and lineage over time and lastly the objects that represents values and describe things ie. the value objects. The original book is weak when it comes to the objects that does interesting things, these are the objects that first and foremost represents processes, the objects that respond to events and performs actions or tasks.
 
