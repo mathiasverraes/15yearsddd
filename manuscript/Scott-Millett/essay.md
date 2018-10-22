@@ -1,12 +1,14 @@
 # Distilling DDD into first principles
 
-* My personal context, introduction and experience of DDD in my domains, my DDD journey
+* My personal context, my journy, introduction and experience of DDD
 * Why I am not a jedi master - I only know the domains I know
 * First principle - DDD - Drive all design decisions based on the rule “will this help achieve the goal?”
 
 ## The fundamental concepts of DDD
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
+
+Before I talk about my takeaways from DDD over the past 13 years I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple.
 
 ### Distill the Problem Domain to Reveal What Is Important
 
@@ -34,17 +36,19 @@
 
  * Clear to see that the majority of effort lies outside of the technical realm
  * First principles distill the non technical skills required to apply DDD
- * You still have to be good a tech!
- * Why its hard to answer the "Can I see an example of a DDD project?" questions 
+ * Goes without saying you need to be able to code
+ * An Explanation of why it’s hard to answer the "Can I see an example of a DDD project?" questions 
 
 ## Gain agreement on the problem
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
 
  * Understand the business big picture (problems, constraints, opportunities)
- * Distilling large problem into sub domains 
- * Core domain, the goal, or impediment is revealed to give focus.    
- * Look for Find interesting problems - sometimes we don't know the exact details of the problem or how to solve it. We must work with no technical people to look for oppurtunity. For example - problem is we are 10% down on budget.
+ * Distil large problem into sub domains
+ * Core domain, the goal, or impediment is revealed to give focus and alignment
+ * Look for interesting problems - sometimes we don't know the exact details of the problem or how to solve it. We must work with non technical people to look for opportunity. 
+ * For example - problem is we are 10% down on budget. Explore how to solve.
+
  
  ### Applying the Theory of Constraints to reveal impediments to business value throughput
 
@@ -57,9 +61,9 @@
  * Value solutions over software. It’s not about being a code monkey it’s about getting results
  * Being clear on what business value is helps to identify if a problem is worth solving or is valuable
  * Look for the money / how does it shift the KPI
- * People don't want to buy a quarter-inch drill, they want a quarter-inch hole - no body cares how we crafted your code is unless is makes money
+ * People don't want to buy a quarter-inch drill, they want a quarter-inch hole - nobody cares how well crafted your code is unless is makes money
  * Look for the money / how does it shift the KPI / where is the bottleneck to business throughput
- * Delivering Business Outcomes over code output / Value solutions over software /  It’s not about being a code monkey it’s about getting results
+ * Delivering Business Outcomes over code output / Value solutions over software
  * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
  * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
  * Avoid software being what developers understand from the business - developers ARE the business.
@@ -67,13 +71,23 @@
 
 ## Collaborate on the direction for a solution
 
+ * Collaborate on the direction for a solution with decision makers and experts, people that are passionate about the problem space
+ * Model-Driven Design
+ * Collaboration is key. Don’t sit and wait for requirements - offer solutions. Don’t leave it to others. If you know the goal and know the business and can do IT you can offer solutions rather than waiting to be asked.
+ * What is the definition of an Analyst programmer? An analyst is an individual who performs analysis of a topic
+ * Offer opportunities / art of the possible before you are asked - be proactive
+ * Have lots of ideas / models
+ * Data entry example. Don’t assume anything - don’t think oh it doesn’t use code!
+
+
 ### Show a professional passion for the problem domain
 
- * You cannot being to be useful to solve a problem or look for oppurtunity if you don't really understand the domain you are working in to a sufficently deep level
+ * Don’t stop asking questions!
+ * You cannot begin to be useful to solve a problem or look for opportunity if you don't really understand the domain you are working in to a sufficiently deep level
  * Have passion for the problem space - this will make it easier to find solutions and more importantly opportunities
  * Focused  (Dan North) Deliberate Discovery at the constraint/bottleneck
  * You are a professional. You are paid well. You have a responsibility to understand the domain you are in.
- * You don’t need to show empathy, you need to enable your business!
+ * You don’t need to show empathy, you need to enable your business! You need to show solidarity to help your business
  * Be proactive, be curious
  * Don’t accept mediocrity in business process
  * Programming is understanding and translating into a software specific language. The software proves our understanding.
@@ -85,8 +99,6 @@
  * IT is the business
  * Domain experts are not system experts. Learn and discover with them. IT + Domain experts + decision makers = solutions
  * If you not making a difference then what are you doing
- * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
- * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
  * Be empowered
  * Domain experts are not system experts. Learn and discover with them
  * IT + Domain experts + decision makers = solutions
@@ -98,7 +110,7 @@
  > “Engagement is more important than precision.” Alberto Brandolini on Event Storming
 
  * Visualise and reveal with Process mapping or event storming big picture
- * Requires decision makers and domain experts
+ * Requires decision makers and domain experts. Help good decisions get made.
  * You don't need to be smartest, need to enable
 
 ## Gain agreement that the solution solves the core problem
@@ -124,6 +136,7 @@ of
 * Simplify problems so that you can produce simpler solution models
 * Don't gold plate software, good is often good enough - remember the goal.
 * Nothing wrong with a hack if you excplicity understand the trade offs - story about EZY testing costs
+* Software Is Just A Means To An End
 
 ### Explore alternative models
 
@@ -135,6 +148,7 @@ of
  > “A company could put a top man at every position and be swallowed by a competitor with people only half as good, but who are working together.” W. Edwards Deming
 
  * Not the Individual Components
+ * Understand how you fit into to the system
 
 ### Manage the solution team organisational design for autonomy 
 
@@ -142,18 +156,25 @@ of
   * Capability Teams
   * Ownership and accountability
   * Loosely coupled but highliy cohesive -  understanding of the business capabilities
+  * Align with business process ownership
   
 ### Identify constraints in delivering the solution 
 
 * Constraints outside  IT, vendors and business colleagues
+* Obsess over dependencies
+* simplify relationships. 
 
 ### Collaborate to solve the big picture
 
-* Always keep a eye on the goal/bottle neck
+* Always keep a eye on the goal/bottleneck
 * Context Maps important but also use process maps to understand system flow
 * Ensure all teams are aligned by understanding the goal,  collaborate together on a solution and understand how they fit into the bigger picture 
 
 ## Values
+
+ > “Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.” ― Randy Pausch, The Last Lecture
+ 
+ > "Complaining is not a strategy. You have to work with the world as you find it, not as you would have it be." —Jeff Bezos
 
 * Have patience and humility
 * respect others - people are good
