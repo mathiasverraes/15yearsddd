@@ -72,7 +72,7 @@ The best way to illustrate the relationship between objects and agents is the Ja
 
 	public class Agent implements Runnable {
 
-    	    public void run() {
+	    public void run() {
     
 		while true {
 	
