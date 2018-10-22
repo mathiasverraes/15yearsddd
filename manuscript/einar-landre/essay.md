@@ -84,26 +84,28 @@ When late professor Kristen Nyggaard was teaching object oriented programming he
 - State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
 - Transitions refers to things like seating, ordering, serving, eating. 
 - Structure refers to the permanent properties of the process.
+What this demonstrates is that behaviour modelling was at the core of object oriented programming.
 
-It can be argued that every domain have two types of objects; the object that do interesting things and the objects that describe and define things. The latter group relates to structural complexity and is very well addressed by entities and value objects. The first group that relates to dynamic domain modelling is none existent with one exception, domain events (Vernon). 
+When we ha high level perspective on a domain we will find two archetypes of objects; the object that do interesting things and the objects that describe and define things. The first group is about dynamic domain modelling, asking questions about who does what and when. The second group relates to structural complexity and are addressed by entities and value objects.
 
-The proposal is therefore to introduce Agent's as the name of the objects that represents processes, whoes primary function it is to do work. An agents behaviour capabilities comes in four flavours. Firstly, we have simple behaviour represented by memoryless functions such as square root or an instruments measurement reading or sending an event. Secondly, we have state driven behaviours that most often are built on top of finite state machines. Thirdly, we have continuous behaviour found in digital filters, mathematical control systems, fuzzy logic and neural networks, behaviours where the memory of historical events play a central role. Lastly, we have behavoir built using cognitive architectures such as BDI or Soar.
+The objects that does interesting things are best understood as agents and the suggestion is to call them that. Agent's comes with four levels of behavioural capabilities.
+- Simple behaviour represented by memoryless functions such as calculating the square root or reading a measurement.
+- State driven behaviour, typically built from finite state machines (value objects).
+- Continous behaviour found in digital filters, mathematical control systems, fuzzy ogic and neural networks, behaviour where the memory of historical events play a central role in the agents decision making process.
+- Reasoning based behaviour implemented using cognitive architectures such as BDI and Soar.
 
-WE ARE HERE
+Independent of an agents cognitive capability can the behavioral modelling be framed by asking the following questions; who does what? What are the tasks to be performed? What triggers the agent to perform a certain task? What is the outcome from a task? What messages are sent and who are the recievers? What we build by asking thee questions is a tasking model (Douglas).
+What we often end up with is agents that have roles such as controllers, planners, observers, workers or sensors. By revistiong Cafe' Objecta it should be clear that waiter and guest are agents with state driven behavoiur that responds to events in the resturant. 
 
-Architecturally behaviour could be modelled as a tasking model (Douglas) by asking the following questions. What are the work threads to be performed, what events triggers the work and what activities are performed as response to the triggers. What threads need to run concurrently and what type of race conditions and deadlocks might occur. The next step involves mapping tasks to objects. Doing that, we often end up with objects that have roles such as controllers, planners, observers or sensors. Two other concepts that might be helpful here is bounded contexts and micro-services as their unit of implementation.
+When developing a tasking model there is two things to be aware of: firstly, what tasks will be performed concurrently and will they fight for the same resource? If yes, than we have race conditions and possible deadlocks. That leaves us with the art of concurrent programming. Secondly, if there are tasks with time budgets i.e. tasks must be completed within given time windows we are working in the world of real-time systems. I mention this since smart phones with a multicore CPU require skills in concurrent programming and with IoT the real-time world converges with the traditional back office.
+
+To sum up. Dynamic domain modelling must become a first class citizen of domain-driven design, and to support that new citizen we need three new concepts:
+
+- Agents as representatives of domain processes, controllers, observers, sensors and planners.
+- Events capturing the occurrences of something that happens in the domain (Vernon).
+- Tasks capturing the work to be performed by the process controller as response to a domain event.
 
 
-
-In addition to the events we need the task model identifying the work items to be performed and we need to assign that work to objects responsible for making sure the work is performed. These objects comes in the flavour as controllers, planners, observers, sensors and even agents. The task model might also be a good start point for understanding what could be master data objects with identity and lineage. One way to approach that challenge is to adopt systems engineering (Hitchins) and the fact that there are always two systems in play: creating and created. We have the process of making a car and we have the car itself. Both might be master data objects that we want to track over time.
-
-We need to make dynamic domain modelling a first class citizen of domain driven design and to do so we end up with five bearing concepts:
-
-Agents as representatives of domain processes, controllers, observers, sensors and planners.
-Events capturing the occurrences of something that happens in the domain (Vernon).
-Tasks capturing the work to be performed by the process controller as response to a domain event.
-Domain states capturing the state guiding the process representatives decision making.
-Domain goals that defines domain process intended outcomes.
 The internal substance and structure of objects that does interesting things can be complicated. Think of the domain model of an iPhone war game with its concurrency.
 
 To support the design and implementations of these behavioural workhorses of your domain the GoF book provide several useful patterns such as: Chain of responsibility, Command, Observer and State. To study these patterns and others is highly recommended. For those who want to take it one step further "Doing hard time" (Douglas) is a good read.
