@@ -9,7 +9,7 @@ Since then, cloud computing, big-data, mobile-apps, internet of things, edge ana
 
 It is easy to argue that our profession is profoundly changed. Despite these changes, the principles and patterns of Domain Driven Design are still relevant and in many ways even more so as industry and society is digitalized and new business capabilities and models are built with software.
 
-Technology has created new, oportunities, oportunities that demand more from the developers than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
+Technology has created new oportunities, oportunities that demands more from both developers and domain experts than before. There are more devices to manage, multi-core processors in smart phones require skills in concurrent programming, the SQL database is replaced by a multitude of storate oportunities. Open source software is embraced and is found everywhere. 
 
 My claim is that shall Domain-Driven Design prosper and be a driving force over the next 15 years must it be adopt to the ever changing reality we live in. It's time for what I like to call Domain-Driven Design 4.0. The forces driving it are domain complexity and technology. More on that later.
 
