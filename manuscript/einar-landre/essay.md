@@ -1,5 +1,8 @@
 # On objects, processes and data
 #### From here to there and back again, Bilbo Baggins (Lord of the Rings)
+## Foreword
+First of a
+
 ## Introduction
 Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
 
@@ -115,7 +118,7 @@ For those who want to take it one step further Douglas, Russel & Norvig and Jarv
 ## Object-Functional languages
 Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have thoug been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to its imperative and object oriented paradigme (Wikipedia).
 
-Since 2003 several modern programming languages that supports both object oriented and functional programming has emerged and gained popularity. In addition to JavaScript we find Swift, Go and Scala to have mentioned some of them. I will use Swift as my foundation. 
+Since 2003 several modern programming languages that supports both object oriented and functional programming has emerged and gained popularity. In addition to JavaScript we find Swift, Go and Scala to have mentioned some of them. I will use Swift to illustrate the possibilities.
 
 In a functional language functions are first class citizens. Being a first class citizen enables the developers to use functions and methods like any other object or value. Functions can be passed as values, stored in properties and be returned as output from another functions. 
 
@@ -157,6 +160,7 @@ Swift provdes three value types, struct, enumeration and tuples that keeps a uni
 	   func openFrontDoor() {
 	        frontDoor = frontDoor.open()
 	   }
+	   
 	   func closeFrontDoor() {
 	   	frontDoor = frontDoor.close()
 	   }   
@@ -166,28 +170,63 @@ Swift provdes three value types, struct, enumeration and tuples that keeps a uni
 	var myHouse = House()
 	myhouse.openFrontDoor()
 
-The house object has the state machine of the door system. Think if there was rules among doors such as the kitchen door could only be open of the main front door was unloked and so on. This is by the way a small example of how structural domain complexity materialises.
+The house maintains its own state. The state can be changed by invoking methods on the house object. This illustrates how the static domain complexity materialises. We add more doors, windows and a heating system and rules we see how the structural complexity grows.
+
+In Swift functions are first class citizens. They are types which means that functions can be passed around in the ways as classes and structs. Functions can take functions as input paratmeters as well as output and they can be stored in variables and constants. This is illustrated in the code below. 
 
 
-With functions as first class citizens they are just types and we can create structures where a function takes a function as input and returns a function as its output.
+	typealias MathFunc = (Int, Int) -> Int
 
-	typealias Output = (Int) -> Int 
-	typealias Input = (Int, String, float) -> Bool
-	func doSomething(Input) -> (SomeType) { }
+	func multiplyTwoInt(_ a: Int, _ b: Int) -> Int {
+    	   return a*b
+	}
 
-Another nice property that comes with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming do.
+	func addTwoInts(_ a: Int, _ b: Int) -> Int {
+    	  return a + b
+	}
+
+	enum MathOps {
+    	   case add
+    	   case multiply
+	}
+
+	func mathFuncFactory(_ ops: MathOps) -> MathFunc {
+    	   switch ops {
+    	      case .add:
+        	return addTwoInts(_:_:)
+    	      case .multiply:
+        	return multiplyTwoInt(_:_:)
+   	    }
+	}
+
+	var adder = mathFuncFactory(MathOps.add)
+	var multiplier = mathFuncFactory( MathOps.multiply)
+	var mathFunction:  MathFunc = addTwoInts
+
+	func printResult(f: MathFunc, _ a: Int, _ b: Int) {
+    	    print("Result: \(f(a,b))")
+	}
+
+	printResult(f: addTwoInts, 3,5)
+	printResult(f: multiplier, 5,5)
+	printResult(f:mathFuncFactory(MathOps.add),3,10)
+
+Another nice property that comes with functions is that they fit very well with multicore architectures, as they can be executed in their own concurrent thread. Swift provides a library called the Grand Dispatch that simplify concurrent programming using mulicore's compared with raw threads programming.
 
 Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
 
-	struct Identity {}
-
-	Protocol Entity {
-	    func ==(Entity) -> Bool
+	protocol Entity {
+	    var identity : Int { get } 
+	    func equals(Entity) -> Bool
 	}
 
 	class Well: Identity {
-	
-	   func  ==(Entity) -> Bool { .. }
+	   internal var identity = 1000 
+	   func equals(_ entity: Entity) -> Bool { 
+	      	return self.identity == entity.identity
+	   }
+	   
+	   // Useful code here
 	}
 
 Value objects on the other hand are just values, and can be implemented using class, struct, enumeration, tuple and function. This mean that we have a much richer toolkit when designing them than we had back in 2003 and its something we need to dig into and develop good design practices for.
