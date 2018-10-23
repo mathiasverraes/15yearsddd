@@ -28,9 +28,10 @@ The British system thinker Derek Hitchins argue that complexity is a function of
 
 Having seen a multitude of domains over the years, I tend to think that domain complexity comes in two flavours; structural and dynamic, both deeply impacted by Hitchins thoughs on variety, connectedness and disorder. The big difference is where and how they materialises.  
 
-Structural domain complexity is the complexity we find in product structures such as as an airplane, in a retail assortment hierarchy where we want to calculate margins, placements of items and item profitability, or in a project plan where we seek to find the critical path. This is problems that Domain-Driven Design was created to address and does very well.
+Structural domain complexity is the complexity we find in product structures such as as an airplane, in a retail assortment hierarchy where we want to calculate margins, placements of items and item profitability, or in a project plan where we seek to find the critical path. The objects have high internal complexity in terms of complicated state models; sophisticated and changing business rules; involve deep data structures often produced by search; the need for lifecycle managment through versioning.
 
-Dynamic domain complexity is the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Objects come and go, they might be lost to enemy action or connectivity loss. They might collaborate, compete, form teams and the actions performed by one object have direct impact on other objects available options.
+Dynamic domain complexity is the result of dynamic intercourses between autonomous entities. This is the complexities we see in adversary games, on the battlefield, in human organisations and enterprise work patterns. Objects come and go, they might be lost to enemy action or connectivity loss. They might collaborate, compete, form teams and the actions performed by one object have direct impact on other objects available options. The objects might have simple internal structures, but their interaction patterns are not.
+ 
 
 # Domain-Driven Design 4.0
 From the profound changes that have taken place since the book was written in 2003, there are three additional concerns that Domain-Driven Design need to address to stay relevant into the future. 
@@ -60,21 +61,23 @@ On the client side, this makes a lot of things easier. The consuming contexts ca
  
 ## Dynamic domain modelling
 
-Dynamic domain complexity can be seen as a collection of asynchronous, concurrent, competing and collaborating processes. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
+Dynamic domain complexity originates from asynchronous, concurrent, competing and collaborating processes that tries to get something done. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
-Looking bakc, it looks like the development of object oriented thinking stopped. A lot of effort went into object wiring and decoupling techniques such as dependency inversion, adoptation of class in existing and new programming languages and by all means into language features. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect  was that the object world lost the connection with its origin. Very few think of agents as objects on steroids. Objects are bound to the programming language "class" construct.
+Looking back, it looks like the development of object oriented thinking stopped. The object-oriented comunity was trapped in programming language and the wfforts went into object wiring, decoupling techniques such as dependency inversion, and development of new features such as generics. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect was that the object world lost the connection with its origin. Very few think of software agents as objects on steroids. Objects are too bound to the "class" construct in your programming language of choice.
 
-In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, refered to as BDI (Beliefs, Desires and Intentions), a programming model for software agents.
+In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, refered to as BDI (Beliefs, Desires and Intentions), a programming model for software agents. Both BDI and Soar are domain models of how the human brain reasons and transfor perception into action.
 
-An intelligent software agent is a program that solves problems,  a program who performs work, it's a program that can act in a role and it is a program that can collaborate and interact with other agents or humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents. Objects as defined by class are passive components whose execution part are invoked by the embedding program.
+Intelligent agents is the cornerstone of artifical intelligence that comes in many flavoru, spanning from chat botts to space crafts. An intelligent software agent is a program that solves problems, a program that perform work. Agents can act in roles and it can collaborate and interact with other agents including humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents.
 
-The best way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the language found in the cognitive architecture.  
+One way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the domain language of the cognitive architecture.  
 
 	public class Agent implements Runnable {
+	    
 	    public void run() {
 		while true {
-	   	  // observe environemt
-	   	  // Select and execute action
+	   	  // Percept environment
+	   	  // Choose and perform action
+		  // Update state
 		}
 	    }
 	}
@@ -84,26 +87,26 @@ When late professor Kristen Nyggaard was teaching object oriented programming he
 - State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
 - Transitions refers to things like seating, ordering, serving, eating. 
 - Structure refers to the permanent properties of the process.
-What this demonstrates is that behaviour modelling was at the core of object oriented programming.
+This demonstrates is that behaviour modelling was at the core of object oriented programming.
 
-When we ha high level perspective on a domain we will find two archetypes of objects; the object that do interesting things and the objects that describe and define things. The first group is about dynamic domain modelling, asking questions about who does what and when. The second group relates to structural complexity and are addressed by entities and value objects.
+When we observe a system such as Cafe' Objecte we see it contain object that do interesting things (waiter, guest, gatekeeper, cashier) and objects that describe and define things (menus, food, bills, tables). The first group is about dynamic domain modelling, asking questions about who does what and when. The second group relates to structural complexity and are addressed by entities and value objects.
 
-The objects that does interesting things are best understood as agents and the suggestion is to call them that. Agent's comes with four levels of behavioural capabilities.
+The objects that does interesting things are best understood and modelled as agents and the suggestion is to call them that. To classify an agents cognitive and behavioral capability we can use the following stack model:
+
 - Simple behaviour represented by memoryless functions such as calculating the square root or reading a measurement.
 - State driven behaviour, typically built from finite state machines (value objects).
 - Continous behaviour found in digital filters, mathematical control systems, fuzzy ogic and neural networks, behaviour where the memory of historical events play a central role in the agents decision making process.
 - Reasoning based behaviour implemented using cognitive architectures such as BDI and Soar.
 
-Independent of an agents cognitive capability can the behavioral modelling be framed by asking the following questions; who does what? What are the tasks to be performed? What triggers the agent to perform a certain task? What is the outcome from a task? What messages are sent and who are the recievers? What we build by asking thee questions is a tasking model (Douglas).
-What we often end up with is agents that have roles such as controllers, planners, observers, workers or sensors. By revistiong Cafe' Objecta it should be clear that waiter and guest are agents with state driven behavoiur that responds to events in the resturant. 
+Behavioral modelling starts with the tasking and event model: What are the tasks to be performed? What event triggers the need for a certain task? What is the intended outcome from a task? What messages are sent and who are the recievers? Who performs the task? What events are created by executing tasks?
 
-When developing a tasking model there is two things to be aware of: firstly, what tasks will be performed concurrently and will they fight for the same resource? If yes, than we have race conditions and possible deadlocks. That leaves us with the art of concurrent programming. Secondly, if there are tasks with time budgets i.e. tasks must be completed within given time windows we are working in the world of real-time systems. I mention this since smart phones with a multicore CPU require skills in concurrent programming and with IoT the real-time world converges with the traditional back office.
+When developing a tasking and event model there is two vital factors to consider: firstly, what tasks will be performed concurrently and will they compete for the same resource? If yes, than we are heading toward race conditions and possible deadlocks in the realm of concurrent programming. Secondly, if there are tasks with time budgets i.e. tasks must be completed within given time windows we are in the realm of real-time systems. 
 
 To sum up. Dynamic domain modelling must become a first class citizen of domain-driven design, and to support that new citizen we need three new concepts:
 
 - Agents as representatives of domain processes, controllers, observers, sensors and planners.
-- Events capturing the occurrences of something that happens in the domain (Vernon).
-- Tasks capturing the work to be performed by the process controller as response to a domain event.
+- Events capturing the triggers for a task to be performed
+- Tasks capturing the work to be performed by the agents.
 
 
 The internal substance and structure of objects that does interesting things can be complicated. Think of the domain model of an iPhone war game with its concurrency.
@@ -187,6 +190,8 @@ Eidhof et al, Functional Swift.
 Hitchins, Advanced systems, thinking, engieering and management.
 
 Jarvis et al, Multiagent Systems and Applications: Volume 2: Development Using the GORITE BDI Framework.
+
+Russel, Norvig, Artifical intelligence, A modern approach, third edition
 
 Thanks to Alan Doniger, Shell for all interesting talks and discussions on data lifecycle management. The master data repository had not been possible without your contributions.
 
