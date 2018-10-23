@@ -4,6 +4,15 @@
 * Why I am not a jedi master - I only know the domains I know
 * First principle - DDD - Drive all design decisions based on the rule “will this help achieve the goal?”
 
+## Disclaimer
+
+As this is all from my perspective it is heavily influenced by my own experience. I am not a consultant nor have I worked as a contractor so my experience is limited to the domains of e-commerce. However in my opinion these domains have been sufficiently complex and thus have benefited from applying the practices of Domain-Driven Design. 
+
+I am not a jedi master in the art of Domain-Driven Design, I did not attend the Eric Evans finishing school (does that exist, if so please send me details) so I am unable to offer any words of wisdom less the ones that I have come to regard as lessons I have learnt. Over my career I have had the great fortune of working in a industry full of the most generous of people all over the world. The community of software is very good at offering opinions, advice and experience - all of which needs to be understood in the context that it is offered and of course moulded to the context that it will be applied in. A lot of what I have learnt and will write about is based on work by others, blog posts, peers, events - basically a great deal of what i know has been gained from standing on the shoulders of giants. I have made mistakes, many mistakes….an awfully large amount of mistakes. I have followed shiny new frameworks, jumped on the latest JavaScript framework bandwagon and jumped straight into an IDE before even finishing a conversation with a business counterpart. 
+
+So while I can’t guarantee that my words of wisdom will fix all your problem I do hope you find something in the lessons that I have learned over the years that will act as a catalyst to helping you on your journey.
+
+
 ## The fundamental concepts of DDD
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
