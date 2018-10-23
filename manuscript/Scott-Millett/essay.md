@@ -237,6 +237,10 @@ The result of tackling a problem from various angles is not the creation of a pe
 * Context Maps important but also use process maps to understand system flow
 * Ensure all teams are aligned by understanding the goal,  collaborate together on a solution and understand how they fit into the bigger picture 
 
+Although having completely independent teams is a productivity win, it’s important to ensure that communication between teams still occurs for knowledge and skill‐sharing benets. Ultimately, bounded contexts combine at run time to carry out full use cases, so teams need a big‐picture understanding of how their bounded context(s) fit into the wider system. Established patterns for this problem involve having regular sessions in which teams share with other development teams what they are working on, how they have implemented it, or any technologies that have helped them achieve their goals. Another excellent pattern is cross‐team pair programming. This involves moving a developer
+to a different team for a few days to learn about that part of the domain. You can spawn many novel approaches based on these two concepts of having group sessions and moving people around.
+
+
 ## Values
 
  > “Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.” ― Randy Pausch, The Last Lecture
