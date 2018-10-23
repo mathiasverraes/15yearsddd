@@ -161,6 +161,9 @@ of
 
  > “All good solutions have one thing in common: they are obvious but only in hindsight." Eli Goldratt
 
+Teams that are aligned with the philosophy of DDD focus more on the bigger picture and understand where to put the most effort. They will not apply the same architecture to all parts of a solution, and they will not strive for perfection in areas of little value. They will trade isolated and working software for unnecessary elegance and gold plating.
+Only the core domains need to be elegant due to complexity or importance. This is not to say that all other code should be poorly written, but it should be isolated, defined by a boundary, and expose behavior to support the core domain.
+
 * Simplify problems so that you can produce simpler solution models
 * Don't gold plate software, good is often good enough - remember the goal.
 * Nothing wrong with a hack if you excplicity understand the trade offs - story about EZY testing costs
