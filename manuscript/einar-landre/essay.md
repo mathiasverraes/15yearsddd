@@ -1,4 +1,4 @@
-# On objects, processes and data
+# On the future of Domain-Driven Design
 #### From here to there and back again, Bilbo Baggins (Lord of the Rings)
 ## Foreword
 With this essay I will try to be forward looking, while at the same time connect to the roots of object oriented programming and its true offspring domain driven design.
