@@ -202,6 +202,11 @@ Keep your model simple and focused, and strive for boring plain code. Often team
 * Understand the Balance and Trade offs of alternative models - don't discount anything - outsource/data temps story
 * Never say I know or stop at the first model
 
+Only stop modelling when you have run out of ideas and not when you get the first good idea. Once you have a useful model start again. Challenge yourself to create a model in a different way, experiment with your thinking and design skills. Try to solve the problem with a completely different model. If you don’t get it right the rst time, refactor to a better solution. Constantly refactor to your understanding of the problem domain to produce a more express model. Models will change with more knowledge.
+
+Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design.
+
+
 ## Optimize for the Overall System 
 
  > “A company could put a top man at every position and be swallowed by a competitor with people only half as good, but who are working together.” W. Edwards Deming
