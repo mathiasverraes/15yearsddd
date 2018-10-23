@@ -8,7 +8,16 @@
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
 
-Before I talk about my takeaways from DDD over the past 13 years I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple.
+Before I talk about my takeaways from DDD and my view on the first principles I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple. Of course the devil is in the detail
+
+ * Distill a large problem domain into smaller subdomains. 
+ * Identify the core sub domains. Those of greater value to focus effort and time
+ * Collaborate with experts to build model that will provide solutions to solve problems or create opportunities in the core domain.
+ * Split the model (if necessary) into smaller models where there is ambiguity in language, too large for a single team and enclose within a boundary to protect its context 
+ * Implement the model in code using the same language as was used in the model. Use tactical patterns to separate technical code for domain code to prevent accidental complexity.
+
+[show image of main points]
+
 
 ### Distill the Problem Domain to Reveal What Is Important
 
