@@ -30,7 +30,7 @@ Before I talk about my takeaways from DDD and my view on the first principles I 
 
 ### Distill the Problem Domain to Reveal What Is Important
 
- * Core domain and sub domains
+Development teams and domain experts use analysis patterns and knowledge crunching to distill large problem domains into more manageable subdomains. This distillation reveals the core sub domain—the reason the software is being written. The core domain is the driving force behind the product under development; it is the fundamental reason it is being built. DDD emphasizes the need to focus effort and talent on the core subdomain(s) as this is the area that holds the most value and is key to the success of the software.
 
 ### Create models to solve problems
 
