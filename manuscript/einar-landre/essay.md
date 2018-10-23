@@ -63,13 +63,13 @@ On the client side, this makes a lot of things easier. The consuming contexts ca
 
 Dynamic domain complexity originates from asynchronous, concurrent, competing and collaborating processes that tries to get something done. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
-Looking back, it looks like the development of object oriented thinking stopped. The object-oriented comunity was trapped in programming language and the wfforts went into object wiring, decoupling techniques such as dependency inversion, and development of new features such as generics. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect was that the object world lost the connection with its origin. Very few think of software agents as objects on steroids. Objects are too bound to the "class" construct in your programming language of choice.
+Looking back, it looks like the development of object oriented thinking stopped. The object-oriented community was trapped in programming language features and object wiring techniques such as dependency inversion. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect was that the object world lost its connection with its origin. Very few think of software agents as objects on steroids. Objects are too bound to the "class" construct in your programming language of choice.
 
-In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, refered to as BDI (Beliefs, Desires and Intentions), a programming model for software agents. Both BDI and Soar are domain models of how the human brain reasons and transfor perception into action.
+In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, known as the BDI (Beliefs, Desires and Intentions) programming model for software agents. Both BDI and Soar are domain models of how the human brain reasons and transfer perception into action.
 
-Intelligent agents is the cornerstone of artifical intelligence that comes in many flavoru, spanning from chat botts to space crafts. An intelligent software agent is a program that solves problems, a program that perform work. Agents can act in roles and it can collaborate and interact with other agents including humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents.
+Intelligent agents is the cornerstone of artificial intelligence that comes in many flavours, spanning from Bots to space crafts. An intelligent software agent is a program that solves problems, a program that perform work. Agents can act in roles and it can collaborate and interact with other agents including humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents.
 
-One way to illustrate the relationship between objects and agents is the Java code below. The hard part is the implementation of the agents reasoning methods leading to choosing the best possible action among many. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the domain language of the cognitive architecture.  
+One way to illustrate the relationship between objects and agents is the Java code below.   
 
 	public class Agent implements Runnable {
 	    
@@ -82,6 +82,8 @@ One way to illustrate the relationship between objects and agents is the Java co
 	    }
 	}
 
+The hard part is the implementation of the agents reasoning method or agent function (Russel&Norvig) that maps a given perception with the best possible action. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the domain language of their respective cognitive architectures.
+
 When late professor Kristen Nyggaard was teaching object oriented programming he used Cafe' Objectas as an example of a system built from processes with a set of basic qualities: Substance, state, transitions and structure.
 - Substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. 
 - State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
@@ -89,14 +91,14 @@ When late professor Kristen Nyggaard was teaching object oriented programming he
 - Structure refers to the permanent properties of the process.
 This demonstrates is that behaviour modelling was at the core of object oriented programming.
 
-When we observe a system such as Cafe' Objecte we see it contain object that do interesting things (waiter, guest, gatekeeper, cashier) and objects that describe and define things (menus, food, bills, tables). The first group is about dynamic domain modelling, asking questions about who does what and when. The second group relates to structural complexity and are addressed by entities and value objects.
+When we observe Cafe' Objecta as a dynamic system we can easilly see objects involved in doing interesting things (waiter, guest, gatekeeper, cashier) and objects that describe and define things (menus, food, bills, tables).
 
-The objects that does interesting things are best understood and modelled as agents and the suggestion is to call them that. To classify an agents cognitive and behavioral capability we can use the following stack model:
+Objects that doesprimary role is to do things are best understood as intelligent agents. To classify an agents cognitive and behavioral capability as implemented by the agent function can be done using a stack model:
 
-- Simple behaviour represented by memoryless functions such as calculating the square root or reading a measurement.
-- State driven behaviour, typically built from finite state machines (value objects).
-- Continous behaviour found in digital filters, mathematical control systems, fuzzy ogic and neural networks, behaviour where the memory of historical events play a central role in the agents decision making process.
 - Reasoning based behaviour implemented using cognitive architectures such as BDI and Soar.
+- Continous behaviour found in digital filters, mathematical control systems, fuzzy ogic and neural networks, behaviour where the memory of historical events play a central role in the agents decision making process.
+- State driven behaviour, typically built from finite state machines (value objects).
+- Simple behaviour represented by memoryless functions such as calculating the square root or reading a measurement.
 
 Behavioral modelling starts with the tasking and event model: What are the tasks to be performed? What event triggers the need for a certain task? What is the intended outcome from a task? What messages are sent and who are the recievers? Who performs the task? What events are created by executing tasks?
 
@@ -105,15 +107,12 @@ When developing a tasking and event model there is two vital factors to consider
 To sum up. Dynamic domain modelling must become a first class citizen of domain-driven design, and to support that new citizen we need three new concepts:
 
 - Agents as representatives of domain processes, controllers, observers, sensors and planners.
+- Agent function defining the agents mapping of perceptions to actions.
 - Events capturing the triggers for a task to be performed
 - Tasks capturing the work to be performed by the agents.
 
+For those who want to take it one step further Douglas, Russel & Norvig and Jarvis et al are good reads.
 
-The internal substance and structure of objects that does interesting things can be complicated. Think of the domain model of an iPhone war game with its concurrency.
-
-To support the design and implementations of these behavioural workhorses of your domain the GoF book provide several useful patterns such as: Chain of responsibility, Command, Observer and State. To study these patterns and others is highly recommended. For those who want to take it one step further "Doing hard time" (Douglas) is a good read.
-
-Lastly, processes can be implemented in many ways. It can be the model in a iPhone application using grand dispatch, a Java Servlet, a Java thread, an Ada task or as a Unix cron job or whatever mechanism is provided by your platform of choice.
 
 ## Object-Functional languages
 Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to the imperative and object oriented paradigme (Wikipedia).
