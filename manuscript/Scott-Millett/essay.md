@@ -81,6 +81,8 @@ I would hasten to add that however well you manage the non technical side you it
 ## Gain agreement on the problem
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
+ 
+To know where to focus effort you need to understand what makes the application worth designing in the first place. You need to understand the business strategy and why the existence of the software you are creating will enable it. It is worth asking why the custom software is being written rather than opting for a commercial off‐the‐shelf product. How will building an application make a difference to the business? How does it t within the strategy of the company? Why is it being built in‐house rather than being outsourced? Does part of the software give the business a competitive edge?
 
  * Understand the business big picture (problems, constraints, opportunities)
  * Distil large problem into sub domains
