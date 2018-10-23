@@ -92,11 +92,6 @@ I would hasten to add that however well you manage the non technical side you it
 
 ## Collaborate on the direction for a solution
 
-A software developer is primarily a problem solver who utilizes technology to implement a solution. Developers are fantastic at educating themselves on technology and project methodologies; however, decomposing a problem and being able to distill what is important from what is not will enable a good developer to become a great one. You should spend as much time in the problem space as you do in the solution space.
-
-Just as a useful model is derived over a series of iterations, so too must a problem space be refined to reveal the true intent behind a stakeholder’s vision. Listening and drawing the why as well as the what and when from stakeholders is a skill that developers should practice just as they practice coding katas.
-Code is a product of DDD, not the process; you can solve problems without having a technical solution.
-
  * Collaborate on the direction for a solution with decision makers and experts, people that are passionate about the problem space
  * Model-Driven Design
  * Collaboration is key. Don’t sit and wait for requirements - offer solutions. Don’t leave it to others. If you know the goal and know the business and can do IT you can offer solutions rather than waiting to be asked.
@@ -119,6 +114,11 @@ Code is a product of DDD, not the process; you can solve problems without having
  * Programming is understanding and translating into a software specific language. The software proves our understanding.
 
 ### Collaborate on viable solutions rather than looking for requirements 
+
+A software developer is primarily a problem solver who utilizes technology to implement a solution. Developers are fantastic at educating themselves on technology and project methodologies; however, decomposing a problem and being able to distill what is important from what is not will enable a good developer to become a great one. You should spend as much time in the problem space as you do in the solution space.
+
+Just as a useful model is derived over a series of iterations, so too must a problem space be refined to reveal the true intent behind a stakeholder’s vision. Listening and drawing the why as well as the what and when from stakeholders is a skill that developers should practice just as they practice coding katas.
+Code is a product of DDD, not the process; you can solve problems without having a technical solution.
 
  * Requirements assume someone has all the answers - this is a massive fallacy. Not about getting requirement. Remove problems with business counterparts or show art of the possible, look for opportunities.
  * Be accountable, don't be lazy - Don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours.
