@@ -121,7 +121,7 @@ To know where to focus effort you need to understand what makes the application 
  * Data entry example. Don’t assume anything - don’t think oh it doesn’t use code!
 
 
-### Show a professional passion for the problem domain
+### Show passion for the problem domain
 
  * Don’t stop asking questions!
  * You cannot begin to be useful to solve a problem or look for opportunity if you don't really understand the domain you are working in to a sufficiently deep level
