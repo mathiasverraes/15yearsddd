@@ -206,6 +206,9 @@ Only stop modelling when you have run out of ideas and not when you get the firs
 
 Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design.
 
+Try to unlearn everything you gained for the first model and take a new direction. Explore and experiment to reveal insights and offer new solutions.
+The result of tackling a problem from various angles is not the creation of a perfect model but instead the learning and discovery of concepts in the problem domain. This is far more valuable and leads to a team able to produce a useful model at each iteration.
+
 
 ## Optimize for the Overall System 
 
