@@ -60,16 +60,15 @@ The master data repository API provide services for Ingestion, Search and Delive
 On the client side, this makes a lot of things easier. The consuming contexts can focus on the processes, the workflows and the dynamic properties of the domain working with entities and value objects without being bothered with identity and lineage except as how these concerns materialises in the API. 
  
 ## Dynamic domain modelling
-
 Dynamic domain complexity originates from asynchronous, concurrent, competing and collaborating processes that tries to get something done. Object oriented programming was created to study and analyse such processes in context of a system. A system being a part of the world that is regarded as a whole, with its interacting components.
 
 Looking back, it looks like the development of object oriented thinking stopped. The object-oriented community was trapped in programming language features and object wiring techniques such as dependency inversion. The study of dynamic systems was left to the control theory and artificial intelligence communities. The effect was that the object world lost its connection with its origin. Very few think of software agents as objects on steroids. Objects are too bound to the "class" construct in your programming language of choice.
 
 In 1983 John Laired and Allen Newell created Soar, a cognitive agent architecture and in 1991 Michael Bratman released his theory of human practical reasoning, known as the BDI (Beliefs, Desires and Intentions) programming model for software agents. Both BDI and Soar are domain models of how the human brain reasons and transfer perception into action.
 
-Intelligent agents is the cornerstone of artificial intelligence that comes in many flavours, spanning from Bots to space crafts. An intelligent software agent is a program that solves problems, a program that perform work. Agents can act in roles and it can collaborate and interact with other agents including humans. Agents are objects that control their own execution thread, they are active, they typically observe their environment and pursues intents.
+Intelligent agents is the cornerstone of artificial intelligence that comes in many flavours, spanning from Bots to space crafts. An intelligent software agent is a program that solves problems, a program that perform work. Agents can act in roles and it can collaborate and interact with other agents including humans. Agents are objects that control their own execution thread, they are active, they observe their environment and pursues intents. They can be reactive and proactive, they can learn and they can make plans.
 
-One way to illustrate the relationship between objects and agents is the Java code below.   
+The code sniplet below illustrate how tightly relatated agents and objects are.   
 
 	public class Agent implements Runnable {
 	    
@@ -84,16 +83,16 @@ One way to illustrate the relationship between objects and agents is the Java co
 
 The hard part is the implementation of the agents reasoning method or agent function (Russel&Norvig) that maps a given perception with the best possible action. Multi-agent frameworks such as JACK, BDI4Jade and Gorite simplifies that part of the job as they implement the domain language of their respective cognitive architectures.
 
-When late professor Kristen Nyggaard was teaching object oriented programming he used Cafe' Objectas as an example of a system built from processes with a set of basic qualities: Substance, state, transitions and structure.
-- Substance was defined by guests, waiters, gatekeeper, cashier, bills, menus, food, tables and chairs. 
-- State refer to things like my table, my waiter, next in queue as well as a guests available funds and whose ordered what. 
+When late professor Kristen Nyggaard was teaching object oriented programming he used Cafe' Objectas as an example of a system that contained processes defined by a set of basic qualities: Substance, state, transitions and structure.
+- Substance was defined by Guests, Waiters, Gatekeeper, Cashier, bills, menus, food, .. 
+- State refer to things like my table, my waiter, next in queue and available funds. 
 - Transitions refers to things like seating, ordering, serving, eating. 
 - Structure refers to the permanent properties of the process.
-This demonstrates is that behaviour modelling was at the core of object oriented programming.
+I included this to show that behaviour modelling was at the core of object oriented programming.
 
-When we observe Cafe' Objecta as a dynamic system we can easilly see objects involved in doing interesting things (waiter, guest, gatekeeper, cashier) and objects that describe and define things (menus, food, bills, tables).
+When observing Cafe' Objecta as a dynamic system we easilly see the objects involved in doing interesting things such as Waiter, Guest, Gatekeeper and Cashier and the objects that describe and define things such as Menus, Food, Bills and Tables.
 
-Objects that doesprimary role is to do things are best understood as intelligent agents. To classify an agents cognitive and behavioral capability as implemented by the agent function can be done using a stack model:
+Objects whos primary role is to do things are best understood as intelligent agents. To classify an agents cognitive and behavioral capability as implemented by the agent function can be done using a stack model:
 
 - Reasoning based behaviour implemented using cognitive architectures such as BDI and Soar.
 - Continous behaviour found in digital filters, mathematical control systems, fuzzy ogic and neural networks, behaviour where the memory of historical events play a central role in the agents decision making process.
@@ -104,18 +103,17 @@ Behavioral modelling starts with the tasking and event model: What are the tasks
 
 When developing a tasking and event model there is two vital factors to consider: firstly, what tasks will be performed concurrently and will they compete for the same resource? If yes, than we are heading toward race conditions and possible deadlocks in the realm of concurrent programming. Secondly, if there are tasks with time budgets i.e. tasks must be completed within given time windows we are in the realm of real-time systems. 
 
-To sum up. Dynamic domain modelling must become a first class citizen of domain-driven design, and to support that new citizen we need three new concepts:
+To sum up. Dynamic domain modelling must become a first class citizen of domain-driven design, and to support that new citizen we need four new concepts that become part of the Domain-Driven Design toolbox:
 
-- Agents as representatives of domain processes, controllers, observers, sensors and planners.
-- Agent function defining the agents mapping of perceptions to actions.
+- Tasks defines the work to be performed by the agents.
+- Agents characterizes the objects whos primary task is to perform tasks.
+- Agent function defining the agents mapping of perceptions to tasks.
 - Events capturing the triggers for a task to be performed
-- Tasks capturing the work to be performed by the agents.
 
 For those who want to take it one step further Douglas, Russel & Norvig and Jarvis et al are good reads.
 
-
 ## Object-Functional languages
-Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to the imperative and object oriented paradigme (Wikipedia).
+Functional programming goes back to lambda calculus, a formal system developed in the 1930ties to investigate computability, the Entscheidungsproblem, function definition, function application and recursion. Functional programming is declerative and have had its home ground in academia. Functional languages such as Haskell, F#, Clojure and Erlang have thoug been used in industrial systems. JavaScript, one of the most used languages has the properties of a dynamically typed functional language in addition to its imperative and object oriented paradigme (Wikipedia).
 
 Since 2003 several modern programming languages that supports both object oriented and functional programming has emerged and gained popularity. In addition to JavaScript we find Swift, Go and Scala to have mentioned some of them. I will use Swift as my foundation. 
 
@@ -127,15 +125,49 @@ Swift make a clear distinction between reference types (class) and value types (
 	var a: A()
 	var b : A = a
 
-Here both an and b refer to the same instance of A. The effect is that a change to variable a will impact variable b and vice versa.
+Both an and b refer to the same instance of A. The effect is that a change to variable a will impact variable b and vice versa. In program stuctures of some size this easily become a problem. One way to deal with that problem is to make the class immutable by decklaring members as constants in stead of as variables.
 
-Value types keeps a unique copy of its data.
+Swift provdes three value types, struct, enumeration and tuples that keeps a unique copy of its data. In context of domain driven design this is an enrichment of the ubiqitous language. We are given a richer toolbox as illustrated by the code below where we build a domain model of a door in a house using the different language constructs.
 
-	struct B {}
-	var b: B()
-	var c : B = b
+	enum DoorState {
+	   case open
+	   case closed
+	}
+	
+	struct Door {
+    	    let state : State
+	    init() {
+	    	state = State.closed
+	    }
+	    init(_ state: State) {
+	     	self.state = state
+	    }
+	    
+    	    func open() -> Door {
+        	return Door.init(State.open)
+	    }
+    
+	    func close() -> Door {
+        	return Door.init(State.closed)
+    	    }
+	}
 
-In this case variable c is made as a copy of b and they can be independently changed.
+	class House {
+	   var frontDoor = Door()
+	   func openFrontDoor() {
+	        frontDoor = frontDoor.open()
+	   }
+	   func closeFrontDoor() {
+	   	frontDoor = frontDoor.close()
+	   }   
+	}
+	
+	// Using the house class
+	var myHouse = House()
+	myhouse.openFrontDoor()
+
+The house object has the state machine of the door system. Think if there was rules among doors such as the kitchen door could only be open of the main front door was unloked and so on. This is by the way a small example of how structural domain complexity materialises.
+
 
 With functions as first class citizens they are just types and we can create structures where a function takes a function as input and returns a function as its output.
 
@@ -143,7 +175,7 @@ With functions as first class citizens they are just types and we can create str
 	typealias Input = (Int, String, float) -> Bool
 	func doSomething(Input) -> (SomeType) { }
 
-Another nice property that comes with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides as an example a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming has proved to be.
+Another nice property that comes with functions is that they fit very well with multicore architectures, as we can execute them in their own threads in a safe way. Swift provides a library called the Grand Dispatch that make concurrent programming using mulicore's a simpler feat than raw threads programming do.
 
 Entities are defined as objects known defined by their identity and their lineage. They are most often best implemented as a reference type (class). Their identity should come from their standing in the business, and they should just conform to a protocol as illustrated below.
 
@@ -154,6 +186,7 @@ Entities are defined as objects known defined by their identity and their lineag
 	}
 
 	class Well: Identity {
+	
 	   func  ==(Entity) -> Bool { .. }
 	}
 
