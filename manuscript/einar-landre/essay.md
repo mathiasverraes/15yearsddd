@@ -1,7 +1,17 @@
 # On objects, processes and data
 #### From here to there and back again, Bilbo Baggins (Lord of the Rings)
 ## Foreword
-First of a
+With this essay I will try to be forward looking, while at the same time connect to the roots of object oriented programming and its true offspring domain driven design.
+
+I will also like to thank Eric for his great contribution to software design and that he was able to articulate what object oriented programming was meant to be from its outset at University of Oslo back in the 1960ties.
+
+Within the churning of change that surrounds us, also domain driven design itself need to be adapted to the new reality to stay relevant. 
+
+I have pointed to three specific areas of concerns that I make domain driven design more important as we move forward into the unknown.
+
+I will also like to thank Eric for all the great talks and discussions we had back in the days at then Statoil, now Equinor. We really plowed some new fields there. 
+
+//Einar 
 
 ## Introduction
 Fifteen years has passed since Eric Evans seminal book Domain Driven Design was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centers.
