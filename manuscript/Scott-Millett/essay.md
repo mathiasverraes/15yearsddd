@@ -148,6 +148,8 @@ Code is a product of DDD, not the process; you can solve problems without having
 
  > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
+All problems are not created equal; some are complex and are of little business value, so it makes no sense to waste effort in nding automated solutions for them. Complex edge cases do not always need automated solutions. Humans can manage by exception. If a problem is complex and forms an edge case, speak to your stakeholder and domain expert about the value of automating it. Your effort could be better served elsewhere, and a human might better handle this exception.
+
  * Avoid local optimisations at expense of improving the system
 of 
  * Don’t solve all the problem
