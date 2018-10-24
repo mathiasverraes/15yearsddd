@@ -73,11 +73,11 @@ When developing a tasking and event model there is two vital factors to consider
 To support the modelling of dynamic systems we need to add four concepts to our Domain-Driven Design toolbox:
 
 - Tasks, the work to be performed by the agents.
-- Agents, the objects who's primary task is to perform tasks 
+- Agents, the objects who's perceives its environment and execute tasks. 
 - Agent function, how the agent maps it's perceptions to tasks.
 - Events, the things happens that triggers the need for a task to be performed.
 
-By making these four first class citizens of Domain-Driven design we are well off.
+By making these four first class citizens of Domain-Driven design we are well off and in position to build even richer and more capable domain models that even might support autonomous systems.
 
 Some might ask, what differs an agent from a micro-service? My answer is granularity. Agents are objects, they are in the end defined by the class constructor in the language of choice.
 
