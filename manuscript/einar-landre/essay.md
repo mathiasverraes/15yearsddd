@@ -99,5 +99,5 @@ I hope you now understand agents as first class citizens of many domains, and th
 - Hitchins, Advanced systems, thinking, engineering and management.
 - Jarvis et al, Multiagent Systems and Applications: Volume 2: Development Using the GORITE BDI Framework.
 - Russel, Norvig, Artificial intelligence, A modern approach, third edition.
-- Vernon, Implementing Domain Drive Design.
+- Vernon, Implementing Domain Driven Design.
 
