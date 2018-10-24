@@ -1,9 +1,9 @@
 # Agents, Domain objects on steroid
-#### From here to there and back again, Bilbo Baggins (Lord of the Rings)
+#### From here to there and back again, Bilbo Baggins
 ## Introduction
 This essay explains dynamic domain modelling and argue why we need to make it a first class citizen of Domain-Driven design.
 
-Before that, I will  like to thank Eric for his seminal contribution to the software community. I will also like to thank him for all the great discussions we had back in the days when we were battling Equinor's (the Statoil) oil trading portfolio.
+But firstly I would like to thank Eric for his seminal contribution to the software community. I will also thank him for all the great discussions we had when we were battling Equinor's (the Statoil) oil trading portfolio and writing papers to OOPSLA, sharing our experiences.
 
 Fifteen years has passed since the book was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centres.
 
