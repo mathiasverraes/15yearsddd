@@ -30,7 +30,7 @@ Surely The Blue Book reads like poetry[^poetry], but it is not an easy book to r
 
 Guess how the system was initially designed? — It would definitely make a certain prominent individual from the DDD community proud.
 
-![@DDD_Borat](images/vladikk/hand-drawn/2-borat-2.png)
+![@DDD_Borat](images/vladikk/hand-drawn/2-borat.png)
 
 [^poetry]: <https://www.infoq.com/interviews/jimmy-nilsson-linq>
 
