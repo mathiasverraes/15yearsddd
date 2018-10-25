@@ -30,7 +30,7 @@ Surely The Blue Book reads like poetry[^poetry], but it is not an easy book to r
 
 Guess how the system was initially designed? — It would definitely make a certain prominent individual from the DDD community proud.
 
-![@DDD_Borat](images/vladikk/hand-drawn/2-borat.png)
+![@DDD_Borat](images/vladikk/hand-drawn/2-borat-2.png)
 
 [^poetry]: <https://www.infoq.com/interviews/jimmy-nilsson-linq>
 
@@ -385,7 +385,7 @@ However, make sure to extract those smaller contexts – not because you can, bu
 #### Examples
 When we tried to decompose to fine-grained services early on, as in the case of Marketing Hub, we ended up with a distributed monolith. On the contrary, the Marketing context started as a very wide one, but was decomposed later on; we extracted Campaigns, Publishers, Creative Catalog, and Events into separate bounded contexts:
 
-(img)
+![](images/vladikk/hand-drawn/13-ddd.png)
 
 Again, it is evident even here: the simpler the business domain, the narrower its boundaries. 
 
