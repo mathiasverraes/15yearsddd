@@ -1,1 +1,1 @@
-Your 1 to 3 line bio here.
+Vladik Khononov is a software engineer with nearly 20 years of industry experience. He worked for companies large and small, in roles ranging from Software Engineer to Chief Architect. Vladik maintains an active media career as a public speaker and blogger. Alongside his media work, Vladik maintains a keen professional interest in Distributed Systems and Software Architecture in general. 
