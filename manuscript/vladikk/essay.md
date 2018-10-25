@@ -383,11 +383,7 @@ In our experience, it is much safer to extract a service out of a bigger one, th
 However, make sure to extract those smaller contexts – not because you can, but only if you truly need them to deliver some functional or non-functional requirements.
 
 #### Examples
-When we tried to decompose to fine-grained services early on, as in the case of Marketing Hub, we ended up with a distributed monolith. On the contrary, the Marketing context started as a very wide one, but was decomposed later on:
-
-(img)
-
-We extracted Campaigns, Publishers, Creative Catalog, and Events into separate bounded contexts:
+When we tried to decompose to fine-grained services early on, as in the case of Marketing Hub, we ended up with a distributed monolith. On the contrary, the Marketing context started as a very wide one, but was decomposed later on; we extracted Campaigns, Publishers, Creative Catalog, and Events into separate bounded contexts:
 
 (img)
 
