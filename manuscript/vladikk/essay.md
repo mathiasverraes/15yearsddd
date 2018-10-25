@@ -266,11 +266,11 @@ However, this decision model didn’t work well for us.
 Companies, and especially startups like ours, tend to change and reinvent themselves over time. Businesses evolve, new profit sources are evaluated, other neglected, and sometimes unexpected opportunities are discovered. Consequently, business domain types change accordingly. 
 
 Speaking of our company, we have experienced almost all the possible combinations of such changes:
-* Both the Event Crunchers and Bonuses started as supporting subdomains, but once we discovered ways to monetize these processes, they became our core subdomains.
-* In the Marketing context, we implemented our own Creative Catalog. Nothing really special or complex about it. However, a few years later, an open-source project came out that offered even more features than we originally had. Once we replaced our implementation with this product, a supporting subdomain became a generic one.
-* In the CRM context, we had an algorithm that identified the most promising leads. We refined it over time and tried different implementations, but eventually it was replaced with a fully managed machine learning model running on AWS. Technically, a core subdomain became generic.
-* As we’ve seen, our Marketing Hub system started as a core, but ended up being a supporting subdomain, since the competitive edge resided in a completely different dimension.
-* We also have quite a few examples in our industry of companies that turned generic and supporting subdomains into their core business. For example, Amazon and their AWS Cloud. 
+* Both the Event Crunchers and Bonuses started as *supporting* subdomains, but once we discovered ways to monetize these processes, they became our *core* subdomains.
+* In the Marketing context, we implemented our own Creative Catalog. Nothing really special or complex about it. However, a few years later, an open-source project came out that offered even more features than we originally had. Once we replaced our implementation with this product, a *supporting* subdomain became a *generic* one.
+* In the CRM context, we had an algorithm that identified the most promising leads. We refined it over time and tried different implementations, but eventually it was replaced with a fully managed machine learning model running on AWS. Technically, a *core* subdomain became *generic*.
+* As we’ve seen, our Marketing Hub system started as a *core*, but ended up being a *supporting* subdomain, since the competitive edge resided in a completely different dimension.
+* We also have quite a few examples in our industry of companies that turned *generic* and *supporting* subdomains into their *core* business. For example, Amazon and their AWS Cloud. 
  Once this kind of change in a subdomain type happens, its design should evolve accordingly. Failing to do so in time will lead to blood, tears, and accidental complexities. Hence, instead of making design decisions based on subdomain types, we prefer to reverse this relationship.
 
 #### Implementation Strategy → Subdomain Type
