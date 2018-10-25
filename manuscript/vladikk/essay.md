@@ -79,9 +79,11 @@ We noticed that, all too often, we were adding awkward prefixes to those “aggr
 #### Achievement Unlocked: Read the Blue Book
 I learned that bounded contexts solve exactly the same issue we had experienced — they protect the consistency of the ubiquitous language.
 
-By that time, Vaughn Vernon had published his “Effective Aggregate Design” (!!!VERIFY and LINK!!) article. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
+By that time, Vaughn Vernon had published his “Effective Aggregate Design”[^vernon] article. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
 
 We took a step back, and redesigned the CRM solution to reflect these revelations.
+
+[^vernon]: <http://dddcommunity.org/library/vernon_2011/>
 
 #### Solution Design: Take #2
 We started by dividing our monolith into two distinct bounded contexts: Marketing and CRM. We didn’t go all the way to microservices here, or anything like that. We just did the bare minimum to protect the ubiquitous language.
