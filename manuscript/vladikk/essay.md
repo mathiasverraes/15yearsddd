@@ -348,7 +348,7 @@ The idea is the same as materialized views in relational databases, the differen
 
 For example, in the Creative Catalog we used a relation model to represent the creatives. However, the data was projected into a search index(Elasticsearch) and plain files in S3 for caching:
 
-!!!! DIAGRAM demonstrating catch-up subscriptions via row-version !!!!
+![](images/vladikk/hand-drawn/11-creative-catalog.png)
 
 What makes this implementation of CQRS, and not a mere data replication, is the fact that we used the same infrastructure to project additional models. It always allowed us to plug in new types of projections in the feature or to wipe and rebuild existing ones.
 
@@ -362,7 +362,7 @@ Originally, we tried to keep our commands “void”, i.e. not returning any dat
 
 We didn’t find any reasons that prevented us from returning this information as a command’s result. We did, however, segregate the models: since projections are eventually consistent, all the data returned by the command should originate from the strongly consistent “write” model:
 
-!!! Diagram !!!!
+![](images/vladikk/hand-drawn/12-cqrs.png)
 
 ### Bounded Contexts’ Boundaries
 At Internovus, we’ve tried quite a few strategies for setting the boundaries of bounded contexts:
