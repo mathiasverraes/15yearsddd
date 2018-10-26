@@ -1,8 +1,14 @@
 # Distilling DDD into first principles
 
-* My personal context, my journey, introduction and experience of DDD
-* Why I am not a jedi master - I only know the domains I know
-* First principle - DDD - Drive all design decisions based on the rule “will this help achieve the goal?”
+> “I don’t have talent, so I just get up earlier.” —Henry Rollins
+
+If I could offer you one piece of advice (apart from always wear sunscreen), it would be to do your utmost to move beyond simply understanding your domain and get to a position where you are in sync with your business vision, goals, strategy and constraints. If you follow my advice then you should be in a position that not only gives you a deeper level of understanding for your domain enabling you to produce effective solutions, but will also allow you to proactively identify opportunities that offer true business value.
+
+IT is now a crucial capability in any organisation. However most technical teams only seem to have a shallow understanding of the domain they work within and in my experience are more aligned to arbitrary requirements and new frameworks over the overall strategy and needs of a business. Advances in technology have afforded a huge amount of opportunity for business development and evolution however the majority of businesses are yet to catch up on these opportunities. This is not due to a lack of technical savviness from business colleagues but more from a lack of alignment from technical people, those that understand the art of the possible and the business needs, which prevents them seeing opportunities.
+
+The line between the non technical and technical people within modern businesses is blurring. I am seeing more progressive companies that have blended roles where technical people have a seat at the table. They have a seat because they have earnt it and because they understand the art of the possible and how it will enable their company to beat the competition.
+
+This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, how model-driven design is a collaborative process and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues.
 
 ## Disclaimer
 
@@ -17,7 +23,9 @@ So while I can’t guarantee that my words of wisdom will fix all your problem I
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
 
-Before I talk about my takeaways from DDD and my view on the first principles I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple. Of course the devil is in the detail
+Before I talk about my takeaways from DDD and my view on the first principles I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple. Of course the devil is in the detail.
+
+DDD in a nutshell:
 
  * Distill a large problem domain into smaller subdomains. 
  * Identify the core sub domains. Those of greater value to focus effort and time
