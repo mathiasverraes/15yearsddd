@@ -1,4 +1,4 @@
-Agents, Domain objects on steroids?
+# Agents, Domain objects on steroids?
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
 This essay explains dynamic domain modelling and argue why we need it and how we can make it a first class citizen of Domain-Driven design.
