@@ -1,2 +1,3 @@
 Vladik Khononov is a software engineer with nearly 20 years of industry experience. He worked for companies large and small, in roles ranging from Software Engineer to Chief Architect.
 Vladik maintains an active media career as a public speaker and blogger. He regularly speaks and writes on topics such as Microservices, Domain-Driven Design, and Software Architecture in general.
+@vladikk, vladikk.com
