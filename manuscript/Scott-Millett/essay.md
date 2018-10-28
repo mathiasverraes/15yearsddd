@@ -229,8 +229,13 @@ Only stop modelling when you have run out of ideas and not when you get the firs
 
  > “A company could put a top man at every position and be swallowed by a competitor with people only half as good, but who are working together.” W. Edwards Deming
 
- * Not the Individual Components
- * Understand how you fit into to the system
+In large and complex applications, multiple models in context collaborate to fulfill the requirements and behaviors of a system. A single team may not own all of the various sub components of a system, some will be existing legacy code that is the responsibility of a different team, and other components will be provided by third parties that will have no knowledge of the clients that will consume its functionality. Teams that don’t have a good understanding of the different contexts within a system, and their relationships to one another, run the risk of compromising the models at play when integrating bounded contexts. Lines between models can become blurred resulting in a Big Ball of Mud if teams don’t explicitly map and understand relationships between contexts.
+
+The technical details of contexts within systems are not the only force that can hamper the success of a solution. Organizational relationships between the teams that are responsible for contexts can also have a big impact on the outcome. Often, teams that manage other contexts are not motivated by the same forces, or they have different priorities. For solutions to succeed, teams usually need to manage changes in these situations at a political rather than technical level, or as Nick Tune refers to it the sociotechnical design. 
+
+Other non technical challenges can appear during development. These are issues that arise from the areas of the problem domain that sit between bounded contexts that have not been explicitly defined. These important business processes can often be devoid of responsibility from development teams and business ownership, but paradoxically are immensely important to business workflows and processes.
+
+What is important to understand is that it is not the individual components of a system that need to work, it is the system itself. Teams needs to learn to collaborate and agree to overcome any obstacles to implementation. To do this they must understand how they fit into to the system as a whole.
 
 ### Manage the solution team organisational design for autonomy 
 
