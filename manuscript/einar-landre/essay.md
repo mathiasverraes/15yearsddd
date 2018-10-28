@@ -1,7 +1,7 @@
 # Agents aka Domain objects on steroids
 #### From here to there and back again, Bilbo Baggins
 ## Introduction
-This essay explains dynamic domain modelling and argue why we need it and how we can make it a first class citizen of Domain-Driven design. But before embarking on that journey, I would like to thank Eric for his seminal contribution to the software community. I will also thank him for all the great discussions we had when battling Equinor's (Statoil) oil trading portfolio, writing papers for OOPSLA and sharing our experiences with a broader audience. 
+This essay explains dynamic domain modelling, why it is needed and the value from making it a first class citizen of Domain-Driven design. But before embarking on that journey, I would like to thank Eric for his seminal contribution to the software community. I will also thank him for all the great discussions we had battling Equinor's (Statoil) oil trading portfolio and writing papers for OOPSLA. That was a great experience. 
 
 Fifteen years has passed since the book was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centres.
 
@@ -12,7 +12,7 @@ It is easy to argue that our profession experience profound changes, changes tha
 ## Domain complexity
 The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled instead of ordered. 
 
-I think, from experience that domain complexity is structural or dynamic, though deeply influenced by Hitchins definition. 
+All that make sense, but connectedness comes comes in two flavours. One thing is the share number of connections, another thing is the nature of the connections. Are they stable or arbitrary. I think, dependent on the nature of the connectedness, that domain complexity is structural or dynamic.
 
 Structural domain complexity is what we find in nested structures such as as the component hierarchy found in products (airplanes, ships), retail assortments or project plans. The objects become complicated due to their internal state models, their rules and the depth of their connectedness and variability.
 
