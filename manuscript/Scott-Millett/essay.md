@@ -262,6 +262,7 @@ In many ways, the communication between bounded contexts, both technical and org
 
 Accountability and responsibility are other non-technical areas that can affect a project. Dening team ownership and management for subsystems that you need to integrate with is essential for ensuring changes are made on time and in line with what you expect. Context mapping is about investigation and clarification; you may not be able to draw a clear context map straight away, but the process of clarifying responsibility, explicitly defining blurred lines, and understanding communication ow while mapping contexts is as important as the nished artifact.
 
+When is comes to responsibility the entire team needs to understand what they are responsible for and how it fits in the bigger picture. Each member must have deep knowledge of what they are doing,  why, and the logic behind the method being used to implement the solution. All members need to have an aligned understanding at the macro level. Too often a team lead simply delegates components of a solution, which is part of a larger process, to junior members who have little or no idea how their part contribute to the whole
 
 ### Identify the grey areas business process 
 
