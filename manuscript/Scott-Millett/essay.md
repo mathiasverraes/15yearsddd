@@ -33,7 +33,7 @@ DDD in a nutshell:
  * Split the model (if necessary) into smaller models where there is ambiguity in language, too large for a single team and enclose within a boundary to protect its context 
  * Implement the model in code using the same language as was used in the model. Use tactical patterns to separate technical code for domain code to prevent accidental complexity.
 
-! [Overview of Domain-Driven Design] (../images/scott-millett/01_DDD_Overview.png)
+![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
 
 
 ### Distill the Problem Domain to Reveal What Is Important
