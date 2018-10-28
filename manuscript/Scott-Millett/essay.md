@@ -261,15 +261,11 @@ Although having completely independent teams is a productivity win, it’s impor
 to a different team for a few days to learn about that part of the domain. You can spawn many novel approaches based on these two concepts of having group sessions and moving people around.
 
 
-## Values
+## Personal Values and Principles
 
  > “Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.” ― Randy Pausch, The Last Lecture
- 
- > "Complaining is not a strategy. You have to work with the world as you find it, not as you would have it be." —Jeff Bezos
 
-* Have patience and humility
-* respect others - people are good
-* Avoid blaming
+Domain-Driven Design isn’t a silver bullet. Just as switching from an upfront waterfall approach to a more agile/XP project methodology didn’t solve all your software development problems, opting to follow DDD won’t suddenly produce better software. The common denominator in any successful project is a team of clever people who are passionate about what they are doing and who care about it succeeding.
 
 ## To the next 15 years and the continued reinvention of DDD
 
