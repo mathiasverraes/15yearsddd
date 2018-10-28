@@ -12,7 +12,7 @@ It is easy to argue that our profession experience profound changes, changes tha
 ## Domain complexity
 The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled instead of ordered. 
 
-All that make sense, but connectedness comes comes in two flavours. One thing is the share number of connections, another thing is the nature of the connections. Are they stable or arbitrary. I think, dependent on the nature of the connectedness, that domain complexity is structural or dynamic.
+The challenge is that we have two types of connectedness. We have stable connections that lead to structural complexity and we have arbitrary connections that leads to dynamic complexity.
 
 Structural domain complexity is what we find in nested structures such as as the component hierarchy found in products (airplanes, ships), retail assortments or project plans. The objects become complicated due to their internal state models, their rules and the depth of their connectedness and variability.
 
