@@ -90,14 +90,13 @@ I would hasten to add that however well you manage the non technical side you it
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
  
-To know where to focus effort you need to understand what makes the application worth designing in the first place. You need to understand the business strategy and why the existence of the software you are creating will enable it. It is worth asking why the custom software is being written rather than opting for a commercial off‐the‐shelf product. How will building an application make a difference to the business? How does it t within the strategy of the company? Why is it being built in‐house rather than being outsourced? Does part of the software give the business a competitive edge?
+To know where to focus effort you first need to understand the motivation for solving a problem. You need to have a solid understanding of the business big picture so that you are able to understand a problem in context. What problems, constraints, opportunities exist that have led up to this point and proved that this problem deserves a solution. 
 
- * Understand the business big picture (problems, constraints, opportunities)
- * Distil large problem into sub domains
- * Core domain, the goal, or impediment is revealed to give focus and alignment
- * Look for interesting problems - sometimes we don't know the exact details of the problem or how to solve it. We must work with non technical people to look for opportunity. 
- * For example - problem is we are 10% down on budget. Explore how to solve.
+Why you ask? The reason is to ensure you truly understand what you are being tasked with to solve. As without this fundamental information is it impossible to be certain that you will be able to produce a solution with significant and beneficial outcomes. I will let you in on a secret - your business counterparts don’t have all the answers. They are experts in their respective domains, as you are in your technical domain. But they are not system or process design experts. They are hypothesising on what they should do. Therefore instead of taking things at face value, collaborate and empathise so you can see the thought processes of your business counterparts and understand how they arrived at their conclusions. This activity often leads to a technical team being able to add real value by looking at simpler alternative solutions or problems further up the supply/process chain that may have been missed.
 
+It is always worth asking why rather than just accepting that someone else has done this further up the chain. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? 
+
+Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level.
  
  ### Applying the Theory of Constraints to reveal impediments to business value throughput
 
