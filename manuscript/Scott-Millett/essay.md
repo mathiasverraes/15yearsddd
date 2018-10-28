@@ -183,14 +183,13 @@ Code is a product of DDD, not the process; you can solve problems without having
 
  > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
-All problems are not created equal; some are complex and are of little business value, so it makes no sense to waste effort in nding automated solutions for them. Complex edge cases do not always need automated solutions. Humans can manage by exception. If a problem is complex and forms an edge case, speak to your stakeholder and domain expert about the value of automating it. Your effort could be better served elsewhere, and a human might better handle this exception.
+All problems are not created equal; some are complex and are of little business value, so it makes no sense to waste effort in finding automated solutions for them. Complex edge cases do not always need automated solutions. Humans can manage by exception. If a problem is complex and forms an edge case, speak to your stakeholder and domain expert about the value of automating it. Your effort could be better served elsewhere, and a human might better handle this exception. You can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless. 
 
- * Avoid local optimisations at expense of improving the system
-of 
- * Don’t solve all the problem
- * Will your output produce meaningful outcomes
- * Master the art of saying no. This will give you more time to focus on the strategic high value initiatives 
- * Curiosity and a genuine desire to learn about a problem space is vital to produce good solutions and meaningful software. In that you can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless
+Simple problems require simple solutions. Trivial domains or subdomains that do not hold a strategic advantage for businesses will not benefit from all the principles of DDD. Developers who are keen to apply the principles of DDD to any project regardless of the complexity of the problem domain will likely be met with frustrated business colleagues who are not concerned with the less important areas of a business. Therefore Don’t worry about not solving all the problems.
+
+If we remind ourselves of the theory of constraints we should avoid local optimisations at expense of improving the system. You should ask yourself will your output produce meaningful outcomes - should you expend lots of effort and energy on are area of the solution that does not impact the core domain?
+
+You need to master the art of saying no. This is of course is very difficult in practice, but it is worth it. Well meaning business counterparts may want you to optimise for their department at the expense of the system. Empathising with them and helping them understand how this distracts you from the overall goal will give you more time to focus on the strategic high value areas.
 
 ### Reduce the cost of software 
 
