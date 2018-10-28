@@ -111,16 +111,14 @@ Why is this relevant to DDD you may ask? DDD has the domain or business at the h
 
 ### Be clear on how you deliver business value
 
- * Value solutions over software. It’s not about being a code monkey it’s about getting results
- * Being clear on what business value is helps to identify if a problem is worth solving or is valuable
- * Look for the money / how does it shift the KPI
- * People don't want to buy a quarter-inch drill, they want a quarter-inch hole - nobody cares how well crafted your code is unless is makes money
- * Look for the money / how does it shift the KPI / where is the bottleneck to business throughput
- * Delivering Business Outcomes over code output / Value solutions over software
- * IT more than ever is at heart of business success. IT people that understand this transforms businesses. Seat at the table
- * IT has a greater amount of power and influence than before. New business models can be developed through leveraging technology. Teams should act like commercially and be business (domain) focused.
- * Avoid software being what developers understand from the business - developers ARE the business.
- * Your job is to Remove blockers from business value throughput
+ > “People don't want to buy a quarter-inch drill, they want a quarter-inch hole.” Theodore Levitt
+
+A software developer is primarily a problem solver who utilizes technology to implement a solution. Their job is to remove blockers that prevent the business producing value. Remember code is a product of a solution, not the process; you can solve problems without having a technical solution, you should value business outcomes over software output. It’s not about being a code monkey it’s about getting results that benefit the business and help achieve its goal.
+
+The IT department is part of the business, you should strive beyond creating software based on what you understand from the business to creating solutions that contribute to the overall business goal. This is a small but important distinction. Its similar to the saying you are not stuck in traffic, you are traffic.  Software developers ARE the business, they just happen to be domain experts in software design just as accountants are domain exports in finance. You should not have a them and us mentally. 
+
+The IT department is as responsible for overall business success rather than simply being an order taler. As I have already mentioned IT far more strategic in most businesses than ever before. The advances in technology has disrupted many markets , think of Kodak and blockbusters, giants businesses that have vanished. Delivering true value is about stems form acting from a domain perspective and identify opportunities through leveraging your technical domain knowledge to help your business counterparts to understand the art of the possible. Look for the money,  how can I help shift the KPI, how can I contribute to removing a  bottleneck to business throughput.
+
 
 ## Collaborate on the direction for a solution
 
