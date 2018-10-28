@@ -163,9 +163,13 @@ When picking scenarios to model, don’t go for the low-hanging fruit; ignore th
 
  > “Engagement is more important than precision.” Alberto Brandolini on Event Storming
 
- * Visualise and reveal with Process mapping or event storming big picture
- * Requires decision makers and domain experts. Help good decisions get made.
- * You don't need to be smartest, need to enable
+Making sense of a complex problem domain in order to create a simple and useful model requires in-depth knowledge and deep insight that can only be gained through constant collaboration with the people that understand the domain inside and out. Complex problem domains will contain a wealth of information, some of which will not be applicable to solving the problem at hand and will only act to distract from the real focus of your modelling efforts. Knowledge crunching is the art of distilling relevant information from the problem domain in order to build a useful model that can fulfill the needs of problem domain.
+
+Domain knowledge is key, even more so than technical know‐how. Teams working in a business with complex processes and logic need to immerse themselves in the problem domain and, like a sponge, absorb all the relevant domain knowledge. This insight will enable teams to focus on the salient points and create a model at the heart of their application’s code base that can fulfill the business use cases and keep doing so over the lifetime of the application.
+
+Facilitate skills are vital in order to efficiently and effectively distilling knowledge from domain experts. You don’t need to be the smartest person but you do need to be able to collaborate and facilitate with smart people to gain deep insights. Only by asking the right questions can decisions be made, knowledge can be shared and a solution can be revealed and agreed upon. Alberto Brandolini has done a tremendous amount of work in this area under the practice of event storming and big picture visual modeling which I urge you to seek out. 
+
+The key to facilitation is about guiding people not to an answer but to a shared understanding and empowering them to take responsibility. It’s not to lead a group and make good decisions, it is to make sure good decisions get made. Workshops and collaborative working must enable a platform that accepts different points of views. No one should have the authority on a good idea, and no suggestion is stupid. 
 
 ## Gain agreement that the solution solves the core problem
 
