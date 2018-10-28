@@ -215,15 +215,21 @@ Don’t be lazy and code around the problem. Sometime it’s easier to code and 
 
 ### Explore alternative models
 
-* Understand the Balance and Trade offs of alternative models - don't discount anything - outsource/data temps story
-* Never say I know or stop at the first model
+When you are starting out on a new solution you are probably least knowledge about the domain. Paradoxically this is also the time when you will be making important decisions. Each different model will have different trade offs, pros and cons. Don’t delay making decisions because they are imperfect. A lack of decision making is the biggest blocker I have consistently seen in software projects.  Make decisions based on what you know and what you need to achieve. You can always change your mind when you have more data. It’s not about being right or wrong it’s about moving forward, progressing and driving toward value. You will make wrong decisions but only from the luxury of hindsight so isn’t beat yourself up. 
 
-Only stop modelling when you have run out of ideas and not when you get the first good idea. Once you have a useful model start again. Challenge yourself to create a model in a different way, experiment with your thinking and design skills. Try to solve the problem with a completely different model. If you don’t get it right the rst time, refactor to a better solution. Constantly refactor to your understanding of the problem domain to produce a more express model. Models will change with more knowledge.
+They say all models are wrong, its just that some are more useful. Your initial model will be wrong, but don’t get too hung up. Remember you need to love the problem not your initial solution. The process of learning more about the problem domain is achieved over many iterations and many modelling attempts.. Your knowledge will grow, and with this you will be able to evolve your model into something useful and appropriate.
 
-Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design.
+Complex domains are full of uncertainty, you need to be comfortable with this and with not knowing all the answers upfront. Remember a wrong choice is rather like an AB test, your chalk it up to experience and you have more information what doesn’t work.
 
-Try to unlearn everything you gained for the first model and take a new direction. Explore and experiment to reveal insights and offer new solutions.
-The result of tackling a problem from various angles is not the creation of a perfect model but instead the learning and discovery of concepts in the problem domain. This is far more valuable and leads to a team able to produce a useful model at each iteration.
+### Don’t stop at your first attempt
+
+When arriving at the first useful model, most teams usually stop exploring and jump to their keyboards to implement it. Your first model will unlikely be your best. Once you have a good model, you should park it and explore the problem from a different direction. Exploration and experimentation are vital to enable deep discoveries and to learn more about the problem domain; therefore, make mistakes and validate good ideas by comparing them to bad ones.
+
+Try to unlearn everything you gained for the first model and take a new direction. Explore and experiment to reveal insights and offer new solutions. The result of tackling a problem from various angles is not the creation of a perfect model but instead the learning and discovery of concepts in the problem domain. This is far more valuable and leads to a team able to produce a useful model at each iteration.
+
+Sometimes while modeling, you become stagnant; your solution may have painted you into a corner, and a new scenario cannot be fulfilled with the current model. This is ne. Instead of trying to make the scenario t the model, make a new model that is useful for the existing and new scenarios.
+
+Only stop modelling when you have run out of ideas and not when you get the first good idea. Once you have a useful model start again. Challenge yourself to create a model in a different way, experiment with your thinking and design skills. Try to solve the problem with a completely different model. Constantly refactor to your understanding of the problem domain to produce a more express model. Models will change with more knowledge. Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design. Eric Evans suggests that for every good design there must be at least three bad ones, this will prevent teams stopping at the rst useful model.
 
 
 ## Optimize for the Overall System 
