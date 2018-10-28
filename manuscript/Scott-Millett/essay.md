@@ -267,7 +267,24 @@ to a different team for a few days to learn about that part of the domain. You c
 
 Domain-Driven Design isn’t a silver bullet. Just as switching from an upfront waterfall approach to a more agile/XP project methodology didn’t solve all your software development problems, opting to follow DDD won’t suddenly produce better software. The common denominator in any successful project is a team of clever people who are passionate about what they are doing and who care about it succeeding.
 
+However much time you will spend in front of the computer it will dwarf the time you spend working and talking to others. Show respect, patience and humility when working with your peers and business counterparts. Understand different personality types and how different types interact in collaborative session. How they learn -  are the big picture people or detail people. Perfect the art of active listening and empathy as these are very important traits to get on in this world let alone in software development.
+
+Don’t assumptions you know something, always be prepared to challenge your thinking and your opinions. Do not be closed off to a new way of thinking or looking at problems from other people's point of views. Remember there is no right or wrong and it often has an awful lot to do with context.
+
+
 ## To the next 15 years and the continued reinvention of DDD
 
-* DDD is now an uncontrollable force. Even if you were to cut the head Evans, it would still continue to grow :)
-* Future of DDD much more blending between developers and business people. Knowledgeable  IT people will turn into business decision makers
+Like the internet DDD is now an uncontrollable force, it is far larger than the sum of its parts. Its is a huge ever growing community of progressive and professional problem solvers learning how they can offer more to their business. I am afraid that even if we were to cut the head of off Eric Evans the community and practitioners would still grow and continue to evolve Domain-Driven Design. Plus he is a nice chap and it would make an awful lot of mess. 
+
+In my opinion the future of DDD lies in the blending between non-technical and technical “business” people. Knowledgeable technical people will turn into business decision makers due to more focus on key underlying business problems. Those that embrace the business as much as they embrace technology will flourish as leaders and actively contribute to the strategies of their domains rather than simply being order takers.
+
+Collaborate with business counterparts so that there is a shared understanding and alignment on the real business constraint or opportunity. Progress from having a shallow understanding of your problem domain but a good grasp on requirements to a deep understanding of business needs with an eye on opportunities that you can enable. Remember people will tell you what they want rather than what is needed, the difference is subtle but leads to very different outcomes.
+
+Ruthlessly tackle the core problem and subordinate everything else to it. Of course supporting domains need to be delivered but without the core domain then you will unlikely remove the constraint or achieve your goal.
+
+Don’t focus on tech, focus on solutions. Deliver value not software. Change your name. Software developers are a self fulfilling prophecy. My first job was Analyst programmer. Much better 
+
+Work together and play nicely.
+
+Finally good night and thank you Eric for a fantastic book and thanks for the thousands that he has inspired (and that have inspired him) and who have inspired me and given so much for the community to help us become a little better each day. Lastly remember it’s all about context so don't take what I say, or anyone says, verbatim, understand things and learn how to leverage the experince in your own context. Always be the humble student, don’t stop learning, and never, never, never stop asking questions.
+
