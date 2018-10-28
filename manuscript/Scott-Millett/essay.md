@@ -171,6 +171,7 @@ When picking scenarios to model, don’t go for the low-hanging fruit; ignore th
 
  > “Technology can bring benefits if, and only if, it diminishes a limitation.” —Eli Goldratt
 
+An initial model is a product of exploration and creativity. However you should no stop at the first useful model you produce and you should constantly validate your model against different ideas and new problems. Experimentation and exploration fuel learning. Breakthroughs only occur when teams are given time to explore a model and experiment with its design. Spending time prototyping and experimenting can go a long way in helping you shape a better design. It can also reveal what a poor design looks like. You need to challenge your assumptions and realign with the big picture. Ask yourself are you sure that you are focused on the core problem and have not been distracted by an interesting yet less valuable side problems? Is the solution cost effective and simple enough? If the solution is complex have we missed a chance to simply the problem? 
 
 ### The Jurassic Park Principle
 
