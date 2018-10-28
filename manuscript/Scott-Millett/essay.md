@@ -206,10 +206,12 @@ Don’t let design patterns and principles get in the way of getting things done
 Keep your model simple and focused, and strive for boring plain code. Often teams quickly fall into the trap of overcomplicating a problem. Keeping a solution simple does not mean opting for the quick and dirty; it’s about avoiding mess and unnecessary complexity. Use simplicity during code review or pair programming. Developers should challenge each other to ensure they are proving a simple solution and that the solution is explicitly focused only on the problem at hand, not just a general solution to a generalized problem.
 
 
-* Simplify problems so that you can produce simpler solution models
-* Don't gold plate software, good is often good enough - remember the goal.
-* Nothing wrong with a hack if you excplicity understand the trade offs - story about EZY testing costs
-* Software Is Just A Means To An End
+#### Change the Problem
+
+Writing software is expensive, code is expensive to produce and maintain. If you can solve a solution without code it’s great. If you can limit what you output this is a good thing. Teams should be rewarded for developing simple solutions that enable business capability at a low actual cost and low opportunity cost. One way to do this is to change the problem. If you have a poorly understood or inefficient business process then applying a technical solution to it will simply create an expensive automated, but more complex process.
+
+Don’t be lazy and code around the problem. Sometime it’s easier to code and add to domain complexity rather than change business process as it’s difficult to get the decision makers people in a room. Simplify problems so that you can produce simpler solution models, Simplify the problem. Change business process to make software dev easy. It’s easy and lazy to not change process as it’s been like that and it’s established - you wouldn’t think that way about code. Refactor the business
+
 
 ### Explore alternative models
 
