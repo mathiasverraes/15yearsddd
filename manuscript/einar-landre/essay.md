@@ -42,11 +42,11 @@ To illustrate that agents are domain objects I have provided a piece of Java cod
 	public class MyAgent implements Runnable {
 	    
 	    public void run() {
-			  while true {
-		   	  // Percept environment
-		   	  // Select and execute action
-				  // Update internal state
-			  }
+		while true {
+		  // Percept environment
+		  // Select and execute action
+		  // Update internal state
+		}
 	    }
 	}
 
