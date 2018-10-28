@@ -252,9 +252,27 @@ What is important to understand is that it is not the individual components of a
   
 ### Identify constraints in delivering the solution 
 
-* Constraints outside  IT, vendors and business colleagues
-* Obsess over dependencies
-* simplify relationships. 
+The context map, ever evolving, ensures that teams are informed of the holistic view of the system, both technical and organizational, enabling them to have the best possible chance of overcoming issues early and to avoid accidentally weakening the usefulness of the models by violating their integrity.
+
+In complex systems there will be many dependencies. You should understand and work with others that own these dependencies to unblock flow for the big picture. The more you manage and, ideally, remove dependencies the easier your life will become..
+
+In many ways, the communication between bounded contexts, both technical and organizational, is as important as the bounded contexts themselves. Information that context maps provide can enable teams to make important strategic decisions that improve the success of a solution. A context map is a powerful artifact that can bring new team members up to speed quickly and provide an early warning for potential trouble hot spots. Context maps can also reveal issues with communication and work ows within the business.
+
+### Understanding Ownership and Responsibility
+
+Accountability and responsibility are other non-technical areas that can affect a project. Dening team ownership and management for subsystems that you need to integrate with is essential for ensuring changes are made on time and in line with what you expect. Context mapping is about investigation and clarification; you may not be able to draw a clear context map straight away, but the process of clarifying responsibility, explicitly defining blurred lines, and understanding communication ow while mapping contexts is as important as the nished artifact.
+
+
+### Identify the grey areas business process 
+
+The business processes that happen between and take advantage of bounded contexts are often left in no‐man’s‐land without clear responsibility and clarity regarding their boundaries and integration methods. A context map, focusing on the nontechnical aspects of the relationships, can reveal broken business process flow and communication between systems and business capabilities that have degraded over time. This revelation is often more useful to the businesses that are able to better understand and improve process that spans across departments and capabilities. The insight can be used to reduce risk of project failure by tackling ambiguity early and asking powerful questions that help the success of the project.
+
+The often gray area between contexts that govern business process is also void of accountability when changes are being made, and is only discovered later on in a project’s life cycle.
+
+Context maps reveal the departmental boundaries involved in a project. If your team does not own all the contexts in play, coordination with other teams and other lines of management and prioritization needs to take place. Understanding these obstacles up front gives you a much greater probability of success on a project and enables you to tackle nontechnical problems such as release scheduling before they become blockers.
+
+In a similar manner, changes that require integration with third‐party contexts can expose requirements on testing environments and coordination with outside teams or at least access to sandbox accounts and documentation.
+
 
 ### Collaborate to solve the big picture
 
