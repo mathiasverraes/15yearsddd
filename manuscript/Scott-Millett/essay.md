@@ -143,6 +143,8 @@ To know where to focus effort you need to understand what makes the application 
 
 ### Collaborate on viable solutions rather than looking for requirements 
 
+ > “Opinion is really the lowest form of human knowledge. It requires no accountability, no understanding. The highest form of knowledge… is empathy, for it requires us to suspend our egos and live in another’s world. It requires profound purpose larger than the self kind of understanding.” ― Bill Bullard
+
 A software developer is primarily a problem solver who utilizes technology to implement a solution. Developers are fantastic at educating themselves on technology and project methodologies; however, decomposing a problem and being able to distill what is important from what is not will enable a good developer to become a great one. You should spend as much time in the problem space as you do in the solution space.
 
 Just as a useful model is derived over a series of iterations, so too must a problem space be refined to reveal the true intent behind a stakeholder’s vision. Listening and drawing the why as well as the what and when from stakeholders is a skill that developers should practice just as they practice coding katas.
