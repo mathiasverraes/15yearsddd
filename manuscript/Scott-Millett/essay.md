@@ -122,14 +122,13 @@ The IT department is as responsible for overall business success rather than sim
 
 ## Collaborate on the direction for a solution
 
- * Collaborate on the direction for a solution with decision makers and experts, people that are passionate about the problem space
- * Model-Driven Design
- * Collaboration is key. Don’t sit and wait for requirements - offer solutions. Don’t leave it to others. If you know the goal and know the business and can do IT you can offer solutions rather than waiting to be asked.
- * What is the definition of an Analyst programmer? An analyst is an individual who performs analysis of a topic
- * Offer opportunities / art of the possible before you are asked - be proactive
- * Have lots of ideas / models
- * Data entry example. Don’t assume anything - don’t think oh it doesn’t use code!
+By gaining an alignment on the real business constraint or opportunity you will be able to progress from having a shallow understanding of your problem domain but a good grasp on requirements to a deep understanding of business needs with an eye on opportunities that you can enable. Remember people will tell you what they want rather than what is needed, the difference is subtle but leads to very different outcomes. Therefore don’t sit and wait for requirements - offer solutions. 
 
+Start with a big picture understanding of the vision of the solution so that everyone has an alignment point. Highlight the important areas and those that need to be good enough. Facilitate collaborative workshops on model design and problem simplification. You need to actively participate in solution design away from the computer. Contribute to your own requirements, don’t simple leave it to others, If you understand the goal, know the business, or have access to domain experts, and possess the technical skills you can offer solutions rather than waiting to be asked. 
+
+I often wonder about that the titles of roles are somewhat self fulfilling. When I first started out in the world of IT my first job title was Analyst Programmer. The definition of An analyst is an individual who performs analysis of a topic and Programmer is a person who writes computer programs. Therefore half of my job was to understand about problems and the other half was to translate that understanding into language a computer could understand. Titles such as Software developer and engineer focus solely on the technical side and assume that the problem is refined enough that it can be turned into a set of requirements. The reality as we all know is seldom so.
+
+A focus purely on the technical side highlights a bigger problem: when designing software for systems with complex logic, typing code will never become a bottleneck. The code is an artifact of developers and domain experts working together and modeling the problem domain. The code represents the end of the process of collaboration and discovery. A developer’s job is to problem solve, and problem solving is sometimes easier done away from the keyboard in collaboration with domain experts. In the end, working code is ultimately the result of learning and understanding the domain.
 
 ### Show passion for the problem domain
 
