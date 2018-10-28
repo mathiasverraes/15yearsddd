@@ -101,9 +101,13 @@ To know where to focus effort you need to understand what makes the application 
  
  ### Applying the Theory of Constraints to reveal impediments to business value throughput
 
- * Shift focus from local optimisations to increasing the flow of the system
- * For example 2nd class shipping postage may save money but is uncompetitive and will lose sales and hit revenue line.
- * Remove impediments to producing business value
+The theory of constraints (TOC) is a management paradigm introduced by Eli Goldratt that states that a system will be limited to achieving its goals by a few small constraints. Therefore focus and effort should be aimed at removing these constraints to the system above anything else. This will ensure that any output of effort results in maximum outcome to the business goal - more often than not gaining money. In very simple terms, identify the bottleneck that restricts the production of business value and remove.
+
+TOC has a five step process: [image of process]
+
+TOC is all about macro level over micro level thinking. It's not about optimising the link, its about optimising the entire change. To put into other words it's about optimizing your business to achieve its goals rather than a sub department of service.
+
+Why is this relevant to DDD you may ask? DDD has the domain or business at the heart of its philosophy, in that design decisions should be about driving business value. If you don't understand the constraint that is stopping the business form producing value then you can’t make good decision on where to focus effort. The constraint is your core domain. Improving anything other than the core domain may have value but it won't be the most valuable thing to do. It's about removing silo mentally and making sure that teams understand the bigger picture so that they can apply effort in the best possible place - the core domain. Shift focus from local optimisations to increasing the flow of the system. 
 
 ### Be clear on how you deliver business value
 
