@@ -133,14 +133,13 @@ The IT department is as responsible for overall business success rather than sim
 
 ### Show passion for the problem domain
 
- * Don’t stop asking questions!
- * You cannot begin to be useful to solve a problem or look for opportunity if you don't really understand the domain you are working in to a sufficiently deep level
- * Have passion for the problem space - this will make it easier to find solutions and more importantly opportunities
- * You are a professional. You are paid well. You have a responsibility to understand the domain you are in.
- * You don’t need to show empathy, you need to enable your business! You need to show solidarity to help your business
- * Be proactive, be curious
- * Don’t accept mediocrity in business process
- * Programming is understanding and translating into a software specific language. The software proves our understanding.
+Developers are fantastic at educating themselves on technology and project methodologies; however, decomposing a problem and being able to distill what is important from what is not will enable a good developer to become a great one. You should spend as much time in the problem space as you do in the solution space.
+
+Just as a useful model is derived over a series of iterations, so too must a problem space be refined to reveal the true intent behind the original vision. Listening and drawing the why as well as the what and when from stakeholders is a skill that developers should practice just as they practice coding katas.
+
+Software development is a learning process, so is the quest to reveal deep insights in your problem domain. Software development is about understanding, software that works to solve a business problem proves that understanding. If you want to be good at anything, you need to practice, practice, practice. If you want to be a great developer rather than a good one, you need to show passion for the problem and commit to understand your domain. To apply the principles of DDD, you need a driven and committed team—a team committed to learning about its craft and the problem domains it works in. Passion lies within all of us, and if you feel value in the practices of DDD, it is up to you to inspire your team and become an evangelist. Passion is contagious; if you commit to spend time with your domain experts to understand a domain at a deeper level and can show how this results in a more expressive codebase then your team will follow.
+
+Have passion for the problem space, Be proactive, be curious - this will make it easier to find solutions and more importantly opportunities. You cannot begin to be useful to solve a problem or look for opportunity if you don't really understand the domain you are working in to a sufficiently deep level. You are a professional. You are paid well. You have a responsibility to understand the domain you are in.
  
 #### Deliberate discovery at the constraint
 
