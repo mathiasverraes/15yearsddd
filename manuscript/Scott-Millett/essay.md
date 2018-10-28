@@ -42,21 +42,21 @@ Development teams and domain experts use analysis patterns and knowledge crunchi
 
 ### Create models to solve problems
 
- * Model-driven design
-
-### Apply Bounded Contexts to Isolate Models from Ambiguity and Corruption
-
- * Bounded contexts 
-
-### Understanding the Relationships between Contexts
-
- * Contexts Map
- * Tech relationships
- * People relationships
+With an understanding of where to focus effort, the technical team along with domain experts can being to derive a solution represented as a model. This is typically done in a collaborative manner and occurs around on whiteboards, working through concrete scenarios with business experts and generally brainstorming together. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model that can fulfill business use cases, remove constraints or open up opportunities. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is therefore vital that stakeholders and subject matter experts are actively involved and engaged. 
 
 ### Employ tactical patterns to separate technical complexity from domain logic complexity in the code model
 
- * Code patterns
+Once a solution is found and other models and scenarios have been used to validate it then it can be turned into a code model. I hasten to add that this process is not as linear as I am explaining here and often a code model is used during model explanation to prototype ideas in code to understand feasibility. However this recap of DDD is fine for setting the scene for the basis of the rest of the essay.
+
+Tactical patterns are used to keep models supple and to isolate them from infrastructure code to avoid the accidental complexity of merging technical and business concepts. 
+
+A code model is built and bound to the analysis model, ensuring that both stay in sync and are useful during evolution. It is the process of validating and proving the model in practice, because it’s pointless to have an elaborate model if you can’t actually implement it. A Model‐Driven Design approach enables domain knowledge and the shared language to be incorporated into a software model that mirrors the language and mental models of the business experts. 
+
+This then supports collaboration because business experts and software developers are able to solve problems together as a result of their respective models being valid. Insights gained in either model are shared and knowledge is increased, leading to better problem solving and clearer communication between the business and development team.
+
+### Apply Bounded Contexts to Isolate Models from Ambiguity and Corruption
+
+Large models can be split into smaller models and defined within separate bounded contexts where ambiguity in terminology exists or where multiple teams are a working in order to further reduce complexity. The bounded context defines the applicability of the model and ensures that its integrity is retained. The Bounded contexts form a protective boundary around models that helps to prevent software from evolving into a big ball of mud. Context boundaries aren’t limited to just language or team set up. They can be influenced by ambiguity in terminology and concepts of the domain, alignment to subdomains and business capabilities, team organization for autonomy and physical location, legacy code base, third party integration and a host of other factors.
 
 ## So what? I already knew this stuff
 
