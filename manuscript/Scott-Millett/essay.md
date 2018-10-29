@@ -8,7 +8,9 @@ IT is now a crucial capability in any organisation. However most technical teams
 
 The line between the non-technical and technical people within modern businesses is blurring. I am seeing more progressive companies that have blended roles where technical people have a seat at the table. They have a seat because they have earnt it and because they understand the art of the possible and how it will enable their company to beat the competition. They are aligned to the real needs of the business and they have the autonomy to deliver solutions to meet those needs.
 
-This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, how model-driven design is a collaborative process and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues. 
+This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, how model-driven design is a collaborative process and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues.
+
+![Be the art of the possible](../images/scott-millett/artofthepossible.png)
 
 ## Disclaimer
 
@@ -33,7 +35,7 @@ DDD in a nutshell:
  * Split the model (if necessary) into smaller models where there is ambiguity in language, too large for a single team and enclose within a boundary to protect its context 
  * Implement the model in code using the same language as was used in the model. Use tactical patterns to separate technical code for domain code to prevent accidental complexity.
 
-![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
+![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)artofthepossible.png
 
 
 ### Distill the Problem Domain to Reveal What Is Important
