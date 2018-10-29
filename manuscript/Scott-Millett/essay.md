@@ -244,11 +244,13 @@ What is important to understand is that it is not the individual components of a
 
 ### Manage the solution team organisational design for autonomy 
 
-  * Product Teams
-  * Capability Teams
-  * Ownership and accountability
-  * Loosely coupled but highliy cohesive -  understanding of the business capabilities
-  * Align with business process ownership
+Multiple teams working together on a solution should be organised so that they are loosely coupled and as far as possible autonomous. Restricting the number of dependencies for a team will enable them to them to move faster. Ideally a team would also be aligned to the business capability that it is enabling and that contributes to the overall solution. In a perfect world the software team should be embedded in the business department that they are providing capability for rather than sit in a central IT org structure in order to develop a deeper understanding for their part of the domain.
+
+Loosely coupled but highly cohesive teams can achieve autonomy if they understand the goal and have collaborated together on a solution. This causes alignment which enables autonomy. However be careful, without alignment loosely coupled teams can become silos and follow their own agenda and needs for their business department counterparts.
+
+[image - product capability team - warning of silos]
+
+Boundaries are very important. Don’t rush for structure or put concrete boundaries in before you really understand your solution space. Try to avoid precision in the first instance as boundaries and organisational design are harder to move down the line. Play with the model and reveal the linguistic and business capability ownership boundaries before implement software boundaries. Have patience, don’t force it or look for perfection, and don’t get hung up if you are proved wrong and need to rethink. It’s all valuable knowledge and experience. 
   
 ### Identify constraints in delivering the solution 
 
