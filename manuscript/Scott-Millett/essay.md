@@ -122,6 +122,8 @@ A software developer is primarily a problem solver who utilizes technology to im
 
 The IT department is part of the business, you should strive beyond creating software based on what you understand from the business to creating solutions that contribute to the overall business goal. This is a small but important distinction. Its similar to the saying you are not stuck in traffic, you are traffic.  Software developers ARE the business, they just happen to be domain experts in software design just as accountants are domain exports in finance. You should not have a them and us mentally. 
 
+![Business value](../images/scott-millett/businessvalue.png)
+
 The IT department is as responsible for overall business success rather than simply being an order taler. As I have already mentioned IT far more strategic in most businesses than ever before. The advances in technology has disrupted many markets , think of Kodak and blockbusters, giants businesses that have vanished. Delivering true value is about stems form acting from a domain perspective and identify opportunities through leveraging your technical domain knowledge to help your business counterparts to understand the art of the possible. Look for the money,  how can I help shift the KPI, how can I contribute to removing a  bottleneck to business throughput.
 
 
