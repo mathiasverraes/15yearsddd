@@ -308,6 +308,8 @@ There are a plethora of collaboration tools in any organisation. Slack, skype, e
 
 Domain-Driven Design isn’t a silver bullet. Just as switching from an upfront waterfall approach to a more agile/XP project methodology didn’t solve all your software development problems, opting to follow DDD won’t suddenly produce better software. The common denominator in any successful project is a team of clever people who are passionate about what they are doing and who care about it succeeding.
 
+![What makes a great developer](../images/scott-millett/greatdev.png)
+
 However much time you will spend in front of the computer it will dwarf the time you spend working and talking to others. Show respect, patience and humility when working with your peers and business counterparts. Understand different personality types and how different types interact in collaborative session. How they learn -  are the big picture people or detail people. Perfect the art of active listening and empathy as these are very important traits to get on in this world let alone in software development.
 
 Don’t assumptions you know something, always be prepared to challenge your thinking and your opinions. Do not be closed off to a new way of thinking or looking at problems from other people's point of views. Remember there is no right or wrong and it often has an awful lot to do with context.
