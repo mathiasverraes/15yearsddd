@@ -2,12 +2,12 @@
 
 Enterprise resource planning (ERP) software offers an integrated solution for the management of core business processes. Different domains (accounting, sales, relation management, payrolling) are handled by a single software system. A well-executed ERP system has the benefit that information is only stored once, and relations between information are easy to follow since it is all in one system.
 
-We, AFAS Software in the Netherlands, have two decades of experience with building ERP software, and not without success. After working on the same codebase for so long, we strategically decided to do a rewrite. Yes, we know that Joel Spolsky said to not do that[^joel]. We are in the DHH-camp[^dhh], because the new version needs to be different. We experienced three major challenges in developing ERP software that we wanted to tackle in this new version. 
-
-We needed to tackle the complexity in ERP software. Through our discovery of CQRS and event-sourcing we stumbled upon Domain-Driven Design (DDD). The goal of DDD is to tackle the complexity in software, exactly what we needed. We let DDD inspire us as much as possible. But we also decided to take it a step further.
+We, AFAS Software in the Netherlands, have two decades of experience with building ERP software, and not without success. After working on the same codebase for so long, we strategically decided to do a rewrite. Yes, we know that Joel Spolsky said not to do that[^joel]. We are in the DHH-camp[^dhh], because the new version needs to be different. We needed to tackle the complexity in ERP software. Through our discovery of CQRS and event-sourcing we stumbled upon Domain-Driven Design (DDD). And the goal of DDD is to tackle the complexity in software, exactly what we needed. We let DDD inspire us as much as possible. But we also decided to take it a step further. We experienced three major challenges in developing ERP software that we wanted to tackle in this new version. 
 
 [^joel]: <https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/>
 [^dhh]: <https://signalvnoise.com/posts/3856-the-big-rewrite-revisited>
+
+*Disclaimer: although we have quite a journey behind us, we have not arrived yet. The software is not yet in production, and our experiences come solely from testing the system in simulated environments.*
 
 ## The three challenges we faced
 
@@ -43,15 +43,11 @@ First, we are in the ERP business for almost 20 years. We know our domain. We ha
 
 Second, we are not trying to build an MDD platform that allows you to build a large variety of software systems. The platform is only used to build our own ERP system, the platform itself is not the product, it is a tool for us to develop our product. We know the boundaries and scope of our domain. We do not have to solve every problem. We only need to solve our own, ERP related, problems.
 
-In the remaining of this article we will discuss the big lesson we learned so far: our discovery of the bounded context. One of the biggest inspirations that we have found in DDD was the concept of bounded contexts, of different sub-domains, and the idea that the DRY (don’t repeat yourself) rule should only be used within a bounded context[^boundaries].
-
-[^boundaries]: <https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55>
-
-*Disclaimer: although we have quite a journey behind us, we have not arrived yet. The software is not yet in production, and our experiences come solely from testing the system in simulated environments.*
-
 ## One bounded context
 
-As mentioned, we discovered DDD through CQRS and event-sourcing. And we choose to generate a CQRS, event-sourced system from the model, because we believed in the scale and flexibility it would provide us. However, in the initial versions of our platform we still had two monoliths: our generator, and the generated CQRS application.
+As mentioned, we discovered DDD through CQRS and event-sourcing. And we choose to generate a CQRS, event-sourced system from the model, because we believed in the scale and flexibility it would provide us. However, in the initial versions of our platform we still had two monoliths: our generator, and the generated CQRS application. One of the biggest inspirations that we have found in DDD was the concept of bounded contexts, of different sub-domains, and the idea that the DRY (don’t repeat yourself) rule should only be used within a bounded context[^boundaries].
+
+[^boundaries]: <https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55>
 
 The resulting application was a monolithic deployment unit. With every change of the model, we needed to generate the complete application, and deploy it. Now, it isn’t impossible to do (we are doing it, and even manage to deploy a new application with zero-downtime through blue-green deployments), but the deployment feels bigger and more cumbersome than necessary. We feel that this kind of upgrades will not scale and that it will become a problem later one, when the model starts evolving at an increased speed. 
 
@@ -63,15 +59,15 @@ We also had a single monolithic generator that translated the complete model. Th
 
 In the long run this did not work out. We still had a single transformation pipeline on which the whole team was working. The development work was not scaling, because we were getting in the way of each other. There was no real code ownership, so no team felt responsible. And finally, it made it hard to implement an incremental generation flow. 
 
-With the huge amount of code that we were generating, we knew we had a new challenge to face. Three major steps took us from these two single bounded contexts (the generator and the resulting application) into a new realm of multiple bounded contexts:
+With the huge amount of code that we were generating, we knew we had a new challenge to face. Two major steps took us from these two single bounded contexts (the generator and the resulting application) into a new realm of multiple bounded contexts:
 1. The move from a single code generator into a collection of small generator *modules*.
 2. The move from a monolithic runtime application into a platform and many loosely coupled *bundles*. 
 
 ## A swarm of generators
 
-Generating an application involves a lot of steps. The input model is analysed, and patterns are translated into concepts that fit the target platform. And while we were extending the meta-model and handling new target components, our generator became a big ball of mud.
+Generating an application involves a lot of steps. The input model is analysed, and patterns are translated into concepts that fit the target platform. While we were extending the meta-model and handling new target components, our generator became a big ball of mud.
 
-As already mentioned, we tried to mitigate this by adding abstractions and by added different phases in the generator. But we were not able to untangle our big ball of mud. And the solution was found in the concept of different bounded contexts.
+As already mentioned, we tried to mitigate this by adding abstractions and by added different phases in the generator. But we were not able to untangle our big ball of mud. The solution was found in the concept of different bounded contexts.
 
 We started to hard work of breaking up our monolithic generator into several smaller generators: *modules*. A module is in fact a mini-generator, responsible for specific model elements in the meta-model. One module might transform the elements of type x, while another transforms the elements of type y. How many instances of a pattern are present in a model is not important, the module will translate all occurrences into code that matches the target platform.
 
@@ -108,6 +104,6 @@ Are there only upsides? No, as with every design decision there are trade-offs.
 *	Finding the right bounded contexts is in fact hard work. Throwing everything together is easier than really thinking about boundaries and dependencies.
 *	We have lost safety in the generation process. The compilation of C# gave us a warning when different parts were not aligned. With the generation of JSON files we lose that warning. 
 
-No of course, we do try to mitigate some of these challenges. We have, for instance, added explicit usage of contracts between bundles. Every bundle can provide and assume API's. The 'assumptions' are linked to the 'provides', and by doing that we get a graph of the bundles. These contracts form a consistency check and give us insight in the message flows in our application. 
+Now of course, we do try to mitigate some of these challenges. We have, for instance, added explicit usage of contracts between bundles. Every bundle can provide and assume API's. The 'assumptions' are linked to the 'provides', and by doing that we get a graph of the bundles. The resulting graph forms the base for our consistency check and give us insight in the message flows in our application. 
 
 We are not yet at the end of our journey. There is road that needs to be walked, until we go live. And while walking that road we will let the great ideas in the DDD community inspire us!
