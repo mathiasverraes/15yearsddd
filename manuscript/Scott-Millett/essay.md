@@ -215,6 +215,8 @@ Writing software is expensive, code is expensive to produce and maintain. If you
 
 Don’t be lazy and code around the problem. Sometime it’s easier to code and add to domain complexity rather than change business process as it’s difficult to get the decision makers people in a room. Simplify problems so that you can produce simpler solution models, Simplify the problem. Change business process to make software dev easy. It’s easy and lazy to not change process as it’s been like that and it’s established - you wouldn’t think that way about code. Refactor the business
 
+![Simplify the problem](../images/scott-millett/simplifytheproblem.png)
+
 ### Explore alternative models
 
 When you are starting out on a new solution you are probably least knowledge about the domain. Paradoxically this is also the time when you will be making important decisions. Each different model will have different trade offs, pros and cons. Don’t delay making decisions because they are imperfect. A lack of decision making is the biggest blocker I have consistently seen in software projects.  Make decisions based on what you know and what you need to achieve. You can always change your mind when you have more data. It’s not about being right or wrong it’s about moving forward, progressing and driving toward value. You will make wrong decisions but only from the luxury of hindsight so isn’t beat yourself up. 
