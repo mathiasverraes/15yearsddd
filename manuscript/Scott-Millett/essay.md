@@ -81,7 +81,7 @@ Problems are solved not only in code but through collaboration, communication, a
 ### Going Back to First Principles
 The remainder of this essay focuses on distilling the non technical aspects DDD down into first principles that I have learned to focus on over my time working in software development. 
 
-[Show mind map/image of techniques available to do the fundamentals.]
+![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
 
 I would hasten to add that however well you manage the non technical side you it goes without saying you need to have a proficient technical ability. However I have often witness that a good understanding of the goal of the core domain and the problem space itself enable a simpler solution to be found that requires a simpler technical implementation. Again as I mentioned at the start of this essay, I can only write from my perspective and from the experience of the domains that I have worked within. Remember its all about context, and this is mine.
 
