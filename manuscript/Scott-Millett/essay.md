@@ -96,6 +96,8 @@ To know where to focus effort you first need to understand the motivation for so
 
 Why you ask? The reason is to ensure you truly understand what you are being tasked with to solve. As without this fundamental information is it impossible to be certain that you will be able to produce a solution with significant and beneficial outcomes. I will let you in on a secret - your business counterparts don’t have all the answers. They are experts in their respective domains, as you are in your technical domain. But they are not system or process design experts. They are hypothesising on what they should do. Therefore instead of taking things at face value, collaborate and empathise so you can see the thought processes of your business counterparts and understand how they arrived at their conclusions. This activity often leads to a technical team being able to add real value by looking at simpler alternative solutions or problems further up the supply/process chain that may have been missed.
 
+![Understand the problem domain in contetx of the wider business](../images/scott-millett/agreement_on_the_problem.png)
+
 It is always worth asking why rather than just accepting that someone else has done this further up the chain. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? 
 
 Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level.
