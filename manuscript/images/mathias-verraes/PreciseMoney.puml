@@ -1,0 +1,32 @@
+@startuml
+
+!include Shared.puml
+
+
+class PreciseMoney {
+  +add(Money) : PreciseMoney
+  +multiply(Float) : PreciseMoney
+  +round() : RoundedMoney
+}
+
+class RoundedMoney {
+   Constructor rounds the argument
+   + getAmount() : string
+   + getCurrency() : Currency
+}
+
+class MoneyFormatter {
+    + format(RoundedMoney) : String
+}
+
+
+PreciseMoney --> RoundedMoney : round to
+note left of RoundedMoney
+  No way back to
+  PreciseMoney
+end note
+
+
+MoneyFormatter --o RoundedMoney
+
+@enduml

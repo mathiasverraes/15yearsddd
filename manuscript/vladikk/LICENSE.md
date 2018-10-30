@@ -1,0 +1,1 @@
+© 2018 Vladik Khononov ALL RIGHTS RESERVED

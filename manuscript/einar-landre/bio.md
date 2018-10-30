@@ -1,0 +1,1 @@
+Einar Landre has more than 30 years of experience as software developer and architect with a passion for software that captures the dynamic aspects of the domain and help the humans to perform better. He currently work for Equinor at the CIO staff supporting the digitalisation effort.

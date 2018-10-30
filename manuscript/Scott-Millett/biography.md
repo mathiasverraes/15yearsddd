@@ -1,0 +1,1 @@
+Scott Millett is the Director of IT for Iglu.com, and has been working with .NET since version 1.0. He was awarded the ASP.NET MVP in 2010 and 2011, and is the author of Patterns, Principles, and Practices of Domain-Driven Design, Professional ASP.NET Design Patterns and Professional Enterprise .NET.

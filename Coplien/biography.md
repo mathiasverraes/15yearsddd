@@ -1,1 +1,0 @@
-James O. Coplien has been working the past 40 years to explore the fundamental, simple models and ideas that lie beneath both human-centric computer programs, and that ground the organizations that create them. As in this essay, he strives to bridge the ideas and communities of disciplined formal thought with everyday practice.

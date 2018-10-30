@@ -1,0 +1,13 @@
+@startuml
+
+!include Shared.puml
+
+interface PreciseMoney
+PreciseEUR --|> PreciseMoney
+PreciseUSD --|> PreciseMoney
+
+interface RoundedMoney
+RoundedEUR --|> RoundedMoney
+RoundedUSD --|> RoundedMoney
+
+@enduml
