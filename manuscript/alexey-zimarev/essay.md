@@ -1,6 +1,8 @@
-> This essey is the first chapter of the Hands-On Domain Driven Design with .NET book
+# TODO TITLE ALEXEY
 
-# Introduction
+## Introduction
+
+> This essey is the first chapter of the Hands-On Domain Driven Design with .NET book
 
 The software industry appeared back in the early 1960s and is growing ever since. We have heard predictions that someday all software would be written and we will not need more software developers, but this prophecy has never become a reality, and the growing army of software engineers is working hard to satisfy continually increasing demand.
 
@@ -19,11 +21,11 @@ The objective of this chapter is to understand:
 *   Understanding complexity
 *   The role of knowledge in software development
 
-# Understanding the problem
+## Understanding the problem
 
 We rarely write software to write some core. Of course, we can create a pet project for fun and to learn new technologies, but professionally, we build software to help other people to do their work _better, faster, and more efficiently._ Otherwise, there is no point in writing any software in the first place. It means that we need to have a _problem_, which we intend to solve. Cognitive psychology defines the issue as an obstacle between the current state and the desired state.
 
-## Problem space and solution space
+### Problem space and solution space
 
 In their book _Human Problem Solving_ (1972, Englewood Cliffs, N.J.: Prentice-Hall), Allen Newell and Herbert Simon outlined the problem space theory. The theory states that humans solve problems by searching for a solution in a _problem space_. The problem space describes these initial and desired states and possible intermediate states. It can also contain specific constraints and rules that define a context of the problem. In the software industry, people operating in the problem space are usually customers and users.
 
@@ -49,7 +51,7 @@ One more aspect to consider when searching for a solution to a given problem. Th
 
 The exploratory approach to find and choose solutions involves more work spiking alternative ways to solve the problem, but the answer that is found during this type of exploration will most probably be much more precise and valuable. We will discuss more fixation on the first possible solution later in this chapter.
 
-## What went wrong with requirements
+### What went wrong with requirements
 
 Many of us are familiar with the idea of requirements for software. Developers rarely have direct contact with the one who wants to solve some problem. Usually, some dedicated people such as requirements analysts, business analysis, or product managers, talk to customers and generalise outcomes of such conversations in the form of functional requirements.
 
@@ -70,13 +72,13 @@ We shall not think that requirements are waste. There are many excellent analyst
 
 However, lean and agile methodologies embrace more direct communication between developers and end users. Understanding the problem by everyone involved in building software, from end users to developers and testers, finding solutions together, eliminating assumptions, building prototypes for end users to evaluate - these things are being adopted by successful teams, and as we will see later in the book, they are also closely related to Domain-Driven Design.
 
-# Dealing with complexity
+## Dealing with complexity
 
 Complexity is something we are dealing with every day, consciously, and unconsciously. Merriam-Webster defines the word "complexity" as the quality or state of being complex. The world around us is somewhat chaotic, but we are using our instinct and experience to ignore this complexity or deal with it.
 
 In software, the idea of complexity is not different. Most of the software is complex, as much as problems this software is trying to solve. Realising what kinds of complexity we are dealing with when creating software thus becomes very important.
 
-## Types of complexity
+### Types of complexity
 
 In 1986, the Turing Award winner Fred Brooks wrote a paper called _No Silver Bullet – Essence and Accident in Software Engineering_ made a distinction between two types of complexity: essential and accidental complexity. Inherent complexity is coming from the domain, from the problem itself, and it cannot be removed without decreasing the scope of the problem. In contrast, accidental complexity is brought to the solution by the solution itself - this could be a framework, a database or some other infrastructure, different kinds of optimisation and integration.
 
@@ -100,7 +102,7 @@ Domain-driven design helps you focus on solving complex domain problems and conc
 
 The rule of thumb when dealing with complexity is: embrace essential, or as we might call it, domain complexity and eliminate or decrease the accidental complexity. Your goal as a developer is not to bring too much accidental complexity. Hence that very often the accidental complexity is caused by over-engineering.
 
-## Categorising complexity
+### Categorising complexity
 
 When dealing with problems, we don't always know if these problems were complex. Moreover, if they are complex, how complex? Is there a tool for measuring complexity? If there is, it would be beneficial to measure or at least categorise the problem complexity before starting to solve it. Such measurement would help to regulate the solution complexity as well, since complex problems also demand a complex solution, with rare exclusions from this rule. If you disagree, we will be getting deeper into this topic in the next section.
 
@@ -145,7 +147,7 @@ Advanced modelling and implementation techniques that are lean enough to allow t
 
 Here we only have a brief overview of the complexity classification. There is more to it, but for this book, the most important outcome is that DDD can be applied almost everywhere, but it is virtually of no use in obvious and chaotic domains. EventStorming as a design technique for complex systems would be useful for both complicated and complex domains, along with event-sourcing, which suits the complex domain best. 
 
-## Decision making and biases
+### Decision making and biases
 
 The human brain processes a tremendous amount of information every single second. We do many things on some autopilot, driven by instincts and habits. Most of our daily routines are like this. Another area of brain activity is thinking, learning and decision making. Such actions are being performed significantly slower and require much more power than those "automatic" operations.
 
@@ -167,7 +169,7 @@ Cognitive biases are playing a crucial role here. Some biases can profoundly inf
 
 The importance of knowing how our decision-making process works is hard to overestimate. The books referenced in this section contain much more information about human behaviour and different factors that can have a negative impact on our cognitive abilities. We need to remember to turn on the _System 2_ in order to make better decisions, which are not based on emotions and biases.
 
-# Knowledge
+## Knowledge
 
 Many junior developers tend to think that software development is typing code and when they become more experienced in typing, will know more IDE shortcuts and learn frameworks and libraries by heart - they will be ninja developers, being able to write something like Instagram in a couple of days.
 
@@ -176,7 +178,7 @@ Well, the reality is harshly different. In fact, after getting some experience a
 > Software development is a learning process. Working software is a side-effect. 
 > _Alberto Brandolini_
 
-## Domain knowledge
+### Domain knowledge
 
 Not all knowledge is equally useful when building a software system. Knowing about writing Java code in the financial domain might not be very beneficial when you start creating an iOS app for real estate management. Of course, principles like Clean Code, DRY and so on are helpful no matter what programming language you use. However, the business knowledge of one domain might be vastly different from what you need for some other domain.
 
@@ -195,7 +197,7 @@ The general advice here is to talk to people and talk to many different people, 
 *   Domain Story-Telling, a technique proposed by Stefan Hofer and his colleagues from Hamburg University (http://domainstorytelling.org/) advocates using pictograms, arrows and a little bit of text, plus numbering actions sequentially, to describe different interactions inside the domain. The technique is easy to use, and typically there is not much to explain to people participating in such a workshop before they start using it to deliver the knowledge.
 *   EventStorming, an advantageous technique, which is invented and coined by Alberto Brandolini. He explains the method in his book _Introducing EventStorming_ (2017, Leanpub) and we will also go into more details later in this book when we start analysing our sample domain. EventStorming uses post-it notes and a paper roll to model all kinds of activities in a straightforward fashion. Workshop participants write facts of the past (events) on post-its and put them on the wall, trying to make a timeline. It allows discovering activities, workflows, business process and so on. Very often it also uncovers ambiguities, assumptions, implicit terminology, confusion and sometimes conflicts and anger. In short - everything, what the domain knowledge consists of.
 
-## Avoiding ignorance
+### Avoiding ignorance
 
 Ignorance is the single greatest impediment to throughput. - Dan North
 
@@ -223,7 +225,7 @@ In the article _Introducing Deliberate Discovery_ ([https://dannorth.net/2010/
 
 To mitigate these risks, Dan recommends using _deliberate discovery_, i.e., seeking knowledge from the start. Since not all knowledge is equally important, we need to try identifying those sensitive areas, where ignorance is creating most impediments. By raising knowledge levels in these areas, we enable progress. At the same time, we need to keep new troublesome areas and resolve them too; and this process is continuous and iterative.
 
-# Summary
+## Summary
 
 In this chapter, we briefly touched on the concepts of problem and solution spaces, requirements, complexity, knowledge and ignorance. Although at first, these topics seem not to be directly related to software development, they have a significant impact on how and what we deliver.
 
@@ -239,7 +241,7 @@ To build such software, you must understand the problem of your user. You need t
 
 In the next chapter, we will do a deep dive into the importance of language and discover the definition of Ubiquitous Language.
 
-# Further reading
+## Further reading
 
 *   Snowden D J, Boone M E. (2007). "A leader's framework for decision making". Harvard Business Review 2007 November issue
 *   Kahneman, Daniel (2011). "Thinking, fast and slow" (1st ed.). New York: Farrar, Straus, and Giroux.
