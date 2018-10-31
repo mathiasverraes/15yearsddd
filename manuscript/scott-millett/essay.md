@@ -1,6 +1,6 @@
 # Distilling DDD into first principles
 
-> “I don’t have talent, so I just get up earlier.” —Henry Rollins
+*Parts of this essay first appeared in the book Patterns, Principles, and Practices of Domain-Driven Design (Wrox 2015) by Scott Millett and Nick Tune.*
 
 If I could offer you one piece of advice (apart from always wear sunscreen), it would be to do your utmost to move beyond simply understanding your domain and get to a position where you are in sync with your business vision, goals, strategy and constraints. You should share the same worries as your business counterparts: are we going to hit budget? how do we successfully launch our proposition in a new territory? how do we remove the bottleneck in fulfillment? If you are able to move to a more fundamental level of understanding for your business then you should be in a position that not only gives you a deeper level of understanding for your domain enabling you to produce effective solutions, but will also allow you to proactively identify product opportunities that offer true business value.
 
@@ -13,6 +13,8 @@ This essay is about my story and how DDD helped me learn more about solving prob
 ![Be the art of the possible](../images/scott-millett/artofthepossible.png)
 
 ## Disclaimer
+
+> “I don’t have talent, so I just get up earlier.” —Henry Rollins
 
 As this is all from my perspective it is heavily influenced by my own experience. I am not a consultant nor have I worked as a contractor so my experience is limited to the domains of e-commerce in one flavour or another. However in my opinion these domains have been sufficiently complex and thus have benefited from applying the practices of Domain-Driven Design. 
 I am not a jedi master in the art of Domain-Driven Design, I did not attend the Eric Evans finishing school (does that exist, if so please send me details) so I am unable to offer any words of wisdom less the ones that I have come to regard as lessons I have learnt. 
