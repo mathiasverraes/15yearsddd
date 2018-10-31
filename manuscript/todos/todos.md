@@ -11,3 +11,4 @@
 - Martin Fowler: edit transition
 - fix all image paths
 - all todos.txt files and TODO annotations in the texts
+- Greg Young
