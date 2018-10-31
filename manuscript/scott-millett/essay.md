@@ -2,13 +2,13 @@
 
 *Parts of this essay first appeared in the book Patterns, Principles, and Practices of Domain-Driven Design (Wrox 2015) by Scott Millett and Nick Tune.*
 
-If I could offer you one piece of advice (apart from always wear sunscreen), it would be to do your utmost to move beyond simply understanding your domain and get to a position where you are in sync with your business vision, goals, strategy and constraints. Dare I say you should obsess over your business and your customers. You should share the same worries as your business counterparts: are we going to hit budget? how do we successfully launch our proposition in a new territory? how do we remove the bottleneck in fulfillment? If you are able to move to a more fundamental level of understanding for your business then you should be in a position that not only gives you a deeper level of understanding for your domain, enabling you to produce effective solutions, but will also allow you to proactively identify product opportunities that offer true business value.
+If I could offer you one piece of advice (apart from always wear sunscreen), it would be to do your utmost to move beyond simply understanding your domain and get to a position where you are in sync with your business vision, goals, strategy and constraints. You should share the same worries as your business counterparts: are we going to hit budget? how do we successfully launch our proposition in a new territory? how do we remove the bottleneck in fulfillment? If you are able to move to a more fundamental level of understanding for your business then you should be in a position that not only gives you a deeper level of understanding for your domain, enabling you to produce effective solutions, but will also allow you to proactively identify product opportunities that offer true business value.
 
 It should come as no surprise to you that software is eating the world and that IT is now a crucial capability in any organisation. However most technical teams only seem to have a shallow understanding of the domain they work within and in my experience are more focused on tech for tech’s sake over the overall strategy and needs of a business. Advances in technology have afforded a huge amount of opportunity for business development and evolution, however the majority of businesses are yet to catch up on these opportunities. This is not due to a lack of technical savviness from business colleagues but more from a lack of alignment from technical people, those that understand the art of the possible, which prevents them from seeing opportunities.  
 
 The line between the non-technical and technical people within modern businesses is blurring. I am seeing more progressive companies that have blended roles where technical people have a seat at the table. They have a seat because they have earnt it through leveraging the art of the possible, technical opportunities, to remove a constraint on the production of business value. They are aligned to the real needs of the business and they have the autonomy to deliver solutions to meet those needs.
 
-This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, how model-driven design is a collaborative process and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues. 
+This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues. 
 
 ![Be the art of the possible](../images/scott-millett/artofthepossible.png)
 
@@ -20,21 +20,22 @@ This essay is all from my perspective and therefore it is heavily influenced by 
 
 Over my career I have had the great fortune of working in a industry full of the most generous of people from all over the world. The community of software is very good at offering opinions, advice and experience - all of which needs to be understood in the context that it is offered and of course moulded to the context that it will be applied in. 
 
-So while I can’t guarantee that my words of wisdom will fix all your problems I do hope you find something in the lessons that I have learned over the years that will act as a catalyst to helping you on your DDD journey. Remember its all about context, and this is mine.
+So while I can’t guarantee that my words of wisdom will fix all your problems (or any). however I do hope you find something in the lessons that I have learnt over the years that perhaps can act as a catalyst to helping you on your DDD journey. Remember its all about context, and this is mine.
 
 ## The fundamental concepts of DDD
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
 
-Before I talk about my takeaways from DDD and my view on the first principles I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple. Of course the devil is in the detail.
+Before I talk about my takeaways from DDD and my view on the first principles I want to quickly recap on the fundamental concepts of Domain-Driven Design as it is often misunderstood when in my opinion it is deceptively simple. Of course the devil is in the detail. 
 
 DDD in a nutshell:
 
- * Distill a large problem domain into smaller subdomains. 
- * Identify the core sub domains. Those of greater value to focus effort and time
- * Collaborate with experts to build model that will provide solutions to solve problems or create opportunities in the core domain.
- * Split the model (if necessary) into smaller models where there is ambiguity in language, too large for a single team and enclose within a boundary to protect its context 
- * Implement the model in code using the same language as was used in the model. Use tactical patterns to separate technical code for domain code to prevent accidental complexity.
+ * Distill a large problem domain into smaller subdomains.
+ * Identify the core sub domains to reveal what is Important. The core domains are those of greater value to the business which require more focus, effort and time.
+ * Collaborate with experts to discover analysis model that will provide solutions to solve problems or reveal opportunities particularly in the core domain.
+ * Use the same ubiquitous language to bind the analysis model to the code model. Use tactical patterns to separate technical code from domain code to prevent accidental complexity.
+ * Split the model (if necessary) into smaller models where there is ambiguity in language or the model is too large for a single team. Enclose the model within a boundary to protect the models integrity. When working with multiple models it's  important that they are understood in context.
+ * Keep a context map to understand the relationships, social and technical, of all models in play.
 
 ![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
 
@@ -43,23 +44,15 @@ DDD in a nutshell:
 
 Development teams and domain experts use analysis patterns and knowledge crunching to distill large problem domains into more manageable subdomains. This distillation reveals the core sub domain—the reason the software is being written. The core domain is the driving force behind the product under development; it is the fundamental reason it is being built. DDD emphasizes the need to focus effort and talent on the core subdomain(s) as this is the area that holds the most value and is key to the success of the software.
 
-![Distillation](../images/scott-millett/distillation.png)
-
 ### Create models to solve problems
 
-With an understanding of where to focus effort, the technical team along with domain experts can being to derive a solution represented as a model. This is typically done in a collaborative manner and occurs around on whiteboards, working through concrete scenarios with business experts and generally brainstorming together. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model that can fulfill business use cases, remove constraints or open up opportunities. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is therefore vital that stakeholders and subject matter experts are actively involved and engaged. 
+With an understanding of where to focus effort, the technical team along with domain experts can begin to derive a solution represented as a analysis model. This is typically done in a collaborative manner occuring around whiteboards, working through concrete scenarios with business experts and generally brainstorming together. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model, using a shared, ubiquitous Language,  that can fulfill business use cases, remove constraints or open up opportunities. 
 
-### Employ tactical patterns to separate technical complexity from domain logic complexity in the code model
+When a useful analysis model is discovered a code model. I hasten to add that this process is not as linear as I am explaining here and often a code model is used during model explanation to prototype ideas in code to understand feasibility. The code model is to bound to the code analysis model via the use of a shared, or as DDD refers to it a Ubiquitous Language. The Ubiquitous Language ensures that both models stay in sync and are useful during evolution. Insights gained in either model are shared and knowledge is increased, leading to better problem solving and clearer communication between the business and development team.
 
-Once a solution is found and other models and scenarios have been used to validate it then it can be turned into a code model. I hasten to add that this process is not as linear as I am explaining here and often a code model is used during model explanation to prototype ideas in code to understand feasibility. However this recap of DDD is fine for setting the scene for the basis of the rest of the essay.
+Tactical patterns are used to keep the code model supple and to isolate it from infrastructure code thus avoid the accidental complexity of merging technical and business concerns. 
 
-Tactical patterns are used to keep models supple and to isolate them from infrastructure code to avoid the accidental complexity of merging technical and business concepts. 
-
-A code model is built and bound to the analysis model, ensuring that both stay in sync and are useful during evolution. It is the process of validating and proving the model in practice, because it’s pointless to have an elaborate model if you can’t actually implement it. A Model‐Driven Design approach enables domain knowledge and the shared language to be incorporated into a software model that mirrors the language and mental models of the business experts. 
-
-This then supports collaboration because business experts and software developers are able to solve problems together as a result of their respective models being valid. Insights gained in either model are shared and knowledge is increased, leading to better problem solving and clearer communication between the business and development team.
-
-### Apply Bounded Contexts to Isolate Models from Ambiguity and Corruption
+### Split large models to isolate from ambiguity and corruption
 
 Large models can be split into smaller models and defined within separate bounded contexts where ambiguity in terminology exists or where multiple teams are a working in order to further reduce complexity. The bounded context defines the applicability of the model and ensures that its integrity is retained. The Bounded contexts form a protective boundary around models that helps to prevent software from evolving into a big ball of mud. Context boundaries aren’t limited to just language or team set up. They can be influenced by ambiguity in terminology and concepts of the domain, alignment to subdomains and business capabilities, team organization for autonomy and physical location, legacy code base, third party integration and a host of other factors.
 
