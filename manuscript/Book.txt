@@ -1,3 +1,4 @@
+todos/todos.md
 alberto-brandolini/essay.md
 alexey-zimarev/essay.md
 anita-kvamme/essay.md
@@ -11,6 +12,7 @@ jeremie-chassaing/essay.md
 kenny-baas-schwegler/essay.md
 martin-fowler/essay.md
 mathias-verraes/essay.md
+mel-conway/essay.md
 michiel-overeem/essay.md
 scott-millett/essay.md
 scott-wlaschin/essay.md

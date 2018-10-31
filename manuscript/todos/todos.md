@@ -1,9 +1,11 @@
+# Todos
+
 - fix markdownlint-cli output
 - cover image
 - table of contents
 - convert David West's entry to markdown
 - Rebecca Wirfs-Brock
-- Mel Conway
+- convert Mel Conway
 - Mathias Verraes
 - Cyrille Martraire: formatting
 - Martin Fowler: edit transition
