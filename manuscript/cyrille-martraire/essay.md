@@ -12,7 +12,7 @@ Since I’ve first talked about my enthusiasm for monoids at conference around t
 
 Just one important warning: please don’t confuse monoids with monads. Monoids are much easier to understand than monads. For the rest of the text, we will keep monads out of scope, to focus solely on monoids and their friends.
 
-# What are Monoids?
+## What are Monoids?
 
 Monoids come from a part of mathematics called abstract algebra. It's totally intimidating, but it really doesn't have to, at least not for monoids, which are creatures so simple that kids pretty much master them by age of 2 (without knowing of course)
 
@@ -50,7 +50,7 @@ Ok at this point, you are perhaps like:
 
 But stay with me, we'll see how this really closely relates to your daily job.
 
-## So what?
+### So what?
 
 So when I started explaining monoids to people I also explained it to my wife. She instantly got it, but then asked: what for?
 
@@ -76,7 +76,7 @@ If you apply that often, then you can deal with high levels of complexity with e
 
 ![image alt text](images/cyrille-martraire/image_8.jpg)
 
-## Examples Please!
+### Examples Please!
 
 You already know a lot of monoids in your programming language:
 
@@ -94,7 +94,7 @@ All this is not difficult. Still, such a simple thing is a key to very complex b
 
 It's all about *composability*, which is highly desirable pretty much everywhere. .
 
-## Implementing monoids in your usual programming language
+### Implementing monoids in your usual programming language
 
 So how do we implement monoids in plan Java code? 
 
@@ -114,11 +114,11 @@ This add() method returns a new instance, as value objects should do. It must no
 
 In addition, being immutable and side-effect-free means that testing is a no-brainer: just pass data in, and assert the result out. Nothing else can happen to make it more complicated.
 
-# Monoids in domain modeling
+## Monoids in domain modeling
 
 Domain-specific lists, like a mailing list defined as a list of emails addresses, can form a monoid at least twice, once with the union operation, and a second time with the intersection operation. The neutral element would be nobody() in the former case, and everybody() in the latter case. Note the naming of the neutral elements that is domain-specific, instead of more generic names like *empty* or *all*. But we could go further and rename the intersection() operation into a word like *overlapping* is this was the way the domain experts talked about this problem.
 
-## Money and Quantity
+### Money and Quantity
 
 Let's start with the good old Money analysis pattern, from Martin Fowler: (EUR, 25) + (EUR, 30) = (EUR, 55). And in case the currencies don't match, we would throw an exception in the add method. Note that throwing exception indeed break perfect composability, but in practice we could deal with some, as long as they only reveal coding mistakes.
 
@@ -128,7 +128,7 @@ Our money class would be defined in UML like this:
 
 The Money pattern is indeed a special case of the more general Quantity analysis pattern: "Representing dimensioned values with both their amount and their unit" (Fowler).
 
-## Cashflows and sequences of cashflows 
+### Cashflows and sequences of cashflows 
 
 Now that we have a money amount, we can make it into a cashflow, by adding a date: 
 
@@ -162,7 +162,7 @@ At this point you get the picture: monoid are all about what we could call an ar
 
 Note that the addition operation in the Cashflow Sequences above is in basically the list concatenation (e.g. *addAll()* in Java), where cashflows on the same date and on the same currency are then added together using the addition operation of the cashflow themselves.
 
-## Ranges
+### Ranges
 
 A range of numbers or a range of dates can be seen as a monoid, for example with the compact-union operation, and the empty range as the neutral element:
 
@@ -196,11 +196,11 @@ public final class Range{
 
 Note that the internal implementation can absolutely delegate the work to some off-the-shelf implementation, e.g. some well-known, well-tested open-source library.
 
-## Predicates
+### Predicates
 
 Predicates are natural monoids, with logical AND and the ALWAYS_TRUE predicate, or with logical OR and the ALWAYS_FALSE predicate.
 
-## Grants
+### Grants
 
 But even unexpected stuff like read/write/execute grants can form a monoid with some merge operation defined for example as "the most secure wins"::
 
@@ -228,7 +228,7 @@ public final enum Grant{
 
 Of course it’s up to your domain expert to decide which exact behavior is expected here, and how the operation should be named.
 
-## Monoids of monoids are monoids
+### Monoids of monoids are monoids
 
 Nesting monoids can easily lead to monoids. For example in many systems you have configuration maps for the settings of an application. You often have a default hardcoded one, then by order of precedence one by department, then another by desk, and ultimately one by user. This leads naturally to a monoid form:
 
@@ -286,7 +286,7 @@ Of course in this example, each value would have to be itself a monoid, with its
 
 What I like in this example is also that it shows that value objects don't have to be small-ish. We can have huge objects trees as values and as monoids, and it works well. And don't obsess too much about the memory allocation here, most of the values are reused many times, really.
 
-## Non Linear 
+### Non Linear 
 
 But not everything is that easy to model as monoids. For example, if you have to deal with partial averages and want to compose them into a bigger average, you cannot write: Average + Average as it would just be WRONG:
 
@@ -478,11 +478,11 @@ Moving average don't compose unless you keep all their respective memories and c
 
 Note that one potential impediment to making an arbitrary calculation into a monoid could be concerns such as being ill-conditioned, or value overflow, but I never had this issue myself.
 
-# Monoids And Friends: Applications Notes
+## Monoids And Friends: Applications Notes
 
 As shown with the pipes, monoids are ubiquitous in our daily lives, and are part of our universal language to describe things, even without ignoring their abstract definition. Everybody knows how to stack glasses or chairs. My kids know how to combine wooden trains together to create longer trains. 
 
-## Declarative style
+### Declarative style
 
 This ability to compose stuff is part of our mental models, and as such can be part of our Ubiquitous Language in the DDD sense. For example in the hotel booking domain, we could say that a booking from January 21 to 23 combined to another booking in the same hotel from January 23 to 24 is equivalent to one single booking from January 21 to 24:
 
@@ -540,7 +540,7 @@ Payments invoice = monthlyFee
 
 One major benefit is that the cognitive load is minimal. You just have to learn the type and its combine method, and that's it. And yet it gives you an infinite number of possibilities to combine them into exactly what you want. 
 
-## Domain-Specific, within one Bounded Context
+### Domain-Specific, within one Bounded Context
 
 You may be tempted to reuse monoidal value objects across various parts of a larger system, but I would not advocate that. Even something as simple a Money class can be specific to some sub-domain. 
 
@@ -550,15 +550,15 @@ Another example this time with cashflows: in a tax-related domain, you can’t j
 
 *...dealing with money is too critical to be regarded as a Generic Subdomain. Different projects have different needs and expectations of how money will be handled. If money matters, you need to build a model that fits your specific problem space...*
 
-## Monoid, multiple times. 
+### Monoid, multiple times. 
 
 It’s not uncommon for some domain concept to be a monoid more than once, for example once with addition and the neutral element ZERO, and a second time with multiplication and the neutral element ONE. As long as it makes enough sense from a domain perspective, then it’s desirable to have more structures (being a monoid multiple times) or to be a stronger structure (see other mathematical structures later in this document).
 
-## Internal implementation hackery
+### Internal implementation hackery
 
 Also note that neutral elements may call for some internal magical hacks for their implementation. You may rely on a magic value like -1 or Integer.MIN-VALUE, or on some special combination of magic values. You may think it’s bad code, and it would be if it was meant to be seen or used regularly. However as long as it’s well-tested (or built from the tests) and as long as it’s totally invisible for the caller of the class, then it will only cause harm when you are changing this class itself, which is probably acceptable. A monoid typically is not subject to a lot of changes, it’s a finely tuned and highly consistent system that just works perfectly, thanks to its mathematical ground.
 
-## Established Formalisms, for Living Documentation
+### Established Formalisms, for Living Documentation
 
 Monoids are one of the most frequent algebraic structures we can observe in the world of business domains. But other structures like groups (monoids with inverse elements), space vectors (addition with multiplication by a real number coefficient) and cyclic groups (think modulo) are also common. You can learn more about all these structures on Wikipedia and see whether they apply for your practical domain problems.
 
@@ -588,7 +588,7 @@ Since a class can be a monoid several times, you would also need to mark the cus
 
           operation="add")
 
-## Self-Explaining Values
+### Self-Explaining Values
 
 Now suppose you want a complete audit on all the calculations, from the initial inputs to the result. Without monoids you'll have a bad time going through all the calculations to insert logs at each step, while making the code unreadable and with plenty of side-effects.
 
@@ -634,7 +634,7 @@ new Ratio(1, 3)
 
 One question with the trace is to decide whether or not to use for the object equality. For example, is (5/6, "") really equal to (“⅚, “(1/3)*(5/2)”)? One way is to ignore the trace in the main object equals(), and to create another strictEquals() if necessary that uses it.
 
-## Encapsulated Error Handling 
+### Encapsulated Error Handling 
 
 Many calculations can fail. We cannot divide a number by the number zero. We cannot subtract 7 from 5 in the set of natural integers. In software, error handling is an important source of accidental complexity, like in defensive programming, with checks statements bloating every other line of code.
 
@@ -652,7 +652,7 @@ In the case of ranges with the union operation, you may want to introduce a spec
 
 In the case of natural integers and subtraction, the way to make the function total is to extend the set with negative integers (which at the same time will promote the monoid into a group with inverses) The way to make the square root function (nothing to do with a monoid) a total function would be to extend the set from real numbers to the superset of complex numbers.
 
-## How to turn anything into a monoid
+### How to turn anything into a monoid
 
 This idea of extending the initial set with additional special values is a common trick for monoids, and not just for error handling. It’s also useful to artificially turn any set into one that is closed under a given operation. 
 
@@ -660,7 +660,7 @@ Given a function with some input I and output O that are not of the same type, w
 
 For example, given a function that gets a String and returns an integer, we can introduce the type Something (String, int), so that we now have a function that gets a Something and also returns a Something. 
 
-# Testing Monoids
+## Testing Monoids
 
 As mentioned already, monoids are easy to test as they’re immutable and have no side-effect. Given the same inputs, the *combine* operation will always return the same result. And with just one single function, the testing surface of a Monoid is minimal. 
 
@@ -762,7 +762,7 @@ public void errorIsAbsorbingElement(
 
 The PBT tool will run these test cases for a number (the default being 100) of random values.
 
-# Beyond monoids 
+## Beyond monoids 
 
 When we model real-life domains into software, we most frequently recognize Monoids as the underlying mathematical structures that best matches the domain as we think about it. 
 
@@ -814,11 +814,11 @@ Over the past 15 years I've created my own domain-specific values from all the a
 
 * **cycle** of order N: a + N = a
 
-## Inheriting the algebraic properties from the implementation structures 
+### Inheriting the algebraic properties from the implementation structures 
 
 We usually implement domain-specific concepts from the standard built-in types of the programming language: boolean, integers and other numbers, finite sets of enums, Strings, and all kinds of lists. It happens that all these types exhibit many properties: numbers are rings, groups, space vectors, enums can be seen as Cyclic Groups, boolean are groups, lists and maps can easily be seen as monoids. And it happens that putting several structures next to each other as fields (product types) usually preserves the relation if the operation on the whole is defined as the field-wise operation of each of the components. This explains why so many domain concepts *inherit* part of their internal implementation structure, unless you mess with their operation. Think about it when you implement.
 
-## Make your own arithmetic to encapsulate additional concerns
+### Make your own arithmetic to encapsulate additional concerns
 
 Creating your own arithmetic helps keep your code simple even when you need to perform calculation of a value "with something else", like keeping track of the accuracy of the calculation, or of its uncertainty, or anything else. The idea is to expand the value into a tuple with the other thing you also are about:
 
@@ -846,7 +846,7 @@ Creating your own arithmetic is more natural and more good-looking with operator
 
 For more examples on how drawing on established formalisms and algebraic structures, don’t hesitate to dig into [JScience](http://jscience.org/api/org/jscience/physics/amount/Amount.html); I did a decade ago and I learnt a lot from it. It’s built on a *linear algebra* layer of supertypes, from which everything else is built upon.
 
-# Case Study: Environmental Impact Across a Supply Chain
+## Case Study: Environmental Impact Across a Supply Chain
 
 *Just like other code snippet across this article, the code for this case study is **[onlin*e](https://gist.github.com/cyriux/a263efb9c483bcefe72e49c3343ff24e)*.** *
 
@@ -1056,7 +1056,7 @@ EnvironmentalImpact(3 suppliers,
 
 Which is what we wanted. We can then extend that approach for many other dimensions of environmental impact accounting, more details on accuracy, estimated vs measured vs calculated values, traceability of the numbers etc., just by expanding the concepts at each level, while still keeping it all as nested mathematical structures that compose perfectly. This approach scales for high complexity, and for high cardinality as well. 
 
-# Domain-Driven Design loves monoids 
+## Domain-Driven Design loves monoids 
 
 Domain-Driven Design leans towards a functional programming style in various aspects. The most visible is the obvious Value Object tactical pattern, but in the Blue Book you can also find the patterns Side-Effect-Free Functions, Closure of Operations, Declarative Design and Drawing on Established Formalisms.
 
