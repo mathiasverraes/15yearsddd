@@ -1,4 +1,4 @@
-# Domain Driven Design as Usability for Coders
+# Domain Driven Design as Usability for Coders (by Anita Kvamme)
 
 ## My Way into Modelling
 Having a usability background, I learned years ago about a model which stated that if you are able to communicate the functionality by using a design model which reflects the user´s mental model, you are more likely to get a system with a high degree of usability. This model is probably best known from Don Norman famous book The Design of Everyday Things published back in 1988.
@@ -35,7 +35,7 @@ Together all these aspects will highly influence the coder´s mental model of th
 
 ## Minimizing the Mental Model to Code Jungle Gap
 The same way as usability area for decades has work against minimizing the gap between the designer´s model and the user´s mental model, DDD is a powerful set of principles to facilitate for a small as possible gap between the coder´s mental model of the codebase and the code. So for me, applying DDD isn´t just fun and useful when implementing complex business functionality, it is actually usability for the coders.
-![](../images/anita-kvamme/MentalModelCodeJungelGap.png)
+![](../images/anita-kvamme/MentalModelCodeGap.png)
 
 Sometimes I wonder, if it is this usability aspect of DDD that is the reason for when having started to apply DDD, it is seems hard to stop. And who knows, maybe that is part of the reason why DDD is celebrating 15. years anniversary with increasing popularity. 
 
