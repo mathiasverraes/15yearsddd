@@ -40,6 +40,6 @@ The same way as usability area for decades has work against minimizing the gap b
 Sometimes I wonder, if it is this usability aspect of DDD that is the reason for when having started to apply DDD, it is seems hard to stop. And who knows, maybe that is part of the reason why DDD is celebrating 15. years anniversary with increasing popularity. 
 
 ## References
-*The Design of Everyday Things, author: Dan Norman, published in 1988.
-*Jessica Kerr´s Keynote at Explore DDD 2018: <https://www.youtube.com/watch?v=nVRUv30coyA>
-*Jakob Nielsen article about Mental Models: <https://www.nngroup.com/articles/mental-models/>
+- The Design of Everyday Things, author: Dan Norman, published in 1988.
+- Jessica Kerr´s Keynote at Explore DDD 2018: <https://www.youtube.com/watch?v=nVRUv30coyA>
+- Jakob Nielsen article about Mental Models: <https://www.nngroup.com/articles/mental-models/>
