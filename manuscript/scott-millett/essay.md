@@ -71,25 +71,24 @@ Having the right soft skills to avoid becoming entrenched or attached to an earl
 Teams concerned only with writing code focus on the tactical patterns of DDD. They treat the building block patterns as a bible rather than a guide, with no understanding of when it’s okay to break the rules. They waste effort adhering to the rules of the patterns. This energy is better spent on understanding why it needs to be written in the first place. DDD is about discovering what you need to write, why you need to write it, and how much effort you should use. The tactical patterns of DDD are the elements that have evolved the most since Eric’s book was written, with the strategic side of DDD remaining faithful to Eric Evan’s original text, albeit there has been great progress on the techniques of how to distill problem spaces which I will discuss later. How development teams create domain models is not nearly as important as understanding what models to write in the first place and how to develop them in a bounded context. Understanding the what and the why of problem solving is a more important process to get correct than how you are going to implement it in code. 
 
 ### Why sample applications don’t tell the full story
-One of the most often-asked questions on software development forums is this: Can I see a sample application? There are probably many good solutions that show the result of a product developed under a DDD process, but much of the benet of DDD is not revealed when you only examine the code artifact. DDD is performed on whiteboards, over coffee, and in the corridors with business experts; it manifests itself when a handful of small refactorings suddenly reveal a hidden domain concept that provides the key to deeper insight. A sample application does not reveal the many conversations and collaborations between domain experts and the development team.
 
-The code artifact is the product of months and months of hard work, but it only represents the last iteration. The code itself would have been through a number of guises before it reached what it resembles today. Over time, the code will continue to evolve to support the changing business requirements; a model that is useful today may look vastly different to the model used in future iterations of the product.
+One of the most often-asked questions on software development forums is “Can I see a sample application?” There are probably many good solutions that show the result of a product developed under a DDD process, but much of the benefit of DDD is not revealed when you only examine the code artifacts. DDD is performed on whiteboards, over coffee, and in the corridors with business experts; it manifests itself when a handful of small refactorings suddenly reveal a hidden domain concept that provides the key to deeper insight. A sample application does not reveal the many conversations and collaborations between domain experts and the development team nor does it reveal the “Aha!” moments when deeper understanding of the problem domain is discovered.
 
-If you were to view a solution that had been built following a DDD approach hoping to emulate the philosophy, a lot of the principles and practices would not be experienced, and too much emphasis would be placed on the building blocks of the code. Indeed, if you were not familiar with the domain, you would not find the underlying domain model very expressive.
-DDD does prescribe a set of design best practices, patterns, and building blocks that are often mistakenly thought to be core to applying DDD to a product. Instead, think of these design artifacts
-as merely a means to an end used to represent the conceptual model. The heart of DDD lies deep in the collaboration between the development team and domain experts to produce a useful model.
+The code artifact is the product of months and months of hard work, but it only represents the last iteration. The code itself would have been through a number of guises before it reached what it resembles today. Over time, the code will continue to evolve to support the changing business needs; a model that is useful today may look vastly different to the model used in future iterations of the product.
+
+If you were to view a solution that had been built following a DDD approach hoping to emulate the philosophy, a lot of the principles and practices would not be experienced, and too much emphasis would be placed on the building blocks of the code. Indeed, if you were not familiar with the domain, you would not find the underlying domain model very expressive at all.
 
 ### Don't miss the real vale of DDD
-A team focusing too much on the tactical patterns is missing the point of DDD. The true value of DDD lies in the creation of a shared language, specific to a context that enables developers and domain experts to collaborate on solutions effectively. Code is a by-product of this collaboration. The removal of ambiguity in conversations and effortless communication is the goal. These foundations must be in place before any coding takes place to give teams the best chance of solving problems. When development does start to focus on language, context and collaboration enable code to be well organized and bound to the mental models of the business.
-Problems are solved not only in code but through collaboration, communication, and exploration with domain experts. Developers should not be judged on how quickly they can churn out code; they must be judged on how they solve problems.
+
+A team focusing too much on the tactical patterns is missing the point of DDD. The true value of DDD lies in the creation of a shared language, specific to a context that enables developers and domain experts to collaborate on solutions effectively. Code is a by-product of this collaboration. The removal of ambiguity in conversations and effortless communication is the goal. These foundations must be in place before any coding takes place to give teams the best chance of solving problems. Problems are solved not only in code but through collaboration, communication, and exploration with domain experts. Developers should not be judged on how quickly they can churn out code; they must be judged on how they solve problems with or without code.
 
 ### Going Back to First Principles
-The remainder of this essay focuses on distilling the non technical aspects DDD down into first principles that I have learned to focus on over my time working in software development. 
+
+The remainder of this essay focuses on distilling these non technical aspects of DDD down into first principles that I have learned to focus on over my time working in software development. The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
 
 ![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
 
-I would hasten to add that however well you manage the non technical side you it goes without saying you need to have a proficient technical ability. However I have often witness that a good understanding of the goal of the core domain and the problem space itself enable a simpler solution to be found that requires a simpler technical implementation. Again as I mentioned at the start of this essay, I can only write from my perspective and from the experience of the domains that I have worked within. Remember its all about context, and this is mine.
-
+I would hasten to add that however well you manage the non technical side, it goes without saying you need to have a proficient technical ability. However I have often witnessed that a good understanding of the goal of the core domain and the problem space itself enables a simpler solution to be found that requires a simpler technical implementation.
 
 ## Gain agreement on the problem
 
@@ -97,23 +96,41 @@ I would hasten to add that however well you manage the non technical side you it
  
 To know where to focus effort you first need to understand the motivation for solving a problem. You need to have a solid understanding of the business big picture so that you are able to understand a problem in context. What problems, constraints, opportunities exist that have led up to this point and proved that this problem deserves a solution. 
 
-Why you ask? The reason is to ensure you truly understand what you are being tasked with to solve. As without this fundamental information is it impossible to be certain that you will be able to produce a solution with significant and beneficial outcomes. I will let you in on a secret - your business counterparts don’t have all the answers. They are experts in their respective domains, as you are in your technical domain. But they are not system or process design experts. They are hypothesising on what they should do. Therefore instead of taking things at face value, collaborate and empathise so you can see the thought processes of your business counterparts and understand how they arrived at their conclusions. This activity often leads to a technical team being able to add real value by looking at simpler alternative solutions or problems further up the supply/process chain that may have been missed.
+Why you ask? The reason is to ensure you truly understand what you are being tasked with to solve. As without this fundamental information it is impossible to be certain that you will be able to produce a solution with significant and beneficial outcomes. I will let you in on a secret - your business counterparts don’t have all the answers. They are experts in their respective domains, as you are in your technical domain. But they are not system or process design experts. They are hypothesising on what they should do. Therefore instead of taking things at face value, collaborate and empathise so you can see the thought processes of your business counterparts and understand how they arrived at their conclusions. This activity often leads to a technical team being able to add real value by looking at simpler alternative solutions or problems further up the supply/process chain that may have been missed. Techniques such as impact mapping are great for highlight this.
 
 ![Understand the problem domain in contetx of the wider business](../images/scott-millett/agreement_on_the_problem.png)
 
-It is always worth asking why rather than just accepting that someone else has done this further up the chain. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? 
+It is always worth asking why rather than just accepting that someone else has done this further up the chain. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? Often the result of systematically asking "why" will reveal a painfully simple solution or a complete change in direction. Clearly don’t ask the question as a child might, be creative with how you search for the truth, but pull on the string of a problem until you reach the root of the matter.
 
-Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level.
+Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level. This will enable you, and you team, to buy in and be fully committed to an idea.
  
  ### Applying the Theory of Constraints and Systems Thinking
 
 The theory of constraints (TOC) is a management paradigm introduced by Eli Goldratt that states that a system will be limited to achieving its goals by a few small constraints. Therefore focus and effort should be aimed at removing these constraints to the system above anything else. This will ensure that any output of effort results in maximum outcome to the business goal - more often than not gaining money. In very simple terms, identify the bottleneck that restricts the production of business value and remove.
 
-TOC has a five step process: [image of process]
+TOC has a five step process:
 
-TOC is all about macro level over micro level thinking. It's not about optimising the link, its about optimising the entire change. To put into other words it's about optimizing your business to achieve its goals rather than a sub department of service.
+ * Identify the constraint. 
+   Understand the key issue that is causing a bottleneck or preventing your business generating value 
 
-Why is this relevant to DDD you may ask? DDD has the domain or business at the heart of its philosophy, in that design decisions should be about driving business value. If you don't understand the constraint that is stopping the business form producing value then you can’t make good decision on where to focus effort. The constraint is your core domain. Improving anything other than the core domain may have value but it won't be the most valuable thing to do. It's about removing silo mentally and making sure that teams understand the bigger picture so that they can apply effort in the best possible place - the core domain. Shift focus from local optimisations to increasing the flow of the system. 
+ * Determine how to eliminate the constraint. 
+   Focus all efforts at removing the constraint as fast as possible
+
+  * Subordinate everything else to the constraint. 
+    Don’t be distracted by any other problems that are not contributing the constraint. Any other effort elsewhere is wasted effort. The constraint is the priority to resolve.
+
+  * Remove the constraint. 
+Apply the solution to the constraint in order to remove it.
+
+  * Determine if the constraint has been removed.
+Sometimes you can push a problem down or up stream. If this is the case simply repeat the steps for the new constraint.
+
+TOC is all about macro level over micro level thinking. It's not about optimising the link, its about optimising the entire chain or the system. To put into other words it's about optimizing your business to achieve its goals rather than a sub department of service.
+
+Why is this relevant to DDD you may ask? DDD has the domain or business at the heart of its philosophy, in that design decisions should be about driving business value. If you don't understand the constraint that is stopping the business from producing value then you can’t make a good decision on where to focus effort. The constraint could be your core domain or it could be a problem in a supporting domain that affects your core domain. Improving anything other than the constraint may have value but it won't be the most valuable thing to do. It's about removing silo mentally and making sure that teams understand the bigger picture so that they can apply effort in the best possible place. 
+
+As an example imagine you are part of a team that has been tasked with increasing online transactions by 10%. In order to gain alignment on where to focus you could apply TOC to determine what is the constraint for people checking out. Is it the registration page? If you see a high amount of dropouts you could look for a solution and correct the problem. Then you would look to see what the next big constraint to checking out is. It could be that the checkout flow is fine but by actually increasing the range of product available you would achieve 10% increase in transactions, all being equal.Alternatively if you optimised payment it would have little impact, even if done with great effort and skill, as the constraint is further up the flow. 
+
 
 ### Be clear on how you deliver business value
 
