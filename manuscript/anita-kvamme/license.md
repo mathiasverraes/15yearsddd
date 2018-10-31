@@ -1,0 +1,2 @@
+© 2018 Anita Kvamme ALL RIGHTS RESERVED
+
