@@ -1,6 +1,6 @@
 > This essay is based on my talk “7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems”. It was delivered at Explore DDD, DDD Europe, KanDDDinsky, NDC Sydney, and other conferences.
 
-> There are two sets of images. Hand drawn own, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style.
+> There are two sets of images. Hand drawn one, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style.
 
 # 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems
 
@@ -30,7 +30,7 @@ The latter meant not only an information management system, but an advertisement
 
 Surely The Blue Book reads like poetry[^poetry], but it is not an easy book to read. Luckily for me, I got a really strong grasp of domain-driven design just by reading the first four chapters.
 
-Guess how the system was initially designed? — It would definitely make a certain prominent individual from the DDD community proud.
+Guess how the system was initially designed? — It would definitely make a certain Kazakhstan based, prominent individual from the DDD community very proud...
 
 ![@DDD_Borat](images/vladikk/hand-drawn/2-borat.png)
 
@@ -91,6 +91,7 @@ We took a step back, and redesigned the CRM solution to reflect these revelation
 We started by dividing our monolith into two distinct bounded contexts: Marketing and CRM. We didn’t go all the way to microservices here, or anything like that. We just did the bare minimum to protect the ubiquitous language.
 
 However, in the new bounded context — CRM — we were not going to repeat the same mistakes we did in the Marketing system. No more anemic domain models! Here we would implement a real domain model with real, by-the-book aggregates. In particular, we vowed that:
+
 * Each transaction would affect only one instance of an aggregate;
 * Instead of an OR/M, each aggregate itself would define the transactional scope; and 
 * The service layer would go on a very strict diet, and all the business logic would be refactored into the corresponding aggregates.
@@ -257,8 +258,9 @@ A good example of a supporting subdomain in our company is the Creative Catalog.
 #### Generic Subdomains
 Generic subdomains are all the things that all companies do in the same way. Those are the solved problems. For example, like all companies, we had to manage our systems’ users. We could have implemented our own solution. It would definitely have taken us a long time and loads of effort. I’m sure that, security-wise, our solution wouldn’t have been ideal. And even if it was 100% secure, it still wouldn’t affect the company’s profits in any way. That’s why it’s preferable to use a common, battle-proven solution.
 
-#### Subdomain Type → Implementation Strategy
+#### Tactical Design
 It is a common practice to use this categorization in business domains to drive design decisions:
+
 * For the core subdomains, use the heavy artillery: domain-driven design’s tactical patterns, or Event Sourcing;
 * Supporting subdomains can be implemented with a rapid application development framework; and 
 * Generic subdomains, in almost all cases, are cheaper and safer to buy or adopt than to implement yourself.
@@ -268,6 +270,7 @@ However, this decision model didn’t work well for us.
 Companies, and especially startups like ours, tend to change and reinvent themselves over time. Businesses evolve, new profit sources are evaluated, other neglected, and sometimes unexpected opportunities are discovered. Consequently, business domain types change accordingly. 
 
 Speaking of our company, we have experienced almost all the possible combinations of such changes:
+
 * Both the Event Crunchers and Bonuses started as *supporting* subdomains, but once we discovered ways to monetize these processes, they became our *core* subdomains.
 * In the Marketing context, we implemented our own Creative Catalog. Nothing really special or complex about it. However, a few years later, an open-source project came out that offered even more features than we originally had. Once we replaced our implementation with this product, a *supporting* subdomain became a *generic* one.
 * In the CRM context, we had an algorithm that identified the most promising leads. We refined it over time and tried different implementations, but eventually it was replaced with a fully managed machine learning model running on AWS. Technically, a *core* subdomain became *generic*.
@@ -275,7 +278,7 @@ Speaking of our company, we have experienced almost all the possible combination
 * We also have quite a few examples in our industry of companies that turned *generic* and *supporting* subdomains into their *core* business. For example, Amazon and their AWS Cloud. 
  Once this kind of change in a subdomain type happens, its design should evolve accordingly. Failing to do so in time will lead to blood, tears, and accidental complexities. Hence, instead of making design decisions based on subdomain types, we prefer to reverse this relationship.
 
-#### Implementation Strategy → Subdomain Type
+#### From Tactical Design to Subdomains
 For each subdomain, we start by choosing the implementation strategy first. No gold-plating here: we want the simplest design that will do the job.
 
 ![](images/vladikk/hand-drawn/10-design-to-type.png)
@@ -291,9 +294,10 @@ Second, reversing this relationship creates additional dialog between you and th
 If they think something is a core business, but you can hack it in a day, then questions should be raised about the viability of that business.
 
 On the other hand, things get interesting if a subdomain is considered as a supporting one by the business but can only be implemented using advanced modeling techniques:
+
 * First, the business people may have gotten over-creative with their requirements and ended up with accidental business complexity. It happens. In such a case, the requirements can, and probably should, be simplified.
 * Second, it might be that the business people don’t yet realize that they employ this subdomain to gain an additional competitive edge. (This happened in the case of the Bonuses project.) By uncovering this mismatch, you’re helping the business to identify new profit sources much faster.
-* 
+
 But how do you choose the implementation strategy? At Internovus, we’ve identified a couple of very simple heuristics that allow us to streamline this decision-making process.
 
 ### Tactical Heuristics
@@ -315,6 +319,7 @@ This pattern is based on the domain model, but here we are using event sourcing 
 
 #### Heuristics
 You can decide which modeling pattern you should use by answering a number of questions about the business domain:
+
 * Does the domain in question deal with money directly, require deep analytics or an audit log? If it does, use the event-sourced domain model.
 * How complex is the business logic? Is it more complex than some input validations? Does it have complicated business rules and invariants? If it does, use the domain model.
 * If the business logic is simple, then how complex are the data structures? If it includes complicated object relations or trees, implement the active record pattern.
@@ -323,6 +328,7 @@ You can decide which modeling pattern you should use by answering a number of qu
 
 #### Architectural Patterns
 Once you’ve decided how to model the business domain, mapping an architectural pattern is trivial:
+
 * You need CQRS to implement event-sourced domain model.
 * Domain model requires hexagonal architecture.
 * Use layered architecture for active record.
@@ -358,6 +364,7 @@ What makes this implementation of CQRS, and not a mere data replication, is the 
 We all know that the CQRS pattern originated from the CQS principle. However, in our experience, clinging too tightly to the CQS roots resulted in nothing but accidental complexity. Let me explain.
 
 Originally, we tried to keep our commands “void”, i.e. not returning any data. The more we did it, the more we struggled, until finally we realized that it made little sense. When a user or a system executes a command, they need to know its outcome: 
+
 * Whether the command succeeded or failed.
 * If it failed — why? Were there any validation issues? Or was there a technical issue? 
 * If it succeeded, the user experience may be improved by reflecting the updated data back in the UI.
@@ -368,6 +375,7 @@ We didn’t find any reasons that prevented us from returning this information a
 
 ### Bounded Contexts’ Boundaries
 At Internovus, we’ve tried quite a few strategies for setting the boundaries of bounded contexts:
+
 * Linguistic boundaries: We split our initial monolith into Marketing and CRM contexts to protect their ubiquitous languages;
 * Subdomain-based boundaries: Most of our subdomains were implemented in their own bounded contexts – for example, Event Crunchers and Bonuses.
 * Entity-based boundaries: As we discussed earlier, this approach had limited success in the Marketing Hub project, but it worked well in others. For example, later on we extracted some of the entities out of Marketing into their own bounded contexts.
@@ -379,6 +387,7 @@ Which of these strategies is the recommended one? Neither one fits all cases. Le
 As Udi Dahan pointed out, finding boundaries is really hard — there is no flowchart for that! This statement has profound implications. Since there is no flowchart, the only way to find the right boundaries is by doing some trial-and-error work yourself. Which means, by definition, there will be mistakes. There is no way around it! So let’s acknowledge this and only make mistakes that are easy to fix, and try to avoid the fatal ones.
 
 In our experience, it is much safer to extract a service out of a bigger one, than to start with services that are too small. Hence, we prefer to start with bigger boundaries and decompose them later, as more knowledge is acquired about the business. How wide are those initial boundaries? It all goes back to the business domain — the less you know about the business domain, the wider the initial boundaries.
+
 * For more complex domains, start with bigger boundaries, e.g., linguistic or subdomain boundaries.
 * Simpler ones, like supporting subdomains, can be decomposed earlier, e.g., into subdomain, or even entity-based boundaries.
 
@@ -393,6 +402,7 @@ Again, it is evident even here: the simpler the business domain, the narrower it
 
 ## Summary
 Those are the five pieces of practical advice I wanted to share:
+
 * Ubiquitous language is not optional in any kind of business domain;
 * Subdomain types change — so embrace those changes! Use them to make your design more resilient;
 * Learn the ins and outs of the four business logic modeling patterns, and use them where each is appropriate;
