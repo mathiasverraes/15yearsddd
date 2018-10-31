@@ -1,8 +1,8 @@
+# 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems
+
 > This essay is based on my talk “7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems”. It was delivered at Explore DDD, DDD Europe, KanDDDinsky, NDC Sydney, and other conferences.
 
-> There are two sets of images. Hand drawn own, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style.
-
-# 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems
+> TODO There are two sets of images. Hand drawn own, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style.
 
 One morning, back in 2010, I got a phone call from a friend. He said he was starting a new company. The business was not going to be simple, but if I joined him, from the technical perspective I could do whatever I wanted. I agreed to join him, just like that! 
 
