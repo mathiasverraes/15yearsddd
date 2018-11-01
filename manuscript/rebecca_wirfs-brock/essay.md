@@ -1,1 +1,8 @@
-ToDo
+#Traces, tracks, trails, and paths: An Exploration of How We Approach Software Design
+
+##Introduction
+If I were to be brutally honest about the nature of software design, I would give up on any notion of certainty. The more I know about software and the world it is part of, the more cautious I become about making absolute statements about either. Software design is full of unexpected complexities and continual surprises. I cannot predict which contextual details will suddenly become important. Small details can loom large and undo even the best design intentions.
+Because I acknowledge this uncertainty, I seek out other designers’ stories. I want to learn about the ugly, confusing aspects of design that are rarely written about. I want to incorporate others’ insights into my growing understanding of the nature of software design. I want to learn what heuristics they use to solve their design problems and see where they clash with or complement my own.
+As a designer I often encounter conflicting goals, dynamically changing context, and shifting degrees of certainty about those heuristics I know and cherish. Once in a while this makes me pause to reflect and readjust my thinking. But more often, I quickly take stock of the situation and move on, perhaps only tweaking my design a little, without much exploration or thought. I don’t spend much time consciously rethinking and rearranging my worldview.
+I’m hoping to change that just a little by giving myself some space and time to reflect on how I approach design and share some ways collectively we as designers might grow, alter, articulate, and better share our heuristics. There is much to learn about design from the stories we tell and from the questions we ask of each other.
+
