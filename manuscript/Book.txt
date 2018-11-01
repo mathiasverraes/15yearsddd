@@ -16,4 +16,4 @@ mel-conway/essay.md
 michiel-overeem/essay.md
 scott-millett/essay.md
 scott-wlaschin/essay.md
-vladikk-khononov/essay.md
+vladik-khononov/essay-1.md
