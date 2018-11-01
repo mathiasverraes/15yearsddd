@@ -71,7 +71,7 @@ On the other hand, pattern languages, unlike pattern collections, attempt to def
 
 I know of few examples of published software design pattern languages. *Object-oriented Reengineering Patterns* by Serge Demeyer, Stéphane Ducasse, and Oscar Nierstrasz is a notable one. Each chapter starts with a pattern map illustrating potential sequences through the patterns in the chapter based on actions (see Figure 2 for the pattern map for Chapter 4). These maps illustrate small trails with branches, loops, and options. For example, to gain an initial understanding of a design, you can start with either a top down or bottom up approach and proceed until you have enough understanding to move on to your next re-engineering task.
 
-Figure 2. Each chapter in Object-Oriented Reengineering Patterns is a small language
+Figure 2. Each chapter in *Object-Oriented Reengineering Patterns* is a small language
 
 
 Unlike physical trails, where we are guided to move in a singular direction, software pattern languages seem more loopy and fragmented. But unlike a physical trail where we are constrained by the physical terrain, software designers can skip over any pattern they don’t find useful or go “off trail” at any point to pick up and apply a useful design heuristic, wherever it is found. It’s hard to skip over a part of a physical trail. It’s only possible when there’s a switchback that you can cut through or a branch. But it is usually those optional stretches away from the main trail and then back again that lead to something really interesting (you don’t want to miss that waterfall simply because it is an extra ¼ mile out of the way).
@@ -147,14 +147,14 @@ For example, an event should be named “a reservation for a car rental has been
 I asked Mathias what he meant by keeping internal details private.
 
 
-Mathias then shared this example: If you are keeping monetary units in say 10 digits internally in a service, you would only pass out an amount in 2 digits precision because that’s all other consumers of the event outside of the Bounded Context would need. Perhaps there was another heuristic exposed by this example:
+Mathias then shared this example: If you are keeping monetary units in say 10 digits internally in a service, you would only pass out an amount in 2 digits precision because that’s all other consumers of the event outside of the Bounded Context would need. Perhaps there was another heuristic exposed by this example.
 ***
 *Heuristic:* Don’t design message or event contents for specific subscribers to that event.
 ***
 I wanted to understand the implications of this heuristic. So I asked, “So does that mean that you have to know what processes will consume any event in order to design an event record?” The discussion then got a bit more nuanced. Mathias said that you have to understand how events flow around the system/business. Whatever you do, you publish business events, not technical events that are consumed by other processes outside of a particular Bounded Contexts. So yes, you really need to know how business events might be used to accomplish downstream business processes in other Bounded Contexts. Events along with their relevant information, once published are simply streamed out and stored over time to be picked up (or not) by any process that registers interest in that event. So of course the consumer of an event needs to know how to unpack/interpret the information payload of that event.
 
 
-Distilling what he said, I offered this heuristic:
+Distilling what he said, I offered this heuristic.
 ***
 *Heuristic:* When designing an event-sourced architecture understand how events flow around the system/business.
 ***
@@ -165,13 +165,13 @@ I asked, “Who should have the burden of decoding or translating the event payl
 
 Mathias answered, “the consumer, of course. But the generator of the event cannot ignore the needs of potential consumers. So there might be an agreed upon standard convention for money, for example, is 2 digits precision.”
 
-This led us to conclude we’d uncovered yet another design heuristic: 
+This led us to conclude we’d uncovered yet another design heuristic. 
 ***
 *Heuristic:* Design agreed upon standard formats for information in business events based on expected usage.
 ***
 And just to poke at an edge case that came to mind as we were talking, I asked, “Well, what happens if a new process needs that extra precision?” Mathias was quick to reply, “Well, maybe it needs to be within the Bounded Context of that process that knows of that 10 digits precision.”
 
-I pushed back, “But what if it doesn’t logically belong in the same Bounded Context?” Which led us to conclude that perhaps there was a competing heuristic that needed to be considered along with the “Design agreed upon standard formats” heuristic:
+I pushed back, “But what if it doesn’t logically belong in the same Bounded Context?” Which led us to conclude that perhaps there was a competing heuristic that needed to be considered along with the “Design agreed upon standard formats” heuristic.
 ***
 *Heuristic:* When designing a payload for an event don’t lose information/precision. 
 ***
@@ -189,7 +189,7 @@ More heuristics tumbled out.
 *Heuristic:* If a different actor performs an action it is a different event.
 ***
 For example, it is one thing for a customer to report an accident with the vehicle or to return a car, and another thing for an employee to report an accident or even the car itself if it has telemetry to do so. These are all different kinds of events.
-We discussed more heuristics about events: 
+We discussed more heuristics about events. 
 ***
 *Heuristic:* If there are different behaviors downstream, then multiple, different events might be generated from the same process.
 ***
