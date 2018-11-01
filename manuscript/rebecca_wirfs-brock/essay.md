@@ -267,6 +267,164 @@ More useful information is likely available, waiting for me to bump into it, if 
 
 
 And yet, how certain can I be about whatever advice I find? I tend to trust patterns authors who put in the time and effort to polish and publish their work, who’ve spent time marking their trails, checking that others can follow and that their heuristics make sense to other designers. I place high value on the advice of those who’ve built interesting systems and can tell stories about what they learned including design missteps they made and how they eventually made forward progress. But I don’t necessarily throw away what I have found useful just because someone is enthusiastic about a new software design approach and a new-to-me set of heuristics. They may be experts at some software design approaches that takes years, if not a lifetime, to master. At best, I might only be able to clumsily apply their heuristics after some concerted effort. Or alternatively, they may be trailblazers to places where I don’t want to go.
+## Techniques for actively cultivating design heuristics
+We each have our own set of heuristics we’ve acquired through reading, practice, and experience. Our heuristics, like living trails, continue to evolve and get honed through experience. Some of our heuristics prove durable and are still useful, even in new design contexts. For example, for me, using the lens of role stereotypes from Responsibility-Driven Design to understand system behaviors is useful, even though I know there are newer stereotypes for functional designs and Internet applications that people are writing about. Characterizing roles and interaction patterns is a useful heuristic for understanding the designs of many systems.  I never thought the original stereotypes I conceived to help me and others understand object-oriented designs were universal (and all the stereotypes there were).  So I welcome new ways of characterizing design behaviors.
+
+
+Some heuristics we discard because our design constraints radically change. I no longer worry about managing memory footprint and have put aside those heuristics that were useful back when I designed systems that required memory overlays—for me that trail has been long abandoned. Other heuristics get pushed to the back of our minds when we find new or trendier heuristics we like better. When I discovered object-oriented techniques, I put aside other approaches to structuring systems because I found objects to be so useful. Long ago I took a decision to head down that trail and have continued on that journey.
+
+
+To keep learning, we need to integrate new heuristics with those we already know. Billy Vaughn Koen cautions us to not judge our earlier designs (or earlier designers) too harshly against today’s design standards. Collectively, our state-of-the-art (or SOTA) keeps progressing. And as active, engaged designers, so do we. Recently I have been exploring functional programming languages and designs that employ them, simply because I want to compare heuristics for designing these systems with older, more familiar-to-me ones. I don’t want to get stuck in a rut. Although I may not become an expert, I’ll be a better designer with a richer set of tools.
+### Recording “Sign” with Question-Heuristic-Example Cards
+I have also experimented with ways to articulate new-to-me heuristics in order to see how they fit into my heuristic gestalt. I’ve been playing around with using index cards as a means to capture the gist of a heuristic. This simple technique structures a heuristic in three parts: a question, the answer (which can be then polished into a formulation of the heuristic), and an example or two to help me remember. I call them QHE  or “Q-Hee” cards, for the lack of a better name (see Figure 5). This use of index cards to capture design heuristics is inspired by CRC (Class-Responsibility-Collaborators) design cards invented by Ward Cunningham and Kent Beck.
+
+Figure 5. Following this heuristic, 3 different events would be generated because there are 3 different actors.
+
+An advantage of QHE cards is that they are easy to write.
+
+But just like CRC cards, they can be too terse.
+
+Without actively integrating the heuristic captured on QHE card into my design heuristic gestalt, I find it quickly loses meaning. Once I convert these to a richer form (either by writing further about the heuristic or sketching out a more detailed design example or writing some code), I can then recall more subtleties about that heuristic.
+### Distilling what you hear
+One way I can more actively learn is to view technical presentations as opportunities distill what I hear and integrate those heuristics with my own. I discovered that if I take a picture of some interesting speaker and/or a slide they were presenting it served to jog my memory. Looking at the picture helps me remember what they said so I can write up field notes, if I choose, long after the presentation.
+
+Here are two photos I took at the DDD Europe 2018 conference.
+
+The first is of Eric Evans telling us the story of how he goes about exploring a design concept and all its limitations and design surprises. I found each line on the slide to be a personal heuristic Eric uses to do this (the rest of his talk was filled with examples exploring the quirks and complexities of date and time).
+
+Figure 6. Photo from Eric Evans’ keynote at Domain Driven Design Europe 2018 introducing how he understands a domain
+
+The next photo is from a talk by Michiel Overeem on versioning event stores, a fundamental element of event-sourced architectures (see Figure 7). This slide summarizes the various approaches Michiel found when he surveyed other designers. Event stores are supposed to be immutable. You use them to play back events and recreate system state. Conceptually they are write once stores. But if your event schema changes, various components need to then be able to interpret these new event structures. So how do you make that work in practice? You select a versioning approach (as summarized by the slide in the photo below), depending on the size of your event store, the ability to handle extra information on an event or to transform on the fly to a new event format, whether it is permissible to update a record in place, or if it is expedient to make a copy and then transform to a new format.
+
+
+While Michiel eventually put his [slides](https://speakerdeck.com/overeemm/dddeurope-2018-event-sourcing-after-launch) online, this photo was enough to jog my memory and make the connections between heuristics for updating event stores and heuristics I’d written in pattern form for updating Adaptive Object Model (AOM) systems. Although Event-sourced and Adaptive Object-Model systems are quite different architecture styles, they have similar challenges with updating their models’ schemas. 
+
+Figure 7.  Photo of summary slide from Michiel Overeem’s presentation on Event Sourcing After Launch
+
+### Sharing Heuristics to Start Conversations
+Since my initial conversation with Mathias, we’ve both become energized to do more heuristics hunting. This led to a one-day Heuristics Distillation workshop I held at DDD Europe 2018. At that workshop I shared my heuristics journey and then participants shared a few of their cherished heuristics. Since then, I’ve given other presentations about design heuristics and have been encouraging others to articulate and share their heuristics. Consequently, Victor Bonacci held a workshop at Agile 2018 on Coaching Heuristics: What’s in Your Toolkit? Coaching heuristics aren’t software heuristics, but in Vaughn Koen’s definition of design heuristics, they do fit: Any thing we do in an attempt to make forward progress towards a goal.
+
+
+The format of Victor’s workshop was quite effective. First he explained what heuristics were, then showed a slide listing the 54 coaching heuristics he had collected over the years organized by category. Victor has also created a card deck for his heuristics. He doesn’t sell these cards, but gives them out as gifts. On the face of each card is an illustration or phrase and on the backside the name/source of the heuristic. He finds the deck a useful way to jog his memory as well as means of sharing just the gist of their idea with others (see Figure 8).
+
+Teaching each heuristic in this long, long list would have overwhelmed us. Instead, Victor quickly introduced two or three heuristics in a particular category and then gave us a situation to briefly discuss in small groups. We also had a deck of Victor’s coaching heuristics to refer to if we wanted. We discussed what heuristics (our own or others we had heard about) we might use to try to improve the situation. After each round of discussion, a few shared what they had talked about with the larger group. We repeated this cycle three or four times, learning a few more of Victor’s heuristics, but also, more important it seems, sharing our experiences and our own heuristics. Although the format of this workshop was similar to that of patterns mining workshops, it wasn’t focused on capturing these heuristics so much as it was getting people to share their experiences with others.
+
+Figure 8. Coaching Heuristics Cards created by Victor Bonacci. Each card carries the gist of the heuristic, either as a drawing or phrase on the front side, and the name and source on the back.
+
+### Holding an Imaginary Debate
+One way to appreciate another designer’s approach is to walk a mile in their shoes. Barring that rare opportunity, an intriguing alternative is to take some design advice you find and imagine having a thoughtful debate with that designer. Counter their advice with an opposing set of arguments. Then, distill the essence of the heuristics you find in both your arguments and reflect on the relationships between the heuristics embedded in each point of view. I find this is easier to do if you have either a strong negative or positive reaction to some particular bit of advice. Surprisingly, arguing for an approach that differs from your preferred design heuristic helps you gain an appreciation for that perspective.
+
+
+For example, Paul Graham, in an essay [Revenge of the Nerds](https://www.eecis.udel.edu/~decker/courses/280f07/paper/Revenge.pdf) writes,
+>“As a rule, the more demanding the application, the more leverage you get from using a powerful language. But plenty of projects are not demanding at all. Most programming probably consists of writing little glue programs, and for little glue programs you can use any language that you’re already familiar with and that has good libraries for whatever you need to do.”
+
+One counterargument to Paul’s thesis might be, “What you recommend for complex systems makes sense—use a powerful programming language. But if I am not in a time crunch and what I’m building is simple, I shouldn’t always take the easy path. If always I took your advice for simple programs, how would I ever learn anything new? If the problem is simple, that might be the perfect opportunity for me to try out new ways to solve it and learn something new especially when the consequence of failure isn’t high. Also, sometimes what appears to be simple turns out to be more complicated. And when I push on the limits of what tools and frameworks were designed to do, it is important to stop and rethink my current approach instead of trying to hack away at it until I patch together a solution. Or at least take a break before coming back to what I’ve been struggling with.”
+
+Two heuristics distilled from Paul Graham’s advice:
+***
+*Heuristic:* Use powerful programming language/toolset hand when you have a demanding design problem.
+
+*Heuristic:* It doesn’t matter what programming language you use if you have a simple program. Use programming languages, tools, and frameworks and libraries you are familiar with.
+***
+And the three heuristics found in my counterargument: 
+***
+*Heuristic:* Use simple design tasks as an opportunity to learn new design approaches, tools, programming languages, and frameworks, especially when you aren’t in a time crunch.
+
+*Heuristic:* When you find yourself constantly fighting against the common usage of a framework, revisit your current design approach.
+
+*Heuristic:* Take a break when you have been working too long and don't feel like you are making progress.
+***
+On reflection, Paul Graham’s advice seems geared towards designers who find they waste too much time trying new tools and techniques instead of implementing workable, familiar solutions. On the other hand, without stretching and trying something new, designers can get stuck in a rut. Both viewpoints have some validity. There are always competing heuristics to choose from. And depending on your current context, past experiences, and preferences, you decide between them.
+
+### The work of reconciling new heuristics with your SOTA
+Sometimes it takes effort to first understand and then reconcile newfound heuristics with your existing ones. Designers use different terms to describe similar (but not identical) concepts. Mapping others’ terminology to your language can be fraught with uncertainty.
+
+To illustrate this difficulty, I took advice from Daniel Whittaker’s blog post on [validating commands in a CQRS architecture](http://danielwhittaker.me/2016/04/20/how-to-validate-commands-in-a-cqrs-application/) and tried to align his heuristics with mine for validating input from an http request.
+
+My heuristics for validating input are roughly as follows:
+***
+*Heuristic:* Perform simple edits (syntactic) in browser code.
+
+*Heuristic:* On the server side, don’t universally trust browser-validated edits. Reapply validation checks when receiving requests from any untrusted source.
+
+*Heuristic:* Use framework-specific validation classes only to perform simple syntactic checks such as correct data type, range of values, etc.
+
+*Heuristic:* Use domain layer validation and constraint enforcement patterns to validate all other semantic constraints and cross-attribute validations.
+
+*Heuristic:* Value consistency over cleverness when performing validations. 
+***
+I also make the further distinction between descriptive, operational state, and life-cycle state attributes, based on concepts found in *Streamlined Object Modeling*. Some domain entities go through a one-way lifecycle, from initial to a final state. The current values of any of their life-cycle attributes determine permissible state transitions. In a traditional architecture, the current state of a domain entity is retrieved from a database via an appropriate query. In an event-sourced architecture the current state of a domain entity is synthesized by replaying all of its events (if this is expensive to do, the state may be cached). Some entities switch between different states, which are represented either directly in a state attribute or synthesized through determining current values of its operational attributes. The state such an entity is in determines how it behaves.
+
+In his blog, Daniel uses different words to describe different kinds of data validations. He speaks of “superficial” and “domain” validations. Are these the same as my “simple, syntactic” and “semantic constraints”? Daniel characterizes “superficial” validations as those constraints on input values that must hold true, regardless of the state of the domain and gives this heuristic:
+***
+*Heuristic:* Perform superficial validations before issuing a command, ideally on the client side as well as the server side.
+***
+He also characterizes some validations as being “superficial but requiring the lookup of other information” and advises:
+***
+*Heuristic:* Perform “superficial validations requiring lookup” in the service before issuing a command.
+***
+Finally, he speaks of “domain validations” where the validity of a command is dependent on the state of the model (or I might restate, the current state of the domain) and recommends they be validated in the domain object:
+***
+*Heuristic:* Perform domain validations in the domain objects.
+***
+It seems clear that I must do some mapping of his concepts to mine in order to make sense of both sets of heuristics. Alternatively, I could let these different sets of heuristics rattle around in my brain without making any attempt to integrate them. But that might lead to “parroting” the new heuristics without really understanding how and where to apply them or worse yet, ignoring.
+
+
+When is it worth the effort translate heuristics from one language of design thought to another and then reconcile them? I suspect that this question isn’t asked often. When faced with a new design challenge and new techniques, we have to absorb them the best we can or we won’t be able to jump into that new way of designing. When a design approach is so radically different from what we know, it’s easier to absorb new and different terminology. 
+
+
+It’s when concepts overlap that it takes more effort.
+
+
+There seems to be an overlap between what I describe as syntactic validations and what Daniel calls superficial validations. But “superficial but requiring lookup of other information” doesn’t directly map to any concept I know of. I can conjecture what it might entail.  “Superficial but requiring lookup of other information” could roughly correspond to my cross-attribute constraints (where the knowledge of what to look up seems to be located closer to domain logic, as in a domain service). And his “domain validations” seem to overlap with operational and life cycle state attributes as well as other cross-domain attribute checks that don’t require any “lookup”. 
+
+
+This mapping isn’t perfect. But it will suffice. My heuristics are at a slightly different level than Daniel’s. For example, I speak of how to use frameworks for simple validations. I also include a heuristic for generally how to approach validation design (value consistency over cleverness). But after performing this mental exercise, I think that I understand his heuristics well enough to integrate them with my own.
+
+
+In retrospect, this wasn’t that hard.
+
+
+But still, it took some effort.
+## Dealing with uncertainty, conflicting heuristics, and details
+I suspect we need to let go of some design certainty before we can truly learn from others. When we are so certain we run the danger of painting ourselves into a corner when there are better paths we might take if only we hadn’t been so certain of what we were attempting. Yet it’s not always appropriate to be experimenting. Sometimes we are better off if we keep to a well-trodden design trail. But first we need to know how to find that trail.
+
+
+Most of us, most of the time don’t start designing every day from scratch. There are usually many constraints already in place. Our task is mostly that of refining some design aspect of a pre-existing implementation. In that case, we jump in and get to work, with more or less certainty based on where we’ve been, what we know about the existing design, and what the task is ahead of us. We may not even know what trail we are on, just where we are at the moment.
+
+
+Even so, we still need to make decisions. And those decisions can have far reaching impact. And as we do, we should be aware that multiple design heuristics are always in competition with each other. Should we leave that working code alone or refactor it (not knowing where it will lead – but hopefully to a clearer design)? Should we apply the heuristic, “only refactor when you are adding a new feature” or stop when we notice the code growing crufty and poke at its design (XP calls this it a design spike)? If we don’t, we may be working at refining a shaky design that eventually drags us down. This is how technical debt grows.
+
+
+You can always find a bit of folk wisdom to support what you want to do; and another equally pithy one advising you to do the exact opposite. For example, see [Proverbs that Contradict Each Other](https://www.psychologytoday.com/us/blog/the-human-beast/201202/proverbs-contradict-each-other). Our challenge as designers is to sort through competing heuristics and make a coherent design.
+
+Michael Keeling and Joe Runde recently reported on their [experiences instilling the practice of recording architecture decisions](https://www.agilealliance.org/resources/experience-reports/distribute-design-authority-with-architecture-decision-records/) into their team. Initially, Michael hoped that simply by recording decisions, this would lead to more clarity about their existing designs and improve overall systems’ quality. When designers record their decisions, they lay down a track for others to follow, and to retrospectively learn from. Each decision is “sign” along a unique design journey. Although initially it might be hard to sort out what decisions are worthy to record and to get people to actually write them, eventually there is a payoff.
+
+If I accept that software design is always filled with some degree of uncertainty, any mark or track I lay down to show where I’ve been (even better if I include what I was thinking when I made a design choice) helps me and others around me support our design’s evolution. These decisions could lead to collectively shared awareness of design choices and become the basis for creating a well-followed trail of collectively shared design heuristics. At the very least, those decisions over time create “sign” that others can trace backwards to better understand why the design currently is the way it is.
+
+And I suspect that written design decisions might lead to more commonly shared heuristics, even if they aren’t recorded.
+
+As patterns authors, we intentionally create waypoints—our patterns are points of interests along a design trail we hope others can traverse. But we shouldn’t be content to only write in pattern forms. Patterns convey critical information so that others on similar journeys can learn about our design thinking. But I think we have an opportunity to offer our fellow designers much more.
+
+What if we were to tell more of our personal story as designers and pattern makers? We might describe what territory we’ve passed through, what systems we’ve designed or seen, and under what conditions they were designed. Or, we might share how we discovered our software patterns and enumerate other potential waypoints that spotted or were aware of but didn’t include (and why). We might share where we’d like to travel—other design contexts where we are curious, or not—places where we are cautious or reluctant to recommend using our patterns. We could experiment with recording other heuristics that fill in the gaps, conflict with, augment, and mesh with our patterns. We might share how confidant we were about our patterns’ utility or our perception of their relative value and whether that has changed over time. Or we might be so bold as to rate our pattern trails with recommended design experience required to traverse it successfully. While all this stuff is “outside” our patterns, I think it this is important information for designers to know.
+
+And yet, patterns are just a small part of a much larger body of design know how. Heuristics, like patterns, can be expressed at various levels. Some are small, simple acts. Others are bigger steps, taken at the beginning of a design journey. There are so many design heuristics. We pattern authors can’t hope to mine, organize, or write about them all. Nor should that be our goal.
+
+
+Each designer has a wealth of heuristics she has internalized yet may have difficulty explaining to others.
+
+
+But something magical happens when you formulate a heuristic in your own words and share it with another. It is in the telling to another that I clarify my thoughts. And when I am able to patiently answer their questions, I find I gain even deeper insight.
+
+
+If I take time to write down a heuristic, the act of creating a personal memento brings me even more clarity. And when I’ve revised my writing, shared it and gotten feedback as to whether they understood and appreciated my heuristic (at least a little) then I have something I can share with others separated from me by time or space or distance.
+
+
+This progression from doing to explaining to recording to effectively communicating can be difficult. Not all heuristics are significant enough to warrant a lot of time or energy polishing them. But those that seem important to you are worth sharing. And in conversation, you just might find that what you thought was a simple and obvious seems profound to someone new to your well-trodden design trail. And if you’re lucky, they might even share an insight or observation that adjusts your thinking. As long as we keep learning from each other, design will continue to be fun, and equally important, we designers will continue to evolve our state-of-the-art.
+
+
+
+
 
 
 
