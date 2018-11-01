@@ -1,0 +1,2 @@
+Avraham is a software architect. For the last 25 years he has been designing and leading the implementation of large scale software systems.
+Avraham is also a passionate teacher. He lectures on topics related to software development and human communication.
