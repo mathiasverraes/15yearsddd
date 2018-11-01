@@ -50,6 +50,7 @@ Recently I’ve learned that some pattern authors were not so certain as their w
 Likewise, Eric Evans in several talks suggests that the most important patterns in his collection were the Strategic Patterns. If you look at how the patterns in his book are laid out (see Figure 1) there are really two groupings or patterns collections—those concerned with design details for object designs (e.g. Tactical Design Patterns) and those for organizing and understanding the domains in complex software systems (Strategic Design Patterns).  Evans believes that while the Tactical Patterns are useful for object-oriented programming, they aren’t nearly as important as the Strategic Patterns. He regrets that the Strategic Patterns were in the latter part of his lengthy book, as some readers never get that far. He also points out that a missing pattern, Domain Events, which was only hinted at in his book, has become increasingly important, especially with the increased use of CQRS (Command-Query-Response Segregation) and Event-Sourced architectures to implement Domain Driven Design models.
 
 
+![](../images/rebecca-wirfs-brock/StrategicAndTacticalDDD.png)
 Figure 1. The Domain-Driven Design Patterns are really two collections in one book: Strategic and Tactical Design Patterns
 
 
@@ -71,6 +72,7 @@ On the other hand, pattern languages, unlike pattern collections, attempt to def
 
 I know of few examples of published software design pattern languages. *Object-oriented Reengineering Patterns* by Serge Demeyer, Stéphane Ducasse, and Oscar Nierstrasz is a notable one. Each chapter starts with a pattern map illustrating potential sequences through the patterns in the chapter based on actions (see Figure 2 for the pattern map for Chapter 4). These maps illustrate small trails with branches, loops, and options. For example, to gain an initial understanding of a design, you can start with either a top down or bottom up approach and proceed until you have enough understanding to move on to your next re-engineering task.
 
+![](../images/rebecca-wirfs-brock/InitialUnderstandingPL.png)
 Figure 2. Each chapter in *Object-Oriented Reengineering Patterns* is a small language
 
 
@@ -278,6 +280,7 @@ To keep learning, we need to integrate new heuristics with those we already know
 ### Recording “Sign” with Question-Heuristic-Example Cards
 I have also experimented with ways to articulate new-to-me heuristics in order to see how they fit into my heuristic gestalt. I’ve been playing around with using index cards as a means to capture the gist of a heuristic. This simple technique structures a heuristic in three parts: a question, the answer (which can be then polished into a formulation of the heuristic), and an example or two to help me remember. I call them QHE  or “Q-Hee” cards, for the lack of a better name (see Figure 5). This use of index cards to capture design heuristics is inspired by CRC (Class-Responsibility-Collaborators) design cards invented by Ward Cunningham and Kent Beck.
 
+![](../images/rebecca-wirfs-brock/QHE.png)
 Figure 5. Following this heuristic, 3 different events would be generated because there are 3 different actors.
 
 An advantage of QHE cards is that they are easy to write.
@@ -292,6 +295,7 @@ Here are two photos I took at the DDD Europe 2018 conference.
 
 The first is of Eric Evans telling us the story of how he goes about exploring a design concept and all its limitations and design surprises. I found each line on the slide to be a personal heuristic Eric uses to do this (the rest of his talk was filled with examples exploring the quirks and complexities of date and time).
 
+![](../images/rebecca-wirfs-brock/EricEvans.png)
 Figure 6. Photo from Eric Evans’ keynote at Domain Driven Design Europe 2018 introducing how he understands a domain
 
 The next photo is from a talk by Michiel Overeem on versioning event stores, a fundamental element of event-sourced architectures (see Figure 7). This slide summarizes the various approaches Michiel found when he surveyed other designers. Event stores are supposed to be immutable. You use them to play back events and recreate system state. Conceptually they are write once stores. But if your event schema changes, various components need to then be able to interpret these new event structures. So how do you make that work in practice? You select a versioning approach (as summarized by the slide in the photo below), depending on the size of your event store, the ability to handle extra information on an event or to transform on the fly to a new event format, whether it is permissible to update a record in place, or if it is expedient to make a copy and then transform to a new format.
@@ -299,6 +303,7 @@ The next photo is from a talk by Michiel Overeem on versioning event stores, a f
 
 While Michiel eventually put his [slides](https://speakerdeck.com/overeemm/dddeurope-2018-event-sourcing-after-launch) online, this photo was enough to jog my memory and make the connections between heuristics for updating event stores and heuristics I’d written in pattern form for updating Adaptive Object Model (AOM) systems. Although Event-sourced and Adaptive Object-Model systems are quite different architecture styles, they have similar challenges with updating their models’ schemas. 
 
+![](../images/rebecca-wirfs-brock/MichielOvereem.png)
 Figure 7.  Photo of summary slide from Michiel Overeem’s presentation on Event Sourcing After Launch
 
 ### Sharing Heuristics to Start Conversations
