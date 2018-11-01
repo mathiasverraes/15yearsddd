@@ -1,6 +1,7 @@
 # Expressing the model in the types
 # Expressing the behaviour in the model
 # Bounded Context
+# TODO title
 
 
 We're going on a journey!
@@ -28,71 +29,70 @@ Timezone example
 
 -----
 
-None of the solutions offered below should be taken as truth. I may have already changed my mind on some of them by the time you read them. 
+Sometimes the best way to find out in which Bounded Context a concept from your domain belongs, is by evolving your model until everything finds a natural place. 
 
-## History
+Let's look at some simple requirements, and explore how we could evolve it, as we learn more about the problem we're trying to solve.
 
-In 2010, I wrote a small library with some Value Objects to represent money, and in 2011, I published a first version. It was a typical open source scratch-your-own-itch thing, that solved a problem with incorrect rounding and conversion in an e-commerce project I was working on. It seems to have scratched many itches, as it got quite popular.
+## The problem
 
-I’ve been a bad parent to the project lately. It's in a [new GitHub organisation](https://github.com/moneyphp/money) now, with @sagikazarmark as the new maintainer, who's blowing new life into it.
-
-Over the years, a bunch of forks and variations appeared. I welcomed this, as many of them serve a need that my library didn’t. It freed me from having to support all possible use cases, and avoided feature bloat. 
+Imagine we're working on a typical business application, that deals with sales, accounting, reporting, that sort of thing. 
 
 
-## Design Flaws
+The existing software has some serious issues: monetary values are represented as scalars. In many places, values are calculated at a high precision, rounded down to 2 decimals, and later used again for high precision calculations. From a back-of-the-napkin calculation, we learn that thousands of euros a month are lost to these rounding errors. On top of that, the values can represent different currencies, but the financial reporting is in euro. It is unclear if the code always correctly converts when needed.
 
-<img style="float:right;margin-left: 10px" src="/img/posts/2016-02-29-type-safety-and-money/MoneyTree-small.jpg" alt="MoneyTree">
-
-Apart from being incomplete, the library suffers from fundamental design flaws, some of which can’t be fixed without breaking it.
-
-- It doesn’t support higher precision than the currency’s default precision.
-- As a result of this, it always rounds, so if you chain operations, you end up with rounding errors.
-- It doesn’t support blockchain currencies, or virtual, vendor-specific currencies, like Facebook Credits (now discontinued), casino chips, game credit…
-- Having to enter values in integers was often impractical (eg €1 had to be written as 100.)
-- Some currencies have mills (1/1000<sup>th</sup> of a unit) as their official division (although they are becoming rare). Bitcoin supports 10<sup>−3</sup> (a millibitcoin), 10<sup>−6</sup> (a microbitcoin or a bit), and 10<sup>−8</sup> (a satoshi). Reportedly, the community is considering to introduce even smaller divisions. The library doesn't support any of this.
+    
 
 ## Requirements
 
-TODO in the monolith, there were a lot of places where money was rounded and then later used for precise calculations again, then rounded again. etc
-
-This is what we expect from our model:
+After a couple of good conversations with the experts from sales and accounting, we distill a set of requirements. 
 
 1.	We need to support about 10 currencies, possibly more in the future. When we do add new currencies, it is assumed that the in-house developers will add support in the code. There’s no UI for adding new currencies.
-2.	All operations need to done with a precision of 8 decimals. This is a business decision.
-3.	When showing amounts to users, or pass them along over an API, we always stick to the currency’s official division. In the case of Bitcoin, that does indeed mean we’re keeping a precision of 1 satoshi aka BTC 10<sup>−8</sup>.
-4.	In some markets, our software will need to do specific compliance reporting.
+2.	All price calculations need to done with a precision of 8 decimals. This is a business decision.
+3.	When showing amounts to users, or pass them along over an API, we always stick to the currency’s official division. In the case of EUR or USD, that's 2 decimals. In the case of Bitcoin, that does indeed mean we’re keeping a precision of 1 satoshi aka BTC 10<sup>−8</sup>. TODO does this render correctly in leanpub?
+4.	In some markets, our software will need to do specific compliance reporting. TODO is this relevant?
 5.	All internal reporting needs to be in EUR, no matter what the original currency was.
 6.	We’re using some legacy and third-party systems, that also publish revenues to our internal reporting tool. Most of them only support the currency’s official division, and can’t deal with higher precision.
+
+(Some programming languages don't deal well with highly precise calculations. There are workarounds which we won't discuss here. Just assume that here "number" means a suitable datatype, such as float or Decimal in C# or BigDecimal in Java.)
+
+## A first solution
+
+A good pattern to apply when dealing with monetary values is the Value Object (TODO ref evans). 
+
+In fact, a couple of years before Eric Evans published his book, Martin Fowler described an implementation for `Money` in [Patterns of Enterprise Application Architecture](http://amzn.to/1TN7Tq4). 
+
+The pattern describes an object consisting of two properties, a number for the amount we're interested in, and another property for the associated currency (which in itself could be a Value Object). The `Money` Value Object is immutable, so all operations will return a new instance.
+
+
+![Money](../images/mathias-verraes/Money.png)
+TODO change the diagrams to show Number instead of float
+
+`Currency` can be an enum type supporting our 10 currencies (A simple assertion will do if your language doesn't have enums). We can't initialise the `Currency` object with any other value than our 10 currencies. It only uses the 3-letter ISO symbols, anything else is an error. That satisfies requirement 1.
+
+![Money](../images/mathias-verraes/MoneyFormatter.png)
+
+`Money`’s constructor rounds the numbers to 8 decimals. This gives it enough precision to deal with any currency. We can add some operations to the `Money`class, like `add(Money other) : Money` and `multiply(Number operand) : Money`. They also round to 8 decimals. We'll also need `round(Integer decimals) : Money`.
+
+
+Requirement 3 (showing nicely formatted rounded values to the users), is clearly presentation logic. We should avoid muddying up our domain model for this. So we add a `MoneyFormatter` in the presentation layer, which takes a `Money` argument and returns a string, such as €5.00 or 5,00€, depending on local standards.
+
+We refactor all the places in the old code that do things with money to use the new `Money` object.
+ 
+# More problems 
+
+When evaluating our models, we should always look for things that are painful or awkward to use. These are smells for opportunities for further refinement.
+
+In our current implementation, we support 8 decimals, but the model doesn't really deal well with the fact that some currencies have two or three decimals by default, and some have more. We're still at risk that money is rounded and then reused in a higher precision calculation, which, as any physicist would tell you, is pretty bad.
+
+
+
+
+TODO research this and/or get rid of it
+- Some currencies have mills (1/1000<sup>th</sup> of a unit) as their official division (although they are becoming rare). Bitcoin supports 10<sup>−3</sup> (a millibitcoin), 10<sup>−6</sup> (a microbitcoin or a bit), and 10<sup>−8</sup> (a satoshi). Reportedly, the community is considering to introduce even smaller divisions. The library doesn't support any of this.
+
+# Refactoring towards deeper insight
+
 	
-## Assumptions
- 
-To understand this post, I'm assuming you know:
-
-- what a Value Object is, and why you'd want some;
-- how you can make your objects immutable;
-- why they _should_ be immutable;
-- how you can make operations safer, eg by disallowing $1+€1 without explicit conversion;
-- why splitting €0.05 between two parties is not €0.025+€0.025 but €0.03+€0.02.
-
-## Fowler-style
-
-Let's design!
- 
-Our first instinct is to have the `Money` object from [Fowler's PoEAA](http://amzn.to/1TN7Tq4), consisting of a float<sup>*</sup> and a currency, which in turn could be an object as well. Both are immutable.
-
-(<sup> * </sup> You may not want to use the actual float type in your programming language for dealing with money, as you may run into issues with precision. Do your research.)
-
-<img style="float:right;margin-left: 10px" src="/img/posts/2016-02-29-type-safety-and-money/Money.png" alt="Money">
-
-`Currency` is an enum type supporting our 10 currencies (A simple assertion will do if your language doesn't have enums). We can't initialise the `Currency` object with any other value than our 10 currencies. It only uses the 3-letter ISO symbols, anything else is an error. That satisfies requirement 1.
-
-<img style="float:right;margin-left: 10px" src="/img/posts/2016-02-29-type-safety-and-money/MoneyFormatter.png" alt="MoneyFormatter">
-
-`Money`’s constructor can round floats with more than 8 decimals. We can add some operations, like `add(Money other) : Money` and `multiply(float operand) : Money`. They also round to 8 decimals if needed. 
-
-
-Requirement 3 (showing pretty-printed, rounded values to the users), is clearly presentation logic. We should avoid muddying up our domain model for this. So we add a `MoneyFormatter` in the presentation layer, which takes a `Money` argument and returns a string, such as €5.00 or 5,00€, depending on local standards. Perhaps we even make a HTML widget or helper of sorts, so that our templates don’t need to worry about it.
-
 
 
 ## Itch
