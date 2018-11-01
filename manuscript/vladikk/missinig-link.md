@@ -1,4 +1,4 @@
-# Ubiquitous Language: The IT Industry’s Missing Link
+# The Missing Link
 
 Let’s be honest: our industry’s track record is pretty bad. The vast majority of software projects fail, either by not meeting the budget, timeframes, or by not delivering expected value. Many researches have been made to identify the reasons for these failures, and their results vary. However, if we look at those findings, there is one central theme repeating itself over and over - communication. Either if it’s stated explicitly — “poor communication”, or implicitly, describing the outcomes:
 
