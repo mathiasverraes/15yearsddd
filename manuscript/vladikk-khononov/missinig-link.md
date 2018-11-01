@@ -33,10 +33,10 @@ I argue that ubiquitous language is our industry’s missing link. It is the qui
 
 ## References
 
-“Domain-Driven Design: Tackling Complexity in the Heart of Software”, Eric Evans
-“Why Software Fails", Robert N. Charette
-“Critical Success Factors In Software Projects”, John S. Reel
-“An Investigation of Failure in Information Systems Projects: The Case of Jordan”, Rateb J. Sweis
-“Critical failure factors in information system projects”, K.T. Yeo
-“Critical success factors for software projects: A comparative study”, Mohd Hairul Nizam Nasir and Shamsul Sahibuddin
-“Seven Reasons Why Information Technology Projects Fail”, Joseph Gulla, Ph.D.
+* “Domain-Driven Design: Tackling Complexity in the Heart of Software”, Eric Evans
+* “Why Software Fails", Robert N. Charette
+* “Critical Success Factors In Software Projects”, John S. Reel
+* “An Investigation of Failure in Information Systems Projects: The Case of Jordan”, Rateb J. Sweis
+* “Critical failure factors in information system projects”, K.T. Yeo
+* “Critical success factors for software projects: A comparative study”, Mohd Hairul Nizam Nasir and Shamsul Sahibuddin
+* “Seven Reasons Why Information Technology Projects Fail”, Joseph Gulla, Ph.D.
