@@ -23,7 +23,7 @@ Another benefit of having a ubiquitous language is more subtle. We all know the 
 
 ## Conclusion
 
-I’d like to conclude this essay with a quote by one of our time’s brightest minds.
+I’d like to conclude this essay with a quote from one of the brightest minds of our time:
 
 > “If I had an hour to solve a problem I'd spend 55 minutes thinking about  the problem and 5 minutes thinking about solutions” - Albert Einstein
 
