@@ -1,27 +1,25 @@
 # The Missing Link
 
-Let’s be honest: our industry’s track record is pretty bad. The vast majority of software projects fail, either by not meeting the budget, timeframes, or by not delivering expected value. Many researches have been made to identify the reasons for these failures, and their results vary. However, if we look at those findings, there is one central theme repeating itself over and over - communication. Either if it’s stated explicitly — “poor communication”, or implicitly, describing the outcomes:
+Let’s be honest: our industry’s track record is pretty bad. The vast majority of software projects fail because they do not meet the budget or timeframe or deliver the expected value. Much research has been conducted to identify the reasons for these failures, and the results vary. However, if we look at those findings, one central theme repeats itself over and over: communication. It’s either stated explicitly — “poor communication” – or implicitly, by describing outcomes:
 
 * “Badly defined system requirements”
 * “Poor reporting of the project's status”
 * “Unarticulated project goals”
 * “Project managers don’t understand users’ needs”
 * “Project changes are managed poorly”
-* etc
+* Etc.
 
-Nothing is really surprising here. For years we’ve been trying to introduce different ways to improve effectiveness of communication: agile methodologies, wikis, chats, and even controversial solutions, such as putting everyone in open spaces. But did we manage to improve our success rates? — No. 
+Nothing is really surprising here. For years we’ve been trying to introduce different ways to improve the effectiveness of communication: agile methodologies, wikis, chats, and even controversial solutions such as putting everyone in open spaces. But did we manage to improve our success rates? No. 
 
-Additional communication mediums didn’t solve our communication problems. Projects keep failing. We have to look for the solution elsewhere.
+Additional communication mediums haven’t solved our communication problems. Projects keep failing. We have to look for solutions elsewhere.
 
 ## Ubiquitous Language
 
-The cornerstone practice of the Domain-Driven Design methodology calls for cultivation of one language, that can be spoken by business people, software engineers, and even source code: Ubiquitous Language.
+The cornerstone practice of the Domain-Driven Design methodology calls for cultivation of one language that can be spoken by businesspeople, software engineers, and even source code: Ubiquitous Language.
 
-The first benefit of having such language is trivial. The translation the business people’s mental models into software requirements, and translation of those requirements into technical jargon, is nothing but a broken telephone game.
+The first benefit of having such a language is obvious. Translating businesspeople’s mental models into software requirements, and those requirements into technical jargon for engineers, is nothing but a Chinese whispers game. Having a rigorous ubiquitous language eliminates the need for such translations! Software engineers needn’t depend on business analysts to interact with domain experts; they can converse with them directly. More than that, those domain experts can make sense of the system’s source code. The result? Both engineers’ mental models and the source code align much better with the businesspeople’s way of thinking. Hence, there are fewer communication issues, and the resulting codebase becomes much easier to maintain and extend.
 
-Having a rigorous ubiquitous language eliminates the need for such translations! Software engineers do not depend on business analysts to interact with domain experts, they can have a conversation with them directly. Even more than that, those domain experts can make sense of the system’s source code. The result? — Both engineers’ mental models, and the source code, aligned much better with the business people’s way of thinking. Hence, less communication issues, and the resulting codebase becomes much easier to maintain and extend.
-
-Another benefit of having a ubiquitous language is a more subtle one. We all know the importance of feedback loops. Agile, Lean, DevOps - all these notions are intended to accelerate different feedback loops. Why are feedback loops so important? Well, because they facilitate communication! The process of cultivating a ubiquitous language is just another feedback loop.     Hence, by increasing the frequency of communication, the quality of communication itself is continually improving as well.
+Another benefit of having a ubiquitous language is more subtle. We all know the importance of feedback loops. Agile, Lean, DevOps - all these notions are intended to accelerate different feedback loops. Why are feedback loops so important? Well, because they facilitate communication! The process of cultivating a ubiquitous language is just another feedback loop. Hence, by increasing the frequency of communication, the quality of communication continually improves as well.
 
 ## Conclusion
 
