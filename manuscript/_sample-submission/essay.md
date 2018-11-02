@@ -1,4 +1,4 @@
-# Title (by Your Name)
+# Sample Submission (by Your Name)
 
 Some text...
 
