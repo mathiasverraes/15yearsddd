@@ -8,7 +8,10 @@ david-west/essay.md
 einar-landre/essay.md
 indu-alagarsamy/essay.md
 james-coplien/essay.md
-jef-claes/essay.md
+jef-claes/essay-1.md
+jef-claes/essay-2.md
+jef-claes/essay-3.md
+jef-claes/essay-4.md
 jeremie-chassaing/essay.md
 kenny-baas-schwegler/essay.md
 martin-fowler/essay.md
