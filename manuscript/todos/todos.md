@@ -12,3 +12,4 @@
 - fix all image paths
 - all todos.txt files and TODO annotations in the texts
 - Greg Young
+- receive and clean up Indu's photos. Fade everything but the captain and the dog.
