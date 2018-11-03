@@ -1,3 +1,3 @@
-# Free the Collaboration Barrier (by Dr. Melvin Conway)
+# Free the Collaboration Barrier (by Mel Conway)
 
-TODO convert
+TODO convert to markua  
