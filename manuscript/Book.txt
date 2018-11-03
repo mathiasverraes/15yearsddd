@@ -24,3 +24,4 @@ scott-millett/essay.md
 scott-wlaschin/essay.md
 vladik-khononov/essay-1.md
 vladik-khononov/essay-2.md
+weronika-labaj/essay.md
