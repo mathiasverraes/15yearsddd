@@ -18,9 +18,9 @@ The British system thinker Derek Hitchins argue that complexity is a function of
 
 The challenge is that we have two types of connectedness. We have stable connections that lead to structural complexity and we have arbitrary connections that leads to dynamic complexity.
 
-Structural domain complexity is what we find in nested structures such as as the component hierarchy found in products (airplanes, ships), retail assortments or project plans. The objects become complicated due to their internal state models, their rules and the depth of their connectedness and variability.
+Structural domain complexity is what we find in nested structures such as as the component hierarchis in products (airplanes, ships), retail assortments or project plans. The objects become complicated due to their internal state models, their rules and the depth of their connectedness and variability.
 
-Dynamic domain complexity comes from the intercourses between autonomous components or objects. This is the complexities we find in dynamic systems. Even the objects might be structural complex on the inside, the dynamic dynamic complexity is created by their ever changing interactions and arbitrary connectedness.
+Dynamic domain complexity comes from the intercourses between autonomous components or objects. This is the complexities we find in dynamic systems. Objects might have high internal complexity but the dynamic complexity is created by their ever changing interactions and arbitrary connectedness.
 
 Objects come and go, they might be lost to enemy action or communication loss. They might collaborate, compete, form teams and actions taken by one object might have direct impact on other objects available options. 
 
