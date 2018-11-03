@@ -1,4 +1,4 @@
-# Thinking No Computers
+# Thinking No Computers (by Jef Claes)
 
 _Published on jefclaes.be 2014-08-01_
 

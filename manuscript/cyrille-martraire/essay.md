@@ -1,4 +1,4 @@
-# Domain modeling with monoids
+# Domain Modeling with Monoids (by Cyrille Martraire)
 
 Cyrille Martraire, Arolla, 2018
 

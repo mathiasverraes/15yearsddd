@@ -3,9 +3,9 @@
 One of the main goals of Domain Driven Design is to encourage good communication between the development team, domain experts, and other stakeholders.
 In particular, there should be a very close correspondence between the mental model of the domain experts and the code used in the implementation.
 
-That means that things in our design must represent real things in the domain expert’s mental model. That is, if the domain expert calls something an "Order"
+That means that things in our design must represent real things in the domain expert's mental model. That is, if the domain expert calls something an "Order"
 then we should have something called an "Order" in the code that corresponds to it and that behaves the same way.
-And conversely, we should avoid having things in our code that do *not* represent something in the domain expert’s model. That means no terms like "OrderFactory",
+And conversely, we should avoid having things in our code that do *not* represent something in the domain expert's model. That means no terms like "OrderFactory",
 "OrderManager", "OrderHelper", etc. A domain expert would not know what you mean if they saw these! Of course, some technical terms will have to occur in the codebase, but we should avoid exposing them as part of the design.
 
 Traditionally, Domain Driven Design has been done using object-oriented techniques, but in this chapter, I'd like to show an alternative approach: using algebraic data types (as used in functional programming) to design and document a domain model.
@@ -497,19 +497,19 @@ text, a domain expert can review it easily without needing special tools, and ma
 
 ## Value Objects, Entities and Aggregates
 
-We’ve now got a basic understanding of how to model the domain types and workflows, so let’s move on and look at an important way of classifying data
+We've now got a basic understanding of how to model the domain types and workflows, so let's move on and look at an important way of classifying data
 types, based on whether they have a persistent identity or not. In DDD terminology, objects with a persistent identity are called *Entities* and
 objects without a persistent identity are called *Value Objects*. 
 
 ### Value objects
 
-Let’s start with Value Objects. 
+Let's start with Value Objects. 
 
 In many cases, the data objects we are dealing with have no identity -- they are interchangeable. For example, one instance of a `CustomerId` with value
 "1234" is the same as any other `CustomerId` with value "1234." We do not need to keep track of which one is which -- they are equal to each other.
 
 When we model a domain using an algebraic type system, the types we create will implement this kind of field-based equality testing automatically! We
-don’t need to write any special equality code ourselves, which is nice.
+don't need to write any special equality code ourselves, which is nice.
 To be precise, in an algebraic type system, two record values (of the same type) are equal if all their fields are equal, and two choice types are equal if they have the same choice
 case, and the data associated with that case is also equal. This is called *Structural Equality*.
 
@@ -651,9 +651,9 @@ Again, we can see that the ripple effect of immutability has been used as a desi
 
 ## Enforcing constraints 
 
-Since we’ve gone to this trouble to model the domain properly, we should take some precautions to make sure that any data in this domain is valid and consistent. The goal is to create a bounded context that always contains data we can trust, as distinct from the untrusted outside world. If we can be sure that all data is always valid, the implementation can stay clean and we can 
+Since we've gone to this trouble to model the domain properly, we should take some precautions to make sure that any data in this domain is valid and consistent. The goal is to create a bounded context that always contains data we can trust, as distinct from the untrusted outside world. If we can be sure that all data is always valid, the implementation can stay clean and we can 
 
 * **Constraints.** We said that an `OrderQty` must be between 1 and 100. How do we ensure that types like this are always constrained correctly? 
 * **Business Rules.** How can we ensure that emails are validated properly before sending a password reset? What's to stop someone accidentally creating a `ValidatedEmailAddress` that hasn't actually been validated?
 
-TO DO
+TODO

@@ -1,7 +1,4 @@
-# Expressing the model in the types
-# Expressing the behaviour in the model
-# Bounded Context
-# TODO title
+# TODO Title (by Mathias Verraes)
 
 
 We're going on a journey!

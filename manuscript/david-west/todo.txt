@@ -1,1 +1,0 @@
-The word version is so you can see what I intended the formatting to be. The txt file is with leanpub formatting but with some exceptions: 1) I could not find how to set font size or font; 2) I had wanted the attribution line below the quote of Eric to be in a small font (10 point) and right justified; 3) could not find how to simple, not-bolded, italics.
