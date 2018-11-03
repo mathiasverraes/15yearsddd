@@ -1,5 +1,6 @@
-# 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems
+# 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems (by Vladik Khononov)
 
+TODO:
 %% Note: There are two sets of images. Hand drawn one, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style. %%
 %% Note:  This essay is based on my talk “7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems”. It was delivered at Explore DDD, DDD Europe, KanDDDinsky, NDC Sydney, and other conferences. %%
 

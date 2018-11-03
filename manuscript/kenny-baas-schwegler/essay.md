@@ -1,4 +1,4 @@
-# Model Exploration Whirlpool 
+# Model Exploration Whirlpool (by Kenny Baas-Schwegler)
 #### with EventStorming and Example Mapping
 
 ## Introduction

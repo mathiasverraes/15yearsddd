@@ -1,7 +1,4 @@
-# Expressing the model in the types
-# Expressing the behaviour in the model
-# Bounded Context
-# TODO title
+# TODO Title (by Mathias Verraes)
 
 
 We're going on a journey!
@@ -78,7 +75,7 @@ Requirement 3 (showing nicely formatted rounded values to the users), is clearly
 
 We refactor all the places in the old code that do things with money to use the new `Money` object.
  
-# More problems 
+## More problems 
 
 When evaluating our models, we should always look for things that are painful or awkward to use. These are smells for opportunities for further refinement.
 
@@ -90,7 +87,7 @@ In our current implementation, we support 8 decimals, but the model doesn't real
 TODO research this and/or get rid of it
 - Some currencies have mills (1/1000<sup>th</sup> of a unit) as their official division (although they are becoming rare). Bitcoin supports 10<sup>−3</sup> (a millibitcoin), 10<sup>−6</sup> (a microbitcoin or a bit), and 10<sup>−8</sup> (a satoshi). Reportedly, the community is considering to introduce even smaller divisions. The library doesn't support any of this.
 
-# Refactoring towards deeper insight
+## Refactoring towards deeper insight
 
 	
 

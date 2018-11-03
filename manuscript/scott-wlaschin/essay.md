@@ -854,7 +854,7 @@ type Contact = {
 }
 ```
 
-Again what we've done is good for developers (we can't accidentally have no contact information â€“ one less test to write) but also it is good for the *design*.
+Again what we've done is good for developers (we can't accidentally have no contact information – one less test to write) but also it is good for the *design*.
 The design makes it very clear that there are only three possible cases, and exactly what those three cases are. We don't need to look at documentation, we can just look at the code itself.
 
 

@@ -1,4 +1,4 @@
-# Traces, tracks, trails, and paths: An Exploration of How We Approach Software Design
+# Traces, Tracks, Trails, and Paths: An Exploration of How We Approach Software Design (by Rebecca Wirfs-Brock)
 
 ## Introduction
 If I were to be brutally honest about the nature of software design, I would give up on any notion of certainty. The more I know about software and the world it is part of, the more cautious I become about making absolute statements about either. Software design is full of unexpected complexities and continual surprises. I cannot predict which contextual details will suddenly become important. Small details can loom large and undo even the best design intentions.

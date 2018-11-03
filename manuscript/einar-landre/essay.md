@@ -1,6 +1,9 @@
-# Agents aka Domain objects on steroids
+# Agents aka Domain objects on steroids (by Einar Landre)
+
 #### From here to there and back again, Bilbo Baggins
+
 ## Introduction
+
 This essay explains dynamic domain modelling, why it is needed and the value from making it a first class citizen of Domain-Driven design. But before embarking on that journey, I would like to thank Eric for his seminal contribution to the software community. I will also thank him for all the great discussions we had battling Equinor's (Statoil) oil trading portfolio and writing papers for OOPSLA. That was a great experience. 
 
 Fifteen years has passed since the book was published. Back then, there was no iPhone, no Facebook, no Netflix and Amazon had been profitable for two years. Windows 2000 was Microsofts flagship operating system, Sun Microsystems was a leading tech company, Java was 9 years old and the relational database ruled the enterprise data centres.
@@ -10,6 +13,7 @@ Since then, cloud computing, big-data, mobile-apps, internet of things, edge com
 It is easy to argue that our profession experience profound changes, changes that I think make Domain-Driven design even more important, changes that also require Domain-Driven design itself to change, adopting itself to the needs of a software defined world.
 
 ## Domain complexity
+
 The British system thinker Derek Hitchins argue that complexity is a function of variety, connectedness and disorder. We perceive things as more complex if there is greater variety among components, more connections between components and the connections are tangled instead of ordered. 
 
 The challenge is that we have two types of connectedness. We have stable connections that lead to structural complexity and we have arbitrary connections that leads to dynamic complexity.
@@ -25,6 +29,7 @@ Domain-Driven design addresses structural complexity. Entities, value objects, a
 Dynamic complexity is not addressed at all. Vernon introduces domain events in his book and that is a good start, but we need more than events and the way events has been managed in context of enterprise messaging software.
 
 ## Agents
+
 The real world consist of dynamic systems. Dynamic domain complexity originates from asynchronous, concurrent, competing and collaborating processes.
 
 Object oriented programming was created to study and analyse processes in context of a system through simulation and Simula provided the required support. The object oriented software community lost (by reasons unknown to me) its interest in dynamic systems and turned itself to programming languages. The study of dynamic systems was left for the control theory (cybernetics) and artificial intelligence (AI) communities. 
@@ -64,6 +69,7 @@ The most sophisticated agent functions implies use of cognitive architectures su
 Soar and BDI are domain models of how the human brain reasons and transfer perception into action. Both architectures are supported by open-source and commercial implementations such as JACK, BDI4Jade, Gorite and SOAR. 
 
 ## Dynamic domain modelling
+
 Late professor Kristen Nygaard used Cafe' Objecta as his system metaphor when teaching object oriented programming. When observing Cafe' Objecta we find objects who does interesting things such as Waiter, Guest, Gatekeeper and Cashier and objects that define and describe things such as Menus, Food, Bills and Tables. 
 
 Behavioural modelling is about the objects that does interesting things. It starts with task environment and leads to the more detailed event and task model. The task environment defines the context and includes who the agent(s) are (Waiter), the agents performance measures (good dining experience), operational environment (the restaurant) actuators (voice, hands and feets) and sensors (eyes, ears). 
@@ -86,6 +92,7 @@ For those who want to take it one step further Douglas, Russel & Norvig and Jarv
 
 
 ## Reflections
+
 Some might ask, what differs an agent from a micro-service? My answer is granularity. Agents are objects, they are in the end defined by the class constructor in the language of choice.
 
 If your domain problem is best solved using a cognitive architecture, the advice is to look for an established framework. No reason to build this yourself.
@@ -97,6 +104,7 @@ Why now?
 I hope you now understand agents as first class citizens of many domains, and that they are domain objects on steroids.
 
 ## References
+
 - Douglas, Doing hard time, Developing real-time systems with UML, Objects, Frameworks and Patterns.
 - Evans, Domain-Driven Design, Tackling the complexity at the heart of software.
 - Hitchins, Advanced systems, thinking, engineering and management.

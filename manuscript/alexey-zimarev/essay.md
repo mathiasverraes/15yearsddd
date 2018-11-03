@@ -1,8 +1,8 @@
-# TODO TITLE ALEXEY
+# TODO TITLE (by Alexey Zimarev)
 
 ## Introduction
 
-> This essey is the first chapter of the Hands-On Domain Driven Design with .NET book
+> This essay is the first chapter of the Hands-On Domain Driven Design with .NET book
 
 The software industry appeared back in the early 1960s and is growing ever since. We have heard predictions that someday all software would be written and we will not need more software developers, but this prophecy has never become a reality, and the growing army of software engineers is working hard to satisfy continually increasing demand.
 
