@@ -1,4 +1,4 @@
-# Tackling Complexity in ERP Software, a Love Song to Bounded Contexts (by Michiel Overeem)
+# Tackling Complexity in ERP Software: a Love Song to Bounded Contexts (by Michiel Overeem)
 
 Enterprise resource planning (ERP) software offers an integrated solution for the management of core business processes. Different domains (accounting, sales, relation management, payrolling) are handled by a single software system. A well-executed ERP system has the benefit that information is only stored once, and relations between information are easy to follow since it is all in one system.
 
