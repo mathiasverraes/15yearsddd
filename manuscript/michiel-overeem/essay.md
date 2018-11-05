@@ -32,10 +32,11 @@ We found a solution for our challenges in the utilization of model-driven develo
 The domain of the software itself is expressed in the meta-model and is thus pulled out of the actual source code. This allows us to bring our code re-use to a new level, because many instances of a single pattern can be translated into running software by a single transformation. It also enables a new level of variability: by changing the model the system changes. Variability is at the core of the system. Finally, it enables us to separate functionality and technology, and let them evolve at different rates.
 
 The development process that we started based on this approach consists of four simple steps:
-1. Extract patterns from the existing business logic and formalize those patterns in a meta-model.
-2. Use that meta-model to create a model of the business logic in an ERP system.
-3. Generate a working application from that model.
-4. Evaluate the working application, and when necessary start at 1.
+
+1.  Extract patterns from the existing business logic and formalize those patterns in a meta-model.
+2.  Use that meta-model to create a model of the business logic in an ERP system.
+3.  Generate a working application from that model.
+4.  Evaluate the working application, and when necessary start at 1.
 
 These steps might appear simple, however, executing them is not that easy. And while MDD is a large research field with promising results, it also has its share of failed projects. However, we believe there are two important reasons why we can pull this off. 
 
@@ -52,16 +53,18 @@ As mentioned, we discovered DDD through CQRS and event-sourcing. And we choose t
 The resulting application was a monolithic deployment unit. With every change of the model, we needed to generate the complete application, and deploy it. Now, it isn’t impossible to do (we are doing it, and even manage to deploy a new application with zero-downtime through blue-green deployments), but the deployment feels bigger and more cumbersome than necessary. We feel that this kind of upgrades will not scale and that it will become a problem later one, when the model starts evolving at an increased speed. 
 
 We also had a single monolithic generator that translated the complete model. This became a burden when both the meta-model (the number of possible patterns increased) and the development team grew. The monolithic generator had several generic possibilities, and new features needed to be solved in the same generic way. This let to sub-optimal solutions. It also made the generator very complex. There were so many possible execution paths that no-one was able to reason about them. We all lost the big picture of the generator. We tried to solve these problems by 
-1. introducing abstraction (*as we all know; every problem can be solved by adding more indirection[^indirection]*). 
-2. refactoring our generator into a multi-stage generator. The parsed model was transformed, extended, simplified, translated into intermediate models, before generating the final output. 
+
+1.  introducing abstraction (*as we all know; every problem can be solved by adding more indirection[^indirection]*). 
+2.  refactoring our generator into a multi-stage generator. The parsed model was transformed, extended, simplified, translated into intermediate models, before generating the final output. 
 
 [^indirection]: "Any problem in computer science can be solved with another level of indirection." is attributed to David Wheeler by **Diomidis Spinellis**. [Another level of indirection](https://www2.dmst.aueb.gr/dds/pubs/inbook/beautiful_code/html/Spi07g.html). In Andy Oram and Greg Wilson, editors, Beautiful Code: Leading Programmers Explain How They Think, chapter 17, pages 279–291. O'Reilly and Associates, Sebastopol, CA, 2007.
 
 In the long run this did not work out. We still had a single transformation pipeline on which the whole team was working. The development work was not scaling, because we were getting in the way of each other. There was no real code ownership, so no team felt responsible. And finally, it made it hard to implement an incremental generation flow. 
 
 With the huge amount of code that we were generating, we knew we had a new challenge to face. Two major steps took us from these two single bounded contexts (the generator and the resulting application) into a new realm of multiple bounded contexts:
-1. The move from a single code generator into a collection of small generator *modules*.
-2. The move from a monolithic runtime application into a platform and many loosely coupled *bundles*. 
+
+1.  The move from a single code generator into a collection of small generator *modules*.
+2.  The move from a monolithic runtime application into a platform and many loosely coupled *bundles*. 
 
 ## A swarm of generators
 
