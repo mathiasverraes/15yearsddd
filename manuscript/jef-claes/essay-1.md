@@ -39,7 +39,7 @@ type ReadModel = {
 }
 ```
 
-![Readmodel](../images/jef-claes/1/readmodel.png)
+![Readmodel](images/jef-claes/1/readmodel.png)
 
 Based on heuristics in the head and a snapshot of information available in the world, we would make a decision and click a button to execute a specific command.
 
@@ -119,7 +119,7 @@ let machineMakesSuggestions snapshot =
 
 I rendered these suggestions on top of the existing view and observed the decisions that were made.
 
-![Suggestions](../images/jef-claes/1/suggestions.png)
+![Suggestions](images/jef-claes/1/suggestions.png)
 
 ```fsharp
 type PickSuggestion = Suggestions -> Decision
