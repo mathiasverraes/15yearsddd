@@ -10,7 +10,7 @@ Since we're applying optimistic concurrency, bursts of activity would occasional
 
 Mapping out an aggregate's eventstream on a timeline is a great way to visualize its lifecycle and usage patterns. When we did this for an account, we came up with something that looked like this.
 
-![Timeline](../images/jef-claes/4/timeline.png)
+![Timeline](images/jef-claes/4/timeline.png)
 
 Activity peaks when a user starts a game. Each bet and each win drags in the account aggregate. When you know that some players make thirty bets per minute, it should be of no surprise that other processes accessing the account in the background might introduce transactional failures.
 
@@ -18,7 +18,7 @@ Inspired by a real casino, I wonder if users online would appreciate it if we st
 
 In practice, we would extract behaviour out of the account aggregate and move it into the sportsbet and game session aggregates. It wouldn't be until the end of their lifecycles, that we would involve the account aggregate to move money around.
 
-![Timeline 2](../images/jef-claes/4/timeline2.png)
+![Timeline 2](images/jef-claes/4/timeline2.png)
 
 By spreading activity to other and shorter lived aggregates, and having the player do a bit of our work, we could reduce the amount of concurrency on the account aggregate and end up with less transactional failures.
 
