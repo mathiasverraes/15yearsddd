@@ -1,5 +1,6 @@
 # Traces, Tracks, Trails, and Paths: An Exploration of How We Approach Software Design (by Rebecca Wirfs-Brock)
 
+
 ## Introduction
 If I were to be brutally honest about the nature of software design, I would give up on any notion of certainty. The more I know about software and the world it is part of, the more cautious I become about making absolute statements about either. Software design is full of unexpected complexities and continual surprises. I cannot predict which contextual details will suddenly become important. Small details can loom large and undo even the best design intentions.
 
@@ -38,7 +39,7 @@ Recently I’ve learned that some pattern authors were not so certain as their w
 
 Likewise, Eric Evans in several talks suggests that the most important patterns in his collection were the Strategic Patterns. If you look at how the patterns in his book are laid out (see Figure 1) there are really two groupings or patterns collections—those concerned with design details for object designs (e.g. Tactical Design Patterns) and those for organizing and understanding the domains in complex software systems (Strategic Design Patterns).  Evans believes that while the Tactical Patterns are useful for object-oriented programming, they aren’t nearly as important as the Strategic Patterns. He regrets that the Strategic Patterns were in the latter part of his lengthy book, as some readers never get that far. He also points out that a missing pattern, Domain Events, which was only hinted at in his book, has become increasingly important, especially with the increased use of CQRS (Command-Query-Response Segregation) and Event-Sourced architectures to implement Domain Driven Design models.
 
-![](../images/rebecca_wirfs-brock/StrategicAndTacticalDDD.png)
+![](images/rebecca_wirfs-brock/StrategicAndTacticalDDD.png)
 Figure 1. The Domain-Driven Design Patterns are really two collections in one book: Strategic and Tactical Design Patterns
 
 In hindsight, the presentation of these pattern collections seems more tentatively than carefully planned. Had the authors taken time to study how others actually used their patterns, would they have designed better pathways? Or is this something they can see only when looking back on their work?
@@ -54,7 +55,7 @@ On the other hand, pattern languages, unlike pattern collections, attempt to def
 
 I know of few examples of published software design pattern languages. *Object-oriented Reengineering Patterns* by Serge Demeyer, Stéphane Ducasse, and Oscar Nierstrasz is a notable one. Each chapter starts with a pattern map illustrating potential sequences through the patterns in the chapter based on actions (see Figure 2 for the pattern map for Chapter 4). These maps illustrate small trails with branches, loops, and options. For example, to gain an initial understanding of a design, you can start with either a top down or bottom up approach and proceed until you have enough understanding to move on to your next re-engineering task.
 
-![](../images/rebecca_wirfs-brock/InitialUnderstandingPL.png)
+![](images/rebecca_wirfs-brock/InitialUnderstandingPL.png)
 Figure 2. Each chapter in *Object-Oriented Reengineering Patterns* is a small language
 
 Unlike physical trails, where we are guided to move in a singular direction, software pattern languages seem more loopy and fragmented. But unlike a physical trail where we are constrained by the physical terrain, software designers can skip over any pattern they don’t find useful or go “off trail” at any point to pick up and apply a useful design heuristic, wherever it is found. It’s hard to skip over a part of a physical trail. It’s only possible when there’s a switchback that you can cut through or a branch. But it is usually those optional stretches away from the main trail and then back again that lead to something really interesting (you don’t want to miss that waterfall simply because it is an extra ¼ mile out of the way).
@@ -97,12 +98,12 @@ The day after my talk, I got a Twitter direct message from Mathias Verraes, one 
 
 I was eager to have a conversation with Mathias and share ideas. Mostly I wanted to practice hunting for heuristics through conversation, as well as gain insights into Mathias’ personal design heuristics for events. Mathias is expert in event-sourced architectures, an alternative to the “traditional” domain-layering architectures (which includes patterns for storing and retrieving and updating Aggregate Roots into repositories), which Eric Evans had written about in his book (see Figure 3).
 
-![](../images/rebecca_wirfs-brock/LayerWithRepository.png)
+![](images/rebecca_wirfs-brock/LayerWithRepository.png)
 Figure 3. - A layered architecture where business domain objects or aggregates are maintained in a database that is accessed through a repository which hides the data store details from the business layer logic.
 
 In a nutshell, instead of storing and updating Aggregates (e.g. complex business domain objects) into databases, with event-sourced architectures, immutable events are stored with just enough information so they can be “replayed” to reconstitute the current state of any Aggregate. In essence, an event is a record of what the software has determined to have happened. Whenever work is accomplished in the system, one or more “business level events” are recorded that represent the facts known at the time. Events are generated by a software process as a byproduct of determining what just “happened” and interpreted by interested downstream processes, which can in turn, as a result of processing or interpreting the events they are interested in receiving, generate even more events. Each event is preserved in an event store, along with relevant information about the event. Figure 4 shows a representation of a CQRS (Command-Query-Response-Segregation) architecture, one approach to implement event-sourced architectures. It should be noted that although the figure only shows one event store and one read model, there can be multiple event stores (each representing some cumulative state of the system) and different projections or read models designed for specific queries about those events.
 
-![](../images/rebecca_wirfs-brock/CQRS.png)
+![](images/rebecca_wirfs-brock/CQRS.png)
 Figure 4.  A representative CQRS Architecture
 
 I didn’t know Mathias’ thinking on designing event-sourced architectures. So I wanted to first ask him to explain some fundamentals before sharing his heuristics for what should be published in an event. Throughout our conversation Mathias used as a working example the designs for car rental, finance, and student grading for courses and modules given by instructors (all examples drawn from real systems he had designed).
@@ -247,7 +248,7 @@ To keep learning, we need to integrate new heuristics with those we already know
 ### Recording “Sign” with Question-Heuristic-Example Cards
 I have also experimented with ways to articulate new-to-me heuristics in order to see how they fit into my heuristic gestalt. I’ve been playing around with using index cards as a means to capture the gist of a heuristic. This simple technique structures a heuristic in three parts: a question, the answer (which can be then polished into a formulation of the heuristic), and an example or two to help me remember. I call them QHE  or “Q-Hee” cards, for the lack of a better name (see Figure 5). This use of index cards to capture design heuristics is inspired by CRC (Class-Responsibility-Collaborators) design cards invented by Ward Cunningham and Kent Beck.
 
-![](../images/rebecca_wirfs-brock/QHE.png)
+![](images/rebecca_wirfs-brock/QHE.png)
 Figure 5. Following this heuristic, 3 different events would be generated because there are 3 different actors.
 
 An advantage of QHE cards is that they are easy to write.
@@ -263,14 +264,14 @@ Here are two photos I took at the DDD Europe 2018 conference.
 
 The first is of Eric Evans telling us the story of how he goes about exploring a design concept and all its limitations and design surprises. I found each line on the slide to be a personal heuristic Eric uses to do this (the rest of his talk was filled with examples exploring the quirks and complexities of date and time).
 
-![](../images/rebecca_wirfs-brock/EricEvans.png)
+![](images/rebecca_wirfs-brock/EricEvans.png)
 Figure 6. Photo from Eric Evans’ keynote at Domain Driven Design Europe 2018 introducing how he understands a domain
 
 The next photo is from a talk by Michiel Overeem on versioning event stores, a fundamental element of event-sourced architectures (see Figure 7). This slide summarizes the various approaches Michiel found when he surveyed other designers. Event stores are supposed to be immutable. You use them to play back events and recreate system state. Conceptually they are write once stores. But if your event schema changes, various components need to then be able to interpret these new event structures. But if your event schema changes, various components need to then be able to interpret these new event structures. So how do you make that work in practice? You select a versioning approach depending on a number of factors including the size of your event store, your ability to process extra information on event or to transform on the fly to a new format, and your event store update policy.
 
 While Michiel eventually put his [slides](https://speakerdeck.com/overeemm/dddeurope-2018-event-sourcing-after-launch) online, this photo was enough to jog my memory and make the connections between heuristics for updating event stores and heuristics I’d written in pattern form for updating Adaptive Object Model (AOM) systems. Although Event-sourced and Adaptive Object-Model systems are quite different architecture styles, they have similar challenges with updating their models’ schemas. 
 
-![](../images/rebecca_wirfs-brock/MichielOvereem.png)
+![](images/rebecca_wirfs-brock/MichielOvereem.png)
 Figure 7.  Photo of summary slide from Michiel Overeem’s presentation on Event Sourcing After Launch
 
 ### Sharing Heuristics to Start Conversations
@@ -281,7 +282,7 @@ The format of Victor’s workshop was quite effective. First he explained what h
 
 Teaching each heuristic in this long, long list would have overwhelmed us. Instead, Victor quickly introduced two or three heuristics in a particular category and then gave us a situation to briefly discuss in small groups. We also had a deck of Victor’s coaching heuristics to refer to if we wanted. We discussed what heuristics (our own or others we had heard about) we might use to try to improve the situation. After each round of discussion, a few shared what they had talked about with the larger group. We repeated this cycle three or four times, learning a few more of Victor’s heuristics, but also, more important it seems, sharing our experiences and our own heuristics. Although the format of this workshop was similar to that of patterns mining workshops, it wasn’t focused on capturing these heuristics so much as it was getting people to share their experiences with others.
 
-![](../images/rebecca_wirfs-brock/HeuristicsCard.png)
+![](images/rebecca_wirfs-brock/HeuristicsCard.png)
 Figure 8. Coaching Heuristics Cards created by Victor Bonacci. Each card carries the gist of the heuristic, either as a drawing or phrase on the front side, and the name and source on the back.
 
 ### Holding an Imaginary Debate
