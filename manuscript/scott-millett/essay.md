@@ -86,9 +86,11 @@ A team focusing too much on the tactical patterns is missing the point of DDD. T
 
 ### Going Back to First Principles
 
-In the remainder of this essay I will present to you each of these 5 first principles that I have distilled down from the non-technical aspects of DDD and learned to focus on during my career to allow me to really use the power od DDD.
+The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
 
-These first principles are:
+In the remainder of this essay I will present to you each of these 5 first principles that I have distilled down from the non-technical aspects of DDD and learned to focus on during my career to allow me to really use the power of DDD.
+
+My first principles are:
 
  * Gain agreement on the problem
  * Collaborate towards a solution
@@ -97,8 +99,6 @@ These first principles are:
  * Uphold personal values and principles
 
 ![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
-
-The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
 
 I would hasten to add that however well you manage the non technical side, it goes without saying you need to have a proficient technical ability. However I have often witnessed that a good understanding of the goal of the core domain and the problem space itself enables a simpler solution to be found that requires a simpler technical implementation.
 
