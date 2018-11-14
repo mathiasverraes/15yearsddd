@@ -30,47 +30,49 @@ Before I talk about my takeaways from DDD and my view on the first principles I 
 
 DDD in a nutshell:
 
- * Distill a large problem domain into smaller subdomains.
+ * Distill a large problem domain into smaller sub domains.
  * Identify the core sub domains to reveal what is Important. The core domains are those of greater value to the business which require more focus, effort and time.
- * Collaborate with experts to discover analysis model that will provide solutions to solve problems or reveal opportunities particularly in the core domain.
+ * Collaborate with experts to discover an analysis model that will provide solutions to solve problems or reveal opportunities particularly in the core domain.
  * Use the same ubiquitous language to bind the analysis model to the code model. Use tactical patterns to separate technical code from domain code to prevent accidental complexity.
  * Split the model (if necessary) into smaller models where there is ambiguity in language or the model is too large for a single team. Enclose the model within a boundary to protect the models integrity. When working with multiple models it's  important that they are understood in context.
  * Keep a context map to understand the relationships, social and technical, of all models in play.
+
 
 ![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
 
 
 ### Distill the Problem Domain to Reveal What Is Important
 
-Development teams and domain experts use analysis patterns and knowledge crunching to distill large problem domains into more manageable subdomains. This distillation reveals the core sub domain—the reason the software is being written. The core domain is the driving force behind the product under development; it is the fundamental reason it is being built. DDD emphasizes the need to focus effort and talent on the core subdomain(s) as this is the area that holds the most value and is key to the success of the software.
+Development teams and domain experts use analysis patterns and knowledge crunching to distill large problem domains into more manageable sub domains. This distillation reveals the core sub domain(s)—the reason the software is being written. The core domain is the driving force behind the product under development. For example in a airline pricing system the algorithm could be the key to the software being successful or not. The system would of course need identity and access control management but this would only be to support the core domain. In a different domain, say government documentation control the security and access may be the core domain and management of content only supporting. The point is that DDD emphasizes the need to focus effort and talent on the core sub domain(s) as this is the area that holds the most value and is key to the success of the software.
 
 ### Create models to solve problems
 
-With an understanding of where to focus effort, the technical team along with domain experts can begin to derive a solution represented as a analysis model. This is typically done in a collaborative manner occuring around whiteboards, working through concrete scenarios with business experts and generally brainstorming together. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model, using a shared, ubiquitous Language,  that can fulfill business use cases, remove constraints or open up opportunities. 
+With an understanding of where to focus effort, the technical team along with domain experts can begin to derive a solution represented as an analysis model. This is typically done in a collaborative manner occuring around whiteboards, working through concrete scenarios with business experts and generally brainstorming together. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model, using a shared, ubiquitous Language,  that can fulfill business use cases, remove constraints or open up opportunities. 
 
 When a useful analysis model is discovered a code model can follow. I hasten to add that this process is not as linear as I am explaining here and often a code model is used during model explanation to prototype ideas in code to understand feasibility. The code model is to bound to the code analysis model via the use of a shared, or as DDD refers to it a Ubiquitous Language. The Ubiquitous Language ensures that both models stay in sync and are useful during evolution. Insights gained in either model are shared and knowledge is increased, leading to better problem solving and clearer communication between the business and development team.
 
-Tactical patterns are used to keep the code model supple and to isolate it from infrastructure code thus avoid the accidental complexity of merging technical and business concerns. 
+Tactical patterns are used to keep the code model supple and to isolate domain from infrastructure code thus avoiding the accidental complexity of merging technical and business concerns. 
 
-### Split large models to isolate from ambiguity and corruption
+### Split large models to prevent ambiguity and corruption
 
-Large models can be split into smaller models and defined within separate bounded contexts to reduce complexity where ambiguity in terminology exists or where multiple teams need to work in parallel. The bounded context defines the applicability of the model and ensures that its integrity is retained. The Bounded contexts form a protective boundary around models that helps to prevent software from evolving into a big ball of mud. Context boundaries aren’t limited to just language or team set up. They can be influenced by ambiguity in terminology and concepts of the domain, alignment to subdomains and business capabilities, team organization for autonomy and physical location, legacy code base, third party integration and a host of other factors.
+Large models can be split into smaller models and defined within separate bounded contexts to reduce complexity where ambiguity in terminology exists or where multiple teams need to work in parallel. The bounded context defines the applicability of the model and ensures that its integrity is retained. The bounded contexts form a protective boundary around models that helps to prevent software from evolving into a big ball of mud. Context boundaries aren’t limited to just language or team set up. They can be influenced by ambiguity in terminology and concepts of the domain, alignment to subdomains and business capabilities, team organization for autonomy and physical location, legacy code base, third party integration and a host of other factors.
 
-## So what? I already knew this stuff
+## Why Teams need to realign with DDD’s first principles
 
-![Software is about understanding](../images/scott-millett/understanding.png)
+As you will have noticed, the majority of effort when applying the practices of Domain-Driven Design lie outside of the technical realm. Many people’s first introduction with Domain-Driven Design is an exposure to the tactical design patterns as well as techniques such as event sourcing or CQRS. They never experience or learn to appreciate the true power of DDD because they aren’t aware or don’t focus on the non technical aspect of software creation. It is the deep understanding of the problem space and the relentless focus on the core domain that allow effective and collaborative model-driven designs to lead to a viable solution. Only then do we need to leverage tactical patterns to organise code in such a manner as to reduce accidental complexity.
 
-As you will have noticed the majority of effort when applying the practices of Domain-Driven Design lie outside of the technical realm. Before one can code a solution one must truly understand the problem. These non-technical aspects are what I refer to as the first principles of Domain-Driven Design. Many people’s first introduction with Domain-Driven Design is an exposure to the tactical design patterns as well as techniques such as event sourcing or CQRS. However it is the deep understanding of the problem space and the relentless focus on the core domain that allow effective and collaborative model-driven designs to lead to a viable solution. Only then do we need to leverage tactical patterns to organise code in such a manner as to reduce accidental complexity.
 
-The reason that solutions fail to deliver is not because of a lack of programming ability or technical expertise, but rather because of a lack of understanding, communication, and business knowledge. I am not saying technical people are lazy just that output doesn’t always translate to outcome. This lack of understanding stems from how developers capture knowledge of the problem domain they work in. Put another way, if developers and customers cannot effectively communicate, aren’t aligned on the same overarching goals then even with the most accomplished programmers in the world, you ultimately cannot produce meaningful outcomes. 
+### Why Domain-Driven solutions often fail to deliver 
+
+The reason that solutions fail to deliver, and the reason we need to focus on first principles, is not because of a lack of programming ability or technical expertise, but rather because of a lack of understanding, communication, and business knowledge. I am not saying technical people are lazy just that output doesn’t always translate to outcome. This lack of understanding stems from how developers capture knowledge of the problem domain they work in. Put another way, if developers and customers cannot effectively communicate, aren’t aligned on the same overarching goals then even with the most accomplished programmers in the world, you ultimately cannot produce meaningful outcomes. 
 
 Having the right soft skills to avoid becoming entrenched or attached to an early version of a model is also important. For example having a technically supple model is great, but useless if you're not able to realise it doesn’t work as your initial understanding was proved to be incorrect.
 
-### Don't Strive for Tactical Pattern Perfection
+#### Striving for Tactical Pattern Perfection
 
-Teams concerned only with writing code focus on the tactical patterns of DDD. They treat the building block patterns as a bible rather than a guide, with no understanding of when it’s okay to break the rules. They waste effort adhering to the rules of the patterns. This energy is better spent on understanding why it needs to be written in the first place. DDD is about discovering what you need to write, why you need to write it, and how much effort you should use. The tactical patterns of DDD are the elements that have evolved the most since Eric’s book was written, with the strategic side of DDD remaining faithful to Eric Evan’s original text, albeit there has been great progress on the techniques of how to distill problem spaces which I will discuss later. How development teams create domain models is not nearly as important as understanding what models to write in the first place and how to develop them in a bounded context. Understanding the what and the why of problem solving is a more important process to get correct than how you are going to implement it in code. 
+Teams concerned only with writing code focus on the tactical patterns of DDD. They treat the building block patterns as a bible rather than a guide, with no understanding of when it’s okay to break the rules. They waste effort adhering to the rules of the patterns. This energy is better spent on understanding why it needs to be written in the first place. DDD is about discovering what you need to write, why you need to write it, and how much effort you should use. The tactical patterns of DDD are the elements that have evolved the most since Eric’s book was written, with the strategic side of DDD remaining faithful to Eric Evan’s original text, albeit there has been great progress on the techniques of how to distill problem spaces which I will discuss later. How development teams create domain models is not nearly as important as understanding what models to write in the first place and how to develop them in a bounded context. Understanding the what and the why of problem solving is a more important process to get correct than how you are going to implement it in code.
 
-### Why sample applications don’t tell the full story
+#### Over valuing sample applications
 
 One of the most often-asked questions on software development forums is “Can I see a sample application?” There are probably many good solutions that show the result of a product developed under a DDD process, but much of the benefit of DDD is not revealed when you only examine the code artifacts. DDD is performed on whiteboards, over coffee, and in the corridors with business experts; it manifests itself when a handful of small refactorings suddenly reveal a hidden domain concept that provides the key to deeper insight. A sample application does not reveal the many conversations and collaborations between domain experts and the development team nor does it reveal the “Aha!” moments when deeper understanding of the problem domain is discovered.
 
@@ -78,19 +80,30 @@ The code artifact is the product of months and months of hard work, but it only 
 
 If you were to view a solution that had been built following a DDD approach hoping to emulate the philosophy, a lot of the principles and practices would not be experienced, and too much emphasis would be placed on the building blocks of the code. Indeed, if you were not familiar with the domain, you would not find the underlying domain model very expressive at all.
 
-### Don't miss the real value of DDD
+#### Missing the real value of DDD
 
 A team focusing too much on the tactical patterns is missing the point of DDD. The true value of DDD lies in the creation of a shared language, specific to a context that enables developers and domain experts to collaborate on solutions effectively. Code is a by-product of this collaboration. The removal of ambiguity in conversations and effortless communication is the goal. These foundations must be in place before any coding takes place to give teams the best chance of solving problems. Problems are solved not only in code but through collaboration, communication, and exploration with domain experts. Developers should not be judged on how quickly they can churn out code; they must be judged on how they solve problems with or without code.
 
 ### Going Back to First Principles
 
-The remainder of this essay focuses on distilling these non technical aspects of DDD down into first principles that I have learned to focus on over my time working in software development. The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
+In the remainder of this essay I will present to you each of these 5 first principles that I have distilled down from the non-technical aspects of DDD and learned to focus on during my career to allow me to really use the power od DDD.
+
+These first principles are:
+
+ * Gain agreement on the problem
+ * Collaborate towards a solution
+ * Ensure the solution solves the core problem
+ * Optimize the overall system
+ * Uphold personal values and principles
 
 ![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
 
+The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
+
 I would hasten to add that however well you manage the non technical side, it goes without saying you need to have a proficient technical ability. However I have often witnessed that a good understanding of the goal of the core domain and the problem space itself enables a simpler solution to be found that requires a simpler technical implementation.
 
-## Gain agreement on the problem
+
+## Principle 1: Gain agreement on the problem
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
  
