@@ -134,6 +134,7 @@ There are a plethora of techniques to extract where you should focus to enable b
  * The Lean Enterprise Innovation Portfolio
  * Wardley Mapping
  * Customer Journey Mapping
+ * Domain Storytelling
 
 I will explain the four practices that I have found particularly useful and powerful to me.
 
