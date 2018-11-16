@@ -1,4 +1,4 @@
-# Distilling DDD into First Principles (by Scott Millett)
+# Distilling DDD Into First Principles (by Scott Millett)
 
 *Parts of this essay first appeared in the book Patterns, Principles, and Practices of Domain-Driven Design (Wrox 2015) by Scott Millett and Nick Tune.*
 
@@ -22,7 +22,7 @@ Over my career I have had the great fortune of working in a industry full of the
 
 So while I can’t guarantee that my words of wisdom will fix all your problems (or any). however I do hope you find something in the lessons that I have learnt over the years that perhaps can act as a catalyst to helping you on your DDD journey. Remember its all about context, and this is mine.
 
-## The fundamental concepts of DDD
+## The Fundamental Concepts Of DDD
 
 > Domain-driven design is both a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. Eric Evans, Domain-Driven Design (2003)
 
@@ -41,11 +41,11 @@ DDD in a nutshell:
 ![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
 
 
-### Distill the Problem Domain to Reveal What Is Important
+### Distill The Problem Domain To Reveal What Is Important
 
 Development teams and domain experts use analysis patterns and knowledge crunching to distill large problem domains into more manageable sub domains. This distillation reveals the core sub domain(s)—the reason the software is being written. The core domain is the driving force behind the product under development. For example in a airline pricing system the algorithm could be the key to the software being successful or not. The system would of course need identity and access control management but this would only be to support the core domain. In a different domain, say government documentation control the security and access may be the core domain and management of content only supporting. The point is that DDD emphasizes the need to focus effort and talent on the core sub domain(s) as this is the area that holds the most value and is key to the success of the software.
 
-### Create models to solve problems
+### Create Models To Solve Problems
 
 With an understanding of where to focus effort, the technical team along with domain experts can begin to derive a solution represented as an analysis model. This is typically done in a collaborative manner occuring around whiteboards, working through concrete scenarios with business experts and generally brainstorming together. This process is the catalyst to conversation, deep insight, and a shared understanding of the domain for all participants. It is the quest to discover and agree on a shared understanding of the problem domain to produce a model, using a shared, ubiquitous Language,  that can fulfill business use cases, remove constraints or open up opportunities. 
 
@@ -53,26 +53,26 @@ When a useful analysis model is discovered a code model can follow. I hasten to 
 
 Tactical patterns are used to keep the code model supple and to isolate domain from infrastructure code thus avoiding the accidental complexity of merging technical and business concerns. 
 
-### Split large models to prevent ambiguity and corruption
+### Split Large Models To Prevent Ambiguity And Corruption
 
 Large models can be split into smaller models and defined within separate bounded contexts to reduce complexity where ambiguity in terminology exists or where multiple teams need to work in parallel. The bounded context defines the applicability of the model and ensures that its integrity is retained. The bounded contexts form a protective boundary around models that helps to prevent software from evolving into a big ball of mud. Context boundaries aren’t limited to just language or team set up. They can be influenced by ambiguity in terminology and concepts of the domain, alignment to subdomains and business capabilities, team organization for autonomy and physical location, legacy code base, third party integration and a host of other factors.
 
-## Why Teams need to realign with DDD’s first principles
+## Why Teams Need To Realign With DDD’s First Principles
 
 As you will have noticed, the majority of effort when applying the practices of Domain-Driven Design lie outside of the technical realm. Many people’s first introduction with Domain-Driven Design is an exposure to the tactical design patterns as well as techniques such as event sourcing or CQRS. They never experience or learn to appreciate the true power of DDD because they aren’t aware or don’t focus on the non technical aspect of software creation. It is the deep understanding of the problem space and the relentless focus on the core domain that allow effective and collaborative model-driven designs to lead to a viable solution. Only then do we need to leverage tactical patterns to organise code in such a manner as to reduce accidental complexity.
 
 
-### Why Domain-Driven solutions often fail to deliver 
+### Why Domain-Driven Solutions Often Fail To Deliver 
 
 The reason that solutions fail to deliver, and the reason we need to focus on first principles, is not because of a lack of programming ability or technical expertise, but rather because of a lack of understanding, communication, and business knowledge. I am not saying technical people are lazy just that output doesn’t always translate to outcome. This lack of understanding stems from how developers capture knowledge of the problem domain they work in. Put another way, if developers and customers cannot effectively communicate, aren’t aligned on the same overarching goals then even with the most accomplished programmers in the world, you ultimately cannot produce meaningful outcomes. 
 
 Having the right soft skills to avoid becoming entrenched or attached to an early version of a model is also important. For example having a technically supple model is great, but useless if you're not able to realise it doesn’t work as your initial understanding was proved to be incorrect.
 
-#### Striving for Tactical Pattern Perfection
+#### Striving For Tactical Pattern Perfection
 
 Teams concerned only with writing code focus on the tactical patterns of DDD. They treat the building block patterns as a bible rather than a guide, with no understanding of when it’s okay to break the rules. They waste effort adhering to the rules of the patterns. This energy is better spent on understanding why it needs to be written in the first place. DDD is about discovering what you need to write, why you need to write it, and how much effort you should use. The tactical patterns of DDD are the elements that have evolved the most since Eric’s book was written, with the strategic side of DDD remaining faithful to Eric Evan’s original text, albeit there has been great progress on the techniques of how to distill problem spaces which I will discuss later. How development teams create domain models is not nearly as important as understanding what models to write in the first place and how to develop them in a bounded context. Understanding the what and the why of problem solving is a more important process to get correct than how you are going to implement it in code.
 
-#### Over valuing sample applications
+#### Over Valuing Sample Applications
 
 One of the most often-asked questions on software development forums is “Can I see a sample application?” There are probably many good solutions that show the result of a product developed under a DDD process, but much of the benefit of DDD is not revealed when you only examine the code artifacts. DDD is performed on whiteboards, over coffee, and in the corridors with business experts; it manifests itself when a handful of small refactorings suddenly reveal a hidden domain concept that provides the key to deeper insight. A sample application does not reveal the many conversations and collaborations between domain experts and the development team nor does it reveal the “Aha!” moments when deeper understanding of the problem domain is discovered.
 
@@ -80,11 +80,11 @@ The code artifact is the product of months and months of hard work, but it only 
 
 If you were to view a solution that had been built following a DDD approach hoping to emulate the philosophy, a lot of the principles and practices would not be experienced, and too much emphasis would be placed on the building blocks of the code. Indeed, if you were not familiar with the domain, you would not find the underlying domain model very expressive at all.
 
-#### Missing the real value of DDD
+#### Missing The Real Value Of DDD
 
 A team focusing too much on the tactical patterns is missing the point of DDD. The true value of DDD lies in the creation of a shared language, specific to a context that enables developers and domain experts to collaborate on solutions effectively. Code is a by-product of this collaboration. The removal of ambiguity in conversations and effortless communication is the goal. These foundations must be in place before any coding takes place to give teams the best chance of solving problems. Problems are solved not only in code but through collaboration, communication, and exploration with domain experts. Developers should not be judged on how quickly they can churn out code; they must be judged on how they solve problems with or without code.
 
-### Going Back to First Principles
+### Going Back To First Principles
 
 The DDD first principles highlight why technical teams should be more aligned with the domain and drive all decisions from that position. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
 
@@ -103,7 +103,7 @@ My first principles are:
 I would hasten to add that however well you manage the non technical side, it goes without saying you need to have a proficient technical ability. However I have often witnessed that a good understanding of the goal of the core domain and the problem space itself enables a simpler solution to be found that requires a simpler technical implementation.
 
 
-## Principle 1: Gain agreement on the problem
+## Principle 1: Gain Agreement On The Problem
 
  > “If you do not deal directly with the core problem, don’t expect significant improvement.” —Eli Goldratt
  
@@ -117,7 +117,7 @@ It is always worth asking why rather than just accepting that someone else has e
 
 Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level. This will enable you, and your team, to buy in and be fully committed to an idea.
 
-### Be clear on how you deliver business value
+### Be Clear On How You Deliver Business Value
 
  > “People don't want to buy a quarter-inch drill, they want a quarter-inch hole.” Theodore Levitt
 
@@ -127,7 +127,7 @@ The IT department is part of the business, you should strive beyond creating sof
 
 As I have already mentioned, IT is far more strategic in most businesses than ever before. The advances in technology have disrupted many markets, think of Kodak and Blockbuster, giants businesses that have vanished. Delivering true value stems from acting from a domain perspective and identifying opportunities through leveraging your technical domain knowledge to help your business counterparts understand the art of the possible. Look for the money, how can I help shift the KPI, how can I contribute to removing a  bottleneck to business throughput? This is how you win, this is how you deliver real value.
 
-### Techniques for Revealing Where Business Value Lies
+### Techniques For Revealing Where Business Value Lies
 There are a plethora of techniques to extract where you should focus to enable business value. Such as 
 
  * The Business Model Canvas
@@ -158,7 +158,7 @@ On many software projects the developers only get the lower tiers of an impact m
 
 Some DDD practitioners rate impact mapping very highly, both when applied with DDD or in isolation. You are highly encouraged to investigate impact mapping by browsing the website (http:// www.impactmapping.org/) or picking up a copy of the book: “Impact Mapping,” by Gojko Adzic.
 
-#### Understanding the Business Model
+#### Understanding The Business Model
 
 A business model contains lots of useful domain information and accentuates the fundamental goals of a business. Unfortunately, very few developers take the time to understand the business model of their employers or even to understand what business models really are.
 
@@ -179,7 +179,7 @@ Understanding the nine building blocks of a business model tells you what is imp
 Armed with the information presented by a Business Model Canvas you will be empowered to ask meaningful questions of domain experts and help to drive the evolution of the business—not just the technical implementation. The small effort of finding and understanding your employer’s business model is well worth it.
 
  
- #### Applying the Theory of Constraints and Systems Thinking
+ #### Applying The Theory Of Constraints And Systems Thinking
 
 The theory of constraints (TOC) is a management paradigm introduced by Eli Goldratt that states that a system will be limited to achieving its goals by a few small constraints. Therefore focus and effort should be aimed at removing these constraints to the system above anything else. This will ensure that any output of effort results in maximum outcome to the business goal - more often than not gaining money. In very simple terms, identify the bottleneck that restricts the production of business value and remove.
 
@@ -206,17 +206,18 @@ Why is this relevant to DDD you may ask? DDD has the domain or business at the h
 
 As an example, imagine you are part of a team that has been tasked with increasing online transactions by 10%. In order to gain alignment on where to focus you could apply TOC to determine what is the constraint for people checking out. Is it the registration page? If you see a high amount of dropouts you could look for a solution and correct the problem. Then you would look to see what the next big constraint to checking out is. It could be that the checkout flow is fine but by actually increasing the range of products available you would achieve 10% increase in transactions, all being equal.Alternatively if you optimised payment it would have little impact, even if done with great effort and skill, as the constraint is further up the flow. 
 
-## Principle 2: Collaborate towards a solution
+## Principle 2: Collaborate Towards A Solution
 
 By gaining alignment on the real business constraint or opportunity you will be able to progress from having a shallow understanding of your problem domain but a good grasp on requirements to a deep understanding of business needs with an eye on opportunities that you can enable. Remember, people will tell you what they want rather than what is needed, the difference is subtle but leads to very different outcomes. Therefore don’t sit and wait for requirements - offer solutions. 
 
 Start with a big picture understanding of the vision of the solution so that everyone has an alignment point. Highlight the important areas and those that need only to be good enough. Facilitate collaborative workshops on model design and problem simplification. You need to actively participate in solution design away from the computer. Contribute to your own requirements, don’t leave it to others.
 
-I often wonder if the titles of roles are somewhat self fulfilling. When I first started out in the world of IT my first job title was Analyst Programmer. The definition of an analyst is an individual who performs analysis of a topic and Programmer is a person who writes computer programs. Therefore half of my job was to understand about problems and the other half was to translate that understanding into language a computer could understand. Titles such as software developer and engineer focus solely on the technical side and assume that the problem is refined enough that it can be turned into a set of requirements. The reality as we all know is seldom so.
+I often wonder if the titles of roles are somewhat self fulfilling. When I first started out in the world of IT my first job title was Analyst Programmer. The definition of an analyst is an individual who performs analysis of a topic and Programmer is a person who writes computer programs. Therefore half of my job was to understand about problems and the other half was to translate that understanding into language a computer could understand. Titles such as software developer and engineer focus solely on the technical side and assume that the solution is refined enough that it can be turned into a set of requirements. The reality as we all know is seldom so.
 
-A focus purely on the technical side highlights a bigger problem: when designing software for systems with complex logic, typing code will never become a bottleneck. The code is an artifact of developers and domain experts working together and modeling the problem domain. The code represents the end of the process of collaboration and discovery. A developer’s job is to problem solve, and problem solving is sometimes easier done away from the keyboard in collaboration with domain experts. In the end, working code is ultimately the result of learning and an understanding of the domain.
+A focus purely on the technical side highlights a bigger problem: when designing software for systems with complex logic, typing code will never become a bottleneck. The code is an artifact of developers and domain experts working together and modeling the a solution for the problem domain. The code represents the end of the process of that collaboration and discovery. A developer’s job is to problem solve, and problem solving is sometimes easier done away from the keyboard in collaboration with domain experts. In the end, working code is ultimately the result of learning and an understanding of the domain.
 
-### Show passion for the problem domain
+
+### Show Passion For The Problem Domain
 
  > “Ignorance  is  the single  greatest  impediment  to  throughput.” Dan North
 
@@ -229,13 +230,23 @@ Software development is a learning process, so is the quest to reveal deep insig
 To apply the principles of DDD, you need a driven and committed team—a team committed to learning about its craft and the problem domains it works in. Passion lies within all of us, and if you feel value in the practices of DDD, it is up to you to inspire your team and become an evangelist. Passion is contagious; if you commit to spend time with your domain experts to understand at a deeper level and can show how this results in a more expressive codebase then your team will follow.
 
 Have passion for the problem space, Be proactive, be curious - this will make it easier to find solutions and more importantly opportunities. You cannot begin to be useful to solve a problem or look for opportunity if you don't really understand the domain you are working in to a sufficiently deep level. You are a professional. You are paid well. You have a responsibility to understand the domain you are in.
+
+### Learn To Facilitate Solution Exploration
+
+Making sense of a complex problem domain in order to create a simple and useful model requires in-depth knowledge and deep insight that can only be gained through constant collaboration with the people that understand the domain inside and out. Complex problem domains will contain a wealth of information, some of which will not be applicable to solving the problem at hand and will only act to distract from the real focus of your modelling efforts. Knowledge crunching is the art of distilling relevant information from the problem domain in order to build a useful model that can fulfill the needs of problem domain.
+
+Domain knowledge is key, even more so than technical know‐how. Teams working in a business with complex processes and logic need to immerse themselves in the problem domain and, like a sponge, absorb all the relevant domain knowledge. This insight will enable teams to focus on the salient points and create a model at the heart of their application’s code base that can fulfill the business use cases and keep doing so over the lifetime of the application.
+
+Facilitation skills are vital in order to efficiently and effectively distill knowledge from domain experts. You don’t need to be the smartest person but you do need to be able to collaborate and facilitate with smart people to gain deep insights. Only by asking the right questions can decisions be made, knowledge can be shared and a solution can be revealed and agreed upon. As covered in the Principle 1: Gain Agreement on the Problem Alberto Brandolini has done a tremendous amount of work in this area under the practice of event storming and big picture visual modeling. But this can also be used to focus on solution exploration at a lower level.
+
+The key to facilitation is about guiding people not to an answer but to a shared understanding and empowering them to take responsibility. It’s not to lead a group and make good decisions, it is to make sure good decisions get made. Workshops and collaborative working must enable a platform that accepts different points of views. No one should have the authority on a good idea, and no suggestion is stupid
  
-### Deliberate discovery at the constraint
+### Deliberate Discovery At The Constraint
 
 Dan  North, the  creator  of  BDD, has  published  a  method  for  improving domain  knowledge  called  deliberate  discovery.  Instead  of  focusing  on the  framework  of  agile  methodologies  during  planning  and  requirement gathering  stages, such  as  the  activities  of  planning  poker  and  story creation, you  should  devote  time  to  learning  about  areas  of  the  problem domain  that  you  are  ignorant  about.  A  greater  amount of  domain  knowledge  will  improve  your  modeling  efforts. At  the  start  of a  project  teams  should  make  a  concerted  effort  to  identify  areas  of  the problem  domain  that  they  are  most  ignorant  of  to  ensure  that  these  are tackled  during  knowledge-crunching  sessions. Teams  should  use knowledge-crunching  sessions  to  identify  the  unknown  unknowns, The parts  of  the  domain  that  they  have  not  yet  discovered. This  should  be  led by  the  domain  experts  and stakeholder  who  can  help  the  teams  focus  on areas  of  importance, such as an identified constraint or bottleneck,  and  not  simply  crunching  the  entire  problem domain. This  will  enable  teams  to  identify  the  gaps  in  domain  knowledge and  deal with  them  in  a  rapid  manner.
 
 
-### Collaborate on viable solutions rather than looking for requirements 
+### Don’t Ask For Requirements, Look For Impact Opportunities 
 
  > “Opinion is really the lowest form of human knowledge. It requires no accountability, no understanding. The highest form of knowledge… is empathy, for it requires us to suspend our egos and live in another’s world. It requires profound purpose larger than the self kind of understanding.” ― Bill Bullard
 
@@ -243,7 +254,7 @@ Be wary of business users asking for enhancements to existing software, because 
 
 Requirements assume someone has all the answers - this is a massive fallacy. We have progressed passed the stage of simply getting requirements from people. We now should be able to partner with business counterparts in order to remove problems or introduce them to the art of the possible and the endless opportunities technology can enable. Remember be accountable, don't be lazy - don’t delegate solution design to the business. It’s not someone else’s problem, it’s yours. Domain experts are not system experts. Learn and discover with them. I have often found it the case that domain experts don’t necessarily know how current system works, or should work. They are domain experts, experts in their fields, but not business process engineers, not systems experts.
 
-### Collaborate with the Domain Expert on the Most Interesting Parts
+### Focus On The Most Interesting Parts
 
  > “There is no compression algorithm for experience” -Andy Jassy, CEO AWS
 
@@ -253,19 +264,20 @@ When picking scenarios to model, don’t go for the low-hanging fruit; ignore th
 
 Therefore focus on the parts of the product that make it unique; these will be hard or may need clarification. Time spent in this area will be well served, and this is exactly why collaboration with domain experts is so effective. Using domain experts’ time to discuss simple create, read, update, and delete (CRUD) operations will soon become boring, and the domain expert will quickly lose interest and time for you. Modeling in the complicated areas that are at the heart of the product is exactly what the principles of DDD were made for.
 
-### Learn to Facilitate Problem exploration
+#### The Core Focus of PotterMore.com
+Pottermore.com was the only place on the web where you can buy digital copies of the Harry Potter books. Like any e‐commerce site, it allows you to browse products, store products in a basket, and check out. The core domain of the Pottermore site
+is not what the customer sees, but rather what he does not. Pottermore books aren’t DRM‐locked (http://www.futurebook.net/content/pottermore-finally- delivers-harry-potter-e-books-arrive); they are watermarked. This invisible watermark allows the books that are purchased to be tracked in case they’re hosted illegally on the web. The core domain of the Pottermore system is the subdomain that enables this watermarking technology to deter illegal distribution of a book without infringing on the customer. (The customer can copy the book to any other of his devices.) This is what was most important to the business, what set it apart from other e‐book sellers, and what ensured the system was built rather than being sold on iTunes or other e‐book sellers.
 
- > “Engagement is more important than precision.” Alberto Brandolini on Event Storming
+### Ensure Everyone Understands The Vision Of The Solution
+A domain vision statement can be created at the start of a project to explicitly capture what is central to the success of the software, what the business goal is, and where the value is. This message should be shared with the team and even stick it up on a wall in the office as a reminder to why the software is being written.
 
-Making sense of a complex problem domain in order to create a simple and useful model requires in-depth knowledge and deep insight that can only be gained through constant collaboration with the people that understand the domain inside and out. Complex problem domains will contain a wealth of information, some of which will not be applicable to solving the problem at hand and will only act to distract from the real focus of your modelling efforts. Knowledge crunching is the art of distilling relevant information from the problem domain in order to build a useful model that can fulfill the needs of problem domain.
+#### Amazon’s Approach To Product Development 
 
-Domain knowledge is key, even more so than technical know‐how. Teams working in a business with complex processes and logic need to immerse themselves in the problem domain and, like a sponge, absorb all the relevant domain knowledge. This insight will enable teams to focus on the salient points and create a model at the heart of their application’s code base that can fulfill the business use cases and keep doing so over the lifetime of the application.
+Amazon has a unique approach when it comes to forming a domain vision statement called working backwards (see: http://www.quora.com/What-is- Amazons-approach-to-product-development-and-product-management).
+For new enhancements, a product manager produces an internal press release announcing the nished product, listing the benefits the feature brings. If the intended customer doesn’t feel the benefits are exciting or worthwhile, the product manager refactors the press release until the feature offers real value for the customer. At all times, Amazon is focused on the customer and is clear about the advantage a new feature can bring before it sets out with development.
 
-Facilitation skills are vital in order to efficiently and effectively distill knowledge from domain experts. You don’t need to be the smartest person but you do need to be able to collaborate and facilitate with smart people to gain deep insights. Only by asking the right questions can decisions be made, knowledge can be shared and a solution can be revealed and agreed upon. Alberto Brandolini has done a tremendous amount of work in this area under the practice of event storming and big picture visual modeling which I urge you to seek out. 
 
-The key to facilitation is about guiding people not to an answer but to a shared understanding and empowering them to take responsibility. It’s not to lead a group and make good decisions, it is to make sure good decisions get made. Workshops and collaborative working must enable a platform that accepts different points of views. No one should have the authority on a good idea, and no suggestion is stupid. 
-
-## Principle 3: Ensure the solution solves the core problem
+## Principle 3: Ensure The Solution Solves The Core Problem
 
  > “Technology can bring benefits if, and only if, it diminishes a limitation.” —Eli Goldratt
 
