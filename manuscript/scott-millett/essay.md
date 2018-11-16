@@ -148,7 +148,7 @@ As an example, imagine you are part of a team that has been tasked with increasi
 
  > “People don't want to buy a quarter-inch drill, they want a quarter-inch hole.” Theodore Levitt
 
-A software developer is primarily a problem solver who utilizes technology to implement a solution. Their job is to remove blockers that prevent the business producing value. Remember, code is a product of a solution, not the process; you can solve problems without having a technical solution, therefore you should value business outcomes over software output. It’s not about being a code monkey it’s about getting results that benefit the business and help achieve its goal.
+A software developer is primarily a problem solver. Their job is to remove blockers that prevent the business producing value rather than producing code. Code should be viewed as the by product of finding a solution to a business problem, meaning that, on occasion, developers can actually solve problems without having a technical solution at all. Focus should be squarely on contributing to business outcomes over software output. It’s not about writing elegant code, it’s about getting results that benefit the business and help achieve its goal.
 
 The IT department is part of the business, you should strive beyond creating software based on what you understand from the business to creating solutions that contribute to the overall business goal. This is a small but important distinction. Its similar to the paradoxical saying “I’m stuck in traffic” - you are not stuck in traffic, you are traffic. Software developers ARE the business, they just happen to be domain experts in software design just as accountants are domain exports in finance. You should not have a them and us mentally. 
 
