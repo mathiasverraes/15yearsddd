@@ -116,8 +116,70 @@ Why you ask? The reason is to ensure you truly understand what you are being tas
 It is always worth asking why rather than just accepting that someone else has ensured that this is the correct solution to the business need further up the chain and not simply a local optimisation or a wish list item. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? Often the result of systematically asking "why" will reveal a painfully simple solution or a complete change in direction. Clearly, don’t ask the question as a child might; be creative with how you search for the truth, but pull on the string of a problem until you reach the root of the matter.
 
 Of course I am not expecting you to be a proxy CEO and change the direction of a company. But you ought to at least question and understand people's motivation for problem solving at a deeper level. This will enable you, and your team, to buy in and be fully committed to an idea.
+
+### Be clear on how you deliver business value
+
+ > “People don't want to buy a quarter-inch drill, they want a quarter-inch hole.” Theodore Levitt
+
+A software developer is primarily a problem solver. Their job is to remove blockers that prevent the business producing value rather than producing code. Code should be viewed as the by product of finding a solution to a business problem, meaning that, on occasion, developers can actually solve problems without having a technical solution at all. Focus should be squarely on contributing to business outcomes over software output. It’s not about writing elegant code, it’s about getting results that benefit the business and help achieve its goal.
+
+The IT department is part of the business, you should strive beyond creating software based on what you understand from the business to creating solutions that contribute to the overall business goal. This is a small but important distinction. Its similar to the paradoxical saying “I’m stuck in traffic” - you are not stuck in traffic, you are traffic. Software developers ARE the business, they just happen to be domain experts in software design just as accountants are domain exports in finance. You should not have a them and us mentally. 
+
+As I have already mentioned, IT is far more strategic in most businesses than ever before. The advances in technology have disrupted many markets, think of Kodak and Blockbuster, giants businesses that have vanished. Delivering true value stems from acting from a domain perspective and identifying opportunities through leveraging your technical domain knowledge to help your business counterparts understand the art of the possible. Look for the money, how can I help shift the KPI, how can I contribute to removing a  bottleneck to business throughput? This is how you win, this is how you deliver real value.
+
+### Techniques for Revealing Where Business Value Lies
+There are a plethora of techniques to extract where you should focus to enable business value. Such as 
+
+ * The Business Model Canvas
+ * The Lean Enterprise Innovation Portfolio
+ * Wardley Mapping
+ * Customer Journey Mapping
+
+I will explain the four practices that I have found particularly useful and powerful to me.
+
+#### Event Storming
+
+Event Storming is a workshop activity that is designed to quickly build an understanding of a problem domain in a fun and engaging way for the business and development teams. Groups of domain experts, the ones with the answers, and development team members, the ones with the questions, work together to build a shared understanding of the problem domain. 
+
+Knowledge crunching occurs in an open environment that has plenty of space for visual modeling, be that lots of whiteboards or an endless roll of brown paper.
+The problem domain is explored by starting with a domain event; i.e., events that occur within the problem domain that the business cares about. A Post-it note representing the domain event is added to the drawing surface and then attention is given to the trigger of that event. An event could be caused by a user action that is captured and added to the surface as a command. An external system or another event could be the originator of the event; these are also added to the canvas. This activity continues until there are no more questions. The team can then start to build a model around the decision points that are made about events and when they, in turn, produce new events.
+
+Event storming is an extremely useful activity for cultivating a UL as each event and command is explicitly named, this goes a long way to producing a shared understanding between the developers and business experts. The biggest benet however is that it’s fun, engaging, and can be done quickly. Alberto Brandolini created this activity and more information can be found on his blog at http://ziobrando.blogspot.co.uk/.
+
+#### Impact Mapping
+
+A technique for better understanding how you can influence business outcomes is impact mapping. With impact mapping, you go beyond a traditional requirements document and instead you try to work out what impacts the business is trying to make. Do they want to increase sales? Is their goal to increase market share? Do they want to enter a new market? Maybe they want to increase engagement to create more loyal customers who have a higher lifetime value.
+
+Once you understand the impact the business is trying to make you can play a more effective role in helping them to achieve it. Significantly for DDD, you will be able to ask better questions during knowledge-crunching sessions since you know what the business wants to achieve. Surprisingly, impact mapping is a very informal technique. You simply create mind‐map-like diagrams that accentuate key business information. You work with the business so that, like knowledge crunching, it is a collaborative exercise that helps to build up a shared vision for the product. 
+
+An impact map, rather obviously, starts with the impact. For example “sell 25% more bicycles”. Directly connected to the impact are the actors—the people who can contribute to making the desired impact. That would be developers and data scientists. Child nodes of the actors are the ways in which the actors can help. One way the developers can help to create the business impact is to improve the performance of the website so that people are more likely to make a purchase. Finally, the last level of the hierarchy shows the actual tasks that can be carried out. You can see in the image that one way the developers may be able to make the website faster is to remove slow frameworks.
+
+On many software projects the developers only get the lower tiers of an impact map—what the business thinks they need and how they think the developers should achieve it. With an impact map, though, you can unwind their assumptions and nd out what they really want to achieve. And then you can use your technical expertise to suggest superior alternatives that they would never have thought of.
+
+Some DDD practitioners rate impact mapping very highly, both when applied with DDD or in isolation. You are highly encouraged to investigate impact mapping by browsing the website (http:// www.impactmapping.org/) or picking up a copy of the book: “Impact Mapping,” by Gojko Adzic.
+
+#### Understanding the Business Model
+
+A business model contains lots of useful domain information and accentuates the fundamental goals of a business. Unfortunately, very few developers take the time to understand the business model of their employers or even to understand what business models really are.
+
+One of the best ways to learn about a company’s business model is to visualize it using a Business Model Canvas; a visualization technique introduced by Alexander Osterwalder and Yves Pigneur in their influential book, “Business Model” highly recommended and very accessible reading for developers. A Business Model Canvas is extremely useful because it breaks down a business model into nine building blocks, as shown in image, which illustrates an example Business Model Canvas for an online sports equipment provider.
+
+Understanding the nine building blocks of a business model tells you what is important to the business. Key information like: how it makes money, what its most important assets are, and crucially its target customers. Each of the sections of a business model is introduced below. For more information, the “Business Model Generation” book is the ideal learning resource.
+
+ * Customer Segments—the different types of customers a business targets. Examples include niche markets, mass markets, and business‐to‐business (b2b).
+ * Value Propositions—the products or services a business offers to its customers. Examples include physical goods and cloud hosting.
+ * Channels—how the business delivers its products or services to customers. Examples include physical shipping and a website.
+ * Customer Relationships—the types of relationships the business has with each customer segment. Examples include direct personal assistance and automated electronic help facilities.
+ * Revenue Streams—the different ways the business makes money. Examples include advertising revenue and recurring subscription fees.
+ * Key Resources—a business’s most important assets. Examples include intellectual property and important employees.
+ * Key Activities—the activities fundamental to making the business work. Examples include developing software and analyzing data.
+ * Key Partnerships—a list of the business’s most significant partners. Examples include suppliers and consultants.
+ * Cost Structure—the costs that the business incurs. Examples include salaries, software subscriptions, and inventory.
+
+Armed with the information presented by a Business Model Canvas you will be empowered to ask meaningful questions of domain experts and help to drive the evolution of the business—not just the technical implementation. The small effort of finding and understanding your employer’s business model is well worth it.
+
  
- ### Applying the Theory of Constraints and Systems Thinking
+ #### Applying the Theory of Constraints and Systems Thinking
 
 The theory of constraints (TOC) is a management paradigm introduced by Eli Goldratt that states that a system will be limited to achieving its goals by a few small constraints. Therefore focus and effort should be aimed at removing these constraints to the system above anything else. This will ensure that any output of effort results in maximum outcome to the business goal - more often than not gaining money. In very simple terms, identify the bottleneck that restricts the production of business value and remove.
 
@@ -143,16 +205,6 @@ TOC is all about macro level over micro level thinking. It's not about optimisin
 Why is this relevant to DDD you may ask? DDD has the domain or business at the heart of its philosophy, in that design decisions should be about driving business value. If you don't understand the constraint that is stopping the business from producing value then you can’t make a good decision on where to focus effort. The constraint could be your core domain or it could be a problem in a supporting domain that affects your core domain. Improving anything other than the constraint may have value but it won't be the most valuable thing to do. It's about removing silo mentally and making sure that teams understand the bigger picture so that they can apply effort in the best possible place. 
 
 As an example, imagine you are part of a team that has been tasked with increasing online transactions by 10%. In order to gain alignment on where to focus you could apply TOC to determine what is the constraint for people checking out. Is it the registration page? If you see a high amount of dropouts you could look for a solution and correct the problem. Then you would look to see what the next big constraint to checking out is. It could be that the checkout flow is fine but by actually increasing the range of products available you would achieve 10% increase in transactions, all being equal.Alternatively if you optimised payment it would have little impact, even if done with great effort and skill, as the constraint is further up the flow. 
-
-### Be clear on how you deliver business value
-
- > “People don't want to buy a quarter-inch drill, they want a quarter-inch hole.” Theodore Levitt
-
-A software developer is primarily a problem solver. Their job is to remove blockers that prevent the business producing value rather than producing code. Code should be viewed as the by product of finding a solution to a business problem, meaning that, on occasion, developers can actually solve problems without having a technical solution at all. Focus should be squarely on contributing to business outcomes over software output. It’s not about writing elegant code, it’s about getting results that benefit the business and help achieve its goal.
-
-The IT department is part of the business, you should strive beyond creating software based on what you understand from the business to creating solutions that contribute to the overall business goal. This is a small but important distinction. Its similar to the paradoxical saying “I’m stuck in traffic” - you are not stuck in traffic, you are traffic. Software developers ARE the business, they just happen to be domain experts in software design just as accountants are domain exports in finance. You should not have a them and us mentally. 
-
-As I have already mentioned, IT is far more strategic in most businesses than ever before. The advances in technology have disrupted many markets, think of Kodak and Blockbuster, giants businesses that have vanished. Delivering true value stems from acting from a domain perspective and identifying opportunities through leveraging your technical domain knowledge to help your business counterparts understand the art of the possible. Look for the money,  how can I help shift the KPI, how can I contribute to removing a  bottleneck to business throughput? This is how you win, this is how you deliver real value.
 
 ## Principle 2: Collaborate towards a solution
 
