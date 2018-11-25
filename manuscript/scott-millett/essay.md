@@ -280,25 +280,19 @@ For new enhancements, a product manager produces an internal press release annou
 
 ## Principle 3: Ensure The Solution Solves The Core Problem
 
- > “Technology can bring benefits if, and only if, it diminishes a limitation.” —Eli Goldratt
+ > “Technology can bring benefits if, and only if, it diminishes a limitation.”, Eli Goldratt
 
-An initial model is a product of exploration and creativity. However you should no stop at the first useful model you produce and you should constantly validate your model against different ideas and new problems. Experimentation and exploration fuel learning. Breakthroughs only occur when teams are given time to explore a model and experiment with its design. Spending time prototyping and experimenting can go a long way in helping you shape a better design. It can also reveal what a poor design looks like. You need to challenge your assumptions and realign with the big picture. Ask yourself are you sure that you are focused on the core problem and have not been distracted by an interesting yet less valuable side problems? Is the solution cost effective and simple enough? If the solution is complex have we missed a chance to simplify the problem? 
+An initial model is a product of exploration and creativity. However you should not stop at the first useful model you produce and you should constantly validate your model against different ideas and new problems. Experimentation and exploration fuel learning and vital breakthroughs only occur when teams are given time to explore a model and experiment with its design. Spending time prototyping and experimenting can go a long way in helping you shape a better design. It can also reveal what a poor design looks like. You need to challenge your assumptions and realign with the big picture. Ask yourself are you sure that you are focused on the core problem and have not been distracted by an interesting yet less valuable side problem? Is the solution cost effective and simple enough? If the solution is complex have we missed a chance to simplify the problem? 
 
-### The Jurassic Park Principle
+### Focus Effort On Outcome Over Output
 
- > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
+In an ideal world, quality software would always be top of your agenda; however, it’s important to be pragmatic. Sometimes a new system’s core domain could be first to market, or sometimes a business may not be able to tell if a particular idea will be successful and become core to its success. In this instance, the business wants to learn quickly and fail fast without putting in a lot of up-front effort.
 
-All problems are not created equal; some are complex and are of little business value, so it makes no sense to waste effort in finding automated solutions for them. Complex edge cases do not always need automated solutions. Humans can manage by exception. If a problem is complex and forms an edge case, speak to your stakeholder and domain expert about the value of automating it. Your effort could be better served elsewhere, and a human might better handle this exception. You can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless. 
+The first version of a product that is not well understood need not be well crafted. There may be uncertainty if the endeavour will be invested in over time, and therefore you need to understand why speed of delivery could top initial supple design. However, if the product is a success and there is value in a prolonged investment in the software, you need to refactor to support the evolution; otherwise, the technical debt racked up in the rush to deliver starts to become an issue. It’s a balancing act to produce code that will help you in the future against getting product out in front of customers for fast feedback.
 
-Simple problems require simple solutions. Trivial domains or subdomains that do not hold a strategic advantage for businesses will not benefit from all the principles of DDD. Developers who are keen to apply the principles of DDD to any project regardless of the complexity of the problem domain will likely be met with frustrated business colleagues who are not concerned with the less important areas of a business. Talk to people about the opportunity cost before writing code and don’t worry about not solving all the problems.
+#### Strive For Simple Boring Code
 
-If we remind ourselves of the theory of constraints we should avoid local optimisations at expense of improving the system. You should ask yourself will your output produce meaningful outcomes - should you expend lots of effort and energy on are area of the solution that does not impact the core domain?
-
-You need to master the art of saying no. This is of course very difficult in practice, but it is worth it. Well meaning business counterparts may want you to optimise for their department at the expense of the system. Empathising with them and helping them understand how this distracts you from the overall goal will give you more time to focus on the strategic high value areas. 
-
-### Keep code simple to reduce the cost of software 
-
- > “All good solutions have one thing in common: they are obvious but only in hindsight." Eli Goldratt
+ > “Simplicity is prerequisite for reliability.”, Edsger W. Dijkstra
 
 Teams that are aligned with the philosophy of DDD focus more on the bigger picture and understand where to put the most effort. They will not apply the same architecture to all parts of a solution, and they will not strive for perfection in areas of little value. They will trade isolated and working software for unnecessary elegance and gold plating.
 Only the core domains need to be elegant due to complexity or importance. This is not to say that all other code should be poorly written, but sometimes good is good enough.
@@ -311,29 +305,74 @@ Don’t let design patterns and principles get in the way of getting things done
 
 Keep your model simple and focused, and strive for boring plain code. Often teams quickly fall into the trap of overcomplicating a problem. Keeping a solution simple does not mean opting for the quick and dirty; it’s about avoiding mess and unnecessary complexity. Use simplicity during code review or pair programming. Developers should challenge each other to ensure they are proving a simple solution and that the solution is explicitly focused only on the problem at hand, not just a general solution to a generalized problem.
 
-### Change the Problem
 
-Writing software is expensive, code is expensive to produce and maintain. If you can solve a solution without code it’s great. If you can limit what you output this is a good thing. Teams should be rewarded for developing simple solutions that enable business capability at a low actual cost and low opportunity cost. One way to do this is to change the problem. If you have a poorly understood or inefficient business process then applying a technical solution to it will simply create an expensive automated, but more complex process.
+#### The Jurassic Park Principle
 
-Don’t be lazy and code around the problem. Sometime it’s easier to code and add to domain complexity rather than change business process as it’s difficult to get the decision makers in a room. But you must do everything you can to simplify problems so that you can produce simpler solution models. Highlight overly verbose or poor business process to your business counterparts so that are able to make changes. It’s easy and lazy to not change process with the excuse that it’s been like that and it’s established, especially when it requires complex code to work around it. You wouldn’t hesitate to refactor complex code why not refactor the business?. Don’t accept mediocrity in business process sort it at the root instead of trying to use software.
+ > "Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.” Dr. Ian Malcom, Jurrasic Park
 
-### Explore alternative models
+All problems are not created equal; some are complex and are of little business value, so it makes no sense to waste effort in finding automated solutions for them. Complex edge cases do not always need automated solutions. Humans can manage by exception. If a problem is complex and forms an edge case, speak to your stakeholder and domain expert about the value of automating it. Your effort could be better served elsewhere, and a human might better handle this exception. You can produce elegant and beautiful software but if it provides no value or misses the point then it is utterly useless. 
 
-When you are starting out on a new solution you are probably least knowledgeable about the domain. Paradoxically this is also the time when you will be making important decisions. Each different model will have different trade offs, pros and cons. Don’t delay making decisions because they are imperfect. A lack of decision making is the biggest blocker I have consistently seen in software projects.  Make decisions based on what you know and what you need to achieve. You can always change your mind when you have more data. It’s not about being right or wrong it’s about moving forward, progressing and driving toward value. You will make wrong decisions but only from the luxury of hindsight so please don’t beat yourself up - remember this is a learning process.
+Simple problems require simple solutions. Trivial domains or subdomains that do not hold a strategic advantage for businesses will not benefit from all the principles of DDD. Developers who are keen to apply the principles of DDD to any project regardless of the complexity of the problem domain will likely be met with frustrated business colleagues who are not concerned with the less important areas of a business. Talk to people about the opportunity cost before writing code and don’t worry about not solving all the problems.
 
-They say all models are wrong, its just that some are more useful. Your initial model will be wrong, but don’t get too hung up. Remember you need to love the problem not your initial solution. The process of learning more about the problem domain is achieved over many iterations and many modelling attempts.. Your knowledge will grow, and with this you will be able to evolve your model into something useful and appropriate.
+If we remind ourselves of the theory of constraints we should avoid local optimisations at expense of improving the system. You should ask yourself will your output produce meaningful outcomes - should you expend lots of effort and energy on are area of the solution that does not impact the core domain?
 
-Complex domains are full of uncertainty, you need to be comfortable with this and with not knowing all the answers upfront. Remember a wrong choice is rather like an AB test, you chalk it up to experience and you have more knowledge on what doesn’t work.
+You need to master the art of saying no. This is of course very difficult in practice, but it is worth it. Well meaning business counterparts may want you to optimise for their department at the expense of the system. Empathising with them and helping them understand how this distracts you from the overall goal will give you more time to focus on the strategic high value areas. 
 
-### Don’t stop at your first attempt
 
-When arriving at the first useful model, most teams usually stop exploring and jump to their keyboards to implement it. Your first model will unlikely be your best. Once you have a good model, you should park it and explore the problem from a different direction. Exploration and experimentation are vital to enable deep discoveries and to learn more about the problem domain; therefore, make mistakes and validate new ideas by comparing them to bad ones.
+#### Build Subdomains For Replacement Rather Than Reuse
 
-Try to unlearn everything you gained for the first model and take a new direction. Explore and experiment to reveal insights and offer new solutions. The result of tackling a problem from various angles is not the creation of a perfect model but instead the learning and discovery of concepts in the problem domain. This is far more valuable and leads to a team able to produce a useful model at each iteration.
+When developing models in subdomains try and build them in isolation with replacement in mind. Keep them separated from other models, legacy code, and third party services by using clean boundaries. By coding for replacement rather than reuse you can create good enough supporting subdomains without wasting effort on perfecting them. In the future they can be replaced by off‐the‐shelf solutions or can be rewritten as business needs change. Stiive for good boundaries rather than perfect models. Boundaries are often harder to change than a model.
+
+
+#### Simplify The Solution By Simplifying The Problem
+
+Writing software is costly, code is expensive to produce and maintain. If you can solve a solution without code it’s great. If you can limit what you output this is a good thing. Teams should be rewarded for developing simple solutions that enable business capability at a low actual cost and low opportunity cost. One way to do this is to change the problem. If you have a poorly understood or inefficient business process then applying a technical solution to it will simply create an expensive automated, but more complex process.
+
+Don’t be lazy and code around the problem. Sometime it’s easier to code and add to domain complexity rather than change business process as it’s difficult to get the decision makers in a room. But you must do everything you can to simplify problems so that you can produce simpler solution models. Highlight overly verbose or poor business process to your business counterparts so that are able to make changes. It’s easy and lazy to not change process with the excuse that it’s been like that and it’s established, especially when it requires complex code to work around it. We understand the value of code refactoring why not refactor the business? Don’t accept mediocrity in business process, highlight it at the root and speak to your business counterparts before trying to automate.
+
+### Challenge Your Solution
+
+ > "All good solutions have one thing in common: they are obvious but only in hindsight.", Eli Goldratt
+
+When you are starting out on a new solution you are probably least knowledgeable about the domain. Paradoxically this is also the time when you will be making important decisions. Complex domains are full of uncertainty, you need to be comfortable with this and with not knowing all the answers upfront. Remember a wrong choice is rather like an AB test, you chalk it up to experience and you have more knowledge on what doesn’t work.
+
+They say all models are wrong, its just that some are more useful. Your initial model will be wrong, but don’t get too hung up. Remember you need to love the problem not your initial solution. The process of learning more about the problem domain is achieved over many iterations and evolutions.. Your knowledge will grow, and to your solution, into something useful and appropriate.
+
+Explore and experiment to reveal insights and offer new solutions. The result of tackling a problem from various angles is not the creation of a perfect model but instead the learning and discovery of concepts in the problem domain. This is far more valuable and leads to a team able to produce a useful model at each iteration.
+
+#### Model Exploration Whirlpool
+
+
+Eric Evans, the creator of Domain‐Driven Design, has created a draft document named the Model Exploration Whirlpool (http://domainlanguage.com/ddd/whirlpool/). This document presents a method of modeling and knowledge crunching that can complement other agile methodologies and be called upon at any time of need throughout the lifetime of application development. It is used not as a modeling methodology but rather for when problems are encountered during the creation of a model. Telltale signs such as breakdowns in communication with the business and overly complex solution designs or when there is a complete lack of domain knowledge are catalysts to jump into the process dened in the Model Exploration Whirlpool and crunch domain knowledge.
+
+
+The whirlpool contains the following activities:
+
+ * Scenario Exploring
+A domain expert describes a scenario that the team is worried about or having difculty with in the problem domain. A scenario is a sequence of steps or processes that is important to the domain expert, is core to the application, and that is within the scope of the project. Once the domain expert has explained the scenario using concrete examples the team understands, the group then maps the scenario, like event storming in a visual manner in an open space.
+
+ * Modeling
+At the same time of running through a scenario, the team starts to examine the current model and assesses its usefulness for solving the scenario expressed by the domain expert.
+
+ * Challenging the Model
+Once the team has amended the model or created a new model they then challenge it with further scenarios from the domain expert to prove its usefulness.
+
+ * Harvesting and Documenting
+Significant scenarios that help demonstrate the model should be captured in documentation. Key scenarios will form the reference scenarios, which will demonstrate how the model solves key problems within the problem domain. Business scenarios will change less often than the model so it is useful to have a collection of important ones as a reference for whenever you are changing the model. However, don’t try and capture every design decision and every model; some ideas should be left at the drawing board.
+
+ * Code Probing
+When insight into the problem domain is unlocked and a design breakthrough occurs the technical team should prove it in code to ensure that it can be implemented.
+
+#### Exploring Multiple Models
+
+> "It's better to be approximately right than precisely wrong." —Eli Goldratt
+
+Most teams usually stop exploring and jump to their keyboards when they arrive at the first useful model. Your first model will unlikely be your best. Once you have a good model, you should park it and explore the problem from a different direction. It’s not about being right or wrong it’s about moving forward, progressing and driving toward value. You will make wrong decisions but only from the luxury of hindsight so please don’t beat yourself up - remember this is a learning process.
 
 There is no such thing as a stupid question or a stupid idea. Wrong models help to validate useful ones, and the process of creating them aids learning. When working in a complex or core area of a product, teams must be prepared to look at things in a different way, take risks, and not be afraid of turning problems on their head. For a complex core domain, a team should produce at least three models to give itself a chance at producing something useful. Teams that are not failing often enough and that are not producing many ideas are probably not trying hard enough. When deep in conversation with a domain expert, a team should not stop brainstorming at the first sign of something useful. Once the team gets to a good place, it should wipe the whiteboard and start again from a different angle and try the what-if route of investigation. When a team is in the zone with an expert, it should stay there until it exhausts all its ideas.
 
-Only stop modelling when you have run out of ideas and not when you get the first good idea. Once you have a useful model start again. Challenge yourself to create a model in a different way, experiment with your thinking and design skills. Try to solve the problem with a completely different model. Constantly refactor to your understanding of the problem domain to produce a more expressive model. Models will change with more knowledge. Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design.  
+Only stop modelling when you have run out of ideas and not when you get the first good idea. Once you have a useful model start again. Challenge yourself to create a model in a different way, experiment with your thinking and design skills. Try to solve the problem with a completely different model. Constantly refactor to your understanding of the problem domain to produce a more expressive model. Models will change with more knowledge. Remember a model is only useful for a moment in time; don’t get attached to elegant designs. Rip up parts of your model that are no longer useful, and be willing to change when new use cases and scenarios are thrown at your design.
+ 
 
 ## Principle 4: Optimize the Overall System
 
@@ -341,23 +380,21 @@ Only stop modelling when you have run out of ideas and not when you get the firs
 
 When working on the solution to a problem teams must still keep an eye on the bigger picture. It is easy to become lost and distracted when you are in the detail and lose sight of what the goal is. We need to ensure that all parts of the decomposed solution are working for the greater good in a effective collaborative manner.
 
-In large and complex domains, multiple models in context collaborate to fulfill the requirements and behaviors of a system. A single team may not own all of the various sub components of a system, some will be existing legacy code that is the responsibility of a different team, and other components will be provided by third parties that will have no knowledge of the clients that will consume its functionality. Teams that don’t have a good understanding of the different contexts within a system, and their relationships to one another, run the risk of compromising the models at play when integrating bounded contexts. Lines between models can become blurred resulting in a Big Ball of Mud if teams don’t explicitly map and understand relationships between contexts.
+In large and complex domains, multiple models in context collaborate to fulfill the requirements and behaviors of a system or process. A single team may not own all of the various sub components of a system, some will be existing legacy code that is the responsibility of a different team, and other components will be provided by third parties that will have no knowledge of the clients that will consume its functionality. Teams that don’t have a good understanding of the different contexts within a system, and their relationships to one another, run the risk of compromising the models at play when integrating bounded contexts. Lines between models can become blurred resulting in a Big Ball of Mud if teams don’t explicitly map and understand relationships between contexts.
 
 The technical details of contexts within systems are not the only force that can hamper the success of a solution. Organizational relationships between the teams that are responsible for contexts can also have a big impact on the outcome. Often, teams that manage other contexts are not motivated by the same forces, or they have different priorities. For solutions to succeed, teams usually need to manage changes in these situations at a political rather than technical level, or as Nick Tune refers to it - the sociotechnical design. 
-
-Other non technical challenges can appear during development. These are issues that arise from the areas of the problem domain that sit between bounded contexts that have not been explicitly defined. These important business processes can often be devoid of responsibility from development teams and business ownership, but paradoxically are immensely important to business workflows and processes.
 
 What is important to understand is that it is not the individual components of a system that need to work, it is the system itself. Teams needs to learn to collaborate and agree to overcome any obstacles to implementation. To do this they must understand how they fit into to the system as a whole.
 
 ### Strive for team autonomy 
 
-Multiple teams working together on a solution should be organised so that they are loosely coupled and as far as possible autonomous. Restricting the number of dependencies for a team will enable them to them to move faster. Ideally a team would also be aligned to the business capability that it is enabling and that contributes to the overall solution. In a perfect world the software team should be embedded in the business department that they are providing capability for rather than sit in a central IT org structure in order to develop a deeper understanding for their part of the domain.
+Multiple teams working together on a solution should be organised so that they are loosely coupled and as far as possible autonomous. Restricting the number of dependencies for a team will enable them to them to move faster. Ideally a team would also be aligned to a business capability (what the business does, rather than how it does it) that it is enabling and that contributes to the overall solution. In a perfect world the software team should be embedded in the business department that they are providing capability for rather than sit in a central IT org structure in order to develop a deeper understanding for their part of the domain.
 
 Loosely coupled but highly cohesive teams can achieve autonomy if they understand the goal and have collaborated together on a solution. This causes alignment which enables autonomy. However be careful, without alignment loosely coupled teams can become silos and follow their own agenda and needs for their business department counterparts.
 
 Boundaries are very important. Don’t rush for structure or put concrete boundaries in before you really understand your solution space. Try to avoid precision in the first instance as boundaries and organisational design are harder to move down the line. Play with the model and reveal the linguistic and business capability ownership boundaries before implement software boundaries. Have patience, don’t force it or look for perfection, and don’t get hung up if you are proved wrong and need to rethink. It’s all valuable knowledge and experience. 
 
-### Collaborate to solve the big picture
+### Collaborate To Solve The Big Picture
 
  > “A company could put a top man at every position and be swallowed by a competitor with people only half as good, but who are working together.” W. Edwards Deming
 
@@ -365,9 +402,9 @@ Although having completely independent teams is a productivity win, it’s impor
 
 Collaboration is easier if you have alignment in what you are doing, this is why it's important to constantly align around the big picture so that everyone remembers the goal that they are separately contributing to. Context maps are important but not exclusive, process maps, event maps and event storming are ideal to visualise a shared understanding of system flow and ensure all teams are aligned by understanding the goal. 
 
-There are a plethora of collaboration tools in any organisation. Slack, skype, email, phone are a few. However with a wash of collaboration tools I often find that teams have forgotten how to talk to each other. It is vital to have strong relationships with teams that you depend on. We must also ensure we take personal feelings out of how we work and attack the problem. Its ok to be angry, just be angry at the problem not the person. Complex systems will have many moving parts and many teams, after all no man is an island.. People relationships are as important as code relationships, therefore refactor your personal relationships as they are key to delivering effective solutions.
+There are a plethora of collaboration tools in any organisation. Slack, skype, email, phone are a few. However with a wash of collaboration tools I often find that teams have forgotten how to talk to each other. It is vital to have strong relationships with teams that you depend on. We must also ensure we take personal feelings out of how we work and attack the problem. Its ok to be angry, just be angry at the problem not the person. Complex systems will have many moving parts and many teams, after all no man is an island. People relationships are as important as code relationships, therefore refactor your personal relationships as they are key to delivering effective solutions.
   
-### Identify constraints in delivering the solution and work through them
+### Identify Constraints In Delivering The Solution And Work Through Them
 
 The context map, ever evolving, ensures that teams are informed of the holistic view of the system, both technical and organizational, enabling them to have the best possible chance of overcoming issues early and to avoid accidentally weakening the usefulness of the models by violating their integrity.
 
@@ -375,21 +412,24 @@ In complex systems there will be many dependencies. You should understand and wo
 
 In many ways, the communication between bounded contexts, both technical and organizational, is as important as the bounded contexts themselves. Information that context maps provide can enable teams to make important strategic decisions which improve the success of a solution. A context map is a powerful artifact that can bring new team members up to speed quickly and provide an early warning for potential trouble hot spots. Context maps can also reveal issues with communication and work within the business.
 
-### Understanding Ownership and Responsibility
+### Understanding Ownership And Responsibility
 
 Accountability and responsibility are other non-technical areas that can affect the delivery of a solution. Defining team ownership and management for subsystems that you need to integrate with is essential for ensuring changes are made on time and in line with what you expect. Context mapping is about investigation and clarification; you may not be able to draw a clear context map straight away, but the process of clarifying responsibility, explicitly defining blurred lines, and understanding communication flow while mapping contexts is as important as the finished artifact.
 
 When is comes to responsibility the entire team needs to understand what they are responsible for and how it fits in the bigger picture. Each member must have deep knowledge of what they are doing, why, and the logic behind the method being used to implement the solution. Of course, teams need to subscribe to the principle of what they build they support, but greater than this is the ability to clearly articulate how what they are building contributes to the system. Too often a team lead simply delegates components of a solution to junior members who have little or no idea how their part contributes to the whole.
 
-### Identify the grey areas of business process 
+### Identify The Grey Areas Of Business Process 
 
 The business processes that happen between and take advantage of bounded contexts are often left in no‐man’s‐land without clear responsibility and clarity regarding their boundaries and integration methods. A context map, focusing on the nontechnical aspects of the relationships, can reveal broken business process flow and communication between systems and business capabilities that have degraded over time. This revelation is often more useful to the businesses that are able to better understand and improve process that spans across departments and capabilities. The insight can be used to reduce risk of project failure by tackling ambiguity early and asking powerful questions that help the success of the project.
 
 The often gray area between contexts that govern business process is also void of accountability when changes are being made, and is only discovered later on in a project’s life cycle.
 
+Other non technical challenges can appear during development. These are issues that arise from the areas of the problem domain that sit between bounded contexts that have not been explicitly defined. These important business processes can often be devoid of responsibility from development teams and business ownership, but paradoxically are immensely important to business workflows and processes.
+
 Context maps reveal the departmental boundaries involved in a project. If your team does not own all the contexts in play, coordination with other teams and other lines of management and prioritization needs to take place. Understanding these obstacles up front gives you a much greater probability of success on a project and enables you to tackle nontechnical problems such as release scheduling before they become blockers.
 
-## Principle 5: Uphold Personal Values and Principles
+
+## Principle 5: Uphold Personal Values And Principles
 
  > “Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.” ― Randy Pausch, The Last Lecture
 
@@ -399,15 +439,16 @@ However much time you will spend in front of the computer it will dwarf the time
 
 Teamwork and communication are as essential as technical ability in order to deliver change in large or complex domains. Enthusiasm and the ability to learn, technical and non-technical subject matter, are also key skills required by team members. These softer skills have as much, if not more to do with delivering success than technical knowledge alone. As I have mentioned before we have moved away from IT being an order taker that are simply given a dense set of requirements and told to get on with it. We need to empathise not only with business colleagues, but with business strategy and overarching needs. You don’t need rock stars, you need capable team players. 
 
-In some respects coding is the easy part, after all, the computer will only do what you tell it to do (well most of the time). Collaborating with and understanding different people with different backgrounds and different ways of working is hard. You need to be able to play well with others. Problem solving is a team sport.
+In some respects coding is the easy part, after all, the computer will only do what you tell it to do (well most of the time). Collaborating with and understanding different people with different backgrounds and different ways of working is hard. You need to be able to play well with others. Problem solving is a team sport, getting or giving help is not a sign of weakness but is essential for improving oneself to become an effective team player.
 
 Lastly don’t assume you know something, always be prepared to challenge your thinking and your opinions - you may be surprised on things you thought you knew. Do not be closed off to a new way of thinking or looking at problems from other people's point of views. Remember there is no right or wrong and it often has an awful lot to do with context.
 
-## To the next 15 years and the continued reinvention of DDD
+## To The Next 15 Years And The Continued Reinvention Of DDD
 
-Like the internet DDD is now an uncontrollable force, it is far larger than the sum of its parts. Its is a huge ever growing community of progressive and professional problem solvers learning how they can offer more to their business. I am afraid that even if we were to cut the head of off Eric Evans the community and practitioners would still grow and continue to evolve Domain-Driven Design. Plus he is a nice chap and it would make an awful lot of mess. 
+DDD is now an uncontrollable force, it is far larger than the sum of its parts. It is a huge ever growing community of progressive and professional problem solvers learning how they can offer more to their business. I am afraid that even if we were to cut the head of off Eric Evans the community and practitioners would still grow and continue to evolve Domain-Driven Design. Plus he is a nice chap and it would make an awful lot of mess. 
 
 In my opinion the future of DDD lies in the blending between non-technical and technical “business” people. Knowledgeable technical people will turn into business decision makers due to more focus on key underlying business problems. Those that embrace the business as much as they embrace technology will flourish as leaders and actively contribute to the  strategies of their domains rather than simply being order takers.
 
-Thank you Eric for a fantastic book and thanks for the thousands that he has inspired (and that have inspired him) and who have inspired me and given so much for the community to help us become a little better each day. Lastly remember it’s all about context so don't take what I say, or anyone says, verbatim, understand things and learn how to leverage the experience in your own context. Always be the humble student, don’t stop learning and never, never, never stop asking questions.
+Thank you Eric for a fantastic book and thanks for the thousands that he has inspired (and that have inspired him). Thanks to those that have inspired me and given so much for the community to help us become a little better each day. Lastly remember it’s all about context so don't take what I say, or anyone says, verbatim, understand things and learn how to leverage the experience in your own context. Always be the humble student, don’t stop learning and never, never, never stop asking questions.
+
 
