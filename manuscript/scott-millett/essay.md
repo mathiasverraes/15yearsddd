@@ -180,6 +180,8 @@ A business model contains lots of useful domain information and accentuates the 
 
 One of the best ways to learn about a company’s business model is to visualize it using a Business Model Canvas; a visualization technique introduced by Alexander Osterwalder and Yves Pigneur in their influential book, “Business Model Generation” is highly recommended and very accessible reading for developers. A Business Model Canvas is extremely useful because it breaks down a business model into nine building blocks, as shown in image, which illustrates an example Business Model Canvas for an online sports equipment provider.
 
+![Business Model Canvas](../images/scott-millett/Business-Model-Canvas.png)
+
 Understanding the nine building blocks of a business model tells you what is important to the business. Key information like: how it makes money, what its most important assets are, and crucially its target customers. Each of the sections of a business model is introduced below. For more information, the “Business Model Generation” book is the ideal learning resource.
 
  * Customer Segments—the different types of customers a business targets. Examples include niche markets, mass markets, and business‐to‐business (b2b).
