@@ -96,19 +96,19 @@ My first principles are:
   * Focusing on the right problem by understanding the motivation behind the need for a solution and understanding it in the wider context of the business.
   * Contributing to delivering real business value by empathising with your business colleagues regarding the opportunity you are enabling or the constraint you are removing.
 
- 2. Collaborate towards a solution
+ 2. Collaborate towards a solution by
   * Moving past requirements gathering through collaborating on the vision and direction of a solution and the impacts that will resolve the problem. 
   * Gaining alignment by investing time and energy at the core problem sub domain.
 
- 3. Ensure the solution solves the core problem
+ 3. Ensure the solution solves the core problem by
   * Focusing on outcomes over output to prevent over complex code and unessercy investment. 
   * Avoiding becoming attached to a solution by keeping things simple and being comfortable that you never know as much as you think you do.
 
- 4. Optimize the overall system
+ 4. Optimize the overall system by
   * Having shared accountability for the entire system/process over siloed team optimisation.
   * Aligning on the big picture goal and understanding how you contribute.
 
- 5. Uphold personal values and principles
+ 5. Uphold personal values and principles by
   * Being respectful, having patience and showing passion.
   * Displaying humility and empathy with others whilst reaching solutions as a team.
 
