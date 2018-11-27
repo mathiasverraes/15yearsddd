@@ -108,7 +108,7 @@ My first principles are:
   * Having shared accountability for the entire system/process over siloed team optimisation.
   * Aligning on the big picture goal and understanding how you contribute.
 
- 5. Uphold personal values and principles by
+ 5. Be a positive influence on the team by
   * Being respectful, having patience and showing passion.
   * Displaying humility and empathy with others whilst reaching solutions as a team.
 
@@ -446,7 +446,7 @@ Other non technical challenges can appear during development. These are issues t
 Context maps reveal the departmental boundaries involved in a project. If your team does not own all the contexts in play, coordination with other teams and other lines of management and prioritization needs to take place. Understanding these obstacles up front gives you a much greater probability of success on a project and enables you to tackle nontechnical problems such as release scheduling before they become blockers.
 
 
-## Principle 5: Uphold Personal Values And Principles
+## Principle 5: Be A Positive Influence On The Team
 
  > “Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.” ― Randy Pausch, The Last Lecture
 
