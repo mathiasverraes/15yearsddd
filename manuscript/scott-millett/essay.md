@@ -170,6 +170,8 @@ Once you understand the impact the business is trying to make you can play a mor
 
 An impact map, rather obviously, starts with the impact. For example “sell 25% more bicycles”. Directly connected to the impact are the actors—the people who can contribute to making the desired impact. That would be developers and data scientists. Child nodes of the actors are the ways in which the actors can help. One way the developers can help to create the business impact is to improve the performance of the website so that people are more likely to make a purchase. Finally, the last level of the hierarchy shows the actual tasks that can be carried out. You can see in the image that one way the developers may be able to make the website faster is to remove slow frameworks.
 
+![Impact Mapping](../images/scott-millett/Impact-Map.png)
+
 On many software projects the developers only get the lower tiers of an impact map—what the business thinks they need and how they think the developers should achieve it. With an impact map, though, you can unwind their assumptions and nd out what they really want to achieve. And then you can use your technical expertise to suggest superior alternatives that they would never have thought of.
 
 Some DDD practitioners rate impact mapping very highly, both when applied with DDD or in isolation. You are highly encouraged to investigate impact mapping by browsing the website (http:// www.impactmapping.org/) or picking up a copy of the book: “Impact Mapping,” by Gojko Adzic.
