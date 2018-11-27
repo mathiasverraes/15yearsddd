@@ -92,14 +92,14 @@ In the remainder of this essay I will present to you each of these 5 first princ
 
 My first principles are:
 
- * Gain agreement on the problem by
+ 1. Gain agreement on the problem by
   * Focusing on the right problem by understanding the motivation behind the need for a solution and understanding it in the wider context of the business.
   * Contributing to delivering real business value by empathising with your business colleagues regarding the opportunity you are enabling or the constraint you are removing.
 
- * Collaborate towards a solution
- * Ensure the solution solves the core problem
- * Optimize the overall system
- * Uphold personal values and principles
+ 2. Collaborate towards a solution
+ 3. Ensure the solution solves the core problem
+ 4. Optimize the overall system
+ 5. Uphold personal values and principles
 
 ![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
 
