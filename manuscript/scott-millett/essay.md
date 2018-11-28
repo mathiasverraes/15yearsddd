@@ -367,7 +367,7 @@ Eric Evans has created a draft document named the Model Exploration Whirlpool (h
 The whirlpool contains the following activities:
 
  * Scenario Exploring
-A domain expert describes a scenario that the team is worried about or having difculty with in the problem domain. A scenario is a sequence of steps or processes that is important to the domain expert, is core to the application, and that is within the scope of the project. Once the domain expert has explained the scenario using concrete examples the team understands, the group then maps the scenario, like event storming in a visual manner in an open space.
+A domain expert describes a scenario that the team is worried about or having difficulty with in the problem domain. A scenario is a sequence of steps or processes that is important to the domain expert, is core to the application, and that is within the scope of the project. Once the domain expert has explained the scenario using concrete examples the team understands, the group then maps the scenario, like event storming in a visual manner in an open space.
 
  * Modeling
 At the same time of running through a scenario, the team starts to examine the current model and assesses its usefulness for solving the scenario expressed by the domain expert.
