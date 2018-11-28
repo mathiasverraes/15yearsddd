@@ -288,7 +288,7 @@ Pottermore.com was the only place on the web where you can buy digital copies of
 is not what the customer sees, but rather what he does not. Pottermore books aren’t DRM‐locked (http://www.futurebook.net/content/pottermore-finally- delivers-harry-potter-e-books-arrive); they are watermarked. This invisible watermark allows the books that are purchased to be tracked in case they’re hosted illegally on the web. The core domain of the Pottermore system is the subdomain that enables this watermarking technology to deter illegal distribution of a book without infringing on the customer. (The customer can copy the book to any other of his devices.) This is what was most important to the business, what set it apart from other e‐book sellers, and what ensured the system was built rather than being sold on iTunes or other e‐book sellers.
 
 ### Ensure Everyone Understands The Vision Of The Solution
-A domain vision statement can be created at the start of a project to explicitly capture what is central to the success of the software, what the business goal is, and where the value is. This message should be shared with the team and even stick it up on a wall in the office as a reminder to why the software is being written.
+A domain vision statement can be created at the start of a project to explicitly capture what is central to the success of the software, what the business goal is, and where the value is. This message should be shared with the team and even stuck up on a wall in the office as a reminder to why the software is being written.
 
 #### Amazon’s Approach To Product Development 
 
