@@ -91,23 +91,23 @@ In the remainder of this essay I will present to you each of these five first pr
 
 My first principles are:
 
- 1. Gain agreement on the problem by
+ 1. Gain agreement on the problem
   * Focusing on the motivation behind the need for a solution and understanding the problem within the wider context of the business.
   * Contributing to delivering real business value by empathising with your business colleagues regarding the opportunity you are enabling or the constraint you are removing.
 
- 2. Collaborate towards a solution by
+ 2. Collaborate towards a solution
   * Moving past requirements gathering through collaborating on the vision and direction of a solution and the impacts that will resolve the problem. 
   * Gaining alignment by investing time and energy at the core problem sub domain.
 
- 3. Ensure the solution solves the core problem by
-  * Focusing on outcomes over output to prevent over complex code and unessercy investment. 
+ 3. Ensure the solution solves the core problem
+  * Focusing on outcomes over output to prevent over complex code and unnecessary investment. 
   * Avoiding becoming attached to a solution by keeping things simple and being comfortable that you never know as much as you think you do.
 
- 4. Optimize the overall system by
+ 4. Optimize the overall system
   * Having shared accountability for the entire system/process over siloed team optimisation.
   * Aligning on the big picture goal and understanding how you contribute.
 
- 5. Be a positive influence on the team by
+ 5. Be a positive influence on the team 
   * Being respectful, having patience and showing passion.
   * Displaying humility and empathy with others whilst reaching solutions as a team.
 
