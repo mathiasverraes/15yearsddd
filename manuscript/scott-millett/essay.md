@@ -111,9 +111,6 @@ My first principles are:
   * Being respectful, having patience and showing passion.
   * Displaying humility and empathy with others whilst reaching solutions as a team.
 
-
-![Domain-Driven Design first principles](../images/scott-millett/FirstPrinciples.png)
-
 I would hasten to add that however well you manage the non technical side, it goes without saying you need to have a proficient technical ability. However I have often witnessed that a good understanding of the goal of the core domain and the problem space itself enables a simpler solution to be found that requires a simpler technical implementation.
 
 
