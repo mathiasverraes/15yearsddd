@@ -361,7 +361,7 @@ Explore and experiment to reveal insights and offer new solutions. The result of
 #### Model Exploration Whirlpool
 
 
-Eric Evans, the creator of Domain‐Driven Design, has created a draft document named the Model Exploration Whirlpool (http://domainlanguage.com/ddd/whirlpool/). This document presents a method of modeling and knowledge crunching that can complement other agile methodologies and be called upon at any time of need throughout the lifetime of application development. It is used not as a modeling methodology but rather for when problems are encountered during the creation of a model. Telltale signs such as breakdowns in communication with the business and overly complex solution designs or when there is a complete lack of domain knowledge are catalysts to jump into the process dened in the Model Exploration Whirlpool and crunch domain knowledge.
+Eric Evans has created a draft document named the Model Exploration Whirlpool (http://domainlanguage.com/ddd/whirlpool/). This document presents a method of modeling and knowledge crunching that can complement other agile methodologies and be called upon at any time of need throughout the lifetime of application development. It is used not as a modeling methodology but rather for when problems are encountered during the creation of a model. Telltale signs such as breakdowns in communication with the business and overly complex solution designs or when there is a complete lack of domain knowledge are catalysts to jump into the process dened in the Model Exploration Whirlpool and crunch domain knowledge.
 
 
 The whirlpool contains the following activities:
