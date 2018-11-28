@@ -293,7 +293,7 @@ A domain vision statement can be created at the start of a project to explicitly
 #### Amazon’s Approach To Product Development 
 
 Amazon has a unique approach when it comes to forming a domain vision statement called working backwards (see: http://www.quora.com/What-is- Amazons-approach-to-product-development-and-product-management).
-For new enhancements, a product manager produces an internal press release announcing the nished product, listing the benefits the feature brings. If the intended customer doesn’t feel the benefits are exciting or worthwhile, the product manager refactors the press release until the feature offers real value for the customer. At all times, Amazon is focused on the customer and is clear about the advantage a new feature can bring before it sets out with development.
+For new enhancements, a product manager produces an internal press release announcing the finished product, listing the benefits the feature brings. If the intended customer doesn’t feel the benefits are exciting or worthwhile, the product manager refactors the press release until the feature offers real value for the customer. At all times, Amazon is focused on the customer and is clear about the advantage a new feature can bring before it sets out with development.
 
 
 ## Principle 3: Ensure The Solution Solves The Core Problem
