@@ -61,7 +61,6 @@ Large models can be split into smaller models and defined within separate bounde
 
 As you will have noticed, the majority of effort when applying the practices of Domain-Driven Design lie outside of the technical realm. Many people’s first introduction with Domain-Driven Design is an exposure to the tactical design patterns as well as techniques such as event sourcing or CQRS. They never experience or learn to appreciate the true power of DDD because they aren’t aware or don’t focus on the non technical aspect of software creation. It is the deep understanding of the problem space and the relentless focus on the core domain that allow effective and collaborative model-driven designs to lead to a viable solution. Only then do we need to leverage tactical patterns to organise code in such a manner as to reduce accidental complexity.
 
-
 ### Why Domain-Driven Solutions Often Fail To Deliver 
 
 The reason that solutions fail to deliver, and the reason we need to focus on first principles, is not because of a lack of programming ability or technical expertise, but rather because of a lack of understanding, communication, and business knowledge. I am not saying technical people are lazy just that output doesn’t always translate to outcome. This lack of understanding stems from how developers capture knowledge of the problem domain they work in. Put another way, if developers and customers cannot effectively communicate, aren’t aligned on the same overarching goals then even with the most accomplished programmers in the world, you ultimately cannot produce meaningful outcomes. 
@@ -86,7 +85,7 @@ A team focusing too much on the tactical patterns is missing the point of DDD. T
 
 ### Going Back To First Principles
 
-The first principles emphasise that focus for technical teams should be more aligned with the domain and driving all decisions from that position rather than only on technical concerns. After all the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
+The first principles emphasise that focus for technical teams should be more aligned with the domain and driving all decisions from that position rather than only on technical concerns. After all with DDD the clue is in the name, the domain is the business, drive all design decisions based on the specifiction “will this help me achieve the business goal?”. If you don’t have a solid understanding of the goal then it is unlikely you will make good decisions. All decisions need to be taken in the wider context of your business and how what you do enables value to be produced.
 
 In the remainder of this essay I will present to you each of these 5 first principles that I have distilled down from the non-technical aspects of DDD and learned to focus on during my career to allow me to really use the power of DDD.
 
