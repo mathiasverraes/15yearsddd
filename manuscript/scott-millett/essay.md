@@ -410,7 +410,7 @@ Multiple teams working together on a solution should be organised so that they a
 
 Loosely coupled but highly cohesive teams can achieve autonomy if they understand the goal and have collaborated together on a solution. This causes alignment which enables autonomy. However be careful, without alignment loosely coupled teams can become silos and follow their own agenda and needs for their business department counterparts.
 
-Boundaries are very important. Don’t rush for structure or put concrete boundaries in before you really understand your solution space. Try to avoid precision in the first instance as boundaries and organisational design are harder to move down the line. Play with the model and reveal the linguistic and business capability ownership boundaries before implement software boundaries. Have patience, don’t force it or look for perfection, and don’t get hung up if you are proved wrong and need to rethink. It’s all valuable knowledge and experience. 
+Boundaries are very important. Don’t rush for structure or put concrete boundaries in before you really understand your solution space. Try to avoid precision in the first instance as boundaries and organisational design are harder to move down the line. Play with the model and reveal the linguistic and business capability ownership boundaries before implementing software boundaries. Have patience, don’t force it or look for perfection, and don’t get hung up if you are proved wrong and need to rethink. It’s all valuable knowledge and experience. 
 
 ### Collaborate To Solve The Big Picture
 
