@@ -435,14 +435,7 @@ When is comes to responsibility the entire team needs to understand what they ar
 
 ### Identify The Grey Areas Of Business Process 
 
-The business processes that happen between and take advantage of bounded contexts are often left in no‐man’s‐land without clear responsibility and clarity regarding their boundaries and integration methods. A context map, focusing on the nontechnical aspects of the relationships, can reveal broken business process flow and communication between systems and business capabilities that have degraded over time. This revelation is often more useful to the businesses that are able to better understand and improve process that spans across departments and capabilities. The insight can be used to reduce risk of project failure by tackling ambiguity early and asking powerful questions that help the success of the project.
-
-The often gray area between contexts that govern business process is also void of accountability when changes are being made, and is only discovered later on in a project’s life cycle.
-
-Other non technical challenges can appear during development. These are issues that arise from the areas of the problem domain that sit between bounded contexts that have not been explicitly defined. These important business processes can often be devoid of responsibility from development teams and business ownership, but paradoxically are immensely important to business workflows and processes.
-
-Context maps reveal the departmental boundaries involved in a project. If your team does not own all the contexts in play, coordination with other teams and other lines of management and prioritization needs to take place. Understanding these obstacles up front gives you a much greater probability of success on a project and enables you to tackle nontechnical problems such as release scheduling before they become blockers.
-
+The business processes that happen between and take advantage of bounded contexts are often left in no‐man’s‐land without clear responsibility and clarity regarding their boundaries and integration methods. A context map, focusing on the nontechnical aspects of the relationships, can reveal broken business process flow and communication between systems and business capabilities that have degraded over time. This revelation is often more useful to the businesses that are able to better understand and improve process that spans across departments and capabilities. The insight can be used to identify the often gray area between contexts that govern business process and address the accountability void early to ensure that ownership is not simply assumed. These important orchestrational processes can often be devoid of responsibility from development teams and business ownership, but paradoxically are immensely important to business workflows and processes.
 
 ## Principle 5: Be A Positive Influence On The Team
 
