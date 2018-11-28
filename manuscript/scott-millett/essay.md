@@ -20,7 +20,7 @@ This essay is all from my perspective and therefore it is heavily influenced by 
 
 Over my career I have had the great fortune of working in a industry full of the most generous of people from all over the world. The community of software is very good at offering opinions, advice and experience - all of which needs to be understood in the context that it is offered and of course moulded to the context that it will be applied in. 
 
-So while I can’t guarantee that my words of wisdom will fix all your problems (or any). however I do hope you find something in the lessons that I have learnt over the years that perhaps can act as a catalyst to helping you on your DDD journey. Remember its all about context, and this is mine.
+So while I can’t guarantee that my words of wisdom will fix all your problems (or any), I do hope you find something in the lessons that I have learnt over the years that perhaps can act as a catalyst to helping you on your DDD journey. However do remember, its all about context, and this is mine.
 
 ## The Fundamental Concepts Of DDD
 
