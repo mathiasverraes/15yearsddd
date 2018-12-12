@@ -10,7 +10,7 @@ The line between the non-technical and technical people within modern businesses
 
 This essay is about my story and how DDD helped me learn more about solving problems and helping people to refocus efforts on how solutions are derived, how people  communicate and collaborate, and how technical people can deliver solutions and identify opportunities that exceed expectations of business colleagues. 
 
-![Be the art of the possible](../images/scott-millett/artofthepossible.png)
+![Be the art of the possible](images/scott-millett/artofthepossible.png)
 
 ## Disclaimer
 
@@ -38,7 +38,7 @@ DDD in a nutshell:
  * Keep a context map to understand the relationships, social and technical, of all models in play.
 
 
-![Overview of Domain-Driven Design](../images/scott-millett/01_DDD_Overview.png)
+![Overview of Domain-Driven Design](images/scott-millett/01_DDD_Overview.png)
 
 
 ### Distill The Problem Domain To Reveal What Is Important
@@ -122,7 +122,7 @@ To know where to focus effort you first need to understand the motivation for so
 
 Why you ask? The reason is to ensure you truly understand what you are being tasked with to solve. As without this fundamental information it is impossible to be certain that you will be able to produce a solution with significant and beneficial outcomes. I will let you in on a secret - your business counterparts don’t have all the answers. They are experts in their respective domains, as you are in your technical domain. But they are not system or process design experts. They are hypothesising on what they should do. Therefore instead of taking things at face value, collaborate and empathise so you can see the thought processes of your business counterparts and understand how they arrived at their conclusions. This activity often leads to a technical team being able to add real value by looking at simpler alternative solutions or problems further up the supply/process chain that may have been missed. Techniques such as impact mapping are great for highlighting this.
 
-![Understand the problem domain in contetx of the wider business](../images/scott-millett/agreement_on_the_problem.png)
+![Understand the problem domain in contetx of the wider business](images/scott-millett/agreement_on_the_problem.png)
 
 It is always worth asking why rather than just accepting that someone else has ensured that this is the correct solution to the business need further up the chain and not simply a local optimisation or a wish list item. How will building an application make a difference to the business? How does it fit within the strategy of the company? Why are we looking at technical solution? Does part of the software give the business a competitive edge? Often the result of systematically asking "why" will reveal a painfully simple solution or a complete change in direction. Clearly, don’t ask the question as a child might; be creative with how you search for the truth, but pull on the string of a problem until you reach the root of the matter.
 
