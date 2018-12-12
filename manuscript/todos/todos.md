@@ -17,12 +17,6 @@
 - We found the following problems with your images:\n
 
 
-- We could not find the file ../images/indu-alagarsamy/comparison-1.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
-
-- We could not find the file ../images/indu-alagarsamy/comparison-2.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
-
-- We could not find the file ../images/indu-alagarsamy/group-selfie.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
-
 - We could not find the file ../images/mathias-verraes/Money.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
 
 - We could not find the file ../images/mathias-verraes/MoneyFormatter.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
