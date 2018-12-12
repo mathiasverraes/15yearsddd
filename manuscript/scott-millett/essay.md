@@ -167,7 +167,7 @@ Once you understand the impact the business is trying to make you can play a mor
 
 An impact map, rather obviously, starts with the impact. For example “sell 25% more bicycles”. Directly connected to the impact are the actors—the people who can contribute to making the desired impact. That would be developers and data scientists. Child nodes of the actors are the ways in which the actors can help. One way the developers can help to create the business impact is to improve the performance of the website so that people are more likely to make a purchase. Finally, the last level of the hierarchy shows the actual tasks that can be carried out. You can see in the image that one way the developers may be able to make the website faster is to remove slow frameworks.
 
-![Impact Mapping](../images/scott-millett/Impact-Map.png)
+![Impact Mapping](images/scott-millett/Impact-Map.png)
 
 On many software projects the developers only get the lower tiers of an impact map—what the business thinks they need and how they think the developers should achieve it. With an impact map, though, you can unwind their assumptions and nd out what they really want to achieve. And then you can use your technical expertise to suggest superior alternatives that they would never have thought of.
 
@@ -179,7 +179,7 @@ A business model contains lots of useful domain information and accentuates the 
 
 One of the best ways to learn about a company’s business model is to visualize it using a Business Model Canvas; a visualization technique introduced by Alexander Osterwalder and Yves Pigneur in their influential book, “Business Model Generation” is highly recommended and very accessible reading for developers. A Business Model Canvas is extremely useful because it breaks down a business model into nine building blocks, as shown in image, which illustrates an example Business Model Canvas for an online sports equipment provider.
 
-![Business Model Canvas](../images/scott-millett/Business-Model-Canvas.png)
+![Business Model Canvas](images/scott-millett/Business-Model-Canvas.png)
 
 Understanding the nine building blocks of a business model tells you what is important to the business. Key information like: how it makes money, what its most important assets are, and crucially its target customers. Each of the sections of a business model is introduced below. For more information, the “Business Model Generation” book is the ideal learning resource.
 
@@ -196,7 +196,7 @@ Understanding the nine building blocks of a business model tells you what is imp
 Armed with the information presented by a Business Model Canvas you will be empowered to ask meaningful questions of domain experts and help to drive the evolution of the business—not just the technical implementation. The small effort of finding and understanding your employer’s business model is well worth it.
 
  
- #### Applying The Theory Of Constraints And Systems Thinking
+#### Applying The Theory Of Constraints And Systems Thinking
 
 The theory of constraints (TOC) is a management paradigm introduced by Eli Goldratt that states that a system will be limited to achieving its goals by a few small constraints. Therefore focus and effort should be aimed at removing these constraints to the system above anything else. This will ensure that any output of effort results in maximum outcome to the business goal - more often than not gaining money. In very simple terms, identify the bottleneck that restricts the production of business value and remove.
 
@@ -208,14 +208,14 @@ TOC has a five step process:
  * Determine how to eliminate the constraint. 
    Focus all efforts at removing the constraint as fast as possible
 
-  * Subordinate everything else to the constraint. 
-    Don’t be distracted by any other problems that are not contributing the constraint. Any other effort elsewhere is wasted effort. The constraint is the priority to resolve.
+ * Subordinate everything else to the constraint. 
+   Don’t be distracted by any other problems that are not contributing the constraint. Any other effort elsewhere is wasted effort. The constraint is the priority to resolve.
 
-  * Remove the constraint. 
-Apply the solution to the constraint in order to remove it.
+ * Remove the constraint. 
+   Apply the solution to the constraint in order to remove it.
 
-  * Determine if the constraint has been removed.
-Sometimes you can push a problem down or up stream. If this is the case simply repeat the steps for the new constraint.
+ * Determine if the constraint has been removed.
+   Sometimes you can push a problem down or up stream. If this is the case simply repeat the steps for the new constraint.
 
 TOC is all about macro level over micro level thinking. It's not about optimising the link, its about optimising the entire chain or the system. To put into other words it's about optimizing your business to achieve its goals rather than a sub-department of service.
 
@@ -282,10 +282,12 @@ When picking scenarios to model, don’t go for the low-hanging fruit; ignore th
 Therefore focus on the parts of the product that make it unique; these will be hard or may need clarification. Time spent in this area will be well served, and this is exactly why collaboration with domain experts is so effective. Using domain experts’ time to discuss simple create, read, update, and delete (CRUD) operations will soon become boring, and the domain expert will quickly lose interest and time for you. Modeling in the complicated areas that are at the heart of the product is exactly what the principles of DDD were made for.
 
 #### The Core Focus of PotterMore.com
+
 Pottermore.com was the only place on the web where you can buy digital copies of the Harry Potter books. Like any e‐commerce site, it allows you to browse products, store products in a basket, and check out. The core domain of the Pottermore site
 is not what the customer sees, but rather what he does not. Pottermore books aren’t DRM‐locked (http://www.futurebook.net/content/pottermore-finally- delivers-harry-potter-e-books-arrive); they are watermarked. This invisible watermark allows the books that are purchased to be tracked in case they’re hosted illegally on the web. The core domain of the Pottermore system is the subdomain that enables this watermarking technology to deter illegal distribution of a book without infringing on the customer. (The customer can copy the book to any other of his devices.) This is what was most important to the business, what set it apart from other e‐book sellers, and what ensured the system was built rather than being sold on iTunes or other e‐book sellers.
 
 ### Ensure Everyone Understands The Vision Of The Solution
+
 A domain vision statement can be created at the start of a project to explicitly capture what is central to the success of the software, what the business goal is, and where the value is. This message should be shared with the team and even stuck up on a wall in the office as a reminder to why the software is being written.
 
 #### Amazon’s Approach To Product Development 
