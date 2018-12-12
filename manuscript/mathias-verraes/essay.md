@@ -28,14 +28,14 @@ Timezone example
 
 Sometimes the best way to find out in which Bounded Context a concept from your domain belongs, is by evolving your model until everything finds a natural place. 
 
-Let's look at some simple requirements, and explore how we could evolve it, as we learn more about the problem we're trying to solve.
+Let's look at some simple requirements, and explore how we could evolve the model, as we learn more about the problem we're trying to solve.
 
 ## The problem
 
 Imagine we're working on a typical business application, that deals with sales, accounting, reporting, that sort of thing. 
 
 
-The existing software has some serious issues: monetary values are represented as scalars. In many places, values are calculated at a high precision, rounded down to 2 decimals, and later used again for high precision calculations. From a back-of-the-napkin calculation, we learn that thousands of euros a month are lost to these rounding errors. On top of that, the values can represent different currencies, but the financial reporting is in euro. It is unclear if the code always correctly converts when needed.
+The existing software has some serious issues: monetary values are represented as scalars. In many places, values are calculated at a high precision, rounded down to 2 decimals, and later used again for high precision calculations. These rounding errors are all over the code. From a back-of-the-napkin calculation, we learn that thousands of euros a month are lost this way. On top of that, the values can represent different currencies, but the financial reporting is in euro. It is unclear if the code always correctly converts to euro when needed, or accidentally adds up amounts from different currencies.
 
     
 
@@ -43,9 +43,9 @@ The existing software has some serious issues: monetary values are represented a
 
 After a couple of good conversations with the experts from sales and accounting, we distill a set of requirements. 
 
-1.	We need to support about 10 currencies, possibly more in the future. When we do add new currencies, it is assumed that the in-house developers will add support in the code. There’s no UI for adding new currencies.
-2.	All price calculations need to done with a precision of 8 decimals. This is a business decision.
-3.	When showing amounts to users, or pass them along over an API, we always stick to the currency’s official division. In the case of EUR or USD, that's 2 decimals. In the case of Bitcoin, that does indeed mean we’re keeping a precision of 1 satoshi aka BTC 10<sup>−8</sup>. TODO does this render correctly in leanpub?
+1.	We need to support about 10 currencies, possibly more in the future. When we do add new currencies, it is assumed that the developers will add support in the code. There’s no UI for adding new currencies.
+2.	All price calculations need to be done with a precision of 8 decimals. This is a business decision.
+3.	When showing amounts to users, or passing them along over an API, we always stick to the currency’s official division. In the case of EUR or USD, that's 2 decimals. In the case of Bitcoin, that does indeed mean we’re keeping a precision of 1 satoshi aka BTC 10<sup>−8</sup>. TODO does this render correctly in leanpub? TODO is this still the smallest unit in BTC?
 4.	In some markets, our software will need to do specific compliance reporting. TODO is this relevant?
 5.	All internal reporting needs to be in EUR, no matter what the original currency was.
 6.	We’re using some legacy and third-party systems, that also publish revenues to our internal reporting tool. Most of them only support the currency’s official division, and can’t deal with higher precision.
@@ -58,7 +58,7 @@ A good pattern to apply when dealing with monetary values is the Value Object (T
 
 In fact, a couple of years before Eric Evans published his book, Martin Fowler described an implementation for `Money` in [Patterns of Enterprise Application Architecture](http://amzn.to/1TN7Tq4). 
 
-The pattern describes an object consisting of two properties, a number for the amount we're interested in, and another property for the associated currency (which in itself could be a Value Object). The `Money` Value Object is immutable, so all operations will return a new instance.
+The pattern describes an object consisting of two properties, a number for the amount we're interested in, and another property for the associated currency (which in itself could be a Value Object as well). The `Money` Value Object is immutable, so all operations will return a new instance.
 
 
 ![Money](../images/mathias-verraes/Money.png)
@@ -68,41 +68,54 @@ TODO change the diagrams to show Number instead of float
 
 ![Money](../images/mathias-verraes/MoneyFormatter.png)
 
-`Money`’s constructor rounds the numbers to 8 decimals. This gives it enough precision to deal with any currency. We can add some operations to the `Money`class, like `add(Money other) : Money` and `multiply(Number operand) : Money`. They also round to 8 decimals. We'll also need `round(Integer decimals) : Money`.
+`Money`’s constructor rounds the numbers to 8 decimals. This gives it enough precision to deal with any currency. We can add some operations to the `Money` class, like `Money.add(Money other) : Money` and `Money.multiply(Number operand) : Money`. They also round to 8 decimals. There's also a `Money.round() : Money` method that returns a new Money object, rounded to 2 decimals. 
 
-
-Requirement 3 (showing nicely formatted rounded values to the users), is clearly presentation logic. We should avoid muddying up our domain model for this. So we add a `MoneyFormatter` in the presentation layer, which takes a `Money` argument and returns a string, such as €5.00 or 5,00€, depending on local standards.
+{% highlight java %}
+Money {
+    // ...
+	round() : Money {
+		return new Money(round(this.amount, 2), this.currency)
+     }
+}
+{% endhighlight %} 
 
 We refactor all the places in the old code that do things with money to use the new `Money` object.
  
-## More problems 
+ 
+ 
+## Looking for weaknesses
 
-When evaluating our models, we should always look for things that are painful or awkward to use. These are smells for opportunities for further refinement.
-
-In our current implementation, we support 8 decimals, but the model doesn't really deal well with the fact that some currencies have two or three decimals by default, and some have more. We're still at risk that money is rounded and then reused in a higher precision calculation, which, as any physicist would tell you, is pretty bad.
-
-
-
-
-TODO research this and/or get rid of it
-- Some currencies have mills (1/1000<sup>th</sup> of a unit) as their official division (although they are becoming rare). Bitcoin supports 10<sup>−3</sup> (a millibitcoin), 10<sup>−6</sup> (a microbitcoin or a bit), and 10<sup>−8</sup> (a satoshi). Reportedly, the community is considering to introduce even smaller divisions. The library doesn't support any of this.
-
-## Refactoring towards deeper insight
-
-	
-
-
-## Itch
-
+ *****TODO
+look for weaknesses
+- money can be rounded and reused in high prec calcs    
+- 8 decimals vs currencies precision
+ *****  
+  
+  
+ 
+ ***GARBAGE CAN
+ *** todo
+Requirement 3 (showing nicely formatted rounded values to the users), is clearly presentation logic. We should avoid muddying up our domain model for this. So we add a `MoneyFormatter` in the presentation layer, which takes a `Money` argument and returns a string, such as €5.00 or 5,00€, depending on local standards.
+TODO## Refactoring towards deeper insight
 Our current design doesn’t satisfy the problem of exposing the rounded values over an API. Of course, we could `round(money.getAmount())`, but `money.round() : Money` seems more in line with our existing methods. 
+****
+ 
 
-This is where you should start feeling the itch. Have a close look at the type of this method. `money.round() : Money`
+Even if we may have a good feeling about our models, they can usually be improved. Eric often suggests to look for aspects that are awkward or painful to use. These are smells, pointing to opportunities for further refinement.
+
+We identify two weaknesses: 
+
+1. We're still at risk that money is rounded and then reused in a higher precision calculation. And in fact, this happens in our existing codebase. It doesn't make a huge difference on a single amount and a single rounding error, but eventually we might win or lose millions of euros worth of incorrect numbers.
+ 
+2. We support 8 decimal precision only, and the model assumes this is fine. When we call `Money.round()`, we don't really deal well with the fact that some currencies don't have two but three decimals by default (such as Bahraini and Kuwaiti Dinar) or more (like Bitcoin), and some have none (like the Japanese Yen).
+
+This is where you should start feeling an itch. Have a close look at the type of this method: `Money.round() : Money`
 
 {% highlight java %}
 a = new Money(1.987654321, eur)
-// The constructor rounds it own to 1.98765432
+// The constructor rounds it down to 1.98765432
 b = a.round()
-// round() rounds it up to 1. 99 and instantiates a new Money
+// round() rounds it up to 1.99 and instantiates a new Money
 // Money’s constructor rounds it to 1.99000000
 {% endhighlight %} 
 
@@ -110,7 +123,7 @@ Technically, most languages don’t distinguish between 1.99 and 1.99000000, but
 
 Let's make the implicit explicit. We can rename `Money` to `PreciseMoney`, and add a new type called `RoundedMoney`. The latter always rounds to whatever the currency's default division is.
 
-The `round()` method now becomes very simple:
+The `Money.round()` method now becomes very simple:
 
 {% highlight java %}
 PreciseMoney {
