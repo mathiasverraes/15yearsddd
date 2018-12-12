@@ -16,9 +16,6 @@
 
 - We found the following problems with your images:\n
 
-- We could not find the file ../images/anita-kvamme/SneakPeekIntoMentalModel.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md
-
-- We could not find the file ../images/anita-kvamme/MentalModelCodeGap.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md
 
 - We could not find the file ../images/indu-alagarsamy/comparison-1.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
 
