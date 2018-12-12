@@ -13,3 +13,50 @@
 - all todos.txt files and TODO annotations in the texts
 - Greg Young
 - receive and clean up Indu's photos. Fade everything but the captain and the dog.
+
+- We found the following problems with your images:\n
+
+- We could not find the file ../images/alexey-zimarev/spacepen.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/illustration1.png. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/illustration2.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/illustration3.png. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/cynefin.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/illustration4.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/alexey-zimarev/illustration5.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
+
+- We could not find the file ../images/anita-kvamme/SneakPeekIntoMentalModel.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md
+
+- We could not find the file ../images/anita-kvamme/MentalModelCodeGap.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md
+
+- We could not find the file ../images/indu-alagarsamy/comparison-1.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
+
+- We could not find the file ../images/indu-alagarsamy/comparison-2.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
+
+- We could not find the file ../images/indu-alagarsamy/group-selfie.png. We have put a place-marker image in its place. It is used in these files: indu-alagarsamy/essay.md
+
+- We could not find the file ../images/mathias-verraes/Money.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
+
+- We could not find the file ../images/mathias-verraes/MoneyFormatter.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
+
+- We could not find the file ../images/scott-millett/artofthepossible.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
+- We could not find the file ../images/scott-millett/01_DDD_Overview.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
+- We could not find the file ../images/scott-millett/agreement_on_the_problem.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
+- We could not find the file ../images/scott-millett/Impact-Map.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
+- We could not find the file ../images/scott-millett/Business-Model-Canvas.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
+We found the following problems with your epub file:\n
+- Error while parsing file 'value of attribute "href" is invalid; must be a URI'.
+
+- '!http://www.eventstorming.com' is not a valid URI. 
+
+- Referenced resource could not be found in the EPUB.
