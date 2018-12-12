@@ -156,7 +156,8 @@ Event Storming is a workshop activity that is designed to quickly build an under
 Knowledge crunching occurs in an open environment that has plenty of space for visual modeling, be that lots of whiteboards or an endless roll of brown paper.
 The problem domain is explored by starting with a domain event; i.e., events that occur within the problem domain that the business cares about. A Post-it note representing the domain event is added to the drawing surface and then attention is given to the trigger of that event. An event could be caused by a user action that is captured and added to the surface as a command. An external system or another event could be the originator of the event; these are also added to the canvas. This activity continues until there are no more questions. The team can then start to build a model around the decision points that are made about events and when they, in turn, produce new events.
 
-Event storming is an extremely useful activity for cultivating a UL as each event and command is explicitly named, this goes a long way to producing a shared understanding between the developers and business experts. The biggest benet however is that it’s fun, engaging, and can be done quickly. Alberto Brandolini created this activity and more information can be found at https://www.eventstorming.com.
+Event storming is an extremely useful activity for cultivating a UL as each event and command is explicitly named, this goes a long way to producing a shared understanding between the developers and business experts. The biggest benet however is that it’s fun, engaging, and can be done quickly. Alberto Brandolini created this activity and more information can be found at [eventstorming.com](https://www.eventstorming.com).
+
 
 #### Impact Mapping
 

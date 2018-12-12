@@ -54,9 +54,3 @@
 
 - We could not find the file ../images/scott-millett/Business-Model-Canvas.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
 
-We found the following problems with your epub file:\n
-- Error while parsing file 'value of attribute "href" is invalid; must be a URI'.
-
-- '!http://www.eventstorming.com' is not a valid URI. 
-
-- Referenced resource could not be found in the EPUB.
