@@ -4,7 +4,6 @@
 - cover image
 - table of contents
 - convert David West's entry to markdown
-- Rebecca Wirfs-Brock
 - convert Mel Conway
 - Mathias Verraes
 - Cyrille Martraire: formatting
