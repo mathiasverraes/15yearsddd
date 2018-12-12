@@ -15,5 +15,8 @@
 - receive and clean up Indu's photos. Fade everything but the captain and the dog.
 
 - We found the following problems with your images:\n
-- We could not find the file ../images/mathias-verraes/Money.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
-- We could not find the file ../images/mathias-verraes/MoneyFormatter.png. We have put a place-marker image in its place. It is used in these files: mathias-verraes/essay.md
+- The generated mobi file is 97 Megabytes. If your file is larger than 49 MB it will not be sendable with Leanpub's send-to-kindle functionality or Amazon's Send to Kindle app.
+- We could not find the file ../images/scott-millett/artofthepossible.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+- We could not find the file ../images/scott-millett/01_DDD_Overview.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+- We could not find the file ../images/scott-millett/agreement_on_the_problem.png. We have put a place-marker image in its place. It is used in these files: scott-millett/essay.md
+
