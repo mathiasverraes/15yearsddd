@@ -16,20 +16,6 @@
 
 - We found the following problems with your images:\n
 
-- We could not find the file ../images/alexey-zimarev/spacepen.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/illustration1.png. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/illustration2.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/illustration3.png. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/cynefin.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/illustration4.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
-- We could not find the file ../images/alexey-zimarev/illustration5.jpg. We have put a place-marker image in its place. It is used in these files: alexey-zimarev/essay.md
-
 - We could not find the file ../images/anita-kvamme/SneakPeekIntoMentalModel.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md
 
 - We could not find the file ../images/anita-kvamme/MentalModelCodeGap.png. We have put a place-marker image in its place. It is used in these files: anita-kvamme/essay.md

@@ -39,7 +39,7 @@ This story is a myth. NASA also tried using pencils but decided to get rid of th
 
 _Source: "Fact or Fiction?: NASA Spent Millions to Develop a Pen that Would Write in Space, whereas the Soviet Cosmonauts Used a Pencil" by Ciara Curtin, Scientific American_
 
-![Fisher Space Pen](../images/alexey-zimarev/spacepen.jpg)
+![Fisher Space Pen](images/alexey-zimarev/spacepen.jpg)
 
 Here you can see the other part of the problem space versus solution space issue. Although the problem itself appeared to be simple, additional constraints, which we could also call _non-functional requirements_, made it more complicated than it looks like at first glance.
 
@@ -47,7 +47,7 @@ Jumping to a solution is very easy, and since each of us has a rather rich exper
 
 One more aspect to consider when searching for a solution to a given problem. There is a danger of fixating all attention on one particular solution, which might be not the best one at all but came first to your mind, based on previous experiences, current understanding of the problem and other factors.
 
-![Refinement versus exploration](../images/alexey-zimarev/illustration1.png)
+![Refinement versus exploration](images/alexey-zimarev/illustration1.png)
 
 The exploratory approach to find and choose solutions involves more work spiking alternative ways to solve the problem, but the answer that is found during this type of exploration will most probably be much more precise and valuable. We will discuss more fixation on the first possible solution later in this chapter.
 
@@ -65,7 +65,7 @@ In contrast, with user stories, we have more insight into what our user wants. L
 
 Requirements became so notorious that if you search for an image using keywords "software requirements," the second result in Google Images would be this picture:
 
-![Tree Swing Project Management cartoon](../images/alexey-zimarev/illustration2.jpg)
+![Tree Swing Project Management cartoon](images/alexey-zimarev/illustration2.jpg)
 
 
 We shall not think that requirements are waste. There are many excellent analysts out there, who produce high-quality requirements specifications. However, it is vital to understand, that these requirements are almost always represent the understanding of the actual problem by a person who wrote these requirements. A misconception that spending more and more time and money on writing higher quality requirements prevails in the industry.
@@ -94,7 +94,7 @@ The company then decided to analyse the actual need that the customer, who reque
 
 This example clearly shows that not understanding the problem can lead to severe consequences. Developers tend to generalise and bring abstractions to solutions, and very often this is entirely unnecessary. What seems to be the essential complexity in this example, turned out to be a waste.
 
-![Complexity growth over time](../images/alexey-zimarev/illustration3.png)
+![Complexity growth over time](images/alexey-zimarev/illustration3.png)
 
 The picture above shows that with the ever-growing complexity of the system, the essential part is being pushed down and the accidental part takes over. When systems become more prominent, a lot of effort is required to make the system work as a whole and to manage large data models, which large systems tend to have.
 
@@ -112,9 +112,7 @@ The framework is Cynefin. This word is Walsh for something like _habitat,_ acc
 
 Cynefin divides all problems into five categories or complexity domains. By describing properties of problems that fall to each domain, it gives the _sense of place_ for any given problem. After the problem is Categorised as one of the domains, Cynefin then also offers some practical approaches to deal with this kind of problem.
 
-![Cynefin Framework: image by Dave Snowden](../images/alexey-zimarev/cynefin.jpg)
-
-> Cynefin Framework: image by Dave Snowden
+![Cynefin Framework: image by Dave Snowden](images/alexey-zimarev/cynefin.jpg)
 
 These five domains have specific characteristics, and the framework provides both attributes for identifying to which domain your problem belong, and how the problem needs to be addressed.
 
@@ -155,7 +153,7 @@ Dual process theory in psychology suggests that these types of brain activity ar
 
 These processes, or _systems_, happily co-exist in one brain, but are rather different in ways how they operate. Keith Stanovich and Richard West have coined the names _implicit system_, or _System 1_ and _explicit system_, or _System 2_ (_Individual difference in reasoning: implications for the rationality debate_?. Behavioural and Brain Sciences 2000). Daniel Kahneman in his award-winning book _Thinking Fast and Slow_ (New York: Farrar, Straus and Giroux, 2011) assigned several attributes to each system:
 
-![System 1 and System 2](../images/alexey-zimarev/illustration4.jpg)
+![System 1 and System 2](images/alexey-zimarev/illustration4.jpg)
 
 What all this has to do with Domain-Driven Design? Well, the point here is more about how we make decisions. The Cynefin complexity model requires from us at least to Categorise the complexity we are dealing with in our problem space (and also sometimes in the solution space). But to assign the right category, we need to make a lot of decisions, and here we often get our _System 1_ speaking and making assumptions based on many of our biases and experiences from the past, rather than engaging the _System 2_ to start reasoning and thinking. Of course, every one of us is familiar with a colleague exclaiming "yeah, that's easy!" before you can even finish describing the problem. We also often see people organising endless meetings and conference calls to discuss something that we assume to be a straightforward decision to make.
 
@@ -213,7 +211,7 @@ The article concentrates on ignorance and identifies five levels of it:
 
 As you can see, ignorance is the opposite of knowledge. The only way to decrease ignorance is to increase understanding. High level of ignorance, conscious or subconscious, leading to the lack of knowledge and misinterpretation of the problem, and therefore, increasing the change of building a wrong solution.
 
-![Ignorance is highest at the earliest stages](../images/alexey-zimarev/illustration5.jpg)
+![Ignorance is highest at the earliest stages](images/alexey-zimarev/illustration5.jpg)
 
 Eric Evans, the father of DDD, describes the upfront design as _locking in our ignorance_. The issue with the upfront design is that we do it at the beginning of a project. At that time we have the least knowledge and most ignorance. It became a norm to make most important decisions about the design and architecture of the software at the very beginning of projects when there is virtually no ground for such decisions available. This practice is quite obviously not optimal. Mary and Tom Poppendieck in their book _Lean Software Development_ (2003, Addison-Wesley Professional) described the term "last responsible moment" as "the moment at which failing to make a decision eliminate an important alternative" and, as the term suggests, advise to postpone important decisions. Agile and Lean methodologies also help to communicate knowledge more efficient and awareness of ignorance more obvious.
 
