@@ -7,6 +7,7 @@
 People often ask for more concrete guidance on how to explore models, especially in an Agile or Lean setting. The model exploration whirlpool is Eric Evans attempt to capture such advice in writing. It is not a development process, but a process that fits in most development processes. The central theme revolving the process is to keep challenging the model. While the process itself for most is straightforward and easy to understand, there are not many concrete examples to find on how to do such a model exploration whirlpool. Most people when starting to use Domain-driven design (DDD) are looking for these practical examples. In this article, I will tell you my story of how I used the model exploration whirlpool by combining EventStorming, a technique that came from the DDD community, and Example Mapping, a technique from Behaviour Driven Development (BDD) community.
 
 ![](./img/DDD_Model_Exploration_Whirlpool.png)
+*© domainlanguage.com*
 
 ### Harvest and document
 
@@ -61,7 +62,7 @@ We want to look for the consistent and eventual consistent business rules (the y
 Like with the as-is, we will use example mapping again. First start with the storming part again, writing down examples on a green sticky either next to the EventStorm or a separate wall on a different paper roll. Only this time we will also go further in the example mapping, by structuring the examples in vertical rows by a business rule. Write business rules on a blue sticky above the vertical row of examples. Important is to only have one business rule per vertical row. Having only one business rule means that specific examples can happen multiple times, but will focus more on a different business rule.
 
 ![](./img/example_mapping.png)
-*https://cucumber.io/blog/2015/12/08/example-mapping-introduction*
+*© https://cucumber.io/blog/2015/12/08/example-mapping-introduction*
 
 The business rules will match the business rules on your EventStorm. You will most likely also find new business rules you need to make explicit. When this happens, you might need to adjust your EventStorm with our newly acquired information. The goal of both tools is to share knowledge and explore complex business domains, so be careful not to go all out on making the two consistent.
 
