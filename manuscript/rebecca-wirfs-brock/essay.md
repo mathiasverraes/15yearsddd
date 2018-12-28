@@ -1,6 +1,9 @@
 # Traces, Tracks, Trails, and Paths: An Exploration of How We Approach Software Design (by Rebecca Wirfs-Brock)
 
+*This work is based on an essay I presented and workshopped at the PLoP (Pattern Languages of Programs) 2018 Conference held October 24-26, 2018 in Portland, Oregon, USA* 
+
 ## Introduction
+
 If I were to be brutally honest about the nature of software design, I would give up on any notion of certainty. The more I know about software and the world it is part of, the more cautious I become about making absolute statements about either. Software design is full of unexpected complexities and continual surprises. I cannot predict which contextual details will suddenly become important. Small details can loom large and undo even the best design intentions.
 
 Because I acknowledge this uncertainty, I seek out other designers’ stories. I want to learn about the ugly, confusing aspects of design that are rarely written about. I want to incorporate others’ insights into my growing understanding of the nature of software design. I want to learn what heuristics they use to solve their design problems and see where they clash with or complement my own.
@@ -11,6 +14,7 @@ As a designer I often encounter conflicting goals, dynamically changing context,
 I’m hoping to change that just a little by giving myself some space and time to reflect on how I approach design and share some ways collectively we as designers might grow, alter, articulate, and better share our heuristics. There is much to learn about design from the stories we tell and from the questions we ask of each other.  
 
 ## Background
+
 A software designer’s personal toolkit likely includes an awareness of some hardcore technical design patterns (and how to shape and adapt and refine them). It also includes heuristics for how to approach the current task at hand. Our heuristics have been imparted to us through code and conversations, as much as anything. While we may read others’ design advice—be it from patterns or stack overflow replies, the heuristics we’ve personally discovered on our own design journey may be even more important.
 
 In *Discussion of ____the____ Method*, Billy Vaughn Koen defines a heuristic as, “anything that provides a plausible aid or direction in the solution of a problem but is in the final analysis unjustified, incapable of justification, and potentially fallible.” If you desire to create or change a system (whether social, political, physical, software, or otherwise), opting for what you consider to be the best available heuristics to apply as you balance conflicting or poorly understood criteria for success, then you are solving an engineering problem. Rarely are such problems well defined. Instead, we problem solvers determine what the actual problem is based on diffuse, changing requirements. And to solve that problem, we successively apply heuristics based on our imperfect knowledge of both the current situation as well as the outcome of taking any specific action. Heuristics offer plausible approaches, not infallible ones.
@@ -24,6 +28,7 @@ I assert that a well-written pattern is a particularly nicely packaged form of h
 Although I like patterns, the vast majority of software design heuristics have not been written in pattern form. Nor do I expect them to be. Not every useful heuristic is a pattern. I seek out those other heuristics, too. I am on the lookout for useful heuristics wherever I am engaged in designing or learning about software design (for example, when thinking about how to solve a current problem that is unfamiliar, when reading code, reading blogs, when playing with a new framework, when searching for online advice and recommendations, when attending conference talks, talking with friends, going to meetups, …). I keep adding to my bag of tricks. I tweak and refine heuristics through experience. Rearranging and growing my heuristics toolkit is ongoing and not in anyway systematic.
 
 ## Metaphors for understanding the certainty and utility of different software heuristics
+
 Could I be a better software designer if I made finer distinctions between heuristics? There are those I know deeply and have learned from others. There are those I discovered on my own. There are heuristics I know intimately—however I came to know them—that I have lovingly polished through experience. And there are those shiny new heuristics I hear or read about.
 
 So what are some ways to understand the soundness and utility of heuristics we find? Robert Moor, in his book, *On Trails*, suggests that we untangle the various meanings and distinctions between trails, traces, tracks, ways, roads, and paths in order to understand how trails came to be and continue to evolve.
@@ -38,8 +43,8 @@ Recently I’ve learned that some pattern authors were not so certain as their w
 
 Likewise, Eric Evans in several talks suggests that the most important patterns in his collection were the Strategic Patterns. If you look at how the patterns in his book are laid out (see Figure 1) there are really two groupings or patterns collections—those concerned with design details for object designs (e.g. Tactical Design Patterns) and those for organizing and understanding the domains in complex software systems (Strategic Design Patterns).  Evans believes that while the Tactical Patterns are useful for object-oriented programming, they aren’t nearly as important as the Strategic Patterns. He regrets that the Strategic Patterns were in the latter part of his lengthy book, as some readers never get that far. He also points out that a missing pattern, Domain Events, which was only hinted at in his book, has become increasingly important, especially with the increased use of CQRS (Command-Query-Response Segregation) and Event-Sourced architectures to implement Domain Driven Design models.
 
-![](../images/rebecca_wirfs-brock/StrategicAndTacticalDDD.png)
-Figure 1. The Domain-Driven Design Patterns are really two collections in one book: Strategic and Tactical Design Patterns
+![Figure 1. The Domain-Driven Design Patterns are really two collections in one book: Strategic and Tactical Design Patterns](images/rebecca_wirfs-brock/StrategicAndTacticalDDD.png)
+
 
 In hindsight, the presentation of these pattern collections seems more tentatively than carefully planned. Had the authors taken time to study how others actually used their patterns, would they have designed better pathways? Or is this something they can see only when looking back on their work?
 
@@ -54,8 +59,8 @@ On the other hand, pattern languages, unlike pattern collections, attempt to def
 
 I know of few examples of published software design pattern languages. *Object-oriented Reengineering Patterns* by Serge Demeyer, Stéphane Ducasse, and Oscar Nierstrasz is a notable one. Each chapter starts with a pattern map illustrating potential sequences through the patterns in the chapter based on actions (see Figure 2 for the pattern map for Chapter 4). These maps illustrate small trails with branches, loops, and options. For example, to gain an initial understanding of a design, you can start with either a top down or bottom up approach and proceed until you have enough understanding to move on to your next re-engineering task.
 
-![](../images/rebecca_wirfs-brock/InitialUnderstandingPL.png)
-Figure 2. Each chapter in *Object-Oriented Reengineering Patterns* is a small language
+![Figure 2. Each chapter in *Object-Oriented Reengineering Patterns* is a small language](images/rebecca_wirfs-brock/InitialUnderstandingPL.png)
+
 
 Unlike physical trails, where we are guided to move in a singular direction, software pattern languages seem more loopy and fragmented. But unlike a physical trail where we are constrained by the physical terrain, software designers can skip over any pattern they don’t find useful or go “off trail” at any point to pick up and apply a useful design heuristic, wherever it is found. It’s hard to skip over a part of a physical trail. It’s only possible when there’s a switchback that you can cut through or a branch. But it is usually those optional stretches away from the main trail and then back again that lead to something really interesting (you don’t want to miss that waterfall simply because it is an extra ¼ mile out of the way).
 
@@ -64,6 +69,7 @@ We software designers often invent (design? hack out?) our own tracks. If we don
 So this is where the pattern languages as trails metaphor breaks down. Software design doesn’t simply proceed from one known waypoint to the next. It’s often more complicated. But sometimes it is much simpler. We aren’t always way finders or followers. Sometimes we are so certain what to do next without consciously following any trail or path or track at all. In that case, the terrain of our software and its design is so familiar to us that we become efficient at just moving through it without much thought. We’re not searching for heuristics so much as taking the next (to us, anyway) obvious step.
 
 ## The roles of trailblazers, travellers, and stewards
+
 >“The soul of a trail—its trail-ness—is not bound up in dirt and rocks; it is immaterial, evanescent, as fluid as air. The essence lies in its function: how it continuously evolves to serve the needs of its users.” —Robert Moor
 
 Trails emerge; living useful trails evolve. Wild, ancient trails started as traces—marks, objects, or other indication of the existence or passing of someone or something. Because others followed, some traces over time become tracks—rough ways typically beaten into existence through repeated use rather than consciously constructed. Tracks became trails only when they become followable. And then, with enough following and time and adaptation a trail becomes “alive” with an evolving purpose—it changes and is adapted by its travellers. But this progression isn’t inevitable. Traces peter out. Tracks fade from disuse. Trails become lost, abandoned, or fall into disrepair. Still, each at one point in time had utility and served a purpose.
@@ -89,6 +95,7 @@ Eric Evans speaks of the revitalization of the DDD community which happened when
 I spot some hesitancy for some to update “official” trails mapped out by the original patterns authors; not wanting to step on the toes of those original trailblazers. But those of us who want to preserve trails can and should become trail stewards—volunteering to mend and repair and refine those trails we cherish. What we trail followers need to recognize is that not all trailblazers are alike. While certain trailblazers may not welcome updates, others may gladly seek company, advice, and stewardship help. And some trailblazers may have moved on, having passed through their territory and on to newer ventures. Trail followers have just as much collective ownership of the trails they use as those who initially marked them.
 
 ## Fieldnotes on an experiment collecting heuristics
+
 Motivated to share what I’ve learned about heuristics and to stimulate others to share and refine their own and other well-known heuristics that might need refreshing/revisiting, I presented a keynote, Cultivating Your Design Heuristics at the Explore DDD 2017 Conference. I hoped to inspire others to take on a more active role as Domain Driven-Design heuristics stewards. The last sentences of my talk abstract had this challenge:
 
 >“To grow as designers, we need to do more than simply design and implement working software. We need to examine and reflect on our work, put our own spin on the advice of experts, and continue to learn better ways of designing.”
@@ -97,11 +104,13 @@ The day after my talk, I got a Twitter direct message from Mathias Verraes, one 
 
 I was eager to have a conversation with Mathias and share ideas. Mostly I wanted to practice hunting for heuristics through conversation, as well as gain insights into Mathias’ personal design heuristics for events. Mathias is expert in event-sourced architectures, an alternative to the “traditional” domain-layering architectures (which includes patterns for storing and retrieving and updating Aggregate Roots into repositories), which Eric Evans had written about in his book (see Figure 3).
 
-Figure 3. - A “canonical” representation of the architecture where business domain objects or aggregates are maintained in a database which is accessed through a repository which hides the data store details from the business layer logic.
+![Figure 3. - A layered architecture where business domain objects or aggregates are maintained in a database that is accessed through a repository which hides the data store details from the business layer logic.](images/rebecca_wirfs-brock/LayerWithRepository.png)
 
-In a nutshell, instead of storing and updating Aggregate Roots (e.g. complex business domain objects) into databases, with event-sourced architectures, immutable events are stored with just enough information so they can be “replayed” to reconstitute the current state of any Aggregate Root. In essence, an event is a record of what the software has determined to have happened. Whenever work is accomplished in the system, one or more “business level events” are recorded that represent the facts known at the time. Events are generated by a software process as a byproduct of determining what just “happened” and interpreted by interested downstream processes, which can in turn, as a result of processing or interpreting the events they are interested in receiving, generate even more events. Each event is preserved in an event store, along with relevant information about the event. Figure 4 shows a canonical CQRS (Command-Query-Response-Segregation) architecture, one approach to implement event-sourced architectures. It should be noted that although the figure only shows one event store and one read model, there can be multiple event stores (each representing some cumulative state of the system) and different projections or read models designed for specific queries about those events.
 
-Figure 4.  A CQRS Architecture Showing Event Stores
+In a nutshell, instead of storing and updating Aggregates (e.g. complex business domain objects) into databases, with event-sourced architectures, immutable events are stored with just enough information so they can be “replayed” to reconstitute the current state of any Aggregate. In essence, an event is a record of what the software has determined to have happened. Whenever work is accomplished in the system, one or more “business level events” are recorded that represent the facts known at the time. Events are generated by a software process as a byproduct of determining what just “happened” and interpreted by interested downstream processes, which can in turn, as a result of processing or interpreting the events they are interested in receiving, generate even more events. Each event is preserved in an event store, along with relevant information about the event. Figure 4 shows a representation of a CQRS (Command-Query-Response-Segregation) architecture, one approach to implement event-sourced architectures. It should be noted that although the figure only shows one event store and one read model, there can be multiple event stores (each representing some cumulative state of the system) and different projections or read models designed for specific queries about those events.
+
+![Figure 4.  A representative CQRS Architecture](images/rebecca_wirfs-brock/CQRS.png)
+
 
 I didn’t know Mathias’ thinking on designing event-sourced architectures. So I wanted to first ask him to explain some fundamentals before sharing his heuristics for what should be published in an event. Throughout our conversation Mathias used as a working example the designs for car rental, finance, and student grading for courses and modules given by instructors (all examples drawn from real systems he had designed).
 
@@ -187,10 +196,12 @@ A>
 We reluctantly concluded our conversation when we were invited to join the conference’s closing circle. Mathias had written on both sides of a big sheet of paper, sketching ideas as he went. I asked if he wanted to keep the paper. He said no, he knew this by heart as he covers what we had talked about in a three-day workshop he gives. I now wish that I had taken a photo of his scribbling to jog my own memory.
 
 ### Reflections on the distillation process
+
 This was my very first attempt at actively distilling someone else’s design heuristics. I didn’t want to bog down our conversation by taking copious notes or interrupting the conversation to stop and record any specific heuristic or tweak the wording of what Mathias said or wrote. So I waited to write up notes about our conversation from memory that evening, inspired by advice I found in Writing Ethnographic Fieldnotes. My goal wasn’t to come up with a completely polished pile of publishable heuristics, just a few to get started.
 
 
 I learned these things from this experiment:
+
 * **Listen.** I need to restrain from sharing my own heuristics and design thoughts in order to let Mathias’ heuristics come out. My primary goal was to pick out and follow his trail of heuristics, not mingle them with my own. I’m not used to doing this, so I didn’t always silence my internal thoughts enough so I could listen more intently. This will take practice.
 * **Let the conversation wander.** It’s OK to let the conversation wander to where the person you want to glean knowledge from takes it. But don’t let it wander too far away from the topic. It is good to have a design topic around which to focus. Our focus was the design of event records. It wandered a bit to an equally interesting topics, event patterns and time, but since that wasn’t our original focus, unfortunately, I didn’t capture those heuristics so clearly. The goal is to tease out traces, tracks, and trails of interesting ideas that you want to pursue further.
 * **Prepare beforehand.** If you aren’t familiar with the jargon around the particular topic, prepare beforehand. I already knew the “classic” DDD patterns and a bit about event-sourced architectures. So I didn’t stumble over Bounded Contexts, Event Records, or Aggregates. Someone unfamiliar with those patterns would’ve had more difficulty following what was said. Trail markers make sense only if you know what you are looking for.
@@ -201,6 +212,7 @@ I learned these things from this experiment:
 * **Photograph scribbles and drawings to jog your memory.** It’s easy to do if the person you are conversing with is drawing while they talk. Mathias drew, but he crumpled up the paper after our conversation. So I lost a valuable memento that would have helped me remember his heuristics about time and what constitutes an event. I’ll need significant practice if I want to distill heuristics while simultaneously making sketch notes. Oh well. I know I need at least one more conversation with Mathias.
 
 ### Certainty about the heuristics we distill
+
 Mathias shared several heuristics in a fairly short time. The heuristics Mathias explained were grounded in his direct experience design and building several event-sourced architectures using Domain Driven Design concepts and patterns. What we discussed was just a taste of what he knows. However, the heuristics Mathias shared were on the whole pretty useful, even though the design of event-sourced systems is a big topic and we jumped right into the middle of it. In hindsight, some heuristics seem self-evident and consequently hard to apply. For example, “don’t lose information/precision” seems obvious (if you lost information, then you wouldn’t be able to trigger workflows in other components in your system or be able to “replay” events to reconstitute the current state of system things).
 
 The heuristics I like best are those where I can take some specific action and then see whether it results in forward design progress. I don’t know exactly what to do with the heuristic, “Don’t lose information/precision,” other than to verify what each consumer of an event might need. Which leads me to appreciate that event records shouldn’t be designed in isolation from their potential consumers. Perhaps I should have restated this heuristic as, “Design event records to convey the precision needed by known consumers of the event.”
@@ -236,6 +248,7 @@ More useful information is likely available, waiting for me to bump into it, if 
 And yet, how certain can I be about whatever advice I find? I tend to trust patterns authors who put in the time and effort to polish and publish their work, who’ve spent time marking their trails, checking that others can follow and that their heuristics make sense to other designers. I place high value on the advice of those who’ve built interesting systems and can tell stories about what they learned including design missteps they made and how they eventually made forward progress. But I don’t necessarily throw away what I have found useful just because someone is enthusiastic about a new software design approach and a new-to-me set of heuristics. They may be experts at some software design approaches that takes years, if not a lifetime, to master. At best, I might only be able to clumsily apply their heuristics after some concerted effort. Or alternatively, they may be trailblazers to places where I don’t want to go.
 
 ## Techniques for actively cultivating design heuristics
+
 We each have our own set of heuristics we’ve acquired through reading, practice, and experience. Our heuristics, like living trails, continue to evolve and get honed through experience. Some of our heuristics prove durable and are still useful, even in new design contexts. For example, for me, using the lens of role stereotypes from Responsibility-Driven Design to understand system behaviors is useful, even though I know there are newer stereotypes for functional designs and Internet applications that people are writing about. Characterizing roles and interaction patterns is a useful heuristic for understanding the designs of many systems.  I never thought the original stereotypes I conceived to help me and others understand object-oriented designs were universal (and all the stereotypes there were).  So I welcome new ways of characterizing design behaviors.
 
 Some heuristics we discard because our design constraints radically change. I no longer worry about managing memory footprint and have put aside those heuristics that were useful back when I designed systems that required memory overlays—for me that trail has been long abandoned. Other heuristics get pushed to the back of our minds when we find new or trendier heuristics we like better. When I discovered object-oriented techniques, I put aside other approaches to structuring systems because I found objects to be so useful. Long ago I took a decision to head down that trail and have continued on that journey.
@@ -243,10 +256,11 @@ Some heuristics we discard because our design constraints radically change. I no
 To keep learning, we need to integrate new heuristics with those we already know. Billy Vaughn Koen cautions us to not judge our earlier designs (or earlier designers) too harshly against today’s design standards. Collectively, our state-of-the-art (or SOTA) keeps progressing. And as active, engaged designers, so do we. Recently I have been exploring functional programming languages and designs that employ them, simply because I want to compare heuristics for designing these systems with older, more familiar-to-me ones. I don’t want to get stuck in a rut. Although I may not become an expert, I’ll be a better designer with a richer set of tools.
 
 ### Recording “Sign” with Question-Heuristic-Example Cards
+
 I have also experimented with ways to articulate new-to-me heuristics in order to see how they fit into my heuristic gestalt. I’ve been playing around with using index cards as a means to capture the gist of a heuristic. This simple technique structures a heuristic in three parts: a question, the answer (which can be then polished into a formulation of the heuristic), and an example or two to help me remember. I call them QHE  or “Q-Hee” cards, for the lack of a better name (see Figure 5). This use of index cards to capture design heuristics is inspired by CRC (Class-Responsibility-Collaborators) design cards invented by Ward Cunningham and Kent Beck.
 
-![](../images/rebecca_wirfs-brock/QHE.png)
-Figure 5. Following this heuristic, 3 different events would be generated because there are 3 different actors.
+![Figure 5. Following this heuristic, 3 different events would be generated because there are 3 different actors.](images/rebecca_wirfs-brock/QHE.png)
+
 
 An advantage of QHE cards is that they are easy to write.
 
@@ -255,23 +269,25 @@ But just like CRC cards, they can be too terse.
 Without actively integrating the heuristic captured on QHE card into my design heuristic gestalt, I find it quickly loses meaning. Once I convert these to a richer form (either by writing further about the heuristic or sketching out a more detailed design example or writing some code), I can then recall more subtleties about that heuristic.
 
 ### Distilling what you hear
+
 One way I can more actively learn is to view technical presentations as opportunities distill what I hear and integrate those heuristics with my own. I discovered that if I take a picture of some interesting speaker and/or a slide they were presenting it served to jog my memory. Looking at the picture helps me remember what they said so I can write up field notes, if I choose, long after the presentation.
 
 Here are two photos I took at the DDD Europe 2018 conference.
 
 The first is of Eric Evans telling us the story of how he goes about exploring a design concept and all its limitations and design surprises. I found each line on the slide to be a personal heuristic Eric uses to do this (the rest of his talk was filled with examples exploring the quirks and complexities of date and time).
 
-![](../images/rebecca_wirfs-brock/EricEvans.png)
-Figure 6. Photo from Eric Evans’ keynote at Domain Driven Design Europe 2018 introducing how he understands a domain
+![Figure 6. Photo from Eric Evans’ keynote at Domain Driven Design Europe 2018 introducing how he understands a domain](images/rebecca_wirfs-brock/EricEvans.png)
+
 
 The next photo is from a talk by Michiel Overeem on versioning event stores, a fundamental element of event-sourced architectures (see Figure 7). This slide summarizes the various approaches Michiel found when he surveyed other designers. Event stores are supposed to be immutable. You use them to play back events and recreate system state. Conceptually they are write once stores. But if your event schema changes, various components need to then be able to interpret these new event structures. But if your event schema changes, various components need to then be able to interpret these new event structures. So how do you make that work in practice? You select a versioning approach depending on a number of factors including the size of your event store, your ability to process extra information on event or to transform on the fly to a new format, and your event store update policy.
 
 While Michiel eventually put his [slides](https://speakerdeck.com/overeemm/dddeurope-2018-event-sourcing-after-launch) online, this photo was enough to jog my memory and make the connections between heuristics for updating event stores and heuristics I’d written in pattern form for updating Adaptive Object Model (AOM) systems. Although Event-sourced and Adaptive Object-Model systems are quite different architecture styles, they have similar challenges with updating their models’ schemas. 
 
-![](../images/rebecca_wirfs-brock/MichielOvereem.png)
-Figure 7.  Photo of summary slide from Michiel Overeem’s presentation on Event Sourcing After Launch
+![Figure 7.  Photo of summary slide from Michiel Overeem’s presentation on Event Sourcing After Launch](images/rebecca_wirfs-brock/MichielOvereem.png)
+
 
 ### Sharing Heuristics to Start Conversations
+
 Since my initial conversation with Mathias, we’ve both become energized to do more heuristics hunting. This led to a one-day Heuristics Distillation workshop I held at DDD Europe 2018. At that workshop I shared my heuristics journey and then participants shared a few of their cherished heuristics. Since then, I’ve given other presentations about design heuristics and have been encouraging others to articulate and share their heuristics. Consequently, Victor Bonacci held a workshop at Agile 2018 on Coaching Heuristics: What’s in Your Toolkit? Coaching heuristics aren’t software heuristics, but in Vaughn Koen’s definition of design heuristics, they do fit: Any thing we do in an attempt to make forward progress towards a goal.
 
 
@@ -279,13 +295,15 @@ The format of Victor’s workshop was quite effective. First he explained what h
 
 Teaching each heuristic in this long, long list would have overwhelmed us. Instead, Victor quickly introduced two or three heuristics in a particular category and then gave us a situation to briefly discuss in small groups. We also had a deck of Victor’s coaching heuristics to refer to if we wanted. We discussed what heuristics (our own or others we had heard about) we might use to try to improve the situation. After each round of discussion, a few shared what they had talked about with the larger group. We repeated this cycle three or four times, learning a few more of Victor’s heuristics, but also, more important it seems, sharing our experiences and our own heuristics. Although the format of this workshop was similar to that of patterns mining workshops, it wasn’t focused on capturing these heuristics so much as it was getting people to share their experiences with others.
 
-![](../images/rebecca_wirfs-brock/HeuristicsCard.png)
-Figure 8. Coaching Heuristics Cards created by Victor Bonacci. Each card carries the gist of the heuristic, either as a drawing or phrase on the front side, and the name and source on the back.
+![Figure 8. Coaching Heuristics Cards created by Victor Bonacci. Each card carries the gist of the heuristic, either as a drawing or phrase on the front side, and the name and source on the back.](images/rebecca_wirfs-brock/HeuristicsCard.png)
+
 
 ### Holding an Imaginary Debate
+
 One way to appreciate another designer’s approach is to walk a mile in their shoes. Barring that rare opportunity, an intriguing alternative is to take some design advice you find and imagine having a thoughtful debate with that designer. Counter their advice with an opposing set of arguments. Then, distill the essence of the heuristics you find in both your arguments and reflect on the relationships between the heuristics embedded in each point of view. I find this is easier to do if you have either a strong negative or positive reaction to some particular bit of advice. Surprisingly, arguing for an approach that differs from your preferred design heuristic helps you gain an appreciation for that perspective.
 
 For example, Paul Graham, in an essay [Revenge of the Nerds](https://www.eecis.udel.edu/~decker/courses/280f07/paper/Revenge.pdf) writes,
+
 >“As a rule, the more demanding the application, the more leverage you get from using a powerful language. But plenty of projects are not demanding at all. Most programming probably consists of writing little glue programs, and for little glue programs you can use any language that you’re already familiar with and that has good libraries for whatever you need to do.”
 
 One counterargument to Paul’s thesis might be, “What you recommend for complex systems makes sense—use a powerful programming language. But if I am not in a time crunch and what I’m building is simple, I shouldn’t always take the easy path. If always I took your advice for simple programs, how would I ever learn anything new? If the problem is simple, that might be the perfect opportunity for me to try out new ways to solve it and learn something new especially when the consequence of failure isn’t high. Also, sometimes what appears to be simple turns out to be more complicated. And when I push on the limits of what tools and frameworks were designed to do, it is important to stop and rethink my current approach instead of trying to hack away at it until I patch together a solution. Or at least take a break before coming back to what I’ve been struggling with.”
@@ -311,6 +329,7 @@ A>
 On reflection, Paul Graham’s advice seems geared towards designers who find they waste too much time trying new tools and techniques instead of implementing workable, familiar solutions. On the other hand, without stretching and trying something new, designers can get stuck in a rut. Both viewpoints have some validity. There are always competing heuristics to choose from. And depending on your current context, past experiences, and preferences, you decide between them.
 
 ### The work of reconciling new heuristics with your SOTA
+
 Sometimes it takes effort to first understand and then reconcile newfound heuristics with your existing ones. Designers use different terms to describe similar (but not identical) concepts. Mapping others’ terminology to your language can be fraught with uncertainty.
 
 To illustrate this difficulty, I took advice from Daniel Whittaker’s blog post on [validating commands in a CQRS architecture](http://danielwhittaker.me/2016/04/20/how-to-validate-commands-in-a-cqrs-application/) and tried to align his heuristics with mine for validating input from an http request.
@@ -363,6 +382,7 @@ In retrospect, this wasn’t that hard.
 But still, it took some effort.
 
 ## Dealing with uncertainty, conflicting heuristics, and details
+
 I suspect we need to let go of some design certainty before we can truly learn from others. When we are so certain we run the danger of painting ourselves into a corner when there are better paths we might take if only we hadn’t been so certain of what we were attempting. Yet it’s not always appropriate to be experimenting. Sometimes we are better off if we keep to a well-trodden design trail. But first we need to know how to find that trail.
 
 Most of us, most of the time don’t start designing every day from scratch. There are usually many constraints already in place. Our task is mostly that of refining some design aspect of a pre-existing implementation. In that case, we jump in and get to work, with more or less certainty based on where we’ve been, what we know about the existing design, and what the task is ahead of us. We may not even know what trail we are on, just where we are at the moment.

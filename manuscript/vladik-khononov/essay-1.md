@@ -1,8 +1,4 @@
-# 7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems (by Vladik Khononov)
-
-TODO:
-%% Note: There are two sets of images. Hand drawn one, and a regular, as used in the original presentation. Personally I prefer the hand drawn one, but included both since it depends on which will look better in a book, and the book's style. %%
-%% Note:  This essay is based on my talk “7 Years of DDD: Tackling Complexity in Large-Scale Marketing Systems”. It was delivered at Explore DDD, DDD Europe, KanDDDinsky, NDC Sydney, and other conferences. %%
+# 7 Years of DDD: Tackling Complexity in a Large-Scale Marketing System (by Vladik Khononov)
 
 One morning, back in 2010, I got a phone call from a friend. He said he was starting a new company. The business was not going to be simple, but if I joined him, from the technical perspective I could do whatever I wanted. I agreed to join him, just like that! 
 
@@ -17,10 +13,11 @@ Imagine you are producing a product or a service. Internovus allows you to outso
 
 Most importantly, this marketing process provides many opportunities for optimization, and that’s exactly what our analysis department is doing. They analyze all the data to make sure our clients are getting the biggest bang for their buck, be it by pinpointing the most successful campaigns, the most effective creatives, or by ensuring that the sales agents are working on the most promising leads.
 
-![Internovus](images/vladikk/hand-drawn/1-internovus.png)
+![](images/vladikk/hand-drawn/1-internovus.png)
 
 ### A New Hope
 Since we were a self-funded company, we had to get rolling as fast as possible. Therefore, for the first version, we had to implement the first third of our value chain:
+
 * A system for managing contracts and integrations with external publishers;
 * A catalog for our designers to manage creative materials; and 
 * A campaign management solution to run advertising campaigns.
@@ -35,7 +32,7 @@ Guess how the system was initially designed? — It would definitely make a cert
 
 [^poetry]: <https://www.infoq.com/interviews/jimmy-nilsson-linq>
 
-## Part 1: 5 Bounded Contexts
+## Part I: 5 Bounded Contexts
 
 ### The First “Bounded” Context
 The architectural style of our first solution could be neatly summarized as “Aggregates Everywhere”. Agency, Campaign, Placement, Funnel, Publisher - each and every noun in the requirements was proclaimed as an Aggregate.
@@ -44,8 +41,7 @@ All those so-called aggregates resided in a huge, lone, bounded context. Yes, a 
 
 And of course, those were no aggregates. They didn’t provide any transactional boundaries, and they had almost no behavior in them. All the business logic was implemented in an enormous service layer. A typically anemic domain model.
 
-
-![Anemic Domain Model](images/vladikk/hand-drawn/3-anemic-dm.png)
+![](images/vladikk/hand-drawn/3-anemic-dm.png)
 
 In hindsight, this design was so terrible it resembled a by-the-book example of what domain-driven design is not. However, things looked quite different from the business standpoint.
 
@@ -163,7 +159,7 @@ Again, it started out simply - once a month, just calculate a percentage of each
 
 We designed the solution accordingly: some Active Record objects, orchestrated by a “smart” service layer:
 
-![Bonuses Architecture](images/vladikk/hand-drawn/7-supporting.png)
+![](images/vladikk/hand-drawn/7-supporting.png)
 
 Once the process became automated, boy, did everyone become creative about it.
 
@@ -224,12 +220,13 @@ Those were the five bounded contexts that I wanted to tell you about: Marketing,
 
 I know, it might sound like we’re a bunch of losers who can’t do anything right the first time. But fear not: I wanted to share the stories of the bounded contexts we learned the most from. And that brings us to the second part. Let’s see what we learned from this experience.
 
-## What We Learned
+## Part II: What We Learned
 
 ### Ubiquitous Language
 In my opinion, ubiquitous language is the “core domain” of domain-driven design. The ability to speak the same language with our domain experts has been indispensable to us. It turned out to be a much more effective way to share knowledge than tests, documents, and “even” Jira.
 
 Moreover, the presence of a ubiquitous language has been a major predictor of a project’s success for us:
+
 * When we started, our implementation of the Marketing system was far from perfect. However, the robust ubiquitous language compensated for the architectural shortcomings and allowed us to deliver the project’s goals.
 * In the CRM context, we screwed it up. Unintentionally, we had two languages describing the same business domain. We strived to have a proper design, but because of the communication issues we ended up with a huge mess.
 * The Event Crunchers project started as a simple supporting subdomain, and we didn’t invest in the ubiquitous language. We regretted this decision big time when the complexity started growing. It would have taken us much less time if we initially started with a ubiquitous language.
@@ -240,7 +237,7 @@ Hence, our take on it right now: ubiquitous language is not optional, regardless
 #### Invest Early!
 We also learned the importance of investing in the ubiquitous language as early as possible. It is practically impossible to “fix” a language if it has been spoken for a while in a company (as was the case with our CRM system). We were able to fix the implementation. It wasn’t easy, but eventually we did it. That’s not the case, however, for the language. To this day, some people still use the conflicting terms defined in the initial implementation.
 
-### Lesson #2: Subdomains
+### Subdomains
 We all know that, according to domain-driven design, there are three types of business domains:
 
 #### Core Subdomains
@@ -300,8 +297,6 @@ But how do you choose the implementation strategy? At Internovus, we’ve identi
 
 ### Tactical Heuristics
 To choose an implementation strategy for a business subdomain, you have to decide how to model its business logic in code. For that we have four options, four patterns:
-
-#### Business Logic Modeling Patterns
 
 ##### Transaction Script
 This pattern calls for implementing the business logic as a simple and straightforward procedural script. Nothing fancy or complicated. All you have to take care of is to make sure each operation is transactional: it either succeeds or fails. Hence the name — Transaction Script.
@@ -394,7 +389,7 @@ However, make sure to extract those smaller contexts – not because you can, bu
 #### Examples
 When we tried to decompose to fine-grained services early on, as in the case of Marketing Hub, we ended up with a distributed monolith. On the contrary, the Marketing context started as a very wide one, but was decomposed later on; we extracted Campaigns, Publishers, Creative Catalog, and Events into separate bounded contexts:
 
-![](images/vladikk/hand-drawn/13-ddd.png)
+![](images/vladikk/hand-drawn/13-marketing.png)
 
 Again, it is evident even here: the simpler the business domain, the narrower its boundaries. 
 
@@ -409,6 +404,7 @@ Those are the five pieces of practical advice I wanted to share:
 
 ### Domain-Driven Design
 Our current way of applying domain-driven design is as follows:
+
 ![](images/vladikk/hand-drawn/14-ddd.png)
 
 1. We always start by building a ubiquitous language with the domain experts, in order to learn as much as possible about the business domain.
@@ -424,6 +420,4 @@ Since I’ve told you the story of how Internovus started, I want share how it e
 
 The company became profitable very quickly, and 7 years after its inception it was acquired by our biggest client. Of course, I cannot attribute its success solely to domain-driven design. However, during those 7 years, we were constantly in “startup mode”. 
 
-What we term “startup mode” in Israel, in the rest of the world is called “chaos”: constantly changing business requirements and priorities, aggressive timeframes, and a tiny R&D team. DDD allowed us to tackle all these complexities and keep delivering working software.
-
-Hence, when I look back, the bet we placed on domain-driven design 7 years ago paid off in full.
+What we term “startup mode” in Israel, in the rest of the world is called “chaos”: constantly changing business requirements and priorities, aggressive timeframes, and a tiny R&D team. DDD allowed us to tackle all these complexities and keep delivering working software. Hence, when I look back, the bet we placed on domain-driven design 7 years ago paid off in full.

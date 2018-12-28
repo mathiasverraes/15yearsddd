@@ -1,20 +1,23 @@
 # Domain Driven Design as Usability for Coders (by Anita Kvamme)
 
 ## My Way into Modelling
+
 Having a usability background, I learned years ago about a model which stated that if you are able to communicate the functionality by using a design model, which reflects the user´s mental model, you are more likely to get a system with a high degree of usability. This model is probably best known from Don Norman famous book The Design of Everyday Things published back in 1988.
 
 A mental model is what the user believes he or she knows about the system at hand. The users´ mental model for a business solution will be influenced by both their mental model of the business and their mental model of how these types of solutions typically work. 
 
 The user unconsciously exploits this model to predict the system´s behaviour. To design a solution with high degree of usability, the designer model must be as close as possible to the user´s mental model. That way, a user will be more likely to correctly predict how the solution works. 
 
-As a UX person I love usability testing where users are thinking aloud when they perform their tasks, since this gives me a sneak peek into how they are thinking and by that getting real insights into their mental model. This insight can be exploited to adjust the designer´s model, and for me chasing the ultimate designer model, was my door to into the world of modelling. 
-![](../images/anita-kvamme/SneakPeekIntoMentalModel.png)
+As a UX person I love usability testing where users are thinking aloud when they perform their tasks, since this gives me a sneak peek into how they are thinking and by that getting real insights into their mental model. This insight can be exploited to adjust the designer´s model, and for me chasing the ultimate designer model, was my door to into the world of modelling.
+ 
+![Figure 1.](images/anita-kvamme/SneakPeekIntoMentalModel.png)
 
 Many years later the company I worked for had hired Eric Evans himself to help us using DDD. I clearly remember him on stage of our biggest auditorium asking if anyone had any stories about modelling to share. There I was, having the stories based on years of experience with user interface design, but lacking the courage to share them.
 
 What I wanted to share were stories from real projects where the focus on the designer´s model also lead to changes in how the technical solution was implemented. One time when I asked the rest of my team, "where does "concept X" belong in our design model", we agreed that the concept would not make sense for a user and should not be visible through the user interface. After deciding that, it was a short way to remove the concept completely from the technical design, all the way down to the database model. In this case, the focus on usability influenced the codebase in a similar fashion as DDD want us to do, and this was years before the famous blue book. 
 
 ## The Coder´s Mental Model
+
 Domain modelling is an important part of DDD, and this makes it easier to solve the complex business problems. However, I believe DDD has another benefit as well, namely making a good environment for coders to build a useful mental model. So, what do I mean by that? 
 
 Jessica Kerr said in her brilliant keynote at Explore DDD that a mental model must be made by continuous adding bits of understanding. She pointed out that this explains why there is so many Java Script frameworks out there. That is because it is much easier to make your own, and at the same time incrementally building the mental model of how it works, than to build a correct mental model of an existing framework. 
@@ -34,12 +37,15 @@ However, even though we cannot predict the coder´s mental model of the codebase
 Together all these aspects will highly influence the coder´s mental model of the codebase. However, learning more about the domain and the chosen technical architecture will only have a positive influence on the coder´s mental model given that the solution is implemented in a consistent manner. On the other hand, if the functionality is placed inside the wrong bounded context, if the domain logic has leaked into the repository, or if a change of the language isn´t reflected in the code, the coder´s mental model is likely to be misleading. Therefore, not following these DDD principles does not only make the IT solution building up technical debt, it also makes a weaker foundation for the coders to build a useful mental model. 
 
 ## Minimizing the Mental Model to Code Jungle Gap
+
 The same way that people in the usability area for decades have worked against minimizing the gap between the designer´s model and the user´s mental model, DDD is a powerful set of principles to facilitate for a small as possible gap between the coder´s mental model of the codebase and the code. So for me, applying DDD isn´t just fun and useful when implementing complex business functionality, it is actually usability for the coders.
-![](../images/anita-kvamme/MentalModelCodeGap.png)
+
+![Figure 2.](images/anita-kvamme/MentalModelCodeGap.png)
 
 Sometimes I wonder, if it is this usability aspect of DDD that is the explanation for when having started to apply DDD, it seems hard to stop. And who knows, maybe that is part of the reason why DDD is celebrating 15. years anniversary with increasing popularity. 
 
 ## References
+
 - The Design of Everyday Things, author: Dan Norman, published in 1988.
 - Jessica Kerr´s Keynote at Explore DDD 2018: <https://www.youtube.com/watch?v=nVRUv30coyA>
 - Jakob Nielsen article about Mental Models: <https://www.nngroup.com/articles/mental-models/>

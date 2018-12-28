@@ -69,4 +69,4 @@ There's plenty of outcomes from a Big Picture EventStorming, the most obvious is
 
 
 
-[^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [http://www.eventstorming.com](!http://www.eventstorming.com) 
+[^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com) 

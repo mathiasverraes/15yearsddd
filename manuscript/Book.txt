@@ -1,5 +1,4 @@
-_sample-submission/essay.md
-todos/todos.md
+_todos/todos.md
 alberto-brandolini/essay.md
 alexey-zimarev/essay.md
 anita-kvamme/essay.md
