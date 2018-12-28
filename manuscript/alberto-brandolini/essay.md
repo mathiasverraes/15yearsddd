@@ -6,8 +6,17 @@ I was probably too good in building monoliths at that time, and I hadn't seen an
 
 Now, "getting the boundaries right" is probably the single design decision with the biggest impact on the entire life of a software project. Sharing a concept that shouldn't be shared or that, will create unnecessary overlappings between different domains with consequences spanning through the whole sociotechnical stack.
 
-* 
+* A common concept (like the `Order` in an e-commerce web shop) becomes vital for many different business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem.
+* Security and access control becomes more complicated: different roles are accessing the same information, but _not exactly the same_, hence the need for sophisticated filtering.
+* Shared resources require more coordination to be changed: we have to be sure we are not breaking anyone else's software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
+* Since everybody is now depending on 'the Order', be it a database table, a MicroService or an Order Management System, changing it becomes riskier. Risk aversion will slowly start polluting your culture, necessary changes will be postponed.
+* Developers will start calling the backbone software _"legacy"_ with a shade od resentment. It's not their baby anymore, it's just _the thing that wakes them up in the middle of the night_.
+* Adding refactoring stories to your backlog becomes a farce: since there is no immediate business value to be delivered they keep being postponed, or interrupted, while your attempts to explain technical debt to your non-technical colleagues always leave you disappointed. 
+* The time it takes to implement changes to the core of your system is now umbearable. Business departments stopped asking changes in those areas and are implementing workarounds by themselves.
+* Now your workplace isn't just that fun anymore. Some good developers that made it great, are now packing looking for more challenging adventures. 
+* The business isn't happy either: arrested software evolution caused some business opportunities to be missed, and new players are moving on the market at a speed that is unconceivable with your current software.
 
+And here you are, yelling at the sky, asking yourself: _"What did we do wrong?"_
 
 
 
