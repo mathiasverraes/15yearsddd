@@ -1,6 +1,22 @@
 # Discovering Bounded Contexts with EventStorming (by Alberto Brandolini)
 
-In my experience, _bounded contexts_ have always been my favorite DDD thing. They're hard to grasp at first, but getting the boundaries right is probably the single action with the biggest impact on the whole project.
+Among the many ideas coming with Domain-Driven Design, Bounded Contexts have been initially hard to grasp, at least for me. It took me a while to realize how powerful and fundamental this concept is.
+
+I was probably too good in building monoliths at that time, and I hadn't seen anything different yet. In a few years, after seeing a few consequences of mainstream architectural practices, I radically changed my mind.
+
+Now, "getting the boundaries right" is probably the single design decision with the biggest impact on the entire life of a software project. Sharing a concept that shouldn't be shared or that, will create unnecessary overlappings between different domains with consequences spanning through the whole sociotechnical stack.
+
+* 
+
+
+
+
+
+The reason for thai is in their intrinsic _asymmetry_ of behaviour. Think Lego boxes: it takes seconds to open two of them and mix all the pieces on a table. It will take probably half an hour to separate them. Interestingly, mixing _three_ lego boxes won't take much more, but separating them will take a significant amount of extra time.
+
+Bounded contexts behave more or less in the same way: the moment we mix something that shouldn't be mixed (usually sharing a database) we open the door to interdipendencies that shouldn't be there. It's not only _coupling_ at the software level. It's meetings that shouldn't be called for coordinating things that should be independent. Is the continuous lack of safety, or the fear of breaking someone else's code, that ulrimately leads to stagnation, because ...well, you never know.
+
+## Finding bounded contexts
 
 Ideally, a bounded context should contain a model tailored around a specific purpose. The perfect tool, for one specific job. No trade offs. 
 The moment we realize we have a different purpose, we should give a chance to a new model, tailored around the new purpose, and then find the best way to allow the two model interact.
@@ -24,6 +40,8 @@ At the very root the recipe is really simple:
 With a little facilitation magic, in a few hours we end up with a big behavioural model of the entire organization: something like the one in the picture below.
 
 ![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
+
+There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens when the different perspective are merged in a flow of events that _has to be consistent_ in order to support storytelling.
 
 ### A subsection
 
