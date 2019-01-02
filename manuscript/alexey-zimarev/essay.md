@@ -1,4 +1,4 @@
-# TODO TITLE (by Alexey Zimarev)
+# Are you building the right thing? (by Alexey Zimarev)
 
 ## Introduction
 
@@ -11,15 +11,6 @@ However, from the very early days of the industry, the number of projects that w
 One of the critical factors that define the success of any IT project is understanding the problem, which the system to be designed, suppose to solve. We all very familiar with systems that do not solve problems they claim to answer or do it very inefficiently. Understanding the problem is also one of the core principles of the Lean Startup methodology, proposed by Eric Ries in his book _The Lean Startup_ by Crown Publishing. Both Scrum and XP software development methodologies embrace interacting with users and understanding their problems.
 
 Domain-Driven Design (DDD) term was coined by Eric Evans in his now-iconic book _Domain-Driven Design, Tackling Complexity in the Heart of Software_ by Addison-Wesley back in 2004. More than a decade after the book was published, interest in practices and principles, described in the book, started to grow exponentially. Many factors influence such growth in popularity, but most important one is that DDD explains how people from software industry can build an understanding of their users needs and create software systems, which solve the problem and make an impact.
-
-In this chapter, we will discuss how understanding the business domain, building domain knowledge, and distinguishing essential complexity from accidental complexity, can help in creating software that matters.
-
-The objective of this chapter is to understand:
-
-*   Problem space versus solution space
-*   What went wrong with requirements
-*   Understanding complexity
-*   The role of knowledge in software development
 
 ## Understanding the problem
 
@@ -225,8 +216,6 @@ To mitigate these risks, Dan recommends using _deliberate discovery_, i.e., see
 
 ## Summary
 
-In this chapter, we briefly touched on the concepts of problem and solution spaces, requirements, complexity, knowledge and ignorance. Although at first, these topics seem not to be directly related to software development, they have a significant impact on how and what we deliver.
-
 Make no mistake by thinking that you can deliver valuable solutions to your customers just by writing code. And that you can deliver faster and better by typing more characters per second and writing cleaner code. Customers do not care about your core or how fast you type. They only care that your software solves their problems in a way that no one solved it before. As Gojko Adžić wrote in his sweet little book about impact mapping (_Impact Mapping: Making a Big Impact With Software Products and Projects,_ 2012Provoking Thoughts), you cannot only formulate user stories like:
 
 *   As a _someone_
@@ -236,8 +225,6 @@ Make no mistake by thinking that you can deliver valuable solutions to your cust
 Your user _someone_ might be already doing _something_ by executing _some functionality_ even without your software. Using a pen and paper. Using Excel. Using a system of your competitor. What you need to ensure is that you make a difference, make an impact. Your system will let people work faster, more efficient, allow them to save money or even not to do this work at all if you completely automate it.
 
 To build such software, you must understand the problem of your user. You need to crunch the domain knowledge, decrease the level of ignorance, accurately classify the problem complexity and try to avoid cognitive biases on the way to your goal. This is an essential part of Domain-Driven Design, although not all of these topics are covered in the Blue Book.
-
-In the next chapter, we will do a deep dive into the importance of language and discover the definition of Ubiquitous Language.
 
 ## Further reading
 
