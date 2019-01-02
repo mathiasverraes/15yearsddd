@@ -1,5 +1,6 @@
 # Todos
 
+- about
 - fix markdownlint-cli output
 - cover image
 - table of contents

@@ -1,4 +1,5 @@
 _todos/todos.md
+_about/page.md
 alberto-brandolini/essay.md
 alexey-zimarev/essay.md
 anita-kvamme/essay.md
