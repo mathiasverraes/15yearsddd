@@ -56,12 +56,28 @@ There's plenty of outcomes from a Big Picture EventStorming, the most obvious is
 
 To make things clearer, let's see the main steps in the workshop structure.
 
-#### Step 1. **Chaotic Exploration**. 
+#### Step 1. Chaotic Exploration. 
 This is where workshop participants explore the domain, writing verbs at past tense on sticky notes (usually orange), and place them on the wall, attempting to follow a timeline.
 
-The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to clusters of locally ordered events, in an overall inconsistent whole.
+The key trick here is that nobody knows the whole story. Imagine we're exploring the domain of conference organization[^CALM]: there will be roles that know about strategy and market positioning, others specialized in dealing with primadonna speakers, plus a variety of other specialists or partners dealing with video coverage, catering, promotional materials and so on.
 
-The key trick here is that nobody knows the whole story. Imagine we're exploring the domain of conference organization[^CALM]: there will be roles that know about strategy and market positioning, others specialized in dealing 
+If you know one job really well, you probably won't have time to know every other job at the same depth. And ...that's exactly what we're expecting to find in every business: local experts with variable degrees of understanding of the other portions of the business.
+
+The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to **clusters of locally ordered events, in an globally inconsistent whole**.
+
+Moreover, this first step is usually _quiet_: people will silently place their own personal braindump on the wall, wherever there's enough space available. Not so much conversations happening.
+
+#### Step 2. Enforce the Timeline
+
+This is where we ask participants to make sure there is a solid timeline describing the business flow from a beginning to an end.
+
+It won't be that easy: there'll be parallel and alternative paths, to explore and even big-bang business like organizing conferences tend to settle on a repeating loop, usually repeating every year.
+
+But what really happens here is that the need to come up with _one consistent view_ of the entire business, triggers some conversations around the places where this view is not consistent. People start asking questions about what happens in obscure places, and _experts are available!_
+
+At the same time, we'll have diverging views about how a given step should be performed. Some conflicts will be settled - after all it's just a matter of having a conversation - other will be simply highlighted with a **Hot Spot**, to let the exploration flow.
+
+[FIXME: picture of a hotspot.]
 
 
 
@@ -95,4 +111,4 @@ But what
 
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com) 
 
-[^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible.
+[^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here. 
