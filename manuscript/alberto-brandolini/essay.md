@@ -28,9 +28,9 @@ The moment we realize a different purpose is emerging, we should give a chance t
 
 ![Two distinct purposes should map to two different models, inside different bounded contexts.](images/alberto-brandolini/Two_bounded_contexts.png)
 
-Unfortunately, _single purpose_ is not a very actionable criteria for finding boundaries in our model. The idea of purpose is too ambiguous to draw actionable boundaries: developers might be looking for a clear, well defined purpose, while business stakeholder might be a little more coarse grained, like "I need an Employee Management Solution".
+Unfortunately, _a single specific purpose_ is not a very actionable criteria for finding boundaries in our model. The idea of purpose is too ambiguous to draw actionable boundaries: developers might be looking for a clear, well defined purpose, while business stakeholder might be a little more coarse grained, like "I need an Employee Management Solution".
 
-In general, we can't assume the business side to know about bounded contexts. They are mostly a software development issue, and the learning loop about them will be closed in software development first.
+In general, we can't assume the business side to know about bounded contexts. BCs are mostly a software development issue, and the learning loop about them will be closed in software development first.
 
 Put in another way, the business stakeholders are not a reliable source of direct information about bounded contexts. _Asking_ about bounded context will get some information, that could not be trusted blindly.
 
@@ -67,8 +67,7 @@ If you know one job really well, you probably won't have time to know every othe
 
 The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to **clusters of locally ordered events, in an globally inconsistent whole**.
 
-![The possible outcome of a chaotic exploration round in a Big Picture EventStorming.]
-(images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
+![The possible outcome of a chaotic exploration round in a Big Picture EventStorming.](images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
 
 Moreover, this first step is usually _quiet_: people will silently place their own personal braindump on the wall, wherever there's enough space available. Not so much conversations happening.
 
@@ -110,18 +109,35 @@ The Big Picture EventStorming will be **the snapshot of our collective current l
 
 #### Emerging structure
 
-Simply talking about problems and moving sticks around won't make justice to the insights and discoveries happening during
+Simply talking about problems and moving sticks around won't make justice to the insights and discoveries happening during this phase. This is where participants often look for a more sophisticated structure, to sort out the mess they just created.
 
-![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
+There are a few strategies to make the emerging strucure visible. The most interesting for discovering bounded contexts are *Pivotal Events* and *Swimlanes*.
 
-### Using Pivotal Events
+##### Using Pivotal Events
 
+Pivotal Events are specific events which are particularly relevant for the business, and usually set a transition between different business phases.
+
+In our conference organization we might spot a few candidates.
+
+* `Conference Website Launched` or maybe `Conference Announced` - this is when you may start to sell tickets, but at the same time you can't roll back anymore.
+* `Conference Schedule Announced` - now, the speakers are officially in. And tickets should follow.
+* `Ticket Sold` - from one side, here is a relevant business transaction; from another one now we have a *customer* and/or an *attendee* and a lot of specific communications will follow.
+* `Conference Started` - this is where attendees should get some value back, from the ticket they purchased. Same goes for speakers looking for insights or contacts, and sponsors.
+* `Conference Ended` looks like an obvious one. The party is over, let's deal with the aftermaths.
+
+I usually mark the candidate events with a colored tape, so that they're visible and we have a visible hint of distinct phases.
+
+![A coloured replaceable tape is my favorite tool for marking pivotal events](ES_Big_picture-Pivotal_Event.png)
+
+It actually doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5  candidate events that seems to fit that role. Mostly in order to sort out the internal events faster.
 
 ![Pivotal Events are a great source of information](images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
 
-#### Look at the business
+However there are a few heuristics that might come in handy, if you're stuck.
 
-#### Look at the people
+1. **Look at the business**, or like detectives would say: _"follow the money"_. Businesses are usually built around a well defined business transaction where some value - usually money - is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event. Similarly, after `Ticket Sold` events, we'll be the temporary owners of a attendees money, but they'll start to get some value back only around the `Conference Started` event.
+2. **Look at the people** people
+[FIXME: from here.]
 
 #### Look at the body language
 
@@ -129,6 +145,9 @@ Simply talking about problems and moving sticks around won't make justice to the
 
 ### Using Swimlanes
 
+
+
+![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
 ## When to draw our context map
 
