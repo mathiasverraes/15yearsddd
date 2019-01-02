@@ -26,7 +26,7 @@ Ideally, a bounded context should contain a model tailored around a specific *pu
 
 The moment we realize a different purpose is emerging, we should give a chance to a new model, fitting the new purpose, and then find the best way to allow the two model interact.
 
-[FIXME: picture of two BCs]
+![Two distinct purposes should map to two different models, inside different bounded contexts.](images/alberto-brandolini/Two_bounded_contexts.png)
 
 Unfortunately, _single purpose_ is not a very actionable criteria for finding boundaries in our model. The idea of purpose is too ambiguous to draw actionable boundaries: developers might be looking for a clear, well defined purpose, while business stakeholder might be a little more coarse grained, like "I need an Employee Management Solution".
 
@@ -78,8 +78,7 @@ Actually, we want this phase to be quiet: people should not agree yet about what
 
 As a result, we'll end up with a lot of _duplicated_ sticky notes, or _apparently duplicated_ ones.
 
-![Different wordings are often a clue of different underlying meanings.]
-(images/alberto-brandolini/ES_Big_picture-duplicated_events.png)
+![Different wordings are often a clue of different underlying meanings.](images/alberto-brandolini/ES_Big_picture-duplicated_events.png)
 
 It's usually a good idea to resist the temptation to resolve those duplicates and find and _agree_ on a single wording choice. Different wording may refer to different perspectives on the same event, hinting that this might be relevant in more than one Bounded Context, or that the two or more events aren't exactly the same thing.
 
@@ -89,8 +88,7 @@ This is already telling us something: this event (assuming or pretending there's
 
 That's cool! This might be a hint of multiple overlapping contexts.
 
-![Different meanings may point to different models, hence different contexts.]
-(images/alberto-brandolini/ES_Big_picture-duplicated_events_maybe_overlapping_contexts.png)
+![Different meanings may point to different models, hence different contexts.](images/alberto-brandolini/ES_Big_picture-duplicated_events_maybe_overlapping_contexts.png)
 
 I didn't say _"bounded"_ because the boundaries aren't clear yet.
 
