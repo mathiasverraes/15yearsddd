@@ -11,9 +11,9 @@ Now, "getting the boundaries right" is probably the single design decision with 
 * Shared resources require more coordination to be changed: we have to be sure we are not breaking anyone else's software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
 * Since everybody is now depending on 'the Order', be it a database table, a MicroService or an Order Management System, changing it becomes riskier. Risk aversion will slowly start polluting your culture, necessary changes will be postponed.
 * Developers will start calling the backbone software _"legacy"_ with a shade od resentment. It's not their baby anymore, it's just _the thing that wakes them up in the middle of the night_.
-* Adding refactoring stories to your backlog becomes a farce: since there is no immediate business value to be delivered they keep being postponed, or interrupted, while your attempts to explain technical debt to your non-technical colleagues always leave you disappointed. 
+* Adding refactoring stories to your backlog becomes a farce: since there is no immediate business value to be delivered they keep being postponed, or interrupted, while your attempts to explain technical debt to your non-technical colleagues always leave you disappointed.
 * The time it takes to implement changes to the core of your system is now umbearable. Business departments stopped asking changes in those areas and are implementing workarounds by themselves.
-* Now your workplace isn't just that fun anymore. Some good developers that made it great, are now packing looking for more challenging adventures. 
+* Now your workplace isn't just that fun anymore. Some good developers that made it great, are now packing looking for more challenging adventures.
 * The business isn't happy either: arrested software evolution caused some business opportunities to be missed, and new players are moving on the market at a speed that is unconceivable with your current software.
 
 And here you are, yelling at the sky, asking yourself: _"What did we do wrong?"_
@@ -52,12 +52,13 @@ With a little facilitation magic, in a few hours we end up with a big behavioura
 
 There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens when the different perspective are merged in a flow of events that _has to be consistent_ in order to support storytelling.
 
-## Big Picture EventStorming structure 
+## Big Picture EventStorming structure
 
-To make things clearer, let's see the main steps in the workshop structure, focusing mainly on the steps that provide key insights to Bounded Contexts discovery. 
+To make things clearer, let's see the main steps in the workshop structure, focusing mainly on the steps that provide key insights to Bounded Contexts discovery.
 [FIXME: decide what to do with the steps which are not relevant]
 
-### Step 1. Chaotic Exploration. 
+### Step 1 - Chaotic Exploration
+
 This is where workshop participants explore the domain, writing verbs at past tense on sticky notes (usually orange), and place them on the wall, attempting to follow a timeline.
 
 The key trick here is that nobody knows the whole story. Imagine we're exploring the domain of conference organization[^CALM]: there will be roles that know about strategy and market positioning, others specialized in dealing with primadonna speakers, plus a variety of other specialists or partners dealing with video coverage, catering, promotional materials and so on.
@@ -70,6 +71,28 @@ The more participants, the harder it will be to actually follow a timeline: dive
 (images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
 
 Moreover, this first step is usually _quiet_: people will silently place their own personal braindump on the wall, wherever there's enough space available. Not so much conversations happening.
+
+#### Divergence as a clue
+
+Actually, we want this phase to be quiet: people should not agree yet about what to write on sticky notes. The facilitator should make sure that there is plenty of markers and stickies so that everybody can write their own interpretation of the flow independently, without influencing each other too much.
+
+As a result, we'll end up with a lot of _duplicated_ sticky notes, or _apparently duplicated_ ones.
+
+![Different wordings are often a clue of different underlying meanings.]
+(images/alberto-brandolini/ES_Big_picture-duplicated_events.png)
+
+It's usually a good idea to resist the temptation to resolve those duplicates and find and _agree_ on a single wording choice. Different wording may refer to different perspectives on the same event, hinting that this might be relevant in more than one Bounded Context, or that the two or more events aren't exactly the same thing.
+
+Getting back to our conference scenario, we might expect to have a few domain events referring more or less to the same thing, with different wording. Something like `Schedule Ready`, `Schedule Completed`, `Schedule Published` and so on.
+
+This is already telling us something: this event (assuming or pretending there's only one event here) is probably relevant for different actors in the business flow.
+
+That's cool! This might be a hint of multiple overlapping contexts.
+
+![Different meanings may point to different models, hence different contexts.]
+(images/alberto-brandolini/ES_Big_picture-duplicated_events_maybe_overlapping_contexts.png)
+
+I didn't say _"bounded"_ because the boundaries aren't clear yet.
 
 ### Step 2. Enforce the Timeline
 
