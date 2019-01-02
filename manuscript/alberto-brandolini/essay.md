@@ -65,6 +65,9 @@ If you know one job really well, you probably won't have time to know every othe
 
 The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to **clusters of locally ordered events, in an globally inconsistent whole**.
 
+![The possible outcome of a chaotic exploration round in a Big Picture EventStorming.]
+(images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
+
 Moreover, this first step is usually _quiet_: people will silently place their own personal braindump on the wall, wherever there's enough space available. Not so much conversations happening.
 
 #### Step 2. Enforce the Timeline
@@ -75,13 +78,13 @@ It won't be that easy: there'll be parallel and alternative paths, to explore an
 
 But what really happens here is that the need to come up with _one consistent view_ of the entire business, triggers some conversations around the places where this view is not consistent. People start asking questions about what happens in obscure places, and _experts are available!_
 
-At the same time, we'll have diverging views about how a given step should be performed. Some conflicts will be settled - after all it's just a matter of having a conversation - other will be simply highlighted with a **Hot Spot**, to let the exploration flow.
+At the same time, we'll have diverging views about how a given step should be performed. Some conflicts will be settled - after all it's just a matter of having a conversation - other will be simply highlighted with a **Hot Spot** (usually a sticky note in the red spectrum, like magenta), to let the exploration flow.
 
 [FIXME: picture of a hotspot.]
 
+Using HotSpots clarifies the underlying approach of our exploration: we're not here to _solve everything_, there is simply no time for that. But we can _visualize everything_ including things that are unclear, uncertain or disputed. 
 
-
-But what
+The Big Picture EventStorming will be **the snapshot of our collective current level of understanding of the business** including holes and gaps.
 
 ### A subsection
 
