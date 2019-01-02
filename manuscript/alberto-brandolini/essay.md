@@ -52,11 +52,12 @@ With a little facilitation magic, in a few hours we end up with a big behavioura
 
 There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens when the different perspective are merged in a flow of events that _has to be consistent_ in order to support storytelling.
 
-### Big Picture EventStorming structure 
+## Big Picture EventStorming structure 
 
-To make things clearer, let's see the main steps in the workshop structure.
+To make things clearer, let's see the main steps in the workshop structure, focusing mainly on the steps that provide key insights to Bounded Contexts discovery. 
+[FIXME: decide what to do with the steps which are not relevant]
 
-#### Step 1. Chaotic Exploration. 
+### Step 1. Chaotic Exploration. 
 This is where workshop participants explore the domain, writing verbs at past tense on sticky notes (usually orange), and place them on the wall, attempting to follow a timeline.
 
 The key trick here is that nobody knows the whole story. Imagine we're exploring the domain of conference organization[^CALM]: there will be roles that know about strategy and market positioning, others specialized in dealing with primadonna speakers, plus a variety of other specialists or partners dealing with video coverage, catering, promotional materials and so on.
@@ -70,7 +71,7 @@ The more participants, the harder it will be to actually follow a timeline: dive
 
 Moreover, this first step is usually _quiet_: people will silently place their own personal braindump on the wall, wherever there's enough space available. Not so much conversations happening.
 
-#### Step 2. Enforce the Timeline
+### Step 2. Enforce the Timeline
 
 This is where we ask participants to make sure there is a solid timeline describing the business flow from a beginning to an end.
 
@@ -86,8 +87,9 @@ Using HotSpots clarifies the underlying approach of our exploration: we're not h
 
 The Big Picture EventStorming will be **the snapshot of our collective current level of understanding of the business** including holes and gaps.
 
-### A subsection
+#### Emerging structure
 
+Simply talking about problems and moving sticks around won't make justice to the insights and discoveries happening during
 
 ![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
