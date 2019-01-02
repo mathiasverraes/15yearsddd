@@ -1,5 +1,9 @@
 # Discovering Bounded Contexts with EventStorming (by Alberto Brandolini)
 
+There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens throughout the workshop. But this is definitely not the only one! In this essay we'll see how EventStorming can be leveraged in order to discover candidate bounded contexts in a complex domain.
+
+## Why Bounded Contexts are so critical
+
 Among the many ideas coming with Domain-Driven Design, Bounded Contexts have been initially hard to grasp, at least for me. It took me a while to realize how powerful and fundamental this concept is.
 
 I was probably too good in building monoliths at that time, and I hadn't seen anything different yet. In a few years, after seeing a few consequences of mainstream architectural practices, I radically changed my mind.
@@ -50,7 +54,7 @@ With a little facilitation magic, in a few hours we end up with a big behavioura
 
 ![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
 
-There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens when the different perspective are merged in a flow of events that _has to be consistent_ in order to support storytelling.
+A massive flood of coloured sticky notes, apparently. But, as the adagio says, _it's the journey, not the destination_: the process of visualizing the whole business flow, with the active participation of all the key stakeholders, is our way to trigger critical insights and discoveries.
 
 ## Big Picture EventStorming structure
 
@@ -107,13 +111,13 @@ Using HotSpots clarifies the underlying approach of our exploration: we're not h
 
 The Big Picture EventStorming will be **the snapshot of our collective current level of understanding of the business** including holes and gaps.
 
-#### Emerging structure
+### Emerging structure
 
 Simply talking about problems and moving sticks around won't make justice to the insights and discoveries happening during this phase. This is where participants often look for a more sophisticated structure, to sort out the mess they just created.
 
 There are a few strategies to make the emerging strucure visible. The most interesting for discovering bounded contexts are *Pivotal Events* and *Swimlanes*.
 
-##### Using Pivotal Events
+#### Using Pivotal Events
 
 Pivotal Events are specific events which are particularly relevant for the business, and usually set a transition between different business phases.
 
@@ -127,7 +131,7 @@ In our conference organization we might spot a few candidates.
 
 I usually mark the candidate events with a colored tape, so that they're visible and we have a visible hint of distinct phases.
 
-![A coloured replaceable tape is my favorite tool for marking pivotal events](ES_Big_picture-Pivotal_Event.png)
+![A coloured replaceable tape is my favorite tool for marking pivotal events](images/alberto-brandolini/ES_Big_picture-Pivotal_Event.png)
 
 It actually doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5  candidate events that seems to fit that role. Mostly in order to sort out the internal events faster.
 
@@ -143,17 +147,36 @@ However there are a few heuristics that might come in handy, if you're stuck.
 
 #### Look at the language (or _listen_)
 
-### Using Swimlanes
+##### Using Swimlanes
+
+Even in the most trivial businesses, the flow is not linear. There are branches, loops and things that happen in parallel. Sometimes the touch points between different portions of the flow are well defined, like _billing_ getting triggered only around the events of a sale, or maybe a cancellation. Other times, the relationship can be more complicated - announcing some famous speaker can boost sales, sales can attract sponsors, sponsorships can allow organizers to afford the paycheck for more superstars speakers, which can trigger more sales and eventually trigger a venue upgrade.
+
+**Horizontal Swimlanes** is a common way to structure portions of the whole flow. It usually happens after pivotal events, but there's no strict recipe here: the emerging shape of the business suggests the more effective partitioning strategy.
+
+In our conference scenario, we can spot a few main themes that happen more or less in parallel: a _Speaker Management Flow_ dealing with theme selection, call for papers and invitation, logistics and accommodation; a _Sales Management Flow_ dealing with ticket sales, advertising, logistics and everything needed to welcome attendees, a _Sponsor Management Flow_ managing the other revenue stream; and last but not least a whole lot of not so ancillary areas, from venue management, to catering, staffing, video recording and so on.
+
+Our replaceable tape comes in handy also to gine a name to these parallel flows. The underlying structure backbone, now will look something like this:
+
+![Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.](images/alberto-brandolini/ES_Big_picture-multiple_sorting_strategies.png)
+
+### Step 3 - People and Systems
+
+This is when we start exploring the surroundings of our business, explicitly lookingh for **people** - actors, users, personas, or specific roles in our system - and **External Systems** - from software components and tools to external organizations. Nothing excluded.
 
 
+
+### Step 4 - Explicit Walkthrough
+
+![An explict walkthrough round is our way to validate our understanding](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
+
+## Homework time
+
+Once the workshop is officially over, and participants left the workshop room, we can start talking software, ..._finally!_
 
 ![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
-## When to draw our context map
 
 
+[^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
 
-
-[^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com) 
-
-[^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here. 
+[^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
