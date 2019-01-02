@@ -18,31 +18,31 @@ Now, "getting the boundaries right" is probably the single design decision with 
 
 And here you are, yelling at the sky, asking yourself: _"What did we do wrong?"_
 
-
-
-
-The reason for thai is in their intrinsic _asymmetry_ of behaviour. Think Lego boxes: it takes seconds to open two of them and mix all the pieces on a table. It will take probably half an hour to separate them. Interestingly, mixing _three_ lego boxes won't take much more, but separating them will take a significant amount of extra time.
-
-Bounded contexts behave more or less in the same way: the moment we mix something that shouldn't be mixed (usually sharing a database) we open the door to interdipendencies that shouldn't be there. It's not only _coupling_ at the software level. It's meetings that shouldn't be called for coordinating things that should be independent. Is the continuous lack of safety, or the fear of breaking someone else's code, that ulrimately leads to stagnation, because ...well, you never know.
+And the answer is: _"We didn't get the right context boundaries"_
 
 ## Finding bounded contexts
 
-Ideally, a bounded context should contain a model tailored around a specific purpose. The perfect tool, for one specific job. No trade offs. 
-The moment we realize we have a different purpose, we should give a chance to a new model, tailored around the new purpose, and then find the best way to allow the two model interact.
+Ideally, a bounded context should contain a model tailored around a specific *purpose*. The perfectly shaped tool for one specific job, no trade offs.
 
-However, _single purpose_ is not a very actionable criteria for finding boundaries in our model. The idea of purpose is too ambiguous to draw actionable boundaries: developers might be looking for a clear, well defined purpose, while business stakeholder might be a little more coarse grained.
+The moment we realize a different purpose is emerging, we should give a chance to a new model, fitting the new purpose, and then find the best way to allow the two model interact.
 
-In general, we can't assume the business side to know about bounded contexts. They are mostly a software development problem, and the learning loop about them will be closed in software development first.
+[FIXME: picture of two BCs]
+
+Unfortunately, _single purpose_ is not a very actionable criteria for finding boundaries in our model. The idea of purpose is too ambiguous to draw actionable boundaries: developers might be looking for a clear, well defined purpose, while business stakeholder might be a little more coarse grained, like "I need an Employee Management Solution".
+
+In general, we can't assume the business side to know about bounded contexts. They are mostly a software development issue, and the learning loop about them will be closed in software development first.
 
 Put in another way, the business stakeholders are not a reliable source of direct information about bounded contexts. _Asking_ about bounded context will get some information, that could not be trusted blindly.
 
+It's our job as software architects to discover boundaries in our domain, and this will be more an investigation on a crime scene than a _tick-the-checkboxes_ conversation.
+
 ## Enter EventStorming
 
-EventStorming is a flexible workshop format that allows a massive collaborative exploration of a very complex domain. There are now several recipes[^ESR], but the one that better fits our need to discover context boundaries is the **Big Picture EventStorming**: a large scale workshop (usually involving 15-20 people, but I facilitated workhsops with more than 30) where software people and business people are building together a behavioral model of the entire business.
+EventStorming is a flexible workshop format that allows a massive collaborative exploration of complex domains. There are now several recipes[^ESR], but the one that better fits our need to discover context boundaries is the **Big Picture EventStorming**: a large scale workshop (usually involving 15-20 people, but I facilitated workhsops with more than 30) where software people and business people are building together a behavioral model of the entire business.
 
 At the very root the recipe is really simple:
 
-* make sure all the key stakeholders are in the same room;
+* make sure all the key stakeholders (business _and_ technical) are in the same room;
 * provide them with an unlimited modelling surface (usually a paper roll on a long straight wall plus some hundreds of coloured sticky notes);
 * have them model the entire business flow with **Domain Events** along a timeline.
 
@@ -51,6 +51,21 @@ With a little facilitation magic, in a few hours we end up with a big behavioura
 ![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
 
 There's plenty of outcomes from a Big Picture EventStorming, the most obvious is the collective learning that happens when the different perspective are merged in a flow of events that _has to be consistent_ in order to support storytelling.
+
+### Big Picture EventStorming structure 
+
+To make things clearer, let's see the main steps in the workshop structure.
+
+#### Step 1. **Chaotic Exploration**. 
+This is where workshop participants explore the domain, writing verbs at past tense on sticky notes (usually orange), and place them on the wall, attempting to follow a timeline.
+
+The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to clusters of locally ordered events, in an overall inconsistent whole.
+
+The key trick here is that nobody knows the whole story. Imagine we're exploring the domain of conference organization[^CALM]: there will be roles that know about strategy and market positioning, others specialized in dealing 
+
+
+
+But what
 
 ### A subsection
 
@@ -79,3 +94,5 @@ There's plenty of outcomes from a Big Picture EventStorming, the most obvious is
 
 
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com) 
+
+[^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible.
