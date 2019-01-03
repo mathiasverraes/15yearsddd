@@ -1,6 +1,6 @@
 # Discovering Bounded Contexts with EventStorming (by Alberto Brandolini)
 
-There's plenty of outcomes from a Big Picture EventStorming, the most obvious being the collective learning that happens throughout the workshop. But learning is definitely not the only one! 
+There's plenty of outcomes from a Big Picture EventStorming, the most obvious being the collective learning that happens throughout the workshop. But learning is definitely not the only one!
 
 In this essay we'll see how EventStorming can be leveraged in order to discover candidate bounded contexts in a complex domain.
 
@@ -42,7 +42,7 @@ In general, we can't assume the business side to know about bounded contexts. BC
 
 Put in another way, the business stakeholders are not a reliable source of direct information about bounded contexts. _Asking_ about bounded context will get some information, but the answer, can't be trusted blindly.
 
-It's our job as software architects to discover boundaries in our domain, and this will be more an investigation on a crime scene than a _tick-the-checkboxes_ conversation. 
+It's our job as software architects to discover boundaries in our domain, and this will be more an investigation on a crime scene than a _tick-the-checkboxes_ conversation.
 
 ![The knowledge distribution in an organization: a weird combination of knwoledge and ignorance](images/alberto-brandolini/Overlapping_expertises_and_ignorances.png)
 
@@ -113,21 +113,21 @@ I didn't say _"bounded"_ because the boundaries aren't clear yet.
 
 This is where we ask participants to make sure there is a solid timeline describing the business flow from a beginning to an end.
 
-It won't be that easy: there'll be parallel and alternative paths, to explore and even big-bang business like organizing conferences tend to settle on a repeating loop, usually repeating every year.
+It won't be that easy: there'll be parallel and alternative paths to explore. Even big-bang business like conference organization tend to settle on a repeating loop, usually repeating every year.
 
-But what really happens here is that the need to come up with _one consistent view_ of the entire business, triggers some conversations around the places where this view is not consistent. People start asking questions about what happens in obscure places, and _experts are available!_
+But what really happens here is that the need to come up with _one consistent view_ of the entire business triggers some **conversations** around the places where this view is not consistent. People start asking questions about what happens in obscure places, and they get answered, because we made sure the _experts are available!_
 
 At the same time, we'll have diverging views about how a given step should be performed. Some conflicts will be settled - after all it's just a matter of having a conversation - other will be simply highlighted with a **Hot Spot** (usually a sticky note in the red spectrum, like magenta), to let the exploration flow.
 
 [FIXME: picture of a hotspot.]
 
-Using HotSpots clarifies the underlying approach of our exploration: we're not here to _solve everything_, there is simply no time for that. But we can _visualize everything_ including things that are unclear, uncertain or disputed. 
+HotSpots clarify the underlying approach of our exploration: we're not here to _solve everything_, there is simply no time for that. But we can try to _visualize everything_ including things that are unclear, uncertain or disputed.
 
-The Big Picture EventStorming will be **the snapshot of our collective current level of understanding of the business** including holes and gaps.
+The Big Picture EventStorming will deliver **the snapshot of our collective current level of understanding of the business** including holes and gaps.
 
 ### Emerging structure
 
-Simply talking about problems and moving sticks around won't make justice to the insights and discoveries happening during this phase. This is where participants often look for a more sophisticated structure, to sort out the mess they just created.
+Simply talking about problems and moving sticks around won't do justice to the insights and discoveries happening during this phase. This is where participants often look for a more sophisticated structure, to sort out the mess they just created.
 
 There are a few strategies to make the emerging strucure visible. The most interesting for discovering bounded contexts are *Pivotal Events* and *Swimlanes*.
 
@@ -137,10 +137,10 @@ Pivotal Events are specific events which are particularly relevant for the busin
 
 In our conference organization we might spot a few candidates.
 
-* `Conference Website Launched` or maybe `Conference Announced` - this is when you may start to sell tickets, but at the same time you can't roll back anymore.
-* `Conference Schedule Announced` - now, the speakers are officially in. And tickets should follow.
-* `Ticket Sold` - from one side, here is a relevant business transaction; from another one now we have a *customer* and/or an *attendee* and a lot of specific communications will follow.
-* `Conference Started` - this is where attendees should get some value back, from the ticket they purchased. Same goes for speakers looking for insights or contacts, and sponsors.
+* `Conference Website Launched` or maybe `Conference Announced` - this is when you may start to sell tickets, but at the same time you can't easily withdraw anymore.
+* `Conference Schedule Announced` - now, the speakers are officially in. And ticket sales should start.
+* `Ticket Sold` - on one side, here is a relevant business transaction, with money finally coming in; on the other one, we now have a *customer* and/or an *attendee* and a lot of specific communications that we'll have to manage.
+* `Conference Started` - this is where attendees are expecting to get some value back from the ticket they purchased. Same goes for speakers looking for insights or contacts, and sponsors.
 * `Conference Ended` looks like an obvious one. The party is over, let's deal with the aftermaths.
 
 I usually mark the candidate events with a colored tape, so that they're visible and we have a visible hint of distinct phases.
@@ -149,17 +149,9 @@ I usually mark the candidate events with a colored tape, so that they're visible
 
 It actually doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5  candidate events that seems to fit that role. Mostly in order to sort out the internal events faster.
 
+After highlighting pivotal events, sorting becomes a lot faster inside the boundaries, and a more sophisticated structure starts to emerge.
+
 ![Pivotal Events are a great source of information](images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
-
-However there are a few heuristics that might come in handy, if you're stuck.
-
-1. **Look at the business**, or like detectives would say: _"follow the money"_. Businesses are usually built around a well defined business transaction where some value - usually money - is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event. Similarly, after `Ticket Sold` events, we'll be the temporary owners of a attendees money, but they'll start to get some value back only around the `Conference Started` event.
-2. **Look at the people** people
-[FIXME: from here.]
-
-#### Look at the body language
-
-#### Look at the language (or _listen_)
 
 ##### Using Swimlanes
 
@@ -172,6 +164,8 @@ In our conference scenario, we can spot a few main themes that happen more or le
 Our replaceable tape comes in handy also to gine a name to these parallel flows. The underlying structure backbone, now will look something like this:
 
 ![Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.](images/alberto-brandolini/ES_Big_picture-multiple_sorting_strategies.png)
+
+Everybody now sees the different _phases_ of the business and the key relevant issues at every step.
 
 ### Step 3 - People and Systems
 
@@ -186,6 +180,19 @@ This is when we start exploring the surroundings of our business, explicitly loo
 ## Homework time
 
 Once the workshop is officially over, and participants left the workshop room, we can start talking software, ..._finally!_
+
+
+[FIXME: not the intended tone]
+However there are a few heuristics that might come in handy, if you're stuck.
+
+1. **Look at the business**, or like detectives would say: _"follow the money"_. Businesses are usually built around a well defined business transaction where some value - usually money - is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event. Similarly, after `Ticket Sold` events, we'll be the temporary owners of a attendees money, but they'll start to get some value back only around the `Conference Started` event.
+2. **Look at the people** people
+[FIXME: from here.]
+
+#### Look at the body language
+
+#### Look at the language (or _listen_)
+
 
 ![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
