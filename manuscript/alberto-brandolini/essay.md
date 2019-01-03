@@ -153,7 +153,7 @@ After highlighting pivotal events, sorting becomes a lot faster inside the bound
 
 ![Pivotal Events are a great source of information](images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
 
-##### Using Swimlanes
+#### Using Swimlanes
 
 Even in the most trivial businesses, the flow is not linear. There are branches, loops and things that happen in parallel. Sometimes the touch points between different portions of the flow are well defined, like _billing_ getting triggered only around the events of a sale, or maybe a cancellation. Other times, the relationship can be more complicated - announcing some famous speaker can boost sales, sales can attract sponsors, sponsorships can allow organizers to afford the paycheck for more superstars speakers, which can trigger more sales and eventually trigger a venue upgrade.
 
@@ -169,8 +169,17 @@ Everybody now sees the different _phases_ of the business and the key relevant i
 
 ### Step 3 - People and Systems
 
-This is when we start exploring the surroundings of our business, explicitly lookingh for **people** - actors, users, personas, or specific roles in our system - and **External Systems** - from software components and tools to external organizations. Nothing excluded.
+This is when we start exploring the surroundings of our business, explicitly lookingh for **people** - actors, users, personas, or specific roles in our system - and **systems** - from software components and tools to external organizations. Nothing excluded.
 
+![Here's the incredibly simple notation for people and systems](images/alberto-brandolini/People_and_systems.png)
+
+Visualizing different actors in our system - we actually don't call them _actors_ just _people_ - helps digging into the different perspectives. We might discover explict responsabilities and roles, or conflicting perspectives: all speakers are submitting talks, but the treatment can be different if we're talking about a superstar guest which is invited as a keynote speaker, an expert or a newbie. A puzzled look during this exploration phase may end up in opening a completely new branch, or making different strategies more visible and readable.
+
+Systems usually trigger a different reasoning. On one hand, they make our boundaries explicit. We won't be able to deliver value in a vacuum, with self-contanied software: there will be tools, integrations, and so on, in order to complete the flow. Payment management systems, ticketing platforms, social media platforms, video streaming, billing software, and whatever comes to mind.
+
+But systems can also be external entities like government agencies, or simply "the weather" (which might be a tough constraint if you are organizing a conference in extreme regions, or if you're so lucky to get a snow storm the day before).
+
+From the software perspective, an external system calls for some type of integration (maybe our all-time favourte: the Anti-Corruption Layer), but from the business perspective, external systems often impose constraints, limitations or _alibis_, a free scapegoating service if anything goes wrong.
 
 
 ### Step 4 - Explicit Walkthrough
