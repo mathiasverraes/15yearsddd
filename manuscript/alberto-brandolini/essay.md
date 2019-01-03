@@ -181,8 +181,17 @@ But systems can also be external entities like government agencies, or simply "t
 
 From the software perspective, an external system calls for some type of integration (maybe our all-time favourte: the Anti-Corruption Layer), but from the business perspective, external systems often impose constraints, limitations or _alibis_, a free scapegoating service if anything goes wrong.
 
-
 ### Step 4 - Explicit Walkthrough
+
+Every step triggers some clarification, and prompts writing more events. Even if we added some structure, with pivotal events and swimlanes, and had some interesting conversation on the spot, the whole thing still feels messy. Probably because it is still messy.
+
+It's now time to validate our discoveries, picking a _narrator_ trying to tell the whole story, from left to right. This is really hard, at the beginning because the narrators' brain will be literally be torn apart by conflicting needs: they'll try to tell the story using the existing events as building blocks, but at the same time they'll realize that what seemed _good enough_ in the previous reviews is not good enough for a public _on stage_ storytelling session.
+
+This is when our model needs to be improved in order to support storytelling. Some more events will be written, others will be moved away, paths will be split and so on.
+
+The audience should not be passive. They're challenging the narrator and the official storytelling, eventually providing examples of corner cases and 'not-so-exceptional-exceptions'.
+
+The more we progress along the timeline, the more clarity is provided to the flow, while the narrator is progressing like a _defrag cursor[^IYOETR]_.
 
 ![An explict walkthrough round is our way to validate our understanding](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
 
@@ -211,3 +220,5 @@ However there are a few heuristics that might come in handy, if you're stuck.
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
 
 [^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
+
+[^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
