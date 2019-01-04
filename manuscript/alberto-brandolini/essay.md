@@ -195,16 +195,36 @@ The more we progress along the timeline, the more clarity is provided to the flo
 
 ![An explict walkthrough round is our way to validate our understanding](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
 
+### Extra steps
+
+There's a few extra steps that might be performed now, usually depending on the context, that may provide more insights. I'll describe them briefly.
+
+* We sometimes explore the **value** that is supposed to be _generated_ or unfortunately _destroyed_ in the business flow. We explore different currencies: money being the most obvious one, often to discover that other are more interesting (like _time_, _reputation_, _emotional safety_, _stress_, _happiness_, and so on).
+* We explore **problems** and **opportunities** in the existing flow, allowing everyone to signal issues that didn't suerface during the previous steps, or to make improvement ideas visible.
+* We might challenge the status quo with an **alternative flow**: once the understanding of the current situation is settled, what happens if we change it? Which parts are going to stay the same and which one are going to be radically changed or dismissed?
+* We might **vote then most important issue** in order to leverage the clarity of collective understanding into political momentun to do the right thing.
+
+All this stuff, plus more, is usually awesome! But most of the information needed to sketch context boundaries is already available, if you take a closer look.
+
+Deriving this information from our workshop is now our job as software architects.
+
 ## Homework time
 
 Once the workshop is officially over, and participants left the workshop room, we can start talking software, ..._finally!_
 
+I used to draw a lot of context maps, as a way to _force myself to ask the right questions early in the project_, now I run EventStorming workshops, and I engage stakeholders in providing the righty answers without asking the corresponding questions.
 
-[FIXME: not the intended tone]
-However there are a few heuristics that might come in handy, if you're stuck.
+There's a lot of Bounded Context related info that comes as a byproduct of our discussion, we just need to be able to decypher the clues. So, here we are with some heuristics[^IUTWHJTMMH], that may come in handy.
 
-1. **Look at the business**, or like detectives would say: _"follow the money"_. Businesses are usually built around a well defined business transaction where some value - usually money - is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event. Similarly, after `Ticket Sold` events, we'll be the temporary owners of a attendees money, but they'll start to get some value back only around the `Conference Started` event.
-2. **Look at the people** people
+### Look at the business
+
+...or like detectives would say: _"follow the money"_. Businesses are usually built around a well defined business transaction where some value - usually money - is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event.
+
+Similarly, after `Ticket Sold` events, we'll be the temporary owners of a attendees money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental model needed in order to _design_ a conference, are not the same tools needed to run a conference.
+
+### Look at the people
+
+ people
 [FIXME: from here.]
 
 #### Look at the body language
@@ -222,3 +242,5 @@ However there are a few heuristics that might come in handy, if you're stuck.
 [^CALM]: Conferences are a little mess, but they are interesting because they often employ less people than the required roles: a small team is taking care of many different activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
 
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
+
+[^IUTWHJTMMH]: I mighgt have used the word _'heuristic'_ here just to make Mathias Verraes happy.
