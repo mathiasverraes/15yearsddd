@@ -145,7 +145,7 @@ In our conference organization we might spot a few candidates.
 
 I usually mark the candidate events with a colored tape, so that they're visible and we have a visible hint of distinct phases.
 
-![A coloured replaceable tape is my favorite tool for marking pivotal events](images/alberto-brandolini/ES_Big_picture-Pivotal_Event.png)
+![A coloured replaceable tape is my favorite tool for marking pivotal events](images/alberto-brandolini/Pivotal_events_shaded.png)
 
 It actually doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5 candidate events that seems to fit that role. Mostly in order to sort out the internal events faster.
 
@@ -216,24 +216,98 @@ I used to draw a lot of context maps, as a way to _force myself to ask the right
 
 There's a lot of Bounded Context related info that comes as a byproduct of our discussion, we just need to be able to decypher the clues. So, here we are with some heuristics[^IUTWHJTMMH], that may come in handy.
 
-### Look at the business
+### Look at the business phases
 
-...or like detectives would say: _“follow the money”_. Businesses are usually built around a well-defined business transaction where some value — usually money — is traded for something else. Pivotal events have akey role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event.
+...or like detectives would say: _“follow the money”_. Businesses are usually built around a well-defined business transaction where some value — usually money — is traded for something else. Pivotal events have a fundamental role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event.
 
-Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendees' money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental model needed in order to _design_ a conference, are not the same tools needed to run a conference.
+Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendees' money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental model needed in order to _design_ a conference, are not the same tools needed to _run_ a conference.
 
-### Look at the people
+![A zoom-in into a pivotal event](images/alberto-brandolini/pivotal_events_and_BCs.png)
 
- people
-[FIXME: from here.]
+Interestingly, boundary events are also the ones with different conflicting wordings. This is where the perception of bounded contexts usually overlaps. A key recommendation here is that _you don't have to agree on the language!_ There's much more to be discovered by looking at the disagreements.
 
-#### Look at the body language
+Moreover, keep in mind that when two models are interacting, there may be _three_ models involved: the internal models of the two bounded contexts and the _communication model_ used to exchange informations between them.
 
-#### Look at the language (or _listen_)
+![Two interacting models usually means three languages.](images/alberto-brandolini/Two_BCs_three_languages.png)
 
+A simple example: I am trying to communicate with my readers using English language, but I am not a native English speaker. My internal reasoning model is sometimes English too, and sometimes Italian. But readers shouldn't be able to tell (I hope). At the same time, this text is not intended for British and American people only, every reader will traslate into their own mental model, possibly in their own native language.
+
+In general, **different phases** usually mean **different problems**, which usually leads to **different models**.
+
+**Pivotal Events** are usually part of a more general _published language_ shared between the different parties.
 
 ![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
+The picture above shows more or less what I am seeing when looking at the flow with Bounded Contexts in mind.
+
+### Look at the swimlanes
+
+Swimlanes often show different paths that involve different models.
+
+Not every swimlane is a Bounded Context, sometimes they're just an _if_ statement somewhere, but when swimlanes are emerging for the need to highlight an independent process, possibly _on a different timeline_ , then you might want to give a shot to an independent model.
+
+![Swimlanes are usually a reliable clue for possible different bounded contexts](images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
+
+An interesting twist might happen when dealing with different _personas_, apparently the flow should be the same, but it's not.
+
+Some speakers can be invited, other submit their proposals, other can be pushed by sponsors. The three flows can be independent in the upstream part of the flow. Downstream they're probably not.
+
+[FIXME: picture]
+
+### Look at the people
+
+This is so obvious that I feel embarrassed to mention, but here we are: the people. Where people are during the exploration is probably giving the simplest and powerful clue about different model distribution. 
+
+People who are responsible for the website design will spend most time hovering around _the areas that they know better_ in order to provide answers or to _correct wrong stickies[^NCRTT]_ that they see on the paper roll. Or they will be commenting around _the areas that they really care about_, maybe because the current implementation is far from satisfactory.
+
+**Different people** are a great indicator of **different needs**, which means **different models**.
+
+The fun part is that this information — where people _are_ — will never be documented, but will often be remembered, through some weird spatial memory.
+
+### Look at the body language
+
+People's body language can be another source of information: not every dissent can be verbal. It's not infrequent to have people from different hierarchy levels to have different views on _apparently the same problem_. Shaking heads, or eyes rolling are a clue of conflicting perspectives that haven't been addressed.
+
+Domain-Driven Design has a fantastic tool for resolving these conflicts: it's not _"we need a model to solve these issues"_, it's _"we need a model to solve your problem **and** we need a model to solve your boss' problem"_, it would be up to software architects to find the perfect way to interact.
+
+Once again: **different needs** mean **different models**.
+
+It doesn't end here. A common conversational pattern that often happens around pivotal or boundary events is the one in the picture below.
+
+### Look at the language (or _listen_)
+
+This is probably the trickiest tip, because language will fool you. Language kept fooling us for decades, and that's one of the reasons why Domain-Driven Design exists.
+
+If you look for central terms like `Talk` you'll discover that they're used in many different places.
+
+- A `Talk` can be _submitted_, _accepted_ or _rejected_ in the call for papers.
+- A `Talk` can be _scheduled_ in a given slot, of a given track.
+- A `Talk` can be _assigned_ to a given presenter or staff member, to introduce the speaker.
+- A `Talk` can be _rated_ by attendees.
+- A `Talk` can be _filmed_ and _recorded_.
+- A `Talk` can be _published_ on the conference YouTube channel.
+
+...are we sure we're talking about the same `Talk`?
+
+The trick here, is that _nouns_ are usually fooling us. People tend to agree on the meaning of _names_ by looking at the static data structure of the thing: someyhing like _"A talk has a title."_ which is an easy statement to agree with, but doesn't mean we're actually talking about the same thing.
+
+In the list above, we're talking about different models: _selection_, _scheduling_, _staffing_, etc. The thing has probably the same name, and needs to have some data in common between the different models ...but _the models are different!_
+
+Looking at _verbs_ provides much more consistency around one specific _purpose_.
+
+## Putting everything together
+
+Compared to traditional, formal requirements gathering, the amount of information that we can achieve during an EventStorming session is not only superior: it's _massively overwhelming_. There's something, like people's behaviour and body language, that would never fit into standard documentation but will get make it to a good model because, we've been there! We've seen people in action around _their problem_ and some stupid things like mixing things just because they happen to have the same name, won't happen!
+
+And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed, because they just don't belong together.
+
+I hope the heuristics I just described will help you to sketch your models, but more importantly this will give you the chance to understand the deep purpose of your software, and maybe of your organization too, in a compelling call to do the right thing.
+
+In a single sentence, the whole idea is really simple:
+
+C> **_Merge the people, split the software._**
+
+In retrospective, I still wonder why we wasted all those years doing the opposite.
 
 [^MINAP]: Management is not a purpose. This is true on so many levels, but talking about bounded contexts this is especially true: _planning_, _designing_, _tracking_, _running_, _supporting_, _choosing_ are more fine-grained purposes, that often require a model on their own.
 
@@ -244,3 +318,5 @@ Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendee
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
 
 [^IUTWHJTMMH]: I mighgt have used the word _'heuristic'_ here just to make Mathias Verraes happy.
+
+[^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! In fact, EventStorming leverages this innate human behaviour and turns into a modelling propeller.
