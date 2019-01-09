@@ -202,7 +202,7 @@ There's a few extra steps that might be performed now, usually depending on the 
 * We sometimes explore the **value** that is supposed to be _generated_ or unfortunately _destroyed_ in the business flow. We explore different currencies: money being the most obvious one, often to discover that other are more interesting (like _time_, _reputation_, _emotional safety_, _stress_, _happiness_, and so on).
 * We explore **problems** and **opportunities** in the existing flow, allowing everyone to signal issues that didn't suerface during the previous steps, or to make improvement ideas visible.
 * We might challenge the status quo with an **alternative flow**: once the understanding of the current situation is settled, what happens if we change it? Which parts are going to stay the same and which one are going to be radically changed or dismissed?
-* We might **vote then most important issue** in order to leverage the clarity of collective understanding into political momentun to do the right thing.
+* We might **vote then most important issue** in order to leverage the clarity of collective understanding into political momentun to do the right thing[^PTCD].
 
 All this stuff, plus more, is usually awesome! But most of the information needed to sketch context boundaries is already available, if you take a closer look.
 
@@ -216,17 +216,17 @@ I used to draw a lot of context maps, as a way to _force myself to ask the right
 
 There's a lot of Bounded Context related info that comes as a byproduct of our discussion, we just need to be able to decypher the clues. So, here we are with some heuristics[^IUTWHJTMMH], that may come in handy.
 
-### Look at the business phases
+### Heuristic: look at the business phases
 
 ...or like detectives would say: _“follow the money”_. Businesses are usually built around a well-defined business transaction where some value — usually money — is traded for something else. Pivotal events have a fundamental role in this flow: we won't be able to sell tickets online without a website, everything that happens before the website goes live is _inventory_ or _expenses_, we can start make money only after the `Conference Website Launched` event.
 
-Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendees' money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental model needed in order to _design_ a conference, are not the same tools needed to _run_ a conference.
+Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendees' money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental models needed to _design_ a conference, are not the same tools needed to _run_ a conference.
 
 ![A zoom-in into a pivotal event](images/alberto-brandolini/pivotal_events_and_BCs.png)
 
-Interestingly, boundary events are also the ones with different conflicting wordings. This is where the perception of bounded contexts usually overlaps. A key recommendation here is that _you don't have to agree on the language!_ There's much more to be discovered by looking at the disagreements.
+Interestingly, boundary events are also the ones with different conflicting wordings. This is where the perception of bounded contexts usually overlaps. A key recommendation here is that _you don't have to agree on the language!_ There's much more to be discovered by making disagreements visible.
 
-Moreover, keep in mind that when two models are interacting, there may be _three_ models involved: the internal models of the two bounded contexts and the _communication model_ used to exchange informations between them.
+Moreover, keep in mind that when two models are interacting, there are usually _three_ models involved: the internal models of the two bounded contexts and the _communication model_ used to exchange informations between them.
 
 ![Two interacting models usually means three languages.](images/alberto-brandolini/Two_BCs_three_languages.png)
 
@@ -240,7 +240,7 @@ In general, **different phases** usually mean **different problems**, which usua
 
 The picture above shows more or less what I am seeing when looking at the flow with Bounded Contexts in mind.
 
-### Look at the swimlanes
+### Heuristic: look at the swimlanes
 
 Swimlanes often show different paths that involve different models.
 
@@ -248,13 +248,17 @@ Not every swimlane is a Bounded Context, sometimes they're just an _if_ statemen
 
 ![Swimlanes are usually a reliable clue for possible different bounded contexts](images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
 
+### Heuristic: look at the people on the paper roll
+
 An interesting twist might happen when dealing with different _personas_, apparently the flow should be the same, but it's not.
 
-Some speakers can be invited, other submit their proposals, other can be pushed by sponsors. The three flows can be independent in the upstream part of the flow. Downstream they're probably not.
+Some speakers can be invited, other submit their proposals. The flows can be independent in the upstream part of the flow. Downstream they're probably not.
 
-[FIXME: picture]
+![Two parallel flows may require independent models](images/alberto-brandolini/parallel_flows_and_personas.png)
 
-### Look at the people
+Some organizations are well-equipped to think in terms of _roles_: they'll recognize that speakers and keynote speakers are different in the left part of the flow, but they'll have a similar badge during the _registration process_, and they won't be different from regular attendees during lunchtime, when their role would be a simple `mouth to feed`.
+
+### Heuristic: look at the humans in the room
 
 This is so obvious that I feel embarrassed to mention, but here we are: the people. Where people are during the exploration is probably giving the simplest and powerful clue about different model distribution. 
 
@@ -264,17 +268,19 @@ People who are responsible for the website design will spend most time hovering 
 
 The fun part is that this information — where people _are_ — will never be documented, but will often be remembered, through some weird spatial memory.
 
-### Look at the body language
+### Heuristic: look at the body language
 
 People's body language can be another source of information: not every dissent can be verbal. It's not infrequent to have people from different hierarchy levels to have different views on _apparently the same problem_. Shaking heads, or eyes rolling are a clue of conflicting perspectives that haven't been addressed.
 
-Domain-Driven Design has a fantastic tool for resolving these conflicts: it's not _"we need a model to solve these issues"_, it's _"we need a model to solve your problem **and** we need a model to solve your boss' problem"_, it would be up to software architects to find the perfect way to interact.
+Domain-Driven Design has a fantastic tool for resolving these conflicts: it's not _“we need a model to solve these issues”_, it's _“we need a model to solve your problem **and** we need a model to solve your boss' problem”_, it would be up to software architects to find the perfect way to interact.
 
 Once again: **different needs** mean **different models**.
 
 It doesn't end here. A common conversational pattern that often happens around pivotal or boundary events is the one in the picture below.
 
-### Look at the language (or _listen_)
+[FIXME: conversational comic]
+
+### Heuristic: listen the language (or _listen_)
 
 This is probably the trickiest tip, because language will fool you. Language kept fooling us for decades, and that's one of the reasons why Domain-Driven Design exists.
 
@@ -289,7 +295,7 @@ If you look for central terms like `Talk` you'll discover that they're used in m
 
 ...are we sure we're talking about the same `Talk`?
 
-The trick here, is that _nouns_ are usually fooling us. People tend to agree on the meaning of _names_ by looking at the static data structure of the thing: someyhing like _"A talk has a title."_ which is an easy statement to agree with, but doesn't mean we're actually talking about the same thing.
+The trick here, is that _nouns_ are usually fooling us. People tend to agree on the meaning of _names_ by looking at the static data structure of the thing: someyhing like _“A talk has a title.”_ which is an easy statement to agree with, but doesn't mean we're actually talking about the same thing.
 
 In the list above, we're talking about different models: _selection_, _scheduling_, _staffing_, etc. The thing has probably the same name, and needs to have some data in common between the different models ...but _the models are different!_
 
@@ -297,9 +303,11 @@ Looking at _verbs_ provides much more consistency around one specific _purpose_.
 
 ## Putting everything together
 
-Compared to traditional, formal requirements gathering, the amount of information that we can achieve during an EventStorming session is not only superior: it's _massively overwhelming_. There's something, like people's behaviour and body language, that would never fit into standard documentation but will get make it to a good model because, we've been there! We've seen people in action around _their problem_ and some stupid things like mixing things just because they happen to have the same name, won't happen!
+Compared to traditional, formal requirements gathering, the amount of information that we can achieve during an EventStorming session is not only superior: it's _massively overwhelming_. 
 
-And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed, because they just don't belong together.
+There's something, like people's behaviour and body language, that would never fit into standard documentation but will get make it to a good model because, _...we've been there!_ We've seen people in action around _their problem_ and some stupid things like mixing things just because they happen to have the same name, won't happen!
+
+And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed, because they just don't belong together. They're metres away!
 
 I hope the heuristics I just described will help you to sketch your models, but more importantly this will give you the chance to understand the deep purpose of your software, and maybe of your organization too, in a compelling call to do the right thing.
 
@@ -314,6 +322,8 @@ In retrospective, I still wonder why we wasted all those years doing the opposit
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
 
 [^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
+
+[^PTCD]: This area might possibly be what your _Core Domain_ looks right now.
 
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
 
