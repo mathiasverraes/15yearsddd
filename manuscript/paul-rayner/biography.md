@@ -1,0 +1,1 @@
+Paul Rayner is a developer, instructor, coach and popular conference speaker. He co-founded DDD Denver and is founder and chair of the Explore DDD Conference. His company Virtual Genius LLC, provides training and coaching for agile teams. Paul is from Perth, Australia, but chooses to live, work and play with his wife and two children, in Denver, Colorado.
