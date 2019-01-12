@@ -18,9 +18,7 @@ So what are monoids? A monoid is a mathematical structure. First we start with a
 
 I usually explain monoids through glasses of beer, but here I will use plumbery pipes. For example, let's define a set of pipes this way:
 
-**"The set of pipes with a hole this size”**
-
-![](images/cyrille-martraire/image_0.png)
+![The set of pipes with a hole this size](images/cyrille-martraire/image_0.png)
 
 Given this definition of our set, now we can test if various elements belong to it or not. 
 
@@ -168,7 +166,7 @@ A range of numbers or a range of dates can be seen as a monoid, for example with
 {line-numbers=off,lang=text}
 ~~~~~~~~
 [1, 3] Union [2, 4] = [1, 4] // compact union
-[1, 3] Union ][ = [1, 3] // neutral element
+[1, 3] Union ][ = [1, 3]     // neutral element
 ~~~~~~~~
 
 By defining the operation of "compact" union:
@@ -185,7 +183,8 @@ public final class Range
    {
        return new Range(
           min(this.min, other.min),
-          max(this.max,other.max));
+          max(this.max,other.max)
+       );
    }
 }
 ~~~~~~~~
@@ -198,7 +197,7 @@ Predicates are natural monoids, with logical AND and the ALWAYS_TRUE predicate, 
 
 ### Grants
 
-But even unexpected stuff like read/write/execute grants can form a monoid with some merge operation defined for example as "the most secure wins"::
+But even unexpected stuff like read/write/execute grants can form a monoid with some merge operation defined for example as "the most secure wins":
 
 {line-numbers=off,lang=text}
 ~~~~~~~~
@@ -212,16 +211,13 @@ The implementation could be an enum and perform a MIN on the internal ordering o
 ~~~~~~~~
 public final enum Grant
 {
-   R, W, X;
+  R, W, X;
 
-   public Grant merge(Grant other)
-   {
-       return 
-           this.ordinal() < other.ordinal() 
-           ? this 
-           : other;
-
-   }
+  public Grant merge(Grant other)
+  {
+     return 
+       this.ordinal() < other.ordinal() ? this : other;
+  }
 }
 ~~~~~~~~
 
@@ -346,7 +342,7 @@ public class Average
     return new Average( count + other.count, sum + other.sum);
   }
 
-  …// hashcode, equals, toString
+  // hashcode, equals, toString
 
 }
 ~~~~~~~~
@@ -364,9 +360,9 @@ Which internally becomes:
 
 {line-numbers=off,lang=text}
 ~~~~~~~~
-  (sum2_0, sum_0, count_0) 
-+ (sum2_1, sum_1, count_1) 
-= (sum2_0,  + sum2_1, sum_0 + sum_1, count_0 + count_1)
+  (sum2_0,          sum_0,         count_0          ) 
++ (sum2_1,          sum_1,         count_1          ) 
+= (sum2_0 + sum2_1, sum_0 + sum_1, count_0 + count_1)
 ~~~~~~~~
 
 as there's a formula to get the standard deviation out of that:
@@ -481,7 +477,7 @@ NoFeesButInsurance(...)
 
 Whereas once you recognize that the cash flow sequences form a monoid, then you can just implement exactly the way you think about it:
 
-{line-numbers=off,lang=text}
+{line-numbers=off,lang=java}
 ~~~~~~~~
 // basic generators
 monthlyFee(...) : Payments
@@ -596,7 +592,7 @@ An alternative to exceptions that can really happen at runtime is to make the mo
 
 Because a monoid has to follow the Closure of operation, it follows that the special extra value has to be part of the set of legal values for the monoid, not just as output but also as input. Usually the implementation of the operation would just bypass the actual operation and immediately return NaN when you get a NaN as a parameter: you propagate the failure, but in a composable fashion. 
 
-This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the Maybe monad and its two values Some or None, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Elemen**t](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)like NaN: a + NaN = a 
+This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the Maybe monad and its two values Some or None, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Elemen](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)** like NaN: a + NaN = a 
 
 In the case of ranges with the union operation, you may want to introduce a special element NotARange to represent the error case of the union of disjoint ranges:
 
@@ -785,13 +781,13 @@ For more examples on how drawing on established formalisms and algebraic structu
 
 ## Case Study: Environmental Impact Across a Supply Chain
 
-*Just like other code snippet across this article, the code for this case study is **[onlin*e](https://gist.github.com/cyriux/a263efb9c483bcefe72e49c3343ff24e)*.** *
+*Just like other code snippet across this article, the code for this case study is [online](https://gist.github.com/cyriux/a263efb9c483bcefe72e49c3343ff24e).*
 
 Putting together all what we’ve seen so far, we will study the case of a social network to track the environmental impact of companies and their suppliers. 
 
 Let’s consider a pizza restaurant willing to track its environmental impact across its complete supply chain. Its supply chain can be huge, with many direct suppliers, each of them having in turn many suppliers, and so forth. The idea is that each company in the supply chain will get invited to provide its own metrics, at its own level, along with the names of its direct suppliers. This happens massively in parallel, all around the world, across potentially hundreds of companies. And it also happens incrementally, with each supplier deciding to share their impact when they become able or willing to. Still, at any time, we would like to compute the most up-to-date aggregated impact for the pizza restaurant at the top. 
 
-The impacts we are interested in include the **number of suppliers** involved for one pizza, the **total energy consumption** and **carbon emission **by pizza produced, along with the respective **margins of error **for these numbers, and also the **proportion of certified numbers** (weighted by their respective mass in the final product) over the whole chain.
+The impacts we are interested in include the **number of suppliers** involved for one pizza, the **total energy consumption** and **carbon emission** by pizza produced, along with the respective **margins of error** for these numbers, and also the **proportion of certified numbers** (weighted by their respective mass in the final product) over the whole chain.
 
 We could collect all the basic facts, and then regularly run queries to calculate the aggregated metrics over the whole dataset each time, a brutal approach that would require lots of CPU and I/O. Or we could try to start from what we already had and then extending it with the latest contributions in order to update the result. This later approach can save a lot of processing (by reusing past calculations, in addition to enabling a map-reduce-ish approach), but requires each impact to compose smoothly with any other.
 
@@ -985,5 +981,5 @@ Once you’ve used monoids a few times you can’t but fall in love with them. A
 
 *The code for the code snippets in this text are all online as Github gists:* [https://gist.github.com/cyriux](https://gist.github.com/cyriux)
 
-*Many thanks to my colleague Mathieu Eveillard for reviewing an early draft, and to other reviewers Eric Evans and Mathias Verraes*
+*Many thanks to my colleague Mathieu Eveillard for reviewing an early draft, and to reviewers Eric Evans and Mathias Verraes*
 
