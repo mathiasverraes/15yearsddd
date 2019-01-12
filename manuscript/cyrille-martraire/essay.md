@@ -18,7 +18,7 @@ So what are monoids? A monoid is a mathematical structure. First we start with a
 
 I usually explain monoids through glasses of beer, but here I will use plumbery pipes. For example, let's define a set of pipes this way:
 
-    "The set of pipes with a hole this size”
+**"The set of pipes with a hole this size”**
 
 ![](images/cyrille-martraire/image_0.png)
 
@@ -56,7 +56,7 @@ So I was the one wondering for a few seconds. Why does it matter to me? I believ
 
 You probably know the old joke in programming:
 
-    There are only three numbers in programming: 0, 1, and MANY.
+> There are only three numbers in programming: 0, 1, and MANY.
 
 That's so true. But this also illustrates a very common kind of diversity we face all the time: the singular, the plural, and the absence. Monoids naturally represent the singular, with the elements of the set. It also deals with the plural, thanks to the *combine* operation that can take a plural and turn it back into an element as usual. And the neutral element takes care of the absence case, and it also belongs to the set. So monoids encapsulate this diversity inside their structure, so that from the outside you don't have to care about it. That's a great idea to fight the battle against complexity.
 
@@ -88,7 +88,7 @@ Note that integers can also form a monoid with the multiplication operation, in 
 
 All this is not difficult. Still, such a simple thing is a key to very complex behaviors. It's also the key to infinite scalability of space (think Hadoop), and the key to infinite incremental scalability (think Storm). There's one joke in Big Data circles: 
 
-     If you're doing Big Data and you don't know what an abelian group is, then you do it wrong!
+> If you're doing Big Data and you don't know what an abelian group is, then you do it wrong!
 
 It's all about *composability*, which is highly desirable pretty much everywhere. .
 
@@ -100,13 +100,12 @@ Monoids are typical Functional Programming; In Functional Programming everything
 
 That's a solid proof that monoid are value objects. Seriously though they do have to be value objects, i.e. immutable and equality by value. But monoid objects don't have to be anemic, with just data. They are supposed to have behavior, and in particular behavior that compose, like lengths, where we want to be able to write: "18 m + 16 m = 34 m". The corresponding code for this method would be:
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 public Length add(Length other){
-
-   return new Length(
-
-      value + other.value);
-
+   return new Length(value + other.value);
 }
+~~~~~~~~
 
 This add() method returns a new instance, as value objects should do. It must not perform any side-effect, as advocated by the DDD "Side-Effect-Free Functions" pattern. Immutability and Side-Effect-Free Functions together are good taste! That should be your default style of programming, unless you really have to do otherwise.
 
@@ -130,11 +129,12 @@ The Money pattern is indeed a special case of the more general Quantity analysis
 
 Now that we have a money amount, we can make it into a cashflow, by adding a date: 
 
-   (EUR, 25, TODAY) 
-
+{line-numbers=off,lang=text}
+~~~~~~~~
+  (EUR, 25, TODAY) 
 + (EUR, 30, TODAY) 
-
 = (EUR, 55, TODAY)
+~~~~~~~~
 
 And again we could throw an exception if the dates don't match.
 
@@ -150,11 +150,12 @@ But why stop there? We typically deal with many cashflows that go together, and 
 
 So once again, we want to be able to write the code the exact same way: 
 
-   Cashflow Sequence 
-
+{line-numbers=off,lang=text}
+~~~~~~~~
+  Cashflow Sequence 
 + Cashflow Sequence 
-
-= Cashflow Sequence.
+= Cashflow Sequence
+~~~~~~~~
 
 At this point you get the picture: monoid are all about what we could call an arithmetics of objects.
 
@@ -164,33 +165,30 @@ Note that the addition operation in the Cashflow Sequences above is in basically
 
 A range of numbers or a range of dates can be seen as a monoid, for example with the compact-union operation, and the empty range as the neutral element:
 
-    [1, 3] Union [2, 4] = [1, 4] // compact union
-
-    [1, 3] Union ][ = [1, 3] // neutral element
+{line-numbers=off,lang=text}
+~~~~~~~~
+[1, 3] Union [2, 4] = [1, 4] // compact union
+[1, 3] Union ][ = [1, 3] // neutral element
+~~~~~~~~
 
 By defining the operation of "compact" union:
 
-public final class Range{
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public final class Range
+{
    private final int min;
-
    private final int max;
+   public final static EMPTY = new Range();
 
-   public final static EMPTY 
-
-= new Range();
-
-   public Range union(Range other){
-
+   public Range union(Range other)
+   {
        return new Range(
-
           min(this.min, other.min),
-
           max(this.max,other.max));
-
    }
-
 }
+~~~~~~~~
 
 Note that the internal implementation can absolutely delegate the work to some off-the-shelf implementation, e.g. some well-known, well-tested open-source library.
 
@@ -202,27 +200,30 @@ Predicates are natural monoids, with logical AND and the ALWAYS_TRUE predicate, 
 
 But even unexpected stuff like read/write/execute grants can form a monoid with some merge operation defined for example as "the most secure wins"::
 
-    r merge w = r
-
-    w merge x = w 
+{line-numbers=off,lang=text}
+~~~~~~~~
+r merge w = r
+w merge x = w 
+~~~~~~~~
 
 The implementation could be an enum and perform a MIN on the internal ordering of each value.
 
-public final enum Grant{
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public final enum Grant
+{
    R, W, X;
 
-   public Grant merge(Grant other){
-
-       return this.ordinal() < 
-
-             other.ordinal()? 
-
-           this : other;
+   public Grant merge(Grant other)
+   {
+       return 
+           this.ordinal() < other.ordinal() 
+           ? this 
+           : other;
 
    }
-
 }
+~~~~~~~~
 
 Of course it’s up to your domain expert to decide which exact behavior is expected here, and how the operation should be named.
 
@@ -230,23 +231,23 @@ Of course it’s up to your domain expert to decide which exact behavior is expe
 
 Nesting monoids can easily lead to monoids. For example in many systems you have configuration maps for the settings of an application. You often have a default hardcoded one, then by order of precedence one by department, then another by desk, and ultimately one by user. This leads naturally to a monoid form:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 MonoidMap + MonoidMap = MonoidMap
+~~~~~~~~
 
 One simple way to do that is just combine the maps with the LAST ONE WINS policy:
 
-public MonoidMap append(
+{line-numbers=off,lang=java}
+~~~~~~~~
+public MonoidMap append(MonoidMap other) 
+{
 
-              MonoidMap other) {
-
-  Map<String, Object> result 
-
-      = new HashMap<>(this.map);
-
-  result.**putAll**(other.map);
-
+  Map<String, Object> result = new HashMap<>(this.map);
+  result.putAll(other.map);
   return new MonoidMap(result);
-
 }
+~~~~~~~~
 
 But we can go further if all values are also monoids, and let each value make its own monoidal magic: 
 
@@ -254,31 +255,21 @@ But we can go further if all values are also monoids, and let each value make it
 
 In our example, colors are combined by an OVERWRITE operation (last value wins), Enable values are combined by a logical OR operation, while Timeout values are combined by an integer MIN operation. You can see here that all the value are monoids by themselves with these operations. By defining the map-level combine operation (here noted +) by delegating to the monoid operation of each value, in parallel for each key, then we also have the configuration maps as monoids. Their neutral element could be either an empty map, or a map with all the neutral elements of each type of value.
 
-public NestedMonoidMap append(
-
-             NestedMonoidMap other) {
-
-  Map<String, Monoid<?>> result 
-
-        = new HashMap<>(map);
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public NestedMonoidMap append(NestedMonoidMap other) 
+{
+  Map<String, Monoid<?>> result = new HashMap<>(map);
   for (String key:other.map.keySet()){
-
-   Monoid value = map.get(key);
-
-   Monoid value2 = other.map.get(key);
-
-   result.put(key, 
-
-     value == null ? value2 :
-
-     **value.append(value2)**);
-
+    Monoid value = map.get(key);
+    Monoid value2 = other.map.get(key);
+    
+    result.put(key, value == null ? value2 : value.append(value2));
   }
 
   return new NestedMonoidMap(result);
-
 }
+~~~~~~~~
 
 Of course in this example, each value would have to be itself a monoid, with its own specific way to append or merge. 
 
@@ -288,153 +279,135 @@ What I like in this example is also that it shows that value objects don't have 
 
 But not everything is that easy to model as monoids. For example, if you have to deal with partial averages and want to compose them into a bigger average, you cannot write: Average + Average as it would just be WRONG:
 
-    	Average + Average = WRONG
+{line-numbers=off,lang=text}
+~~~~~~~~
+Average + Average = WRONG
+~~~~~~~~
 
 Average calculation just doesn't compose at all. This makes my panda sad.
 
 But if you really want to make it into a monoid, then you can do it! The usual trick is to go back to the intermediate calculation, in which you can find some composable intermediate sub-calculations:
 
-    	avg = sum / count
+{line-numbers=off,lang=text}
+~~~~~~~~
+avg = sum / count
+~~~~~~~~
 
 And it turns out that put together as a tupple, it composes quite well, using a tuple-level addition defined as the addition of each term: 
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 (sum, count) + (sum, count) = (sum, count)
+~~~~~~~~
 
 Which internally becomes:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
   (sum_0, count_0) 
-
 + (sum_1, count_1) 
-
 = (sum_0 + sum_1, count_0 + count_1)
+~~~~~~~~
 
 So you can combine tuples at large scale, across many nodes for example, and then when you get the final result as a tuple, then you just finish the work by taking the average out of it by actually doing the division sum/count. 
 
-public class Average {
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public class Average 
+{
   private final int count;
-
   private final int sum;
 
-  public static final Average NEUTRAL 
-
-               = new Average(0, 0);
-
-  public static final 
-
-      Average of(int... values) {
-
-    return new Average(
-
-          values.length,
-
-          stream(values).sum());
-
+  public static final Average NEUTRAL = new Average(0, 0);
+  
+  public static final Average of(int... values) 
+  {
+    return new Average( values.length, stream(values).sum());
   }
 
-  private Average(int count, int sum){
-
+  private Average(int count, int sum)
+  {
     this.count = count;
-
     this.sum = sum;
-
   }
 
-  public double average() {
-
+  public double average() 
+  {
     return (double) sum / count;
-
   }
 
-  public int count() {
-
+  public int count() 
+  {
     return count;
-
   }
 
-  public Average add(Average other) {
-
-    return new Average(
-
-       **count + other.count, **
-
-**       sum + other.sum);**
-
+  public Average add(Average other) 
+  {
+    return new Average( count + other.count, sum + other.sum);
   }
 
   …// hashcode, equals, toString
 
 }
+~~~~~~~~
 
 And if you need the standard deviation, you can do the same trick, just by adding the sum of the values at the power of two (sum2): 
 
-   (sum2, sum, count) 
-
+{line-numbers=off,lang=text}
+~~~~~~~~
+  (sum2, sum, count) 
 + (sum2, sum, count) 
-
-= (sum2, sum, count), 
+= (sum2, sum, count)
+~~~~~~~~
 
 Which internally becomes:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
   (sum2_0, sum_0, count_0) 
-
 + (sum2_1, sum_1, count_1) 
-
-= (sum2_0,  + sum2_1, 
-
-    sum_0 + sum_1, 
-
-    count_0 + count_1)
+= (sum2_0,  + sum2_1, sum_0 + sum_1, count_0 + count_1)
+~~~~~~~~
 
 as there's a formula to get the standard deviation out of that:
 
-"the standard deviation is equal to the square root of the difference between the average of the squares of the values and the square of the average value."
+> "the standard deviation is equal to the square root of the difference between the average of the squares of the values and the square of the average value."
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 STD = square root[1/N.Sum(x^2) - (1/N.Sum(x))^2]
+~~~~~~~~
 
 Monoids don’t have to use addition, here’s an example of a monoid of ratios with the operation of multiplication:
 
-public class Ratio {
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public class Ratio 
+{
   private final int numerator;
-
   private final int denumerator;
+  public static final Ratio NEUTRAL = new Ratio(1, 1);
 
-  public static final Ratio NEUTRAL =
-
-                    new Ratio(1, 1);
-
-  public Ratio(
-
-      int numerator, int denumerator){
-
+  public Ratio(int numerator, int denumerator)
+  {
     this.numerator = numerator;
-
     this.denumerator = denumerator;
-
   }
 
-  public double ratio() {
-
+  public double ratio() 
+  {
     return numerator / denumerator;
-
   }
 
-  
-
-  public Ratio multiply(Ratio other) {
-
-    return new Ratio(
-
-     **numerator * other.numerator,**
-
-**     denumerator * other.denumerator)**;
-
+  public Ratio multiply(Ratio other) 
+  {
+    return new Ratio(numerator * other.numerator, denumerator * other.denumerator);
   }
 
   ...// hashcode, equals, toString
 
 }
+~~~~~~~~
 
 Over the years I've grown the confidence that anything can be made into a monoid, with these kinds of tricks. Histograms with fixed buckets naturally combine, bucket by bucket:
 
@@ -442,33 +415,23 @@ Over the years I've grown the confidence that anything can be made into a monoid
 
 The corresponding code for the add operation adds the number of elements in each respective bucket:
 
-public Histogram add(Histogram other) {
-
-  if (buckets.length !=
-
-      other.buckets.length) {
-
-   throw new IllegalArgumentException(
-
-    "Histograms must have same size");
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public Histogram add(Histogram other) 
+{
+  if (buckets.length != other.buckets.length) {
+    throw new IllegalArgumentException( "Histograms must have same size");
   }
 
   int[] bins = new int[buckets.length];
 
-  for 
-
-    (int i = 0; i < bins.length; i++){
-
-    **bins[i] **
-
-**    = buckets[i] + other.buckets[i];**
-
+  for (int i = 0; i < bins.length; i++){
+    bins[i] = buckets[i] + other.buckets[i];
   }
 
   return new Histogram(bins);
-
 }
+~~~~~~~~
 
 If histograms have heterogeneous buckets, they can be made to compose using approximations (eg curves like splines) that compose.
 
@@ -484,11 +447,12 @@ As shown with the pipes, monoids are ubiquitous in our daily lives, and are part
 
 This ability to compose stuff is part of our mental models, and as such can be part of our Ubiquitous Language in the DDD sense. For example in the hotel booking domain, we could say that a booking from January 21 to 23 combined to another booking in the same hotel from January 23 to 24 is equivalent to one single booking from January 21 to 24:
 
-    Booking [21, 21] 
-
-    + Booking [23, 24] 
-
-    = Booking [21, 24]
+{line-numbers=off,lang=text}
+~~~~~~~~
+  Booking [21, 21] 
++ Booking [23, 24] 
+= Booking [21, 24]
+~~~~~~~~
 
 Which we could sketch like this, as ranges with some union operation:
 
@@ -504,37 +468,32 @@ Let's consider another example of price plans of mobile phones. There's a potent
 
 Unfortunately then developers tend to implement this kind of problem with an accumulation of special cases:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 // without monoids 
-
 PaymentsFees(...)
-
 PaymentsFeesWithOptions(...)
-
-PaymentsFeesWithInsuranceAndOptions(.)
-
+PaymentsFeesWithInsuranceAndOptions(...)
 PaymentsFeesWithInsurance(...)
-
 NoFeesButInsurance(...)
-
 ...
+~~~~~~~~
 
 Whereas once you recognize that the cash flow sequences form a monoid, then you can just implement exactly the way you think about it:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 // basic generators
-
 monthlyFee(...) : Payments
-
 options(...) : Payments
-
 insurance(...) : Payments
 
 // your custom code to combine
 
 Payments invoice = monthlyFee
-
     .add(options)
-
     .add(insurance);
+~~~~~~~~
 
 One major benefit is that the cognitive load is minimal. You just have to learn the type and its combine method, and that's it. And yet it gives you an infinite number of possibilities to combine them into exactly what you want. 
 
@@ -546,7 +505,7 @@ For example in pretrade you would have a Money optimized for speed and expressed
 
 Another example this time with cashflows: in a tax-related domain, you can’t just add an reimbursement cashflow to an interest cashflow, as they are treated very differently by the tax institution, whereas in an investment domain you would just add them all together without any constraint. For more on that point, I suggest Mathias Verraes [blog post](http://verraes.net/2016/02/type-safety-and-money/) where he notes:
 
-*...dealing with money is too critical to be regarded as a Generic Subdomain. Different projects have different needs and expectations of how money will be handled. If money matters, you need to build a model that fits your specific problem space...*
+> *...dealing with money is too critical to be regarded as a Generic Subdomain. Different projects have different needs and expectations of how money will be handled. If money matters, you need to build a model that fits your specific problem space...*
 
 ### Monoid, multiple times. 
 
@@ -563,7 +522,6 @@ Monoids are one of the most frequent algebraic structures we can observe in the 
 But the fact that these structures are totally described in the maths literature is important. It means that these solutions are established formalisms, which successfully passed the test of time. The DDD book actually advocates drawing on Established Formalisms for this reason.
 
  
-
 Another reason is that you don't have to document them yourself. Just refer to the reference with a link and you're done. That's very much Living Documentation!
 
 So if we want to document the fact that we implement a monoid, we could create a specific Java annotation @Monoid(String neutralElement), that could then be used to annotate a combine method on some class:
@@ -572,19 +530,18 @@ So if we want to document the fact that we implement a monoid, we could create a
 
 Alternatively since Java 8 you could define a class-level annotation 
 
-   @Monoid(neutralElement="emptyList", 
-
-           operation="union")
+{line-numbers=off,lang=java}
+~~~~~~~~
+@Monoid(neutralElement="emptyList", operation="union")
+~~~~~~~~
 
 Since a class can be a monoid several times, you would also need to mark the custom annotation as @Repeatable and define its container annotation Monoids, so that you can then annotate a class multiple times:
 
-  @Monoid(neutralElement="one",
-
-          operation="multiply")
-
-  @Monoid(neutralElement="zero",
-
-          operation="add")
+{line-numbers=off,lang=java}
+~~~~~~~~
+@Monoid(neutralElement="one", operation="multiply")
+@Monoid(neutralElement="zero", operation="add")
+~~~~~~~~
 
 ### Self-Explaining Values
 
@@ -592,43 +549,40 @@ Now suppose you want a complete audit on all the calculations, from the initial 
 
 But if the calculations are done on a type like a monoid, with custom operations, then you could just enrich the operations with internal traceability audit trail:
 
-public static class Ratio {
+{line-numbers=off,lang=java}
+~~~~~~~~
+public static class Ratio 
+{
+    private final int numerator;
+    private final int denumerator;
+    private final String trace;
 
-private final int numerator;
+    public Ratio multiply(Ratio other) 
+    {
+        return new Ratio( 
+            numerator * other.numerator, 
+            denumerator * other.denumerator, 
+            "(" + asString() + ")*(" + other.asString() + ")"
+        );
+    }
 
-private final int denumerator;
-
-private final **String trace**;
-
-public Ratio multiply(Ratio other) {
-
-  return new Ratio(
-
-     numerator * other.numerator,
-
-     denumerator * other.denumerator,
-
-     "(" + asString() + ")*(" 
-
-         + other.asString() + ")");
-
+    public String asString() 
+    {
+        return numerator + "/" + denumerator;
+    }
+    // ...
 }
-
-public String asString() {
-
- return numerator + "/" + denumerator;
-
-}
+~~~~~~~~
 
 With this built-in traceability, we can ask for the explanation of the calculation afterwards:
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 new Ratio(1, 3)
-
    .multiply(new Ratio(5, 2))
-
    .trace()
-
 // trace: "(1/3)*(5/2)“
+~~~~~~~~
 
 One question with the trace is to decide whether or not to use for the object equality. For example, is (5/6, "") really equal to (“⅚, “(1/3)*(5/2)”)? One way is to ignore the trace in the main object equals(), and to create another strictEquals() if necessary that uses it.
 
@@ -666,97 +620,72 @@ Still monoids should be tested on all their important properties, like being ass
 
 Since monoids are all about properties ("expressions that hold true") like the following: 
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 Associativity
-
 FOR ANY 3 values X, Y and Z,
-
 THEN (X + Y) + Z == X + (Y + Z)
 
 Neutral element 
-
 FOR ANY value X
-
 THEN X + NEUTRAL = X
-
 AND NEUTRAL + X = X
 
 Absorbing element
-
 FOR ANY value X
-
 THEN X + NaN = NaN
+~~~~~~~~
 
 Property-based Testing is therefore a perfect fit for testing monoids, since PBT tools can directly express and test these properties. For example in Java we can use [JunitQuickCheck](https://github.com/pholser/junit-quickcheck) to turn test cases into properties. Let us express the above properties for some custom Balance class with its neutral element and some [absorbing element](https://en.wikipedia.org/wiki/Absorbing_element) called Error:
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 public class Balance {
+    private final int balance;
+    private final boolean error;
 
-private final int balance;
+    public final static Balance ZERO = new Balance(0);
 
-private final boolean error;
+    public final static Balance ERROR = new Balance(0, true);
 
-public final static Balance ZERO 
-
-                     = new Balance(0);
-
-public final static Balance ERROR 
-
-               = new Balance(0, true);
-
-public Balance add(Balance other) {
-
-    return error ? ERROR : 
-
-    other.error ? ERROR : 
-
- new Balance(balance + other.balance);
-
-}
+    public Balance add(Balance other) 
+    {
+        return error ? ERROR : 
+        other.error ? ERROR : 
+        new Balance(balance + other.balance);
+    }
+~~~~~~~~
 
 The properties could be written:
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 @RunWith(JUnitQuickcheck.class)
+public class MonoidTest 
+{    
+    @Property
+    public void neutralElement(@From(Ctor.class) Balance a) 
+    {
+        assertEquals(a.add(ZERO), a);
+        assertEquals(ZERO.add(a), a);
+    }
 
-public class MonoidTest {
+    @Property
+    public void associativity( 
+            @From(Ctor.class) Balance a, 
+            @From(Ctor.class) Balance b, 
+            @From(Ctor.class) Balance c) 
+    { 
+        assertEquals(a.add(b).add(c), a.add(b.add(c)));
+    }
 
-@Property
-
-public void neutralElement(
-
-     @From(Ctor.class) Balance a) {
-
-  assertEquals(a.add(ZERO), a);
-
-  assertEquals(ZERO.add(a), a);
-
-}
-
-@Property
-
-public void associativity(
-
-       @From(Ctor.class) Balance a,
-
-       @From(Ctor.class) Balance b,
-
-       @From(Ctor.class) Balance c) {
-
-  assertEquals(a.add(b).add(c),
-
-               a.add(b.add(c)));
-
-}
-
-@Property
-
-public void errorIsAbsorbingElement(
-
-        @From(Ctor.class) Balance a) {
-
-  assertEquals(a.add(ERROR), ERROR);
-
-  assertEquals(ERROR.add(a), ERROR);
-
-}
+    @Property
+    public void errorIsAbsorbingElement(@From(Ctor.class) Balance a) 
+    {
+        assertEquals(a.add(ERROR), ERROR);
+        assertEquals(ERROR.add(a), ERROR);
+    }
+~~~~~~~~
 
 The PBT tool will run these test cases for a number (the default being 100) of random values.
 
@@ -772,17 +701,21 @@ If you just have the closure of the operation, then it's called a "**magma**", d
 
 If for any value there exists an *inverse value*, then the monoid becomes a "**group**": 
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 value + inverse-value = neutral element. 
+~~~~~~~~
 
 It's a strong property to have inverses for all values. For example, natural integers don't have inverse with respect to addition, but signed integers do: 3 + (-3) == 0. In business domains, having inverses is less frequent, so groups are less frequently used than monoids. Groups are all about compensation, with inverse values that can always compensate the effect of any value. 
 
 Going further, if we can compose not just whole elements but also compose values *partially*, then we have a **vector space**. For example we would write that (1, 3) + 0.5(6, 8) = (4, 7). Notice the coefficient (the real number 0.5 here) that modulates the impact of the second term. Money with addition can be seen not just as a monoid, but as a group, and even as a space vector: 
 
- EUR25 
-
- + **1.5**.EUR30 
-
- = EUR70. 
+{line-numbers=off,lang=text}
+~~~~~~~~
+  EUR25 
++ 1.5.EUR30 
+= EUR70
+~~~~~~~~ 
 
 Space vector is all about addition with multiplication by a scalar coefficient. 
 
@@ -794,7 +727,10 @@ Numeration and time love cyclic groups, and as a result, domain-specific numerat
 
 Then there are many other more complicated algebraic structures available that deal with more than one operation and how the operations interact: a **ring** for example generalizes the arithmetic operations of addition and multiplication. It extends a commutative group (addition) with a second operation (multiplication), and requires that this second operation distributes with the first one:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 a.(b+c) = a.b + a.c 
+~~~~~~~~
 
 Over the past 15 years I've created my own domain-specific values from all the above-mentioned structures, and many times without knowing the corresponding name. Still, it helps to pay attention to the properties that we can build upon or not, for a recap, with a given operation noted "+": 
 
@@ -820,23 +756,26 @@ We usually implement domain-specific concepts from the standard built-in types o
 
 Creating your own arithmetic helps keep your code simple even when you need to perform calculation of a value "with something else", like keeping track of the accuracy of the calculation, or of its uncertainty, or anything else. The idea is to expand the value into a tuple with the other thing you also are about:
 
+{line-numbers=off,lang=text}
+~~~~~~~~
 (Value, Accuracy)
-
 (Value, Uncertainty)
+~~~~~~~~
 
 And to expand the operation into the tuple-level operation, trying to preserve some desirable properties along the way. 
 
 For example for the type TrustedNumber(Value, Uncertainty)  you could define the addition operation this way, in a pessimist fashion such as the resulting uncertainty is the worst of both operands:
 
-public add(TrustedNumber o){
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public add(TrustedNumber o)
+{
   return new TrustedNumber(
-
       value + o.value, 
-
-      max(uncertainty, uncertainty));
-
+      max(uncertainty, uncertainty)
+  );
 }
+~~~~~~~~
 
 This approach is standard in mathematics, for example for a complex numbers, or dual numbers. 
 
@@ -868,111 +807,83 @@ From what we’ve seen, we need to define a concept of Environmental Impact that
 
 Out of the impacts we want, the number of suppliers is easy to compose: for each supplier (level N), its supplier count is exactly 1 plus the supplier counts of all its direct suppliers (level N-1). It’s naturally additive, in the simplest possible way. The energy consumption and carbon emissions are naturally additive too. This suggests the following concept in code:
 
-public static class EnvironmentalImpact {
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public static class EnvironmentalImpact 
+{
   private final int supplierCount; 
-
-  private final 
-
-            Amount energyConsumption;
-
+  private final Amount energyConsumption;
   private final Amount carbonEmission;
-
-  
 
   // … equals, hashcode, toString
 
 }
+~~~~~~~~
 
 Now in order to compose partial impacts in a way that is weighted by their respective contribution to the pizza, we make this value a space vector, with the "addition" and  "multiplication by a scalar” operations:
 
-public EnvironmentalImpact add
-
-       (EnvironmentalImpact other) {
-
-  return new EnvironmentalImpact(
-
-    supplierCount 
-
-        +other.supplierCount,
-
-    energyConsumption
-
-        .add(other.energyConsumption),
-
-    carbonEmission
-
-        .add(other.carbonEmission));
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public EnvironmentalImpact add (EnvironmentalImpact other) 
+{
+  return new EnvironmentalImpact
+      supplierCount + other.supplierCount, 
+      energyConsumption.add(other.energyConsumption), 
+      carbonEmission.add(other.carbonEmission)
+  ); 
 }
 
-public EnvironmentalImpact times      
-
-              (double coefficient) {
-
-   return new EnvironmentalImpact(
-
-       supplierCount,  
-
-    energyConsumption
-
-         .times(coefficient),
-
-    carbonEmission
-
-        .times(coefficient));
+public EnvironmentalImpact times (double coefficient) 
+{
+   return new EnvironmentalImpact( 
+      supplierCount, 
+      energyConsumption.times(coefficient), 
+      carbonEmission.times(coefficient)
+   );
 
 }
+~~~~~~~~
 
 Because all these amounts are not that easy to measure, they come with significant margins of error, which we’d like to track when it comes to the end result. This is specially important when suppliers don’t provide their impact, so we have to guess it, with some larger margin of error. This could make the calculations quite complicated, but we know how to do that in a simple way, using another tuple that gathers the amount, its unit and its margin of error:
 
-public static class Amount {
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public static class Amount 
+{
   private final double value;
-
   private final String unit;
-
   private final double errorMargin;
-
   // … equals, hashcode, toString
-
 }
+~~~~~~~~
 
 And because we want to add these amounts weighted by coefficients, we want to make it a space vector as well, with the addition and multiplication by a scalar:
 
-public Amount add(Amount other) {
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+public Amount add(Amount other) 
+{
   if (!unit.equals(other.unit))
-
       throw new IllegalArgumentException(
+        "Amounts must have same units: " + unit + " <> " + other.unit
+      );
 
-      "Amounts must have same units: " 
-
-        + unit + " <> " + other.unit);
-
-   return new Amount(
-
-     value + other.value, 
-
-     unit, 
-
-     errorMargin + other.errorMargin);
-
-}
-
- public Amount times(
-
-             double coefficient) {
-
-    return new Amount(
-
-      coefficient * value, 
-
+  return new Amount(
+      value + other.value, 
       unit, 
-
-      coefficient * errorMargin);
-
+      errorMargin + other.errorMargin
+  );
 }
+
+public Amount times(double coefficient) 
+{
+    return new Amount(
+        coefficient * value, 
+        unit, 
+        coefficient * errorMargin
+    );
+}
+~~~~~~~~
 
 We’re lucky the error margins are additive too. But it’s also possible to calculate them for any other operation than just addition if we wanted to.
 
@@ -980,77 +891,85 @@ Now we’re almost done, but remember we wanted to track the proportion of certi
 
 So we now decorate the Amount class with a CertifiedAmount class that expands it with this tuple:
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 /** An amount that keeps track of its percentage of certification */
-
-public static class CertifiedAmount {
-
+public static class CertifiedAmount 
+{
   private final Amount amount;
 
   // the total certification score
-
   private final double score;
 
   // the total weight of the certified thing
-
   private final double weight; 
+~~~~~~~~
 
 And we update our EnvironmentalImpact class to use the CertifiedAmount instead of the Amount, which is easy since it has the exact same methods names and signatures.
 
 Now let’s use that for 1 pizza, that is made of 1 dough, 0.3 (kg) of tomato sauce and some cooking in the restaurant.
 
+{line-numbers=off,lang=java}
+~~~~~~~~
 EnvironmentalImpact cooking = singleSupplier(
-
   certified(1, "kWh", 0.3), // energy
-
-  certified(1, "T", 0.25)); // carbon
-
+  certified(1, "T", 0.25)   // carbon
+);
 EnvironmentalImpact dough = singleSupplier(
-
   uncertified(5, "kWh", 5.), 
-
-  uncertified(0.5, "T", 1.));
+  uncertified(0.5, "T", 1.)
+);
 
 EnvironmentalImpact tomatoSauce = singleSupplier(
-
   uncertified(3, "kWh", 1.), 
-
-  certified(0.2, "T", 0.1));
+  certified(0.2, "T", 0.1)
+);
+~~~~~~~~
 
 Which displayed into the console:
 
-EnvironmentalImpact(1 supplier, 
-
+{line-numbers=off,lang=text}
+~~~~~~~~
+EnvironmentalImpact(
+  1 supplier, 
   energy: 1.0+/-0.3 kWh (100% certified), 
+  carbon: 1.0+/-0.25 T (100% certified)
+)
 
-  carbon: 1.0+/-0.25 T (100% certified))
-
-EnvironmentalImpact(1 supplier, 
-
+EnvironmentalImpact(
+  1 supplier, 
   energy: 5.0+/-5.0 kWh (0% certified), 
+  carbon: 0.5+/-1.0 T (0% certified)
+)
 
-  carbon: 0.5+/-1.0 T (0% certified))
-
-EnvironmentalImpact(1 supplier, 
-
+EnvironmentalImpact(
+  1 supplier, 
   energy: 3.0+/-1.0 kWh (0% certified), 
-
-  carbon: 0.2+/-0.1 T (100% certified))
+  carbon: 0.2+/-0.1 T (100% certified)
+)
+~~~~~~~~
 
 From that we can calculate the full impact of the restaurant by chaining each impact:
 
+
+{line-numbers=off,lang=java}
+~~~~~~~~
 EnvironmentalImpact pizza = cooking
-
   .add(dough)
-
-  .add(tomatoSauce.times(0.3));
+  .add(tomatoSauce.times(0.3)
+);
+~~~~~~~~
 
 If we print the resulting impact into the console, we get:
 
-EnvironmentalImpact(3 suppliers, 
-
+{line-numbers=off,lang=java}
+~~~~~~~~
+EnvironmentalImpact(
+  3 suppliers, 
   energy: 6.9+/-5.6 kWh (43% certified), 
-
-  carbon: 1.56+/-1.28 T (56% certified))
+  carbon: 1.56+/-1.28 T (56% certified)
+)
+~~~~~~~~
 
 Which is what we wanted. We can then extend that approach for many other dimensions of environmental impact accounting, more details on accuracy, estimated vs measured vs calculated values, traceability of the numbers etc., just by expanding the concepts at each level, while still keeping it all as nested mathematical structures that compose perfectly. This approach scales for high complexity, and for high cardinality as well. 
 
@@ -1064,7 +983,7 @@ Monoids are everywhere, even in Machine Learning, with the ubiquitous matrices a
 
 Once you’ve used monoids a few times you can’t but fall in love with them. As a consequence, you try to make everything into a monoid. For example with my friend Jeremie Chassaing we’ve discussed monoids and Event Sourcing, and he kept investigating how to make Monoidal Event Sourcing (see his [related blog post](https://thinkbeforecoding.com/post/2014/04/11/Monoidal-Event-Sourcing)). 
 
-*The code for the code snippets in this text are all online as Github gists: **[https://gist.github.com/cyriu*x](https://gist.github.com/cyriux)
+*The code for the code snippets in this text are all online as Github gists:* [https://gist.github.com/cyriux](https://gist.github.com/cyriux)
 
-*Many thanks to my colleague Mathieu Eveillard for reviewing an early draft, and to other reviewers: <add your name here>*
+*Many thanks to my colleague Mathieu Eveillard for reviewing an early draft, and to other reviewers Eric Evans and Mathias Verraes*
 
