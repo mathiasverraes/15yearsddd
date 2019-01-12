@@ -16,7 +16,7 @@ Monoids come from a part of mathematics called abstract algebra. It's totally in
 
 So what are monoids? A monoid is a mathematical structure. First we start with a simple set. A set is just a criterion to decide if elements belong or not to the set. Yes it’s a bit circular a definition but you get the idea.
 
-I usually explain monoids through glasses of beer, but here I will use plumbery pipes. For example, let's define a set of pipes this way:
+I usually explain monoids through glasses of beer, but here I will use plumbing pipes. For example, let's define a set of pipes this way:
 
 ![The set of pipes with a hole this size](images/cyrille-martraire/image_0.png)
 
