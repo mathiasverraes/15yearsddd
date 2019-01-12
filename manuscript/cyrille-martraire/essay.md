@@ -588,13 +588,13 @@ Many calculations can fail. We cannot divide a number by the number zero. We can
 
 The traditional way to go to simplify is to throw exceptions, however it defeats the purpose or composability since it breaks the control flow. In practice I observe that throwing is acceptable for errors that are nothing but coding errors; once fixed they should never happen anymore, so for practical matters we have apparent composability.
 
-An alternative to exceptions that can really happen at runtime is to make the monoidal operation a *total function*. A total function is a function that accepts any possible value for all its parameters, and therefore always returns a result for them. In practice the trick is to introduce a special value that represents the error case. For example in the case if division by zero, Java has introduced the special value NaN, for Not-a-Number.
+An alternative to exceptions that can really happen at runtime is to make the monoidal operation a *total function*. A total function is a function that accepts any possible value for all its parameters, and therefore always returns a result for them. In practice the trick is to introduce a special value that represents the error case. For example in the case if division by zero, Java has introduced the special value `NaN`, for Not-a-Number.
 
-Because a monoid has to follow the Closure of operation, it follows that the special extra value has to be part of the set of legal values for the monoid, not just as output but also as input. Usually the implementation of the operation would just bypass the actual operation and immediately return NaN when you get a NaN as a parameter: you propagate the failure, but in a composable fashion. 
+Because a monoid has to follow the Closure of operation, it follows that the special extra value has to be part of the set of legal values for the monoid, not just as output but also as input. Usually the implementation of the operation would just bypass the actual operation and immediately return `NaN` when you get a `NaN` as a parameter: you propagate the failure, but in a composable fashion. 
 
-This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the Maybe monad and its two values Some or None, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Elemen](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)** like NaN: a + NaN = a 
+This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the `Maybe` monad and its two values `Some` or `None`, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Elemen](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)** like `NaN`: `a + NaN = a` 
 
-In the case of ranges with the union operation, you may want to introduce a special element NotARange to represent the error case of the union of disjoint ranges:
+In the case of ranges with the union operation, you may want to introduce a special element `NotARange` to represent the error case of the union of disjoint ranges:
 
 ![](images/cyrille-martraire/image_17.png)
 
