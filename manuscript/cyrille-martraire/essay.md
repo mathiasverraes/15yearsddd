@@ -76,13 +76,13 @@ If you apply that often, then you can deal with high levels of complexity with e
 
 You already know a lot of monoids in your programming language:
 
-* **Integer** with **addition**: Integers are closed under addition: int + int = int. They're associative: (3+5)+2=3+(5+2), and their neutral element is 0, since any integer plus zero gives the same integer.
+* **Integer** with **addition**: Integers are closed under addition: `int + int = int`. They're associative: `(3+5)+2=3+(5+2)`, and their neutral element is 0, since any integer plus zero gives the same integer.
 
-* **Lists** with list **append** operation: List + List = List is closed under this appending, which is associative: (a︎)+(b︎,c)=(a︎, b)+(c). And the empty list is the neutral element here.
+* **Lists** with list **append** operation: `List + List = List` is closed under this appending, which is associative: `(a︎)+(b︎,c)=(a︎, b)+(c)`. And the empty list is the neutral element here.
 
-* A special case of lists, **Strings** with **concatenation**: "hello" + "world" is a string too. It's associative: "cy"+"ri"+"lle", and the neutral element is the empty string.
+* A special case of lists, **Strings** with **concatenation**: `"hello" + "world"` is a string too. It's associative: `"cy"+"ri"+"lle"`, and the neutral element is the empty string.
 
-Note that integers can also form a monoid with the multiplication operation, in which case the neutral element would be 1. But natural integers with subtraction do not form a monoid, because 3 - 5 is not in the set of natural integers.
+Note that integers can also form a monoid with the multiplication operation, in which case the neutral element would be 1. But natural integers with subtraction do not form a monoid, because `3 - 5` is not in the set of natural integers.
 
 All this is not difficult. Still, such a simple thing is a key to very complex behaviors. It's also the key to infinite scalability of space (think Hadoop), and the key to infinite incremental scalability (think Storm). There's one joke in Big Data circles: 
 
@@ -96,7 +96,7 @@ So how do we implement monoids in plan Java code?
 
 Monoids are typical Functional Programming; In Functional Programming everything is a value; Therefore: Monoids are values! 
 
-That's a solid proof that monoid are value objects. Seriously though they do have to be value objects, i.e. immutable and equality by value. But monoid objects don't have to be anemic, with just data. They are supposed to have behavior, and in particular behavior that compose, like lengths, where we want to be able to write: "18 m + 16 m = 34 m". The corresponding code for this method would be:
+That's a solid proof that monoid are value objects. Seriously though, they do have to be value objects, i.e. immutable and equality by value. But monoid objects don't have to be anemic, with just data. They are supposed to have behavior, and in particular behavior that compose, like lengths, where we want to be able to write: `18 m + 16 m = 34 m`. The corresponding code for this method would be:
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -115,7 +115,7 @@ Domain-specific lists, like a mailing list defined as a list of emails addresses
 
 ### Money and Quantity
 
-Let's start with the good old Money analysis pattern, from Martin Fowler: (EUR, 25) + (EUR, 30) = (EUR, 55). And in case the currencies don't match, we would throw an exception in the add method. Note that throwing exception indeed break perfect composability, but in practice we could deal with some, as long as they only reveal coding mistakes.
+Let's start with the good old Money analysis pattern, from Martin Fowler: `(EUR, 25) + (EUR, 30) = (EUR, 55)`. And in case the currencies don't match, we would throw an exception in the add method. Note that throwing exception indeed break perfect composability, but in practice we could deal with some, as long as they only reveal coding mistakes.
 
 Our money class would be defined in UML like this:
 
@@ -157,7 +157,7 @@ So once again, we want to be able to write the code the exact same way:
 
 At this point you get the picture: monoid are all about what we could call an arithmetics of objects.
 
-Note that the addition operation in the Cashflow Sequences above is in basically the list concatenation (e.g. *addAll()* in Java), where cashflows on the same date and on the same currency are then added together using the addition operation of the cashflow themselves.
+Note that the addition operation in the Cashflow Sequences above is in basically the list concatenation (e.g. `addAll()` in Java), where cashflows on the same date and on the same currency are then added together using the addition operation of the cashflow themselves.
 
 ### Ranges
 
@@ -193,7 +193,7 @@ Note that the internal implementation can absolutely delegate the work to some o
 
 ### Predicates
 
-Predicates are natural monoids, with logical AND and the ALWAYS_TRUE predicate, or with logical OR and the ALWAYS_FALSE predicate.
+Predicates are natural monoids, with logical `AND` and the `ALWAYS_TRUE` predicate, or with logical `OR` and the `ALWAYS_FALSE` predicate.
 
 ### Grants
 
@@ -205,7 +205,7 @@ r merge w = r
 w merge x = w 
 ~~~~~~~~
 
-The implementation could be an enum and perform a MIN on the internal ordering of each value.
+The implementation could be an enum and perform a `MIN` on the internal ordering of each value.
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -232,7 +232,7 @@ Nesting monoids can easily lead to monoids. For example in many systems you have
 MonoidMap + MonoidMap = MonoidMap
 ~~~~~~~~
 
-One simple way to do that is just combine the maps with the LAST ONE WINS policy:
+One simple way to do that is just combine the maps with the `LAST ONE WINS` policy:
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -249,7 +249,7 @@ But we can go further if all values are also monoids, and let each value make it
 
 ![](images/cyrille-martraire/image_12.jpg)
 
-In our example, colors are combined by an OVERWRITE operation (last value wins), Enable values are combined by a logical OR operation, while Timeout values are combined by an integer MIN operation. You can see here that all the value are monoids by themselves with these operations. By defining the map-level combine operation (here noted +) by delegating to the monoid operation of each value, in parallel for each key, then we also have the configuration maps as monoids. Their neutral element could be either an empty map, or a map with all the neutral elements of each type of value.
+In our example, colors are combined by an `OVERWRITE` operation (last value wins), Enable values are combined by a logical `OR` operation, while Timeout values are combined by an integer `MIN` operation. You can see here that all the value are monoids by themselves with these operations. By defining the map-level combine operation (here noted `+`) by delegating to the monoid operation of each value, in parallel for each key, then we also have the configuration maps as monoids. Their neutral element could be either an empty map, or a map with all the neutral elements of each type of value.
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -273,7 +273,7 @@ What I like in this example is also that it shows that value objects don't have 
 
 ### Non Linear 
 
-But not everything is that easy to model as monoids. For example, if you have to deal with partial averages and want to compose them into a bigger average, you cannot write: Average + Average as it would just be WRONG:
+But not everything is that easy to model as monoids. For example, if you have to deal with partial averages and want to compose them into a bigger average, you cannot write: `Average + Average` as it would just be `WRONG`:
 
 {line-numbers=off,lang=text}
 ~~~~~~~~
@@ -347,7 +347,7 @@ public class Average
 }
 ~~~~~~~~
 
-And if you need the standard deviation, you can do the same trick, just by adding the sum of the values at the power of two (sum2): 
+And if you need the standard deviation, you can do the same trick, just by adding the sum of the values at the power of two (`sum2`): 
 
 {line-numbers=off,lang=text}
 ~~~~~~~~
@@ -520,7 +520,7 @@ But the fact that these structures are totally described in the maths literature
  
 Another reason is that you don't have to document them yourself. Just refer to the reference with a link and you're done. That's very much Living Documentation!
 
-So if we want to document the fact that we implement a monoid, we could create a specific Java annotation @Monoid(String neutralElement), that could then be used to annotate a combine method on some class:
+So if we want to document the fact that we implement a monoid, we could create a specific Java annotation `@Monoid(String neutralElement)`, that could then be used to annotate a combine method on some class:
 
 ![](images/cyrille-martraire/image_16.jpg)
 
@@ -531,7 +531,7 @@ Alternatively since Java 8 you could define a class-level annotation
 @Monoid(neutralElement="emptyList", operation="union")
 ~~~~~~~~
 
-Since a class can be a monoid several times, you would also need to mark the custom annotation as @Repeatable and define its container annotation Monoids, so that you can then annotate a class multiple times:
+Since a class can be a monoid several times, you would also need to mark the custom annotation as `@Repeatable` and define its container annotation Monoids, so that you can then annotate a class multiple times:
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -580,7 +580,7 @@ new Ratio(1, 3)
 // trace: "(1/3)*(5/2)“
 ~~~~~~~~
 
-One question with the trace is to decide whether or not to use for the object equality. For example, is (5/6, "") really equal to (“⅚, “(1/3)*(5/2)”)? One way is to ignore the trace in the main object equals(), and to create another strictEquals() if necessary that uses it.
+One question with the trace is to decide whether or not to use for the object equality. For example, is `(5/6, "")` really equal to `(“⅚, “(1/3)*(5/2)”)`? One way is to ignore the trace in the main object `equals()`, and to create another `strictEquals()` if necessary that uses it.
 
 ### Encapsulated Error Handling 
 
@@ -604,9 +604,9 @@ In the case of natural integers and subtraction, the way to make the function to
 
 This idea of extending the initial set with additional special values is a common trick for monoids, and not just for error handling. It’s also useful to artificially turn any set into one that is closed under a given operation. 
 
-Given a function with some input I and output O that are not of the same type, we can always turn it into a monoid by introducing the artificial type that is the tuple of both types: (I, O).
+Given a function with some input `I` and output `O` that are not of the same type, we can always turn it into a monoid by introducing the artificial type that is the tuple of both types: `(I, O)`.
 
-For example, given a function that gets a String and returns an integer, we can introduce the type Something (String, int), so that we now have a function that gets a Something and also returns a Something. 
+For example, given a function that gets a `String` and returns an `integer`, we can introduce the type `Something (String, int)`, so that we now have a function that gets a `Something` and also returns a `Something`. 
 
 ## Testing Monoids
 
@@ -702,9 +702,9 @@ If for any value there exists an *inverse value*, then the monoid becomes a "**g
 value + inverse-value = neutral element. 
 ~~~~~~~~
 
-It's a strong property to have inverses for all values. For example, natural integers don't have inverse with respect to addition, but signed integers do: 3 + (-3) == 0. In business domains, having inverses is less frequent, so groups are less frequently used than monoids. Groups are all about compensation, with inverse values that can always compensate the effect of any value. 
+It's a strong property to have inverses for all values. For example, natural integers don't have inverse with respect to addition, but signed integers do: `3 + (-3) == 0`. In business domains, having inverses is less frequent, so groups are less frequently used than monoids. Groups are all about compensation, with inverse values that can always compensate the effect of any value. 
 
-Going further, if we can compose not just whole elements but also compose values *partially*, then we have a **vector space**. For example we would write that (1, 3) + 0.5(6, 8) = (4, 7). Notice the coefficient (the real number 0.5 here) that modulates the impact of the second term. Money with addition can be seen not just as a monoid, but as a group, and even as a space vector: 
+Going further, if we can compose not just whole elements but also compose values *partially*, then we have a **vector space**. For example we would write that `(1, 3) + 0.5(6, 8) = (4, 7)`. Notice the coefficient (the real number 0.5 here) that modulates the impact of the second term. Money with addition can be seen not just as a monoid, but as a group, and even as a space vector: 
 
 {line-numbers=off,lang=text}
 ~~~~~~~~
@@ -715,9 +715,9 @@ Going further, if we can compose not just whole elements but also compose values
 
 Space vector is all about addition with multiplication by a scalar coefficient. 
 
-Any structure that happens to yield the same result regardless of the ordering of the values is called "**commutative**": a + b = b + a. This is a very strong property, not so frequent, so don't expect it too much in domain modeling, but if you see it or manage to make it so, go for it. Commutativity helps a lot especially for situations of "out of order" events, for example when distributed systems communicate through a network, it’s frequent for events a, b, c that used to be in this ordering to arrive out of order, e.g. b, a, c. Being commutative is the most elegant way to deal with that. Exotic structures like [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) rely on commutativity for that, but it’s far beyond the scope of this text.
+Any structure that happens to yield the same result regardless of the ordering of the values is called "**commutative**": `a + b = b + a`. This is a very strong property, not so frequent, so don't expect it too much in domain modeling, but if you see it or manage to make it so, go for it. Commutativity helps a lot especially for situations of "out of order" events, for example when distributed systems communicate through a network, it’s frequent for events a, b, c that used to be in this ordering to arrive out of order, e.g. b, a, c. Being commutative is the most elegant way to deal with that. Exotic structures like [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) rely on commutativity for that, but it’s far beyond the scope of this text.
 
-There's another structure that I like a lot. It's a very simple yet common one, and is called the "**Cyclic Group**", and its key idea is the modulo, hence the name cyclic. The days of the week form such a cyclic group of order 7 (its size), and the months of the year are another of order 12. Cyclic groups have a finite number of values, and when you reach the last value your cycle back to the first one: if the order of the cyclic group is 3, then the values are {0, 1, 2} and 2+1 = 0. 
+There's another structure that I like a lot. It's a very simple yet common one, and is called the "**Cyclic Group**", and its key idea is the modulo, hence the name cyclic. The days of the week form such a cyclic group of order 7 (its size), and the months of the year are another of order 12. Cyclic groups have a finite number of values, and when you reach the last value your cycle back to the first one: if the order of the cyclic group is `3`, then the values are `{0, 1, 2}` and `2 + 1 = 0`. 
 
 Numeration and time love cyclic groups, and as a result, domain-specific numeration and time also love them. For example, in finance, financial derivatives like options and futures are identified by their expiry date, simplified as a month code and a year code, e.g. H9 means March 2019, but also March 2029 or March 2009. The letter codifies the month, and the number codifies the year. They're both cyclic groups (one of order 12, and the other of order 10). And it turns out that the product of both is also a cyclic group of order 12*10 = 120, that's what we can learn by looking [Wikipedia on Cyclic Groups](https://en.wikipedia.org/wiki/Cyclic_group). One benefit from using established formalism is that it comes with a lot of proven properties and theorems we can rely on safely. One of interest is that every cyclic group of order N is isomorphic (think equivalent) to the one on integers of order N, called Z/nZ. This means in practice that you can always implement it with integers as the internal state and modulo arithmetics. 
 
@@ -730,19 +730,19 @@ a.(b+c) = a.b + a.c
 
 Over the past 15 years I've created my own domain-specific values from all the above-mentioned structures, and many times without knowing the corresponding name. Still, it helps to pay attention to the properties that we can build upon or not, for a recap, with a given operation noted "+": 
 
-* **closure of operation** T + T is a T 
+* **closure of operation** `T + T` is a `T` 
 
-* **associativity**: a + (b + c) = (a + b) + c 
+* **associativity**: `a + (b + c) = (a + b) + c` 
 
-* **neutral element** e such as a + e = a
+* **neutral element** `e` such that `a + e = a`
 
-* **inverse** (-a) for any a such as a + (-a) = 0 (your own zero) 
+* **inverse** `(-a)` for any `a` such that `a + (-a) = 0` (your own zero) 
 
-* **using a coefficient**: a + alpha.b 
+* **using a coefficient**: `a + alpha.b` 
 
-* **commutativity** : a + b = b + a 
+* **commutativity** : `a + b = b + a` 
 
-* **cycle** of order N: a + N = a
+* **cycle** of order `N`: `a + N = a`
 
 ### Inheriting the algebraic properties from the implementation structures 
 
@@ -760,7 +760,7 @@ Creating your own arithmetic helps keep your code simple even when you need to p
 
 And to expand the operation into the tuple-level operation, trying to preserve some desirable properties along the way. 
 
-For example for the type TrustedNumber(Value, Uncertainty)  you could define the addition operation this way, in a pessimist fashion such as the resulting uncertainty is the worst of both operands:
+For example for the type `TrustedNumber(Value, Uncertainty)`  you could define the addition operation this way, in a pessimist fashion such as the resulting uncertainty is the worst of both operands:
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -885,7 +885,7 @@ We’re lucky the error margins are additive too. But it’s also possible to ca
 
 Now we’re almost done, but remember we wanted to track the proportion of certified numbers in the whole chain. A proportion is typically expressed in percentage, and it’s a ratio. If we compose one impact that is 100% certified with two other that are not at all, then we should end up with a proportion of certification of 1/3, i.e. 33%. But we want this proportion to be weighted by the respective mass of each supplier in the final product. We notice that this kind of weighted ratio is not additive at all, so we need to use the trick of making it into a tuple: (total certification percents, total of the weights in kg), which we can compose with addition and multiplication by a scalar.
 
-So we now decorate the Amount class with a CertifiedAmount class that expands it with this tuple:
+So we now decorate the Amount class with a `CertifiedAmount` class that expands it with this tuple:
 
 {line-numbers=off,lang=java}
 ~~~~~~~~
@@ -901,7 +901,7 @@ public static class CertifiedAmount
   private final double weight; 
 ~~~~~~~~
 
-And we update our EnvironmentalImpact class to use the CertifiedAmount instead of the Amount, which is easy since it has the exact same methods names and signatures.
+And we update our `EnvironmentalImpact` class to use the `CertifiedAmount` instead of the Amount, which is easy since it has the exact same methods names and signatures.
 
 Now let’s use that for 1 pizza, that is made of 1 dough, 0.3 (kg) of tomato sauce and some cooking in the restaurant.
 
