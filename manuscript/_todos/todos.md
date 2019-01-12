@@ -14,3 +14,4 @@
 - all todos.txt files and TODO annotations in the texts 
 - Somehow put the biographies and licenses in the book
 - Check Einar Landre's images (put in the text or delete?)
+- Reduce image sizes, see leanpub docs for recommendation
