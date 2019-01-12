@@ -19,6 +19,7 @@ martin-fowler/essay.md
 mathias-verraes/essay.md
 mel-conway/essay.md
 michiel-overeem/essay.md
+paul-rayner/essay.md
 rebecca-wirfs-brock/essay.md
 scott-millett/essay.md
 scott-wlaschin/essay.md

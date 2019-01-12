@@ -15,6 +15,7 @@ Martin Fowler
 Mathias Verraes
 Mel Conway
 Michiel Overeem
+Paul Rayner
 Rebecca Wirfs-Brock
 Scott Millett
 Scott Wlaschin
