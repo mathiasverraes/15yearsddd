@@ -1,18 +1,16 @@
 # Todos
 
-- about
-- fix markdownlint-cli output
-- cover image
-- table of contents
-- convert David West's entry to markdown
-- convert Mel Conway
-- Mathias Verraes
-- Cyrille Martraire: formatting
-- Martin Fowler: edit transition
-- all todos.txt files and TODO annotations in the texts
-- Greg Young
-- receive and clean up Indu's photos. Fade everything but the captain and the dog.
-- biographies
-
-- We found the following problems with your images:\n
-- The generated mobi file is 97 Megabytes. If your file is larger than 49 MB it will not be sendable with Leanpub's send-to-kindle functionality or Amazon's Send to Kindle app.
+- Add "About this book" (Mathias) or make a draft (Paul)
+- Add acknowledgments
+- Move Paul's image (Paul)
+- Finish Mathias' essay (Mathias)
+- convert Mel Conway's essay to Markdown
+- Format Cyrille Martraire: formatting (Mathias)
+- Compare David West's pdf output to his word doc
+- receive and clean up Indu's photos. Fade everything but the captain and the dog. (Mathias)
+- fix markdownlint-cli output (Mathias)
+- Prettier table of contents (Mathias)
+- Martin Fowler: edit transition or add an introduction (Paul)
+- all todos.txt files and TODO annotations in the texts 
+- Somehow put the biographies and licenses in the book
+- Check Einar Landre's images (put in the text or delete?)
