@@ -21,3 +21,5 @@
 - Use markdown for all URLs so they turn blue
 - Replace Rebecca's image of Strategic vs Tactical
 - Swap Cyrille's quote from Mathias blog to a reference to the article here
+- Add a changelog after first publication
+- Replace author by Domain-Driven Design Europe
