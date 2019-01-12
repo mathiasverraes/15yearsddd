@@ -1,6 +1,6 @@
 # The Captain of the Night Watch (by Indu Alagarsamy)
 
-*This article is based on a conversation that ensued during a midnight stroll in the streets of Amsterdam with Eric Evans, Paul Rayner, and Mathias Verraes. Reading time: 6 minutes.*
+*This article is based on a conversation that ensued during a midnight stroll in the streets of Amsterdam with Eric Evans, Paul Rayner, and Mathias Verraes.*
 
 There I was, standing in front of a masterpiece, thanking my lucky stars of the incredible opportunity that I had just been given to be there, to be present in that moment. I was in front of Rembrandt’s Night Watch, standing in complete awe. The captain was striking and regal. The light flowed into the room, as if the heavens were trying to illustrate his authority.  He was giving orders to the people around him. There was a sense of life and belonging, a canvas that was filled with so much emotion all captured so beautifully. I was in the midst of it all, facing the captain and for a brief moment, it almost felt as if he was walking straight toward me.
 
