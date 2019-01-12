@@ -16,3 +16,4 @@
 - Check Einar Landre's images (put in the text or delete?)
 - Reduce image sizes, see leanpub docs for recommendation
 - Choose an order for the essays
+- Decide if we keep all Jef's & Vladikk's essays or pick one for each.
