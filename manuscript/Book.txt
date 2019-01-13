@@ -1,5 +1,5 @@
 _todos/todos.md
-_about/page.md
+_foreword/foreword.md
 alberto-brandolini/essay.md
 alexey-zimarev/essay.md
 anita-kvamme/essay.md

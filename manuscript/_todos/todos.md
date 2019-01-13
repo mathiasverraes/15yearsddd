@@ -1,7 +1,6 @@
 # Todos
 
-- Add "About this book" (Mathias) or make a draft (Paul)
-- Add acknowledgments
+- Review Foreword (Paul)
 - convert Mel Conway's essay to Markdown
 - Martin Fowler: edit transition or add an introduction (Paul)
 - Move Paul's image (Paul)
@@ -13,7 +12,7 @@
 - all todos.txt files and TODO annotations in the texts 
 - Somehow put the biographies and licenses in the book
 - Check Einar Landre's images (put in the text or delete?)
-- Reduce image sizes, see leanpub docs for recommendation
+- Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere. 
 - Choose an order for the essays
 - Prettier table of contents (Mathias)
 - "Title (by Author)" => "Title — Author"
