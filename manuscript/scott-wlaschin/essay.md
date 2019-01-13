@@ -1,8 +1,8 @@
 # Domain Modeling with Algebraic Data Types (by Scott Wlaschin)
 
-*Authors note: It is a privilege to be able to contribute to this project. Even though it has been fifteen years since 'Domain Driven Design' was published, its insights and wisdom are just as valuable as ever, and continue to influence each new generation of programmers. One thing that has changed since it was written is the rise of functional programming as an alternative paradigm to object-oriented programming. Many articles on functional programming focus on the mathematical aspects, but I believe it has great potential for effective design in conjunction DDD principles. This chapter, condensed from my book "Domain Modeling Made Functional," explains why.*
+*Authors note: It is a privilege to be able to contribute to this project. Even though it has been fifteen years since 'Domain-Driven Design' was published, its insights and wisdom are just as valuable as ever, and continue to influence each new generation of programmers. One thing that has changed since it was written is the rise of functional programming as an alternative paradigm to object-oriented programming. Many articles on functional programming focus on the mathematical aspects, but I believe it has great potential for effective design in conjunction DDD principles. This chapter, condensed from my book "Domain Modeling Made Functional," explains why.*
 
-One of the main aims of Domain Driven Design is to promote good communication between the development team, domain experts, and other stakeholders.
+One of the main aims of Domain-Driven Design is to promote good communication between the development team, domain experts, and other stakeholders.
 In particular, there should be a very close correspondence between the mental model of the domain experts and the code used in the implementation.
 That is, if the domain expert calls something an "Order" then we should have something called an "Order" in the code that behaves the same way.
 And conversely, we should avoid having things in our code that do *not* represent something in the domain expert's model. That means no terms like "OrderFactory",
@@ -36,7 +36,7 @@ Let's look at each of these in more detail.
 Domain experts will never talk about "integers" or "strings". Instead, they will use domain concepts such as "order quantity" or "email address".
 These concepts may be *represented* by an integer or string, but they are not equivalent. For example, an "order id", a "product id", and an "order quantity" may all be represented by integers, but the domain concepts are in no way equivalent to an integer. It doesn't make sense to multiply an "order id" by two, for example. 
 
-And even concepts which *are* integers don't correspond directly to an `int` in a programming language--there are almost always constraints. For example, an "order quantity" must be at least one, and probably has an upper bound as well, such as 100. It's unlikely that a sales system would let you order 2 billion items!
+And even concepts which *are* integers don't correspond directly to an `int` in a programming language — there are almost always constraints. For example, an "order quantity" must be at least one, and probably has an upper bound as well, such as 100. It's unlikely that a sales system would let you order 2 billion items!
 
 Similarly an "email address" and a "phone number" might both be represented by strings, but again they are not interchangeable, and each will have special constraints.
 
@@ -92,7 +92,7 @@ Failing to clearly distinguish between these kinds of choices results in a confu
 
 ### Fighting the impulse to do class-driven design
 
-One of the key tenets of Domain Driven Design is *persistence ignorance*. It is an important principle because it forces you to focus on modeling the domain accurately, without worrying about the representation of the data in a database. Indeed, if you're an experienced object-oriented developer, then the idea of not being biased to a particular database model will be familiar, Object-oriented techniques such as dependency injection encourage you to separate the database implementation from the business logic.
+One of the key tenets of Domain-Driven Design is *persistence ignorance*. It is an important principle because it forces you to focus on modeling the domain accurately, without worrying about the representation of the data in a database. Indeed, if you're an experienced object-oriented developer, then the idea of not being biased to a particular database model will be familiar, Object-oriented techniques such as dependency injection encourage you to separate the database implementation from the business logic.
 
 But we also have to be careful of introducing bias into the design if we think in terms of objects and classes rather than the domain.
 For example, as the domain expert describes the different kinds of contact methods, you may be tempted to create a class hierarchy in your head, like this:
@@ -108,7 +108,7 @@ class EmailAddressContactMethod extends ContactMethodBase ...
 class PhoneNumberContactMethod extends ContactMethodBase ...   
 ```
 
-But letting classes drive the design can be just as dangerous as letting a database drive the design--again, we're not really listening to the requirements.
+But letting classes drive the design can be just as dangerous as letting a database drive the design — again, we're not really listening to the requirements.
 
 * In our mental class hierarchy we have introduced an artificial base class, `ContactMethodBase`, that doesn't exist in the real world. This is a distortion of the domain. Try asking the domain expert what a `ContactMethodBase` is! 
 * And similarly, an `EmailAddress` is a reusable primitive value, not specific to contact methods, so to use it in this particular context we have had to create a
@@ -118,12 +118,12 @@ The lesson here is that we should keep our minds open during requirements gather
 
 ### Workflows
 
-So far, we've been talking about "nouns" in our domain--the data structures. 
+So far, we've been talking about "nouns" in our domain — the data structures. 
 In practice though, these are not the most important thing to model. Why is that?
 
 Well, a business doesn't just *have* data, it *transforms* it somehow. That is, you can think of a typical business process as a series of data or document transformations. The value of the business is created in this process of transformation, so it is critically important to understand how these transformations work and how they relate to each other.
 
-Static data--data that is just sitting there unused--is not contributing anything. So what causes a person (or automated process) to start working with that data and adding value?
+Static data — data that is just sitting there unused — is not contributing anything. So what causes a person (or automated process) to start working with that data and adding value?
 Often it's an outside trigger (a piece of mail arriving or your phone ringing), but it can also be a time-based trigger (you do something every day at 10 a.m.) or an observation (there are no more orders in the inbox to process, so do something else).
 
 Whatever it is, it's important to capture it as part of the design. We generally call these things *Domain Events*. Domain Events are the starting point for almost all of the business processes we want to model. For example:
@@ -154,7 +154,7 @@ In the second case, the validation might fail (e.g. the link has expired) and so
 
 ### States and lifecycles
 
-Most important business entities have a lifecycle--they go through a series of changes over time. 
+Most important business entities have a lifecycle — they go through a series of changes over time. 
 
 * An invoice starts off as unpaid, and then transitions to being paid.
 * A purchaser starts off as a guest, and then transitions to being registered.
@@ -249,7 +249,7 @@ This can be read as:
 * An `AppleVariety` is either a `GoldenDelicious` *OR* a `GrannySmith` *OR* a `Fuji`. 
 * and so on for the other types of fruit.
 
-Unlike the `FruitSnack` example, there is no extra data associated with each case--they are just labels. 
+Unlike the `FruitSnack` example, there is no extra data associated with each case — they are just labels. 
 
 
 ### Simple types
@@ -267,7 +267,7 @@ This definition is generally simplified to one line, like this:
 type EmailAddress = EmailAddress of string
 ```
 
-Why would we create such a type? Because it's an easy way to create a "wrapper"--a type that contains a primitive (such as a `string` or `int`) as an inner value.
+Why would we create such a type? Because it's an easy way to create a "wrapper" — a type that contains a primitive (such as a `string` or `int`) as an inner value.
 
 For example, we might define wrapper types like these:
 
@@ -303,7 +303,7 @@ This can be read as: to use `CreateEmailAddress` you need to provide a `string` 
 
 ### Algebraic types are composable types 
 
-Now we can define what we mean by an algebraic type *system*.  It's simply a type system where *every* compound type is composed from smaller types by *AND*-ing or *OR*-ing them together. Using *AND* and *OR* to build new data types should feel familiar--we used the same kind of *AND* and *OR* to document our domain earlier. 
+Now we can define what we mean by an algebraic type *system*.  It's simply a type system where *every* compound type is composed from smaller types by *AND*-ing or *OR*-ing them together. Using *AND* and *OR* to build new data types should feel familiar — we used the same kind of *AND* and *OR* to document our domain earlier. 
 
 This kind of *composable* type system is a great aid in doing domain-driven design because we can quickly create a complex model simply by mixing types together in different combinations, as we'll see next.
 
@@ -398,7 +398,7 @@ type Purchaser =
 
 The description was: "An email is either validated or unvalidated. Password resets should only be sent to validated emails."
 
-It's important to distinguish between `Unvalidated` and `Validated` emails--there are different business rules around them, so we should define distinct types for each of these, and a choice type to combine them:
+It's important to distinguish between `Unvalidated` and `Validated` emails — there are different business rules around them, so we should define distinct types for each of these, and a choice type to combine them:
 
 ```
 type UnvalidatedEmailAddress = UnvalidatedEmailAddress of string
@@ -490,7 +490,7 @@ type CheckNumber = CheckNumber of int
 type CardNumber = CardNumber of string
 ``` 
 
-Next, as we discuss credit cards further, we might build up some more low-level types. A `CardType` is an *OR* type--a choice between `Visa` *or* `Mastercard`, while `CreditCardInfo` is an *AND* type, a record containing a `CardType` *and* a `CardNumber`:
+Next, as we discuss credit cards further, we might build up some more low-level types. A `CardType` is an *OR* type — a choice between `Visa` *or* `Mastercard`, while `CreditCardInfo` is an *AND* type, a record containing a `CardType` *and* a `CardNumber`:
 
 ```
 type CardType = Visa | Mastercard 
@@ -546,7 +546,7 @@ Or, to convert a payment from one currency to another:
 type ConvertPaymentCurrency = Payment -> Currency -> Payment
 ```
 
-where the first `Payment` is the input, the second parameter (`Currency`) is the currency to convert to, and the second `Payment`--the output--is the result after the conversion.
+where the first `Payment` is the input, the second parameter (`Currency`) is the currency to convert to, and the second `Payment` — the output--is the result after the conversion.
 
 ## Value Objects, Entities and Aggregates
 
@@ -554,8 +554,8 @@ We've now got a basic understanding of how to model the domain types and workflo
 
 ### Value objects
 
-In many cases, the data objects we are dealing with have no identity--they are interchangeable. For example, one instance of a `CustomerId` with value
-"1234" is the same as any other `CustomerId` with value "1234." We do not need to keep track of which one is which--they are equal to each other.
+In many cases, the data objects we are dealing with have no identity — they are interchangeable. For example, one instance of a `CustomerId` with value
+"1234" is the same as any other `CustomerId` with value "1234." We do not need to keep track of which one is which — they are equal to each other.
 
 When we model a domain using an algebraic type system, the types we create will implement this kind of field-based equality testing automatically. We
 don't need to write any special equality code ourselves, which is nice.
@@ -613,7 +613,7 @@ In functional programming languages, algebraic data types are immutable by defau
 
 How does this affect our design?
 
-* For *Value Objects*, immutability is required. Think of how we use them in common speech: if we change any part of a personal name, say, we call it a *new*, distinct name, not the same name with different data. The fact that immutability is the default means that Value Objects are very easy to implement--no extra work is needed.
+* For *Value Objects*, immutability is required. Think of how we use them in common speech: if we change any part of a personal name, say, we call it a *new*, distinct name, not the same name with different data. The fact that immutability is the default means that Value Objects are very easy to implement — no extra work is needed.
 * For *Entities*, it's a different matter. We expect the data associated with Entities to change over time; that's the whole point of having a constant identifier. So how can immutable data structures be made to work this way? The answer is that we make a *copy* of the Entity with the changed data while preserving the identity.
 All this copying seems like it might be a lot of extra work but isn't an issue in practice. Functional programming languages have built in support to make this easy.
 
@@ -727,7 +727,7 @@ type Option<'a> =
 ```
 
 The `Some` case means that there is data stored in the associated value `'a`. The `None` case means there is no data.
-The tick in `'a` is F#'s way of indicating a generic type--that is, the `Option` type can be used to wrap *any* other type.
+The tick in `'a` is F#'s way of indicating a generic type — that is, the `Option` type can be used to wrap *any* other type.
 The C# or Java equivalent would be something like `Option<T>`.
 
 To indicate optional data in the domain model then, we wrap the type in `Option<...>` just as we would in C# or Java. For example, if we have a `PersonalName`
@@ -756,7 +756,7 @@ data EmailAddress is string // Must not be null or empty. Must contain @ symbol.
 Rather than allowing the raw `int` and `string` values to be used, we want to ensure that, if we *do* have a `OrderQuantity` or `EmailAddress`, then
 we know *for sure* that the constraints have been satisfied. If we never need to check the constraints after creation, then that eliminates yet more defensive coding.
 
-This sounds great, so how do we ensure that the constraints are enforced? The answer: the same way as we would in any programming language--make the constructor private and have a separate function that creates valid values and rejects invalid values, returning an error instead. In FP communities, this is sometimes called the *smart constructor* approach.
+This sounds great, so how do we ensure that the constraints are enforced? The answer: the same way as we would in any programming language — make the constructor private and have a separate function that creates valid values and rejects invalid values, returning an error instead. In FP communities, this is sometimes called the *smart constructor* approach.
 
 Here's an example of this approach applied to `OrderQuantity`:
 
@@ -854,7 +854,7 @@ type Contact = {
 }
 ```
 
-Again what we've done is good for developers (we can't accidentally have no contact information--one less test to write) but also it is good for the *design*.
+Again what we've done is good for developers (we can't accidentally have no contact information — one less test to write) but also it is good for the *design*.
 The design makes it very clear that there are only three possible cases, and exactly what those three cases are. We don't need to look at documentation, we can just look at the code itself.
 
 
@@ -862,9 +862,9 @@ The design makes it very clear that there are only three possible cases, and exa
 
 If we look at some of the snippets above, we should be pleased. We have managed to capture the essence of the verbal domain descriptions, but as code rather than as text or documentation.
 
-From a developer's point of view, we have attained one of the goals of Domain Driven Design--compilable code that defines and implements the domain model and ubiquitous language. Another developer joining the project would be able to understand the domain model without having to translate between the implementation concepts and the domain concepts.
+From a developer's point of view, we have attained one of the goals of Domain-Driven Design — compilable code that defines and implements the domain model and ubiquitous language. Another developer joining the project would be able to understand the domain model without having to translate between the implementation concepts and the domain concepts.
 
-Furthermore, this code is still quite comprehensible for non-developers. With a little training, I believe it would be possible for a domain expert to understand this code--probably no harder than understanding UML digrams or other kinds of technical documentation. It certainly is more readable than a conventional programming language such as C# or Java.
+Furthermore, this code is still quite comprehensible for non-developers. With a little training, I believe it would be possible for a domain expert to understand this code — probably no harder than understanding UML digrams or other kinds of technical documentation. It certainly is more readable than a conventional programming language such as C# or Java.
 
 This approach, using types as documentation, is very general and it should be clear now how we can apply it to almost any domain modeling situation. Because there's no
 implementation at this point, it's a great way to try ideas out quickly when you are collaborating with domain experts. And of course, because it is just

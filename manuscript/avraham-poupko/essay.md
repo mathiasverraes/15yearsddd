@@ -90,7 +90,7 @@ The same applies when we are learning a new domain. Learning a new domain is not
 
 ## In summary
 
-Domain Driven Design has truly revolutionized the way we think and talk about domains, domain problems and the solutions to those problem. A critical component in Domain Driven Design is ubiquitous language. The power of ubiquitous language is not just in giving a common meaning to words, it is in being aware of and making use of the complexities of language. If we understand those complexities, we will be better communicators. 
-I believe that a deeper study of the theory of language by Domain Driven Design practitioners will advance Domain Driven Design. By better understanding how human communication works, we can better communicate. Better communication always leads to better design.
+Domain-Driven Design has truly revolutionized the way we think and talk about domains, domain problems and the solutions to those problem. A critical component in Domain-Driven Design is ubiquitous language. The power of ubiquitous language is not just in giving a common meaning to words, it is in being aware of and making use of the complexities of language. If we understand those complexities, we will be better communicators. 
+I believe that a deeper study of the theory of language by Domain-Driven Design practitioners will advance Domain-Driven Design. By better understanding how human communication works, we can better communicate. Better communication always leads to better design.
 
 

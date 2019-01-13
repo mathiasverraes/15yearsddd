@@ -4,7 +4,7 @@ Discovering, honing and respecting boundaries is one of the most important facet
 
 I often use Eric's analogy of cells and membranes to describe bounded contexts. But cells are also part of all living things and DDD itself is a living thing.
 
-In its 15th year, at ExploreDDD, Eric expressed his gratitude to the DDD community for understanding this -- adding to it and evolving DDD. And he was earnest in his request that the community continue to evolve DDD, continue it's life, the growth of new cells and as needed, the death of cells, as well. DDD was already a gift, yet this blessing to participate in his work seems to be an even greater one.
+In its 15th year, at ExploreDDD, Eric expressed his gratitude to the DDD community for understanding this — adding to it and evolving DDD. And he was earnest in his request that the community continue to evolve DDD, continue it's life, the growth of new cells and as needed, the death of cells, as well. DDD was already a gift, yet this blessing to participate in his work seems to be an even greater one.
 
 There are many great minds in the DDD community and I'm excited to see where else DDD will take us. Even more, I look forward to watching Eric take pride as he witnesses and contributes to the future of DDD. And he will surely continue to encourage the community as we spread the power of DDD.
 

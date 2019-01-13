@@ -6,7 +6,7 @@ File after file, project after project, finding traces of time in systems seems 
 
 Hints take the form of asynchronous entry points, timers, threads and locks. Concurrent data access or synchronization primitives. Be it a date or a duration, meaning is shattered and understanding lost.
 
-From a Domain Driven Design practitioner perspective, it's obvious that there is something missing. A disturbing lack of model.
+From a Domain-Driven Design practitioner perspective, it's obvious that there is something missing. A disturbing lack of model.
  
 ## The essence of Time
 
@@ -78,7 +78,7 @@ Greg Young would say:
 
 ## Domain Events
  
-There is no change in the domain that is not due to an Event. And Domain Driven Design should definitely encompass them to create better models when time passing in the system is part of the problem.
+There is no change in the domain that is not due to an Event. And Domain-Driven Design should definitely encompass them to create better models when time passing in the system is part of the problem.
 
 Once starting to look for them, events appear everywhere in the Ubiquitous Language:
 

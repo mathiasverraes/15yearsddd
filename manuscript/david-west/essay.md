@@ -73,7 +73,7 @@ And, of course, for software engineering the domain was irrelevant. Users provid
 
 ## Comes the Dawn
 
-My first impression, opening Eric Evans’ *Domain Driven Design*, was pleased amazement that someone was actually paying attention and was aware of the underground existence of the Domain.
+My first impression, opening Eric Evans’ *Domain-Driven Design*, was pleased amazement that someone was actually paying attention and was aware of the underground existence of the Domain.
 
 Martin Fowler’s Introduction and Eric’s own words assert that a robust domain model is essential for the success of any software project. They even asserted that there was an entire community within software development that understood the essential value of domain knowledge and domain models.
 
@@ -164,7 +164,7 @@ While this is clearly possible with languages like COBOL and Smalltalk (and for 
 
 >  “The heart of software is its ability to solve domain-related problems for its user. All other features, vital though they may be, support this basic purpose.”
 
-Eric Evans, Domain Driven Design, page 4
+Eric Evans, Domain-Driven Design, page 4
 
 At the heart of this simple statement is another gauntlet thrown at the feet of traditional, mainstream, software engineering. Another example of Eric challenging prevailing wisdom.
 
