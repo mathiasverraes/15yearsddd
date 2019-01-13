@@ -3,7 +3,6 @@
 - Add "About this book" (Mathias) or make a draft (Paul)
 - Add acknowledgments
 - convert Mel Conway's essay to Markdown
-- Format Cyrille Martraire: formatting (Mathias)
 - Martin Fowler: edit transition or add an introduction (Paul)
 - Move Paul's image (Paul)
 - Finish Mathias' essay (Mathias)
@@ -23,9 +22,9 @@
 - Swap Cyrille's quote from Mathias blog to a reference to the article here
 - Add a changelog after first publication
 - Replace author by Domain-Driven Design Europe
+- Uniform spelling of "Domain-Driven Design" 
 
 Leanpub errors:
-
 
 We found the following problems with your images:\n
 - We could not find the file ./img/DDD_Model_Exploration_Whirlpool.png. We have put a place-marker image in its place. It is used in these files: kenny-baas-schwegler/essay.md
