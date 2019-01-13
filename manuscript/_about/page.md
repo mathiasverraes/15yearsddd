@@ -17,6 +17,9 @@ Domain-Driven Design Europe
 
 ## Acknowledgments
 
-I'd like to thank Céline Dursin, Anneke Schoonjans, and Paul Rayner for their help with the logistics of this book. The wonderful cover design is by Nick Liefhebber. And most importantly, I'm incredibly thankful for the more than 20 authors who contributed to this book. They are all people who have in one way or another inspired me, and countless others. 
+I'd like to thank Anneke Schoonjans, Céline Dursin, and Paul Rayner, for their help with the logistics of this book. The wonderful cover design is by Nick Liefhebber. And most importantly, I'm incredibly thankful for the more than 20 authors who contributed to this book. They are all people who have in one way or another inspired me, and countless others. 
 
 
+## About DDD Europe
+
+Domain-Driven Design Europe is the world's leading DDD conference. Our mission is to expose the community to new ideas and influences from inside and outside the DDD community, and to spread DDD throughout the software industry. Please visit [dddeurope.com](https://dddeurope.com) to learn more, and we hope to welcome you as a participant soon.
