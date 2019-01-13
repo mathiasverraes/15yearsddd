@@ -10,7 +10,7 @@
 - receive and clean up Indu's photos. Fade everything but the captain and the dog. (Mathias)
 - fix markdownlint-cli output (Mathias)
 - all todos.txt files and TODO annotations in the texts 
-- Somehow put the biographies and licenses in the book
+- Somehow put the biographies and licenses in the book (use leanpub sidebars?)
 - Check Einar Landre's images (put in the text or delete?)
 - Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere. 
 - Choose an order for the essays
