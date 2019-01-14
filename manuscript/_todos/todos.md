@@ -22,6 +22,7 @@
 - Add a changelog after first publication
 - Replace author by Domain-Driven Design Europe
 - Uniform spelling of "Domain-Driven Design" 
+- Smaller images in Cyrille's text
 
 Leanpub errors:
 
