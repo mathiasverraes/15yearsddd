@@ -94,7 +94,7 @@ It's all about *composability*, which is highly desirable pretty much everywhere
 
 So how do we implement monoids in plan Java code? 
 
-Monoids are typical Functional Programming; In Functional Programming everything is a value; Therefore: Monoids are values! 
+> Monoids are typical Functional Programming; In Functional Programming everything is a value; Therefore: Monoids are values! 
 
 That's a solid proof that monoid are value objects. Seriously though, they do have to be value objects, i.e. immutable and equality by value. But monoid objects don't have to be anemic, with just data. They are supposed to have behavior, and in particular behavior that compose, like lengths, where we want to be able to write: `18 m + 16 m = 34 m`. The corresponding code for this method would be:
 
@@ -111,7 +111,7 @@ In addition, being immutable and side-effect-free means that testing is a no-bra
 
 ## Monoids in domain modeling
 
-Domain-specific lists, like a mailing list defined as a list of emails addresses, can form a monoid at least twice, once with the union operation, and a second time with the intersection operation. The neutral element would be nobody() in the former case, and everybody() in the latter case. Note the naming of the neutral elements that is domain-specific, instead of more generic names like *empty* or *all*. But we could go further and rename the intersection() operation into a word like *overlapping* is this was the way the domain experts talked about this problem.
+Domain-specific lists, like a mailing list defined as a list of emails addresses, can form a monoid at least twice, once with the union operation, and a second time with the intersection operation. The neutral element would be *nobody()* in the former case, and *everybody()* in the latter case. Note the naming of the neutral elements that is domain-specific, instead of more generic names like *empty* or *all*. But we could go further and rename the intersection() operation into a word like *overlapping* is this was the way the domain experts talked about this problem.
 
 ### Money and Quantity
 
@@ -509,7 +509,7 @@ It’s not uncommon for some domain concept to be a monoid more than once, for e
 
 ### Internal implementation hackery
 
-Also note that neutral elements may call for some internal magical hacks for their implementation. You may rely on a magic value like -1 or Integer.MIN-VALUE, or on some special combination of magic values. You may think it’s bad code, and it would be if it was meant to be seen or used regularly. However as long as it’s well-tested (or built from the tests) and as long as it’s totally invisible for the caller of the class, then it will only cause harm when you are changing this class itself, which is probably acceptable. A monoid typically is not subject to a lot of changes, it’s a finely tuned and highly consistent system that just works perfectly, thanks to its mathematical ground.
+Also note that neutral elements may call for some internal magical hacks for their implementation. You may rely on a magic value like `-1` or `Integer.MIN-VALUE`, or on some special combination of magic values. You may think it’s bad code, and it would be if it was meant to be seen or used regularly. However as long as it’s well-tested (or built from the tests) and as long as it’s totally invisible for the caller of the class, then it will only cause harm when you are changing this class itself, which is probably acceptable. A monoid typically is not subject to a lot of changes, it’s a finely tuned and highly consistent system that just works perfectly, thanks to its mathematical ground.
 
 ### Established Formalisms, for Living Documentation
 
@@ -592,7 +592,7 @@ An alternative to exceptions that can really happen at runtime is to make the mo
 
 Because a monoid has to follow the Closure of operation, it follows that the special extra value has to be part of the set of legal values for the monoid, not just as output but also as input. Usually the implementation of the operation would just bypass the actual operation and immediately return `NaN` when you get a `NaN` as a parameter: you propagate the failure, but in a composable fashion. 
 
-This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the `Maybe` monad and its two values `Some` or `None`, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Elemen](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)** like `NaN`: `a + NaN = a` 
+This idea was proposed by Ward Cunningham as the Whole Object pattern from his CHECKS patterns. Java Optional, and monads in functional programming languages, like the `Maybe` monad and its two values `Some` or `None`, are similar mechanisms to achieve this invisible propagation of failure. This is a property of an **[Absorbing Element](https://en.wikipedia.org/wiki/Absorbing_element)[ ](https://en.wikipedia.org/wiki/Absorbing_element)** like `NaN`: `a + NaN = a` 
 
 In the case of ranges with the union operation, you may want to introduce a special element `NotARange` to represent the error case of the union of disjoint ranges:
 
@@ -612,7 +612,7 @@ For example, given a function that gets a `String` and returns an `integer`, we 
 
 As mentioned already, monoids are easy to test as they’re immutable and have no side-effect. Given the same inputs, the *combine* operation will always return the same result. And with just one single function, the testing surface of a Monoid is minimal. 
 
-Still monoids should be tested on all their important properties, like being associative, and on some random values, with an emphasis on the neutral elements, any artificial value like NaN or Special Cases, and when approaching the limits of the set (MAX_VALUE...).
+Still monoids should be tested on all their important properties, like being associative, and on some random values, with an emphasis on the neutral elements, any artificial value like `NaN` or Special Cases, and when approaching the limits of the set (`MAX_VALUE`...).
 
 Since monoids are all about properties ("expressions that hold true") like the following: 
 
