@@ -55,7 +55,7 @@ EventStorming is a flexible workshop format that allows a massive collaborative 
 At the very root the recipe is really simple:
 
 * make sure all the key people (business _and_ technical stakeholders) are in the same room;
-* provide them with an unlimited modeling surface (usually a paper roll on a long straight wall plus some hundreds of coloured sticky notes);
+* provide them with an unlimited modeling surface (usually a paper roll on a long straight wall plus some hundreds of colored sticky notes);
 * have them model the entire business flow with **Domain Events** along a timeline.
 
 Ib an EventStorming workshop, domain events — or just _events_ — are not software constructs: they're short sentences written on a sticky note, using a verb at the past tense.
@@ -66,7 +66,7 @@ With a little facilitation magic, in a few hours, we end up with a big behaviour
 
 ![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
 
-A massive flood of coloured sticky notes, apparently. But, as the adagio says, _it's the journey, not the destination_: the process of visualizing the whole business flow, with the active participation of all the key stakeholders, is our way to trigger critical insights and discoveries.
+A massive flood of colored sticky notes, apparently. But, as the adagio says, _it's the journey, not the destination_: the process of visualizing the whole business flow, with the active participation of all the key stakeholders, is our way to trigger critical insights and discoveries.
 
 ## Structure of a Big Picture workshop
 
@@ -80,7 +80,7 @@ The key trick here is that nobody knows the whole story. Imagine we're exploring
 
 If you know one job well, you probably won't have time to know every other job at the same depth. And ...that's exactly what we're expecting to find in every business: local experts, masters of their own silo, with variable degrees of understanding of the other portions of the business.
 
-The more participants, the harder it will be to actually follow a timeline: diverging perspectives and specialized view on what the business is actually doing will usually lead to **clusters of locally ordered events, in a globally inconsistent whole**.
+The more participants, the harder it will be to follow a timeline: diverging perspectives and specialized view on what the business is really doing will usually lead to **clusters of locally ordered events, in a globally inconsistent whole**.
 
 Far from perfect, but a good starting point. Now we see stuff.
 
@@ -90,7 +90,7 @@ Moreover, this first step is usually _silent_: people will quietly place their p
 
 #### Divergence as a clue
 
-Actually, we want this phase to be quiet: people should not agree yet about what to write on sticky notes. The facilitator should make sure that there is plenty of markers and stickies so that everybody can write their own interpretation of the flow independently, without influencing each other too much.
+Actually, we want this phase to be quiet: people should not agree yet about what to write on sticky notes. The facilitator should make sure that there is plenty of markers and stickies so that everybody can write their interpretation of the flow independently, without influencing each other too much.
 
 As a result, we'll end up with a lot of _duplicated_ sticky notes, or _apparently duplicated_ ones.
 
@@ -198,7 +198,7 @@ The more we progress along the timeline, the more clarity is provided to the flo
 
 There are a few extra steps that might be performed now, usually depending on the context, that may provide more insights. I'll describe them briefly.
 
-* We sometimes explore the **value** that is supposed to be _generated_ or unfortunately _destroyed_ in the business flow. We explore different currencies: money being the most obvious one, often to discover that other are more interesting (like _time_, _reputation_, _emotional safety_, _stress_, _happiness_, and so on).
+* We sometimes explore the **value** that is supposed to be _generated_ or unfortunately _destroyed_ in the business flow. We explore different currencies: money being the most obvious one, often to discover that others are more interesting (like _time_, _reputation_, _emotional safety_, _stress_, _happiness_, and so on).
 * We explore **problems** and **opportunities** in the existing flow, allowing everyone to signal issues that didn't surface during the previous steps, or to make improvement ideas visible.
 * We might challenge the status quo with an **alternative flow**: once the understanding of the current situation is settled, what happens if we change it? Which parts are going to stay the same and which ones are going to be radically changed or dismissed?
 * We might **vote the most important issue** in order to leverage the clarity of collective understanding into political momentum to do the right thing[^PTCD].
@@ -229,7 +229,7 @@ Moreover, keep in mind that when two models are interacting, there are usually _
 
 ![Two interacting models usually mean three languages.](images/alberto-brandolini/Two_BCs_three_languages.png)
 
-A simple example: I am trying to communicate with my readers using English language, but I am not a native English speaker. My internal reasoning model is sometimes English too, and sometimes Italian. But readers shouldn't be able to tell (I hope). At the same time, this text is not intended for British and American people only, every reader will traslate into their own mental model, possibly in their own native language.
+A simple example: I am trying to communicate with my readers using English language, but I am not a native English speaker. My internal reasoning model is sometimes English too, and sometimes Italian. But readers shouldn't be able to tell (I hope). At the same time, this text is not intended for British and American people only, every reader will translate into their own mental model, possibly in their own native language.
 
 In general, **different phases** usually mean **different problems**, which usually leads to **different models**.
 
@@ -251,7 +251,7 @@ Not every swimlane is a Bounded Context, sometimes they're just an _if_ statemen
 
 An interesting twist might happen when dealing with different _personas_, apparently the flow should be the same, but it's not.
 
-Some speakers can be invited, other submit their proposals. The flows can be independent in the upstream part of the flow. Downstream they're probably not.
+Some speakers can be invited, others submit their proposals. The flows can be independent in the upstream part of the flow. Downstream they're probably not.
 
 ![Two parallel flows may require independent models](images/alberto-brandolini/parallel_flows_and_personas.png)
 
@@ -308,7 +308,7 @@ Compared to traditional, formal requirements gathering, the amount of informatio
 
 There's something, like people's behavior and body language, that would never fit into standard documentation but will get make it to a good model because, _...we've been there!_ We've seen people in action around _their problem_ and some stupid things like mixing things just because they happen to have the same name, won't happen!
 
-And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed, because they just don't belong together. They're metres away!
+And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed because they just don't belong together. They're metres away!
 
 I hope the heuristics I just described will help you to sketch your models, but more importantly this will give you the chance to understand the deep purpose of your software, and maybe of your organization too, in a compelling call to do the right thing.
 
@@ -322,12 +322,12 @@ In retrospective, I still wonder why we wasted all those years doing the opposit
 
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
 
-[^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity diring the conference and the few days before. The need for specialization is continuously at odd with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
+[^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity during the conference and the few days before. The need for specialization is continuously at odds with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
 
 [^PTCD]: This area might possibly be what your _Core Domain_ looks right now.
 
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
 
-[^IUTWHJTMMH]: I mighgt have used the word _'heuristic'_ here just to make Mathias Verraes happy.
+[^IUTWHJTMMH]: I might have used the word _'heuristic'_ here just to make Mathias Verraes happy.
 
 [^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! In fact, EventStorming leverages this innate human behaviour and turns into a modelling propeller.
