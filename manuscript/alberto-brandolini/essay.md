@@ -322,12 +322,12 @@ In retrospective, I still wonder why we wasted all those years doing the opposit
 
 [^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
 
-[^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity during the conference and the few days before. The need for specialization is continuously at odds with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
+[^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity during the conference and the days before. The need for specialization is continuously at odds with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
 
-[^PTCD]: This area might possibly be what your _Core Domain_ looks right now.
+[^PTCD]: This area might be what your _Core Domain_ looks right now.
 
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
 
 [^IUTWHJTMMH]: I might have used the word _'heuristic'_ here just to make Mathias Verraes happy.
 
-[^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! In fact, EventStorming leverages this innate human behaviour and turns into a modelling propeller.
+[^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! In fact, EventStorming leverages this innate human behavior and turns into a modeling propeller.
