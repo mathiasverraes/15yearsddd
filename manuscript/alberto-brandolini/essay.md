@@ -98,7 +98,7 @@ As a result, we'll end up with a lot of _duplicated_ sticky notes, or _apparentl
 
 It's usually a good idea to resist the temptation to resolve those duplicates and find and _agree_ on a single wording choice. Different wording may refer to different perspectives on the same event, hinting that this might be relevant in more than one Bounded Context, or that the two or more events aren't exactly the same thing.
 
-Getting back to our conference scenario, we might expect to have a few domain events referring more or less to the same thing, with different wording. Something like `Schedule Ready`, `Schedule Completed`, `Schedule Published` and so on.
+Getting back to our conference scenario, we might expect to have a few domain events referring more or less to the same thing, with different wording. Something like: `Schedule Ready`, `Schedule Completed`, `Schedule Published` and so on.
 
 This discordance is already telling us something: this event (assuming or pretending there's only one event here) is probably relevant for different actors in the business flow.
 
@@ -253,7 +253,7 @@ An interesting twist might happen when dealing with different _personas_, appare
 
 Some speakers can be invited, others submit their proposals. The flows can be independent in the upstream part of the flow. Downstream they're probably not.
 
-![Two parallel flows may require independent models](images/alberto-brandolini/parallel_flows_and_personas.png)
+![Two parallel flows may require independent models.](images/alberto-brandolini/parallel_flows_and_personas.png)
 
 Some organizations are well-equipped to think in terms of _roles_: they'll recognize that speakers and keynote speakers are different in the left part of the flow, but they'll have a similar badge during the _registration process_, and they won't be different from regular attendees during lunchtime, when their role would be a simple `mouth to feed`.
 
@@ -261,7 +261,7 @@ Some organizations are well-equipped to think in terms of _roles_: they'll recog
 
 This is so obvious that I feel embarrassed to mention, but here we are: the people. Where people are during the exploration is probably giving the simplest and powerful clue about different model distribution. 
 
-People who are responsible for the website design will spend most time hovering around _the areas that they know better_ in order to provide answers or to _correct wrong stickies[^NCRTT]_ that they see on the paper roll. Or they will be commenting around _the areas that they really care about_, maybe because the current implementation is far from satisfactory.
+People who are responsible for the website design will spend most time hovering around _the areas that they know better_, to provide answers or to _correct wrong stickies[^NCRTT]_ that they see on the paper roll. Or they will be commenting around _the areas that they really care about_, maybe because the current implementation is far from satisfactory.
 
 **Different people** are a great indicator of **different needs**, which means **different models**.
 
@@ -310,7 +310,7 @@ There's something, like people's behavior and body language, that would never fi
 
 And that won't require that much discipline, or rules. It will just look incredibly stupid to mix things that shouldn't be mixed because they just don't belong together. They're metres away!
 
-I hope the heuristics I just described will help you to sketch your models, but more importantly this will give you the chance to understand the deep purpose of your software, and maybe of your organization too, in a compelling call to do the right thing.
+I hope the heuristics I just described will help you to sketch your models, but, more importantly, this will give you the chance to understand the deep purpose of your software, and maybe of your organization too, in a compelling call to do the right thing.
 
 In a single sentence, the whole idea is really simple:
 
@@ -328,6 +328,6 @@ In retrospective, I still wonder why we wasted all those years doing the opposit
 
 [^IYOETR]: If you're old enough to remember what _defrag_ used to be. ;-)
 
-[^IUTWHJTMMH]: I might have used the word _'heuristic'_ here just to make Mathias Verraes happy.
+[^IUTWHJTMMH]: I might have used the word _'heuristic'_ here only to make Mathias Verraes happy.
 
-[^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! In fact, EventStorming leverages this innate human behavior and turns into a modeling propeller.
+[^NCRTT]: Nobody can resist this temptation: _somebody is wrong here!_ I have to point it out immediately! EventStorming leverages this innate human behavior and turns into a modeling propeller.
