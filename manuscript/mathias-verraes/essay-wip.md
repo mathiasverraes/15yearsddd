@@ -24,7 +24,7 @@ I> Some programming languages don't deal well with highly precise calculations. 
 
 ## The first step
 
-Are there existing design patterns that can help here? A good pattern to apply when dealing with monetary values is the `Value Object pattern` from [Domain-Driven Design](http://amzn.to/1CdXXP9). 
+Are there existing design patterns that can help here? A good pattern to apply when dealing with monetary values is the Value Object pattern from [Domain-Driven Design](http://amzn.to/1CdXXP9). 
 In fact, a couple of years before Eric Evans published his book, Martin Fowler described an implementation for `Money` in [Patterns of Enterprise Application Architecture](http://amzn.to/1TN7Tq4). 
 The pattern describes an object consisting of two properties, a number for the amount, and another property for the associated currency (which could be a Value Object as well). The `Money` Value Object is immutable, so all operations will return a new instance.
 
@@ -32,9 +32,11 @@ The pattern describes an object consisting of two properties, a number for the a
 
 ![Money](../images/mathias-verraes/Money.png)
 
-T> Value Objects are the ultimate composable objects. That helps to make implicit concepts more explicit. For example, you can naively use the money type to represent prices. But what if a price is not so simple? In Europe, prices have a Value Added Tax component. You can now naturally compose a new `Price` Value Object from a `Money` and a `VAT` object. The `VAT` object could be a wrapper around a `Percentage` object, but at this point that probably doesn't add much value to the model.
-T> Value Objects make it easy to build abstractions that can handle lots of complexity, at a low cognitive cost to the developer using it. Finding the abstractions can be hard, but spending the effort here usually impacts code quality and maintainability so much in the long run, that it's very often worth it.
-T> ![Money](../images/mathias-verraes/Price.png)
+Value Objects are the ultimate composable objects. That helps to make implicit concepts more explicit. For example, you can naively use the money type to represent prices. But what if a price is not so simple? In Europe, prices have a Value Added Tax component. You can now naturally compose a new `Price` Value Object from a `Money` and a `VAT` object. The `VAT` object could be a wrapper around a `Percentage` object, but at this point that probably doesn't add much value to the model.
+
+Value Objects make it easy to build abstractions that can handle lots of complexity, at a low cognitive cost to the developer using it. Finding the abstractions can be hard, but spending the effort here usually impacts code quality and maintainability so much in the long run, that it's very often worth it.
+
+![Money](../images/mathias-verraes/Price.png)
 
 TODO rename PreciseMoney to Money in the diagram (is this fixed?)
 
@@ -50,14 +52,14 @@ The `Currency` enum can support the 10 different currencies that the business is
 
 `Money`’s constructor rounds the numbers to 8 decimals. This gives it enough precision to deal with any currency. Operations like `Money.add(Money other) : Money` and `Money.multiply(Number operand) : Money` etc can be added to the `Money` class. The operations automatically round to 8 decimals. In addition, there's also a `Money.round() : Money` method that returns a new Money object, rounded to 2 decimals. 
 
-{% highlight java %}
-Money {
-    // ...
-    round() : Money {
-        return new Money(round(this.amount, 2), this.currency)
-     }
-}
-{% endhighlight %} 
+{lang="java"}
+    Money {
+        // ...
+        round() : Money {
+            return new Money(round(this.amount, 2), this.currency)
+         }
+    }
+
 
 Now that you have modeled the types based on the requirements, the next step is to refactor all the places in the old code that do things with money to use the new `Money` object.
    
@@ -74,13 +76,13 @@ This is where you should start feeling an itch. The itch to stop and rethink you
 
 Have a close look at: `Money.round() : Money`
 
-{% highlight java %}
-a = new Money(1.987654321, eur)
-// The constructor rounds it down to 1.98765432
-b = a.round()
-// round() rounds it up to 1.99 and instantiates a new Money
-// Money’s constructor rounds it to 1.99000000
-{% endhighlight %} 
+{lang="java"}
+    a = new Money(1.987654321, eur)
+    // The constructor rounds it down to 1.98765432
+    b = a.round()
+    // round() rounds it up to 1.99 and instantiates a new Money
+    // Money’s constructor rounds it to 1.99000000
+
 
 Technically, most programming languages don’t distinguish between 1.99 and 1.99000000, but logically, there is an important nuance here. `b` is not just any `Money` , **it is a fundamentally different type of money**. The current design doesn’t make that distinction, and just mixes up money, whether it was rounded or not.
 
@@ -90,13 +92,12 @@ A good heuristic when modelling, is to consider if we can be more explicit in yo
 
 The `Money.round()` method now becomes very simple:
 
-{% highlight java %}
-PreciseMoney {
-    round() : RoundedMoney {
-        return new RoundedMoney(this.amount, this.currency)
-     }
-}
-{% endhighlight %} 
+{lang="java"}
+    PreciseMoney {
+        round() : RoundedMoney {
+            return new RoundedMoney(this.amount, this.currency)
+         }
+    }
 
 The chief benefit is strong guarantees. We can now typehint against `PreciseMoney` in most of our domain model, and typehint against `RoundedMoney` where we explicitly want or need it. 
 
@@ -131,11 +132,10 @@ TODO: refactor from CurrencyService -> ConversionRate + ForeignExchange -> Repos
    
 Converting between different currencies depends on today's exchange rates. The exchange rates probably come from some third party API or a database. To avoid leaking these technical details into the model, you can have an `CurrencyService` interface, with a `convert` method. It takes a `PreciseMoney` and a target `Currency`, and does the conversion.
 
-{% highlight java %}
-interface CurrencyService {
-   convert(PreciseMoney source, Currency target) : PreciseMoney
-}
-{% endhighlight %} 
+{lang="java"}
+    interface CurrencyService {
+       convert(PreciseMoney source, Currency target) : PreciseMoney
+    }
 
 The `CurrencyService` implementations might deal with concerns such as caching today's rates, to avoid unnecessary traffic on each call. 
 
@@ -143,17 +143,16 @@ If fetching + caching + converting sounds like a lot of responsibility for one s
 
 There's a missing concept here. Instead of having the `CurrencyService` do the conversion, we can make it return a `ConversionRate` instead. This is a Value Object that represents a source `Currency`, a target `Currency`, and a factor (a float). Value Objects attract behaviour, and in this case, it's the `ConversionRate` object that becomes the natural place for doing the actual calculation.
 
-{% highlight java %}
-interface CurrencyService {
-   getRate(Currency source, Currency target) :: ConversionRate
-}
-ConversionRate {
-  - sourceCurrency : Currency 
-  - targetCurrency : Currency
-  - factor : Float
-  convert(PreciseMoney source) : PreciseMoney
-}
-{% endhighlight %}
+{lang="java"}
+    interface CurrencyService {
+        getRate(Currency source, Currency target) :: ConversionRate
+    }
+    ConversionRate {
+        - sourceCurrency : Currency 
+        - targetCurrency : Currency
+        - factor : Float
+        convert(PreciseMoney source) : PreciseMoney
+    }
 
 TODO dollars to USD
 
@@ -173,14 +172,13 @@ The original procedural `CurrencyService` is now split into the two simpler patt
    
 There are still have some issues left. Remember that some currencies have a division of 1/00, 1/1000, or 1/100000000. `RoundedMoney` needs to support this, and in this case, for 10 different currencies. The constructor can start to look somewhat ugly:
 
-{% highlight java %}
-switch(currency) 
-    case EUR: this.amount = round(amount, 2)
-    case USD: this.amount = round(amount, 2)
-    case BTC: this.amount = round(amount, 8)
-etc
+{lang="java"}
+    switch(currency) 
+        case EUR: this.amount = round(amount, 2)
+        case USD: this.amount = round(amount, 2)
+        case BTC: this.amount = round(amount, 8)
+    etc
 
-{% endhighlight %} 
 
 Also, every time business needs to support a new currency, new code needs to get added here, and possibly in other places in the system. While not a serious issue, it's not exactly ideal either. A switch statement (or a key/value pairs) can be a smell for missing types.
 
@@ -191,13 +189,12 @@ TODO image
 
 Each of the `PreciseEUR`, `PreciseBTC`, `RoundedEUR`, `RoundedBTC` etc classes have local knowledge about how they go about their business, such as the rounding switch example above.
 
-{% highlight java %}
-RoundedEUR {
-   RoundedEUR (amount) {
-       this.amount = round(amount, 2)
-   }
-}
-{% endhighlight %}
+{lang="java"}
+    RoundedEUR {
+       RoundedEUR (amount) {
+           this.amount = round(amount, 2)
+       }
+    }
 
 Again, you can put the type system to work here. Remember the requirement that the reporting needs to be in EUR? You can now typehint for that, making it impossible to pass any other currency into our reporting. Similarly, the different compliance reporting strategies for different markets can each be limited to the currencies they support.
 
@@ -224,11 +221,10 @@ In this case, the whole point of this modelling exercise was to solve the precis
 
 If so, you could keep a separate ledger for rounding. Every time a fraction of the value is gained or lost by rounding, we record it in the ledger. When the fractions add up to more than a cent, we can add it to the next payment. 
 
-{% highlight java %}
-// rounding now separates the rounded part from the leftover fraction
-PreciseMoney.round() : (RoundedMoney, PreciseMoney)
-Ledger.add(PreciseMoney) : void
-{% endhighlight %}
+{lang="java"}
+    // rounding now separates the rounded part from the leftover fraction
+    PreciseMoney.round() : (RoundedMoney, PreciseMoney)
+    Ledger.add(PreciseMoney) : void
 
 You might not have to deal with this in most domains, but when you have high volumes of small transactions, it could make a significant difference. Consider this a pattern for your toolbox.
 
