@@ -23,6 +23,7 @@
 - Replace author by Domain-Driven Design Europe
 - Uniform spelling of "Domain-Driven Design" 
 - Smaller images in Cyrille's text
+- use leanpubs format for code samples everywhere
 
 Leanpub errors:
 
