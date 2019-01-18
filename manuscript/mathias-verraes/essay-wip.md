@@ -1,4 +1,4 @@
-# Emergent Contexts through Refactoring (by Mathias Verraes)
+# Emergent Contexts through Refinement (by Mathias Verraes)
 
 Which Bounded Context owns a particular concept? One way to find out is by evolving your model until everything finds a natural place. All models are wrong, especially the early ones. Let's look at some simple requirements, and explore how you can evolve the model over time. As you learn more about the problem you're solving, you can bring that clarity into new iterations of the model. 
 
