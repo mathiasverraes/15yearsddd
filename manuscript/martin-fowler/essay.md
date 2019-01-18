@@ -1,6 +1,9 @@
-# Multiple Canonical Models and Bounded Contexts (by Martin Fowler)
+# Multiple Canonical Models (by Martin Fowler)
 
-*Adapted from articles published in 2003 and 2014*
+
+## Multiple Canonical Models
+
+*Adapted from an article published in 2003*
 
 Scratch any large enterprise and you'll usually find some kind of group focused on enterprise-wide conceptual modeling. Most commonly this will be a data management group, occasionally they may be involved in defining enterprise-wide services. They are enterprise-wide because rather than focusing on the efforts of a single application they concentrate on integrating multiple applications.
 
@@ -22,6 +25,10 @@ One of the interesting consequences of a messaging based approach to integration
 So far, however, it seems that the data modeling community is only beginning to catch on to this new world. This is sad because data modelers have a tremendous amount to offer to people building canonical messaging models. Not just are skills not taking part, many also resist this approach because they assert that a single enterprise-wide model is the only proper foundation for integration.
 
 ---
+
+## Bounded Contexts
+
+*Adapted from an article published in 2014*
 
 Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD's strategic design section which is all about dealing with large models and teams. DDD deals with large models by dividing them into different Bounded Contexts and being explicit about their interrelationships.
 
