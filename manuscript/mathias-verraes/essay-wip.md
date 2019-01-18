@@ -115,7 +115,7 @@ You can add a `round()` method to `PreciseMoney`, but you wouldn't add a `toPrec
 
 There's an elegance to that constraint. Once you round something, the precision is lost forever. The lack of `RoundedMoney.toPrecise()` fits the understanding of the domain. 
 
-## Common Interfaces is not your friend
+## Common Interfaces
 
 You may have noticed that in the current design, there is no `Money` interface at the top of the object graph. Aren’t `PreciseMoney` and `RoundedMoney` both a kind of `Money` or `AbstractMoney`? Don’t they share a lot of methods?
 
@@ -127,9 +127,7 @@ If the goal is to try and build a model inspired by the real-world, this would m
 This may be a bit counterintuitive. `PreciseMoney` and `RoundedMoney`, although somewhat related, are fundamentally different types. The model is designed for clarity, for the guarantee that rounded and precise values are not mixed up. By allowing client code the typehint for the generic `Money`, you've taken away that clarity. There’s now no way of knowing which `Money` you're getting. All responsibility for passing the correct type is now back in the hands of the caller. The caller could do `money instanceof PreciseMoney`, but that's a serious code smell.
 
 ## Dealing with Conversions
-   
-TODO: refactor from CurrencyService -> ConversionRate + ForeignExchange -> Repository
-   
+      
 Converting between different currencies depends on today's exchange rates. The exchange rates probably come from some third party API or a database. To avoid leaking these technical details into the model, you can have an `CurrencyService` interface, with a `convert` method. It takes a `PreciseMoney` and a target `Currency`, and does the conversion.
 
 {lang="java"}
