@@ -12,17 +12,23 @@ namespace AntiCorruptionLayer {
 }
 
 namespace SalesContext {
-  AntiCorruptionLayer.Adapter --> PreciseMoney
-  interface PreciseMoney
-  class PreciseEUR
-  class PreciseUSD
+  AntiCorruptionLayer.Adapter --> Money
+  interface Money
+  class EUR
+  class USD
 
-  PreciseMoney <|-- PreciseEUR
-  PreciseMoney <|-- PreciseUSD
+  Money <|-- EUR
+  Money <|-- USD
+
+  note top of Money
+    In this context,
+    all Money is
+    assumed precise.
+  end note
 }
 
 namespace ForeignExchangeContext {
-  SalesContext.PreciseMoney --> ConversionRate
+  SalesContext.Money --> ConversionRate
   class ConversionRate
   interface ForeignExchange
   class WebAPIForeignExchange
@@ -31,15 +37,15 @@ namespace ForeignExchangeContext {
 }
 
 namespace InternalFinancialReporting {
-  ForeignExchangeContext.ConversionRate --> RoundedEUR
+  ForeignExchangeContext.ConversionRate --> EUR
 
-  class RoundedEUR
+  class EUR
 }
 
 namespace USComplianceReporting {
-  ForeignExchangeContext.ConversionRate --> RoundedUSD
+  ForeignExchangeContext.ConversionRate --> USD
 
-  class RoundedUSD
+  class USD
 }
 
 
