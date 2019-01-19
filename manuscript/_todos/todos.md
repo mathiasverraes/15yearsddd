@@ -4,7 +4,6 @@
 - convert Mel Conway's essay to Markdown
 - Martin Fowler: edit transition or add an introduction (Paul)
 - Move Paul's image (Paul)
-- Finish Mathias' essay (Mathias)
 - Decide if we keep all Jef's & Vladikk's essays or pick one for each.
 - Compare David West's pdf output to his word doc
 - receive and clean up Indu's photos. Fade everything but the captain and the dog. (Mathias)
@@ -24,6 +23,7 @@
 - Uniform spelling of "Domain-Driven Design" 
 - Smaller images in Cyrille's text
 - use leanpubs format for code samples everywhere
+- we vs us in Mathias' essay
 
 Leanpub errors:
 

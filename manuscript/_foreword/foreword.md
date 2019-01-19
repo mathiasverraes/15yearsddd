@@ -17,7 +17,7 @@ Domain-Driven Design Europe
 
 ## Acknowledgments
 
-I'd like to thank Anneke Schoonjans, Céline Dursin, and Paul Rayner, for their help with the logistics of this book. The wonderful cover design is by Nick Liefhebber. And most importantly, I'm incredibly thankful for the more than 20 authors who contributed to this book. You are all people who have in one way or another inspired me, and countless others. 
+I'd like to thank Anneke Schoonjans, Céline Dursin, Paul Rayner, and Indu Alagarsamy for their help with the logistics and content of this book. The wonderful cover design is by Nick Liefhebber. And most importantly, I'm incredibly thankful for the more than 20 authors who contributed to this book. You are all people who have in one way or another inspired me, and countless others. 
 
 
 ## About DDD Europe
