@@ -27,7 +27,7 @@ Are there existing design patterns that can help here? A good pattern to apply w
 In fact, a couple of years before Eric Evans published his book, Martin Fowler described an implementation for `Money` in [Patterns of Enterprise Application Architecture](http://amzn.to/1TN7Tq4). 
 The pattern describes an object consisting of two properties, a number for the amount, and another property for the associated currency (which could be a Value Object as well). The `Money` Value Object is immutable, so all operations will return a new instance.
 
-![Money](images/mathias-verraes/Money.png)
+![Figure 1](images/mathias-verraes/Money.png)
 
 The `Currency` type supports the 10 different currencies that the business is interested in. You can use enums, but a simple assertion will do if your language doesn't have enums. The following constraints can be added:
 
@@ -52,11 +52,11 @@ Now that you have modeled the types based on the requirements, the next step is 
 
 An interesting aspect of Value Objects, is that they are the ultimate composable objects. That helps to make implicit concepts more explicit. For example, you could naively use the money type to represent prices. But what if a price is not so simple? In Europe, prices have a Value Added Tax component. You can now naturally compose a new `Price` Value Object from a `Money` and a `VAT` object, the latter representing a percentage.
 
-![Price](images/mathias-verraes/Price.png)
+![Figure 2](images/mathias-verraes/Price.png)
 
 A Product could have different prices in different markets, and we can make this concept explicit in a another Value Object.
 
-![ProductPrice](images/mathias-verraes/ProductPrice.png)
+![Figure 3](images/mathias-verraes/ProductPrice.png)
 
 ... and so on. We can push a lot of logic that we'd traditionally put in services, down into these Value Objects. 
 
@@ -100,7 +100,7 @@ The `Money.round()` method now becomes very simple:
          }
     }
 
-![PreciseMoney](images/mathias-verraes/PreciseMoney.png)
+![Figure 4](images/mathias-verraes/PreciseMoney.png)
 
 
 The chief benefit is strong guarantees. We can now typehint against `PreciseMoney` in most of our domain model, and typehint against `RoundedMoney` where we explicitly want or need it. 
@@ -126,7 +126,7 @@ You may have noticed that in the current design, there is no `Money` interface a
 
 If the goal is to try and build a model inspired by the real-world, this would make sense. However, don't judge your models by how well they fit into hierarchical categorisations. A Domain Model is not an taxonomy — in contrast to the OOP books that teach you that a `Cat extends Animal`. Judge your models based on usefulness instead. A top-level `Money` interface adds no value at all; in fact it takes away value. 
 
-![BadMoney](images/mathias-verraes/BadMoney.png)
+![Figure 5](images/mathias-verraes/BadMoney.png)
 
 
 This may be a bit counterintuitive. `PreciseMoney` and `RoundedMoney`, although somewhat related, are fundamentally different types. The model is designed for clarity, for the guarantee that rounded and precise values are not mixed up. By allowing client code the typehint for the generic `Money`, you've taken away that clarity. There’s now no way of knowing which `Money` you're getting. All responsibility for passing the correct type is now back in the hands of the caller. The caller could do `money instanceof PreciseMoney`, but that's a serious code smell.
@@ -187,8 +187,7 @@ Also, every time business needs to support a new currency, new code needs to get
 
 One way to achieve this is to make `PreciseMoney` and `RoundedMoney` abstracts or interfaces, and factor the variation out into subtypes for each currency.
 
-TODO image
-<img src="/img/posts/2016-02-29-type-safety-and-money/FactorOutCurrency.png" alt="Factoring out currency">
+![Figure 6](images/mathias-verraes/FactorOutCurrency.png)
 
 Each of the `PreciseEUR`, `PreciseBTC`, `RoundedEUR`, `RoundedBTC` etc classes have local knowledge about how they go about their business, such as the rounding switch example above.
 
@@ -238,11 +237,8 @@ The point here is that our model is easy to extend. In the original code, where 
 
 Different capabilities of the system have different requirements. This is what Bounded Contexts are good for: they allow us to reason about the system as a number of cooperating models, as opposed to one unified model. Perhaps the Product Catalog needs a really simple model for money, because it doesn't really do anything other than displaying prices. Sales may need precise price calculations. Our internal Reporting might be fine with reporting with rounded numbers, or even with reporting with no decimals. Company financials are sometimes expressed in thousands or millions. The Compliance Reporting again has different needs.
 
-TODO make three diagrams: 
+![Figure 7](images/mathias-verraes/Contexts.png)
 
-- one big money shared kernel, that all the others depend on
-- move each chunk to the context that needs it <img src="/img/posts/2016-02-29-type-safety-and-money/Hexagonal.png" alt="Hexagonal"> 
-TODO image
 
 If the Sales context always deals with high precision, does it then make sense to call the type `PreciseMoney`? Why not just `Money`? It should then be clearly understood that in the Sales Ubiquitous Language, there is only one `Money` and it doesn't tolerate rounding. In the Reporting Context, money is always rounded and in EUR. Again the type doesn't have to be `RoundedMoney` or `RoundedEUR`, it can just be `Money`.  
 

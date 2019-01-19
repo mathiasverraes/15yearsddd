@@ -2,7 +2,7 @@
 !include Shared.puml
 
 
-package "Product Catalog" {
+package "Product Catalog Context" {
   class Money
 }
 
@@ -11,7 +11,7 @@ package "Anti-Corruption Layer" {
   class Adapter
 }
 
-package "Orders" {
+package "Sales Context" {
   Adapter --> PreciseMoney
   interface PreciseMoney
   class PreciseEUR
@@ -21,15 +21,16 @@ package "Orders" {
   PreciseMoney <|-- PreciseUSD
 }
 
-package "Exchange" {
+package "Foreign Exchange Context" {
   PreciseMoney --> ConversionRate
   class ConversionRate
-  interface Exchange
-  class Adapter
-  Exchange --> ConversionRate
+  interface ForeignExchange
+  class WebAPIForeignExchange
+  ForeignExchange <|--WebAPIForeignExchange
+  ForeignExchange --> ConversionRate
 }
 
-package "Reporting" {
+package "Internal Financial Reporting" {
   ConversionRate --> RoundedEUR
 
   class RoundedEUR
