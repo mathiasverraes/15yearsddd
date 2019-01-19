@@ -11,11 +11,11 @@
 - Check with Einar Landre about his images (put in the text or delete?)
 - Somehow put the biographies and licenses in the book (use leanpub sidebars?)
 - Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere. 
-- Use markdown for all URLs so they turn blue
 - Replace Rebecca's image of Strategic vs Tactical
+- get two more images from Rebecca that she needs to draw
 - Add a changelog after first publication
 - Replace author by Domain-Driven Design Europe
-- Uniform spelling of "Domain-Driven Design" 
+- Use markdown for all URLs so they turn blue
 - Smaller images in Cyrille's text
 - use leanpubs format for code samples everywhere
 - we vs us in Mathias' essay
