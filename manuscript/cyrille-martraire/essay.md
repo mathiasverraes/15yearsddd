@@ -1,4 +1,4 @@
-# Domain Modeling with Monoids (by Cyrille Martraire)
+# Domain Modeling with Monoids — Cyrille Martraire
 
 It is unlucky the word "Monoid" is so awkward, as it represents a concept that is both ubiquitous and actually simple. 
 
@@ -499,7 +499,7 @@ You may be tempted to reuse monoidal value objects across various parts of a lar
 
 For example in pretrade you would have a Money optimized for speed and expressed as an integer, as a multiple of the trading lot size, whereas for accounting you’d use a BigDecimal-based implementation that would ensure the expected accuracy even after summing many amounts and even after many foreign exchange conversions. 
 
-Another example this time with cashflows: in a tax-related domain, you can’t just add an reimbursement cashflow to an interest cashflow, as they are treated very differently by the tax institution, whereas in an investment domain you would just add them all together without any constraint. For more on that point, I suggest Mathias Verraes [blog post](http://verraes.net/2016/02/type-safety-and-money/) where he notes:
+Another example this time with cashflows: in a tax-related domain, you can’t just add an reimbursement cashflow to an interest cashflow, as they are treated very differently by the tax institution, whereas in an investment domain you would just add them all together without any constraint. For more on that point, I suggest Mathias Verraes' [blog post](http://verraes.net/2016/02/type-safety-and-money/) where he notes:
 
 > *...dealing with money is too critical to be regarded as a Generic Subdomain. Different projects have different needs and expectations of how money will be handled. If money matters, you need to build a model that fits your specific problem space...*
 

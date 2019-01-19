@@ -1,4 +1,4 @@
-# Traces, Tracks, Trails, and Paths: An Exploration of How We Approach Software Design (by Rebecca Wirfs-Brock)
+# Traces, Tracks, Trails, and Paths: An Exploration of How We Approach Software Design — Rebecca Wirfs-Brock
 
 *This work is based on an essay I presented and workshopped at the PLoP (Pattern Languages of Programs) 2018 Conference held October 24-26, 2018 in Portland, Oregon, USA* 
 

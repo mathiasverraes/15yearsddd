@@ -1,4 +1,4 @@
-#   Ubiquitous Language - More Than Just Shared Vocabulary (by Avraham Poupko)
+#   Ubiquitous Language - More Than Just Shared Vocabulary — Avraham Poupko
 
 A key tenant of DDD is _ubiquitous language_, and rightfully so. DDD is about improving domain communication and understanding. What better way to improve understanding than to make sure that we all speak the same language, and use the same words to describe the same things? In this paper, I use some insights and concepts from the study of how language is used, to explain in some detail how it is that ubiquitous language provides shared understanding.
 

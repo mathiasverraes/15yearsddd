@@ -1,4 +1,4 @@
-# From Human Decisions, to Suggestions to Automated Decisions (by Jef Claes)
+# From Human Decisions, to Suggestions to Automated Decisions — Jef Claes
 
 _Published on jefclaes.be 2017-07-01_
 

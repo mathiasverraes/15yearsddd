@@ -1,4 +1,4 @@
-# Domain Modeling with Algebraic Data Types (by Scott Wlaschin)
+# Domain Modeling with Algebraic Data Types — Scott Wlaschin
 
 *Authors note: It is a privilege to be able to contribute to this project. Even though it has been fifteen years since 'Domain-Driven Design' was published, its insights and wisdom are just as valuable as ever, and continue to influence each new generation of programmers. One thing that has changed since it was written is the rise of functional programming as an alternative paradigm to object-oriented programming. Many articles on functional programming focus on the mathematical aspects, but I believe it has great potential for effective design in conjunction DDD principles. This chapter, condensed from my book "Domain Modeling Made Functional," explains why.*
 

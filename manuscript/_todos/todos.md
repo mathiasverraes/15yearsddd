@@ -4,26 +4,22 @@
 - convert Mel Conway's essay to Markdown
 - Martin Fowler: edit transition or add an introduction (Paul)
 - Move Paul's image (Paul)
-- Decide if we keep all Jef's & Vladikk's essays or pick one for each.
 - Compare David West's pdf output to his word doc
 - receive and clean up Indu's photos. Fade everything but the captain and the dog. (Mathias)
 - fix markdownlint-cli output (Mathias)
 - all todos.txt files and TODO annotations in the texts 
+- Check with Einar Landre about his images (put in the text or delete?)
 - Somehow put the biographies and licenses in the book (use leanpub sidebars?)
-- Check Einar Landre's images (put in the text or delete?)
 - Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere. 
-- Choose an order for the essays
-- Prettier table of contents (Mathias)
-- "Title (by Author)" => "Title — Author"
 - Use markdown for all URLs so they turn blue
 - Replace Rebecca's image of Strategic vs Tactical
-- Swap Cyrille's quote from Mathias blog to a reference to the article here
 - Add a changelog after first publication
 - Replace author by Domain-Driven Design Europe
 - Uniform spelling of "Domain-Driven Design" 
 - Smaller images in Cyrille's text
 - use leanpubs format for code samples everywhere
 - we vs us in Mathias' essay
+- review the order of the essays
 
 Leanpub errors:
 

@@ -1,4 +1,4 @@
-# Are you building the right thing? (by Alexey Zimarev)
+# Are you building the right thing? — Alexey Zimarev
 
 ## Introduction
 

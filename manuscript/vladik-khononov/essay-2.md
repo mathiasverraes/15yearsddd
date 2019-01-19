@@ -1,4 +1,4 @@
-# The Missing Link (by Vladik Khononov)
+# The Missing Link — Vladik Khononov
 
 Let’s be honest: our industry’s track record is pretty bad. The vast majority of software projects fail because they do not meet the budget or timeframe or deliver the expected value. Much research has been conducted to identify the reasons for these failures, and the results vary. However, if we look at those findings, one central theme repeats itself over and over: communication. It’s either stated explicitly — “poor communication” – or implicitly, by describing outcomes:
 

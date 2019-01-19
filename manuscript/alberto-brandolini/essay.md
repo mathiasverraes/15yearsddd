@@ -1,4 +1,4 @@
-# Discovering Bounded Contexts with EventStorming (by Alberto Brandolini)
+# Discovering Bounded Contexts with EventStorming — Alberto Brandolini
 
 There's plenty of outcomes from a Big Picture EventStorming, the most obvious being the collective learning that happens throughout the workshop. However, learning is not the only one!
 

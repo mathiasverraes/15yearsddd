@@ -1,4 +1,4 @@
-# Distilling DDD Into First Principles (by Scott Millett)
+# Distilling DDD Into First Principles — Scott Millett
 
 *Parts of this essay first appeared in the book Patterns, Principles, and Practices of Domain-Driven Design (Wrox 2015) by Scott Millett and Nick Tune.*
 

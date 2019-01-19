@@ -1,4 +1,4 @@
-# 7 Years of DDD: Tackling Complexity in a Large-Scale Marketing System (by Vladik Khononov)
+# 7 Years of DDD: Tackling Complexity in a Large-Scale Marketing System — Vladik Khononov
 
 One morning, back in 2010, I got a phone call from a friend. He said he was starting a new company. The business was not going to be simple, but if I joined him, from the technical perspective I could do whatever I wanted. I agreed to join him, just like that! 
 

@@ -1,4 +1,4 @@
-# Multiple Canonical Models (by Martin Fowler)
+# Multiple Canonical Models — Martin Fowler
 
 
 ## Multiple Canonical Models

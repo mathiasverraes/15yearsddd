@@ -1,4 +1,4 @@
-# The Captain of the Night Watch (by Indu Alagarsamy)
+# The Captain of the Night Watch — Indu Alagarsamy
 
 *This article is based on a conversation that ensued during a midnight stroll in the streets of Amsterdam with Eric Evans, Paul Rayner, and Mathias Verraes.*
 

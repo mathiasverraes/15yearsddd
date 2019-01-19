@@ -1,4 +1,4 @@
-# DDD — The Misunderstood Mantra (by James O. Coplien)
+# DDD — The Misunderstood Mantra — James O. Coplien
 
 Eric, it is a great honor and pleasure that I would find myself in the company of those invited to address you on the 15th anniversary of your _magnum opus_. I too, have been with this process for 15 years, and have watched as both of our ideas have grown. Meeting you at _DDD Europe_ was a highlight for me and was my first opportunity to learn from you first-hand. I still yearn for us to continue that process, and hope we will meet face-to-face again soon, In the meantime, this is like a letter to you that primes the pump for those discussions. I offer these ideas with the greatest respect and great expectations of what we'll learn together next.
 

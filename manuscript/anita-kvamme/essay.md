@@ -1,4 +1,4 @@
-# Domain-Driven Design as Usability for Coders (by Anita Kvamme)
+# Domain-Driven Design as Usability for Coders — Anita Kvamme
 
 ## My Way into Modelling
 
