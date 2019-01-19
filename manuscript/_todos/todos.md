@@ -21,15 +21,3 @@
 - we vs us in Mathias' essay
 - review the order of the essays
 
-Leanpub errors:
-
-We found the following problems with your images:\n
-- We could not find the file ./img/DDD_Model_Exploration_Whirlpool.png. We have put a place-marker image in its place. It is used in these files: kenny-baas-schwegler/essay.md
-
-- We could not find the file ./img/EventStorming1.jpg. We have put a place-marker image in its place. It is used in these files: kenny-baas-schwegler/essay.md
-
-- We could not find the file ./img/EventStorming2.jpg. We have put a place-marker image in its place. It is used in these files: kenny-baas-schwegler/essay.md
-
-- We could not find the file ./img/example_mapping.png. We have put a place-marker image in its place. It is used in these files: kenny-baas-schwegler/essay.md
-
-- We could not find the file centered-set.png. We have put a place-marker image in its place. It is used in these files: paul-rayner/essay.md
