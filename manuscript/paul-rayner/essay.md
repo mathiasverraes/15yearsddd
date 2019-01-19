@@ -112,7 +112,7 @@ Second, because all objects are seen in constant motion, they are moving, fast
 or slowly, towards or away from the center. Something is always happening to an
 object. It is never static.
 
-![Centered Set](centered-set.png)
+![Centered Set](images/paul-rayner/centered-set.png)
 
 Illustrations of centered sets are harder to come by in English, since English tends
 to see the world largely in terms of bounded sets. One example is a magnetic field
