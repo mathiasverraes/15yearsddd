@@ -4,8 +4,6 @@ Which Bounded Context owns a particular concept? One way to find out is by evolv
 
 ## The problem
 
-@TODO we vs us
-
 Imagine you're working on a business application, that deals with sales, accounting, reporting, that sort of thing. The existing software has some serious issues. For example, monetary values are represented as scalars. In many places, values are calculated at a high precision, and then rounded down to 2 decimals, and later used again for high precision calculations. These rounding errors are all over the code. It doesn't make a huge difference on a single amount and a single rounding error, but eventually it could add up, and cost the business millions. The monetary values can represent different currencies, but the financial reporting is always in EUR. It is unclear if the code always correctly converts to EUR when needed, or accidentally adds up amounts from different currencies.
 
 To solve these problems, the first thing to do is to have conversations with the domain experts from sales and accounting. As a result, you come to a common agreement on some requirements.
