@@ -3,7 +3,7 @@
 !include Shared.puml
 
 class Money {
-  - amount : Float
+  - amount : Number
   - currency : Currency
   +add(Money) : Money
   +multiply(operand) : Money

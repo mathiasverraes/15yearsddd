@@ -5,7 +5,6 @@ Which Bounded Context owns a particular concept? One way to find out is by evolv
 ## The problem
 
 @TODO we vs us
-@TODO make this less dense?
 
 Imagine you're working on a business application, that deals with sales, accounting, reporting, that sort of thing. The existing software has some serious issues. For example, monetary values are represented as scalars. In many places, values are calculated at a high precision, and then rounded down to 2 decimals, and later used again for high precision calculations. These rounding errors are all over the code. It doesn't make a huge difference on a single amount and a single rounding error, but eventually it could add up, and cost the business millions of euros. The monetary values can represent different currencies, but the financial reporting is always in Euro. It is unclear if the code always correctly converts to Euro when needed, or accidentally adds up amounts from different currencies.
 
@@ -28,27 +27,13 @@ Are there existing design patterns that can help here? A good pattern to apply w
 In fact, a couple of years before Eric Evans published his book, Martin Fowler described an implementation for `Money` in [Patterns of Enterprise Application Architecture](http://amzn.to/1TN7Tq4). 
 The pattern describes an object consisting of two properties, a number for the amount, and another property for the associated currency (which could be a Value Object as well). The `Money` Value Object is immutable, so all operations will return a new instance.
 
+![Money](images/mathias-verraes/Money.png)
 
+The `Currency` type supports the 10 different currencies that the business is interested in. You can use enums, but a simple assertion will do if your language doesn't have enums. The following constraints can be added:
 
-![Money](../images/mathias-verraes/Money.png)
-
-Value Objects are the ultimate composable objects. That helps to make implicit concepts more explicit. For example, you can naively use the money type to represent prices. But what if a price is not so simple? In Europe, prices have a Value Added Tax component. You can now naturally compose a new `Price` Value Object from a `Money` and a `VAT` object. The `VAT` object could be a wrapper around a `Percentage` object, but at this point that probably doesn't add much value to the model.
-
-Value Objects make it easy to build abstractions that can handle lots of complexity, at a low cognitive cost to the developer using it. Finding the abstractions can be hard, but spending the effort here usually impacts code quality and maintainability so much in the long run, that it's very often worth it.
-
-![Money](../images/mathias-verraes/Price.png)
-
-TODO rename PreciseMoney to Money in the diagram (is this fixed?)
-
-TODO change the diagrams to show Number instead of float
-
-Using the Value Object pattern, you can define a type for the `Money` object and an enum for the `Currency`.
-The `Currency` enum can support the 10 different currencies that the business is interested in. A simple assertion will do if your language doesn't have enums. The following constraints can be added:
-
-- The type can't be initialised  with a value different from any of the supported 10 currencies. 
+- The type can't be initialised with a value different from any of the supported 10 currencies. 
 - It only uses the 3-letter ISO symbols, anything else is an error. That satisfies requirement 1.
 
-![Money](../images/mathias-verraes/MoneyFormatter.png)
 
 `Money`’s constructor rounds the numbers to 8 decimals. This gives it enough precision to deal with any currency. Operations like `Money.add(Money other) : Money` and `Money.multiply(Number operand) : Money` etc can be added to the `Money` class. The operations automatically round to 8 decimals. In addition, there's also a `Money.round() : Money` method that returns a new Money object, rounded to 2 decimals. 
 
@@ -62,6 +47,22 @@ The `Currency` enum can support the 10 different currencies that the business is
 
 
 Now that you have modeled the types based on the requirements, the next step is to refactor all the places in the old code that do things with money to use the new `Money` object.
+
+## Composition
+
+An interesting aspect of Value Objects, is that they are the ultimate composable objects. That helps to make implicit concepts more explicit. For example, you could naively use the money type to represent prices. But what if a price is not so simple? In Europe, prices have a Value Added Tax component. You can now naturally compose a new `Price` Value Object from a `Money` and a `VAT` object, the latter representing a percentage.
+
+![Price](images/mathias-verraes/Price.png)
+
+A Product could have different prices in different markets, and we can make this concept explicit in a another Value Object.
+
+![ProductPrice](images/mathias-verraes/ProductPrice.png)
+
+... and so on. We can push a lot of logic that we'd traditionally put in services, down into these Value Objects. 
+
+Value Objects make it easy to build abstractions that can handle lots of complexity, at a low cognitive cost to the developer using it. Finding the abstractions can be hard, but spending the effort here usually impacts code quality and maintainability so much in the long run, that it's very often worth it.
+
+
    
 ## Look for weaknesses
  
@@ -99,7 +100,11 @@ The `Money.round()` method now becomes very simple:
          }
     }
 
+![PreciseMoney](images/mathias-verraes/PreciseMoney.png)
+
+
 The chief benefit is strong guarantees. We can now typehint against `PreciseMoney` in most of our domain model, and typehint against `RoundedMoney` where we explicitly want or need it. 
+
 
 It's easy to underestimate how valuable this style of granular types can be.
 
@@ -121,7 +126,7 @@ You may have noticed that in the current design, there is no `Money` interface a
 
 If the goal is to try and build a model inspired by the real-world, this would make sense. However, don't judge your models by how well they fit into hierarchical categorisations. A Domain Model is not an taxonomy — in contrast to the OOP books that teach you that a `Cat extends Animal`. Judge your models based on usefulness instead. A top-level `Money` interface adds no value at all; in fact it takes away value. 
 
-![Money](../images/mathias-verraes/BadMoney.png)
+![BadMoney](images/mathias-verraes/BadMoney.png)
 
 
 This may be a bit counterintuitive. `PreciseMoney` and `RoundedMoney`, although somewhat related, are fundamentally different types. The model is designed for clarity, for the guarantee that rounded and precise values are not mixed up. By allowing client code the typehint for the generic `Money`, you've taken away that clarity. There’s now no way of knowing which `Money` you're getting. All responsibility for passing the correct type is now back in the hands of the caller. The caller could do `money instanceof PreciseMoney`, but that's a serious code smell.

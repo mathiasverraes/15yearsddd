@@ -17,5 +17,10 @@ class Price {
 
 Price --o Money
 Price --o VAT
+ProductPrice --o Price
+
+class ProductPrice {
+   prices : Map<MarketID, Price>
+}
 
 @enduml

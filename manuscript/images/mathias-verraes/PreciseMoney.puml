@@ -5,18 +5,14 @@
 
 class PreciseMoney {
   +add(Money) : PreciseMoney
-  +multiply(Float) : PreciseMoney
+  +multiply(Number) : PreciseMoney
   +round() : RoundedMoney
 }
 
 class RoundedMoney {
    Constructor rounds the argument
-   + getAmount() : string
+   + getAmount() : Number
    + getCurrency() : Currency
-}
-
-class MoneyFormatter {
-    + format(RoundedMoney) : String
 }
 
 
@@ -26,7 +22,5 @@ note left of RoundedMoney
   PreciseMoney
 end note
 
-
-MoneyFormatter --o RoundedMoney
 
 @enduml

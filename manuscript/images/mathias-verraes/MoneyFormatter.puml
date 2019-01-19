@@ -8,7 +8,7 @@ class MoneyFormatter {
 }
 
 class Money {
-  + getAmount() : float
+  + getAmount() : Number
   + getCurrency() : Currency
 }
 
