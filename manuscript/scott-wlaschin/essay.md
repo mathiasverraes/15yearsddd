@@ -305,7 +305,7 @@ This can be read as: to use `CreateEmailAddress` you need to provide a `string` 
 
 Now we can define what we mean by an algebraic type *system*.  It's simply a type system where *every* compound type is composed from smaller types by *AND*-ing or *OR*-ing them together. Using *AND* and *OR* to build new data types should feel familiar — we used the same kind of *AND* and *OR* to document our domain earlier. 
 
-This kind of *composable* type system is a great aid in doing domain-driven design because we can quickly create a complex model simply by mixing types together in different combinations, as we'll see next.
+This kind of *composable* type system is a great aid in doing Domain-Driven Design because we can quickly create a complex model simply by mixing types together in different combinations, as we'll see next.
 
 
 ## Modeling with algebraic data types

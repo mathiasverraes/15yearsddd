@@ -5,7 +5,7 @@
 Dan North mentioned in the CukeUp 2015 panel the notion
 of a community being a "bounded set," and I pointed out
 that the same theology also talks about the notion of a community being a
-"centered set." The original context of the panel discussion concerned BDD (behaviour-driven development), but I believe the idea applies equally to domain-driven design (DDD). DDD is a centered set, rather than a
+"centered set." The original context of the panel discussion concerned BDD (behaviour-driven development), but I believe the idea applies equally to Domain-Driven Design (DDD). DDD is a centered set, rather than a
 bounded set. To extend this further to the community that has grown around DDD over the last 15 years, we might say _DDD is a centered community, rather than a bounded community._
 
 Let's be clear what is meant by bounded vs. centered set as it applies to a
