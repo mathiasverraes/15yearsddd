@@ -1,4 +1,4 @@
-# Calm Your Spirit with Bounded Contexts — Julie Lerman
+# Calm Your Spirit with Bounded Contexts -- Julie Lerman
 
 Discovering, honing and respecting boundaries is one of the most important facets of Domain-Driven Design. And the awareness of this practice is like a meditation that can be leveraged far beyond the efforts of building software. Dividing big, messy problems into smaller solvable problems can help one evolve towards the calmness that Eric Evans emanates. I have often said  that Eric is like a philosopher - a deep, contemplative, big-idea thinker. Those of us who have had the opportunity to see him speak or speak with him, are fortunate to witness his mind at work as it wanders into various corners of an idea.
 
