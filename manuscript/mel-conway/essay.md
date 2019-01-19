@@ -1,4 +1,4 @@
-# Free the Collaboration Barrier — Mel Conway
+# Free the Collaboration Barrier - Mel Conway
 
 1\. DDD Prototyping: Extend the tech-business collaboration
 
@@ -10,7 +10,7 @@
 Plan to throw one away; you will, anyway.
 
 Frederick P. Brooks, Jr.
-“The Mythical Man-Month”
+"The Mythical Man-Month"
 {/aside}
 
 **1. DDD Prototyping: Extend the tech-business collaboration**
@@ -28,7 +28,9 @@ there is confidence that the likelihood of disruptive change of ideas
 has become acceptably low, so the ideas that have been captured in the
 domain model can begin to be frozen in code.
 
-![Figure 1 - The contribution of business people drops when coding begins](images/mel-conway/Fig_01.png)Figure 1 shows a purely qualitative model
+![Figure 1 - The contribution of business people drops when coding begins](images/mel-conway/Fig_01.png)
+
+Figure 1 shows a purely qualitative model
 of how the technical people and the business people share participation
 in determining the final outcome as the project progresses. There is a
 kink to the left of the collaboration barrier. Before this kink the
@@ -52,7 +54,9 @@ something about the design that needs to change, the decision process
 may turn into a value tradeoff between product quality and project
 schedule.
 
-![Figure 2 - The more code that has been committed, the greater the cost of change](images/mel-conway/Fig_02.png)Figure 2 shows, again qualitatively, the
+![Figure 2 - The more code that has been committed, the greater the cost of change](images/mel-conway/Fig_02.png)
+
+Figure 2 shows, again qualitatively, the
 cost of change as time progresses. This cost is some combination of
 schedule delay and quality loss, depending on how the change is handled.
 
@@ -145,7 +149,7 @@ benefits of each.
 
 ![Figure 4 - The two-faced prototype model](images/mel-conway/Fig_04.png)
 
-**Code-free Use Cases **
+**Code-free Use Cases**
 
 The code-free use cases execute value-delivering user interactions. They
 do more than simply describe a user interface because they communicate
@@ -180,7 +184,7 @@ elements have domain-specific behaviors.
 ![Figure 5 - Simple wiring languages are less powerful (by themselves) but more
 accessible](images/mel-conway/Fig_05.png)
 
-**Visual APIs **
+**Visual APIs**
 
 The Visual API replaces the demand on the builder to construct
 grammatical text by presentation of choices presented in dialog windows.
@@ -200,7 +204,7 @@ This section combines multiple existing distinctions into one conceptual
 framework, in order to extend this framework. Figure 9 puts the concepts
 together in one place.
 
-**A. The Symmetry/Flexibility Distinction **
+**A. The Symmetry/Flexibility Distinction**
 
 Each API has two aspects.
 
@@ -263,7 +267,7 @@ follows:
 Why mention the spreadsheet here? Because describing its application
 model will allow us later to segue to the two-faced model.
 
-**B. The Construction/Operation Distinction **
+**B. The Construction/Operation Distinction**
 
 There are two distinct stages in the development of any unit of
 software, the ***construction stage*** and the ***operation stage***. In
