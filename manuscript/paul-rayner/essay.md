@@ -1,4 +1,4 @@
-# Domain-Driven Design as a Centered Set  --  Paul Rayner
+# Domain-Driven Design as a Centered Set — Paul Rayner
 
 *This essay has been adapted from Paul's blog post "BDD is a Centered Community," originally published in 2015.*
 
