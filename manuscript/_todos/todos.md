@@ -18,7 +18,9 @@
 - review the order of the essays
 
 - Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere.
-done: 
+I did a first round reducing some file sizes for these:
    alberto
    alexey
    indu
+   rebecca
+But I haven't adapted layout yet.
