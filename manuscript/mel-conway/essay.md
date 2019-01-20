@@ -6,12 +6,12 @@
 
 3\. Proposal: Release the Visual API into the wild
 
-{aside}
+{blockquote}
 Plan to throw one away; you will, anyway.
 
 Frederick P. Brooks, Jr.
 "The Mythical Man-Month"
-{/aside}
+{/blockquote}
 
 **1. DDD Prototyping: Extend the tech-business collaboration**
 
