@@ -1,11 +1,10 @@
 # Todos
 
-- convert Mel Conway's essay to Markdown
 - Martin Fowler: edit transition or add an introduction (Paul)
-- Move Paul's image (Paul)
-- Compare David West's pdf output to his word doc
+- Compare David West's pdf output to his word doc (Paul)
 - receive and clean up Indu's photos. Fade everything but the captain and the dog. (Mathias)
 - fix markdownlint-cli output (Mathias)
+- Mel Conway: format the Fred Brooks quote for Leanpub correctly
 - all todos.txt files and TODO annotations in the texts
 - Check with Einar Landre about his images (put in the text or delete?)
 - Somehow put the biographies and licenses in the book (use leanpub sidebars?)
