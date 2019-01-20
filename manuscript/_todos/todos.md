@@ -20,4 +20,4 @@
 - Reduce image sizes, see leanpub docs for recommendation. Don't delete the originals, move them somewhere.
 done: 
    indu
-   
+   alberto
