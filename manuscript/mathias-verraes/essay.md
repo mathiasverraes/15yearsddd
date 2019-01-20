@@ -204,7 +204,9 @@ Let's say you're not dealing with 5 or 10 values, but there is an infinite or ve
 
 ## Minimalist Interfaces
 
-A benefit of having lots of small classes, is that we can get rid of a lot of code. Perhaps the Sales Bounded Context deals with the 10 `PreciseXYZ` types, but the Reporting Bounded Context only supports `RoundedEUR`. That means there's no need to support `RoundedUSD` etc, as there's no need for it. This also implies that we don't need `round()` methods on any of the `PreciseXYZ` classes, apart from EUR. Less code means less boilerplate, less bugs, less tests, and less maintenance.
+At this point, we can start seeing how concepts from our requirements, and concepts from our refined Money model, start clustering. We can start breaking up this model, moving and copying parts to different Bounded Contexts. The name Money fooled us: Money means different things to different Contexts. 
+
+A benefit of having lots of small classes, is that we can get rid of a lot of code. Perhaps the Sales Bounded Context deals with the 10 `PreciseXYZ` types, but the Internal Reporting Bounded Context only needs `RoundedEUR`. That means there's no need to support `RoundedUSD` etc, as there's no need for it. This also implies that we don't need `round()` methods on any of the `PreciseXYZ` classes, apart from EUR. Less code means less boilerplate, less bugs, less tests, and less maintenance.
 
 Not supporting a way back from `RoundedEUR` to `PreciseEUR` is another example of a minimalist interface. Don't build behaviours that you don't need or want to discourage.
 
@@ -217,7 +219,7 @@ Another benefit of these small, ultra-single-purpose classes, is that they very 
 
 One advantage of expressing our code in terms of rich, well-adapted domain models, is that sometimes this can lead to finding opportunities for other features. It also makes the implementation of those features very easy. 
 
-In this case, the whole point of this modelling exercise was to solve the precision problem. Every time a precise value is rounded, what happens to the fractions of cents that the business gains or loses? Is this important to the domain?
+In this case, a goal of this modelling exercise was to solve the precision problem. Every time a precise value is rounded, what happens to the fractions of cents that the business gains or loses? Is this important to the domain?
 
 If so, we can keep a separate ledger for rounding. Every time a fraction of the value is gained or lost by rounding, we record it in the ledger. When the fractions add up to more than a cent, we can add it to the next payment. 
 
