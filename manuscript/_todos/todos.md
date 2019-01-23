@@ -14,6 +14,7 @@
 - Use markdown for all URLs so they turn blue
 - Smaller images in Cyrille's text
 - use leanpubs format for code samples everywhere
+- consistent footnotes, see leanpub manual
 - we vs us in Mathias' essay
 - review the order of the essays
 
