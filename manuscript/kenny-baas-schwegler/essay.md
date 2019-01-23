@@ -34,7 +34,7 @@ The core of visual meetings like EventStorming is that we discuss only explicit 
   
 ![](images/kenny-baas-schwegler/EventStorming1.jpg)
 
-*For more information about eventstorming read the book by Alberto Brandolini on: https://leanpub.com/introducing_eventstorming*
+*For more information about eventstorming read [the book by Alberto Brandolini](https://leanpub.com/introducing_eventstorming)*
 
 The basic flow will look like this, but the critical point here is to make communication explicit, if it is explicit for everyone in the room, that is enough. If we don't know, try and follow this flow. Remember to make the implicit, explicit. Discussions that do not take place on the paper roll needs to be made explicit. Sometimes it is hard to make it explicit in just a few stickies, that is why we need to have a whiteboard at hand where we can make sketches, drawings or write down bits and pieces of the model.
 
@@ -64,7 +64,7 @@ Like with the as-is, we will use example mapping again. First start with the sto
 
 ![](images/kenny-baas-schwegler/example_mapping.png)
 
-*© https://cucumber.io/blog/2015/12/08/example-mapping-introduction*
+*© [cucumber.io](https://cucumber.io/blog/2015/12/08/example-mapping-introduction)*
 
 The business rules will match the business rules on your EventStorm. You will most likely also find new business rules you need to make explicit. When this happens, you might need to adjust your EventStorm with our newly acquired information. The goal of both tools is to share knowledge and explore complex business domains, so be careful not to go all out on making the two consistent.
 

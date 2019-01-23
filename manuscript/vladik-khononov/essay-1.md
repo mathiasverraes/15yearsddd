@@ -24,13 +24,11 @@ Since we were a self-funded company, we had to get rolling as fast as possible. 
 
 The latter meant not only an information management system, but an advertisement serving and hosting solution as well. To be honest, I was overwhelmed and had to find a way to wrap my head around all the complexities of the business domain. Fortunately, not long before we started working, I got a book that promised just that. It described a way to tackle the complexities at the heart of software: Domain-Driven Design.
 
-Surely The Blue Book reads like poetry[^poetry], but it is not an easy book to read. Luckily for me, I got a really strong grasp of Domain-Driven Design just by reading the first four chapters.
+Surely [The Blue Book reads like poetry](https://www.infoq.com/interviews/jimmy-nilsson-linq), but it is not an easy book to read. Luckily for me, I got a really strong grasp of Domain-Driven Design just by reading the first four chapters.
 
 Guess how the system was initially designed? — It would definitely make a certain Kazakhstan based, prominent individual from the DDD community very proud...
 
 ![@DDD_Borat](images/vladikk/hand-drawn/2-borat.png)
-
-[^poetry]: <https://www.infoq.com/interviews/jimmy-nilsson-linq>
 
 ## Part I: 5 Bounded Contexts
 
@@ -60,13 +58,12 @@ Our understanding of Domain-Driven Design at this stage could be represented wit
 Ubiquitous language and an anemic domain model, in a monolithic bounded context.
 
 ### Bounded Context #2: CRM
-Soon after we deployed the campaign management solution, leads started flowing in, and we were in a rush. Our sales agents needed a robust CRM[^crm] system.
+Soon after we deployed the campaign management solution, leads started flowing in, and we were in a rush. Our sales agents needed a robust [CRM](https://en.wikipedia.org/wiki/Customer-relationship_management) system.
 
 The CRM had to aggregate all incoming leads, group them based on different parameters, and distribute the leads across multiple sales desks around the globe. It also had to integrate with our clients’ internal systems, both to notify the clients about changes in the leads’ lifecycles and to complement our leads with additional information. And, of course, the CRM had to provide as many optimization opportunities as possible. For example, we needed the ability to make sure that the agents were working on the most promising leads, to assign leads to agents based on their qualifications and past performance, and to allow a very flexible solution for calculating agents’ commissions.
 
 Since no off-the-shelf product fit our requirements, we decided to roll out our own CRM system.
 
-[^crm]: <https://en.wikipedia.org/wiki/Customer-relationship_management>
 
 #### More Aggregates!
 The initial implementation approach was the good ol’ DDD Lite. We decided to call every noun an aggregate, and shoehorn them into the same monolith. This time, however, something felt wrong right from the start.
@@ -76,11 +73,10 @@ We noticed that, all too often, we were adding awkward prefixes to those “aggr
 #### Achievement Unlocked: Read the Blue Book
 I learned that bounded contexts solve exactly the same issue we had experienced — they protect the consistency of the ubiquitous language.
 
-By that time, Vaughn Vernon had published his “Effective Aggregate Design”[^vernon] paper. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
+By that time, Vaughn Vernon had published his [“Effective Aggregate Design”](http://dddcommunity.org/library/vernon_2011/) paper. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
 
 We took a step back, and redesigned the CRM solution to reflect these revelations.
 
-[^vernon]: <http://dddcommunity.org/library/vernon_2011/>
 
 #### Solution Design: Take #2
 We started by dividing our monolith into two distinct bounded contexts: Marketing and CRM. We didn’t go all the way to microservices here, or anything like that. We just did the bare minimum to protect the ubiquitous language.

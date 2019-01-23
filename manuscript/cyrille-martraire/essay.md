@@ -977,9 +977,9 @@ It turns out that if you put all of them together, you end up with something lik
 
 Monoids are everywhere, even in Machine Learning, with the ubiquitous matrices and tensors, and with the key trick of composing derivatives together thanks to the [Chain Rule](https://en.wikipedia.org/wiki/Chain_rule).  
 
-Once you’ve used monoids a few times you can’t but fall in love with them. As a consequence, you try to make everything into a monoid. For example with my friend Jeremie Chassaing we’ve discussed monoids and Event Sourcing, and he kept investigating how to make Monoidal Event Sourcing (see his [related blog post](https://thinkbeforecoding.com/post/2014/04/11/Monoidal-Event-Sourcing)). 
+Once you’ve used monoids a few times you can’t but fall in love with them. As a consequence, you try to make everything into a monoid. For example with my friend Jeremie Chassaing we’ve discussed monoids and Event Sourcing, and he kept investigating how to make [Monoidal Event Sourcing](https://thinkbeforecoding.com/post/2014/04/11/Monoidal-Event-Sourcing). 
 
-*The code for the code snippets in this text are all online as Github gists:* [https://gist.github.com/cyriux](https://gist.github.com/cyriux)
+*The code for the code snippets in this text are all [online as Github gists](https://gist.github.com/cyriux).*
 
 *Many thanks to my colleague Mathieu Eveillard for reviewing an early draft, and to reviewers Eric Evans and Mathias Verraes*
 

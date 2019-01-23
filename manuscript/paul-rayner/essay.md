@@ -174,8 +174,8 @@ increase the gravitational pull of the principles and values at the center.
 
 ## References
 
-http://thepaulrayner.com/bdd-is-a-centered-rather-than-a-bounded-community
+[BDD is a Centered Community Rather than a Bounded Community](http://thepaulrayner.com/bdd-is-a-centered-rather-than-a-bounded-community)
 
 Paul Hiebert, "Conversion, Culture and Cognitive Categories." In: Gospel in Context 1:4 (October, 1978), 24-29.
 
-Centered set diagram sourced from http://www.academia.edu/6810466/Understanding_Christian_Identity_in_Terms_of_Bounded_and_Centered_Set_Theory_in_the_Writings_of_Paul_G._Hiebert.
+Centered set diagram sourced from [academia.edu](http://www.academia.edu/6810466/Understanding_Christian_Identity_in_Terms_of_Bounded_and_Centered_Set_Theory_in_the_Writings_of_Paul_G._Hiebert).

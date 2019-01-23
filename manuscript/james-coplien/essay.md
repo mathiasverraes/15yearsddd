@@ -132,7 +132,7 @@ Sometimes disjoint bounded contexts are just the ticket. While nothing in the un
 
 Yet things are messy in between, and the symmetry breaks. We need both heuristics and design formalisms to decide when to create new entities and when to use more sophisticated approaches such as DCI. Sometimes culture wins out and what is in reality an entangled concept deserves its own identity because of how it matches human mental models. Perhaps such situations should cause us to cast Occam's Razor aside for the sake of pragmatics and the power of software maintainability that comes with comprehension. A true story is useless if it cannot be understood, and even untrue stories (fables, myths) convey great power.
 
-##Sendoff
+## Sendoff
 
 So there you have it: a rambling mind dump of ideas, hopes, and heresies related to our shared aspirations for design. I hope it brings a smile to your face, and gives you ponder about something on which to work for the next 15 years. Godspeed.
 
@@ -141,7 +141,7 @@ Neighbors, J. (1984), “The Draco Approach to Constructing Software from Reusab
 
 Siniaalto and Abrahamsson. "Does Test-Driven Development Improve the Program Code? Alarming results from a Comparative Case Study." _Proceedings of Cee-Set 2007_, 10 - 12 October, 2007, Poznan, Poland.
 
-Guy Steele. Crafting a Language. https://www.youtube.com/watch?v=\_ahvzDzKdB0, OOPLSA 1998.
+[Guy Steele. Crafting a Language, OOPLSA 1998.](https://www.youtube.com/watch?v=\_ahvzDzKdB0)
 
 James Coplien. _Multi-Paradigm Design for C++_. Reading, MA: Addison-Wesley, 1998.
 
