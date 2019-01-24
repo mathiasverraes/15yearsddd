@@ -12,8 +12,9 @@ When we approached authors for this book, we deliberately imposed as few constra
 
 Eric, we present this book to you during the Domain-Driven Design Europe 2019 conference, as a token of our appreciation for your generosity in sharing your ideas. Here's to the next 15 years!
 
-Mathias Verraes
-Domain-Driven Design Europe
+*Mathias Verraes*
+
+*Founder Domain-Driven Design Europe*
 
 ## Acknowledgments
 
@@ -22,4 +23,4 @@ I'd like to thank Anneke Schoonjans, Céline Dursin, Paul Rayner, and Indu Alaga
 
 ## About DDD Europe
 
-Domain-Driven Design Europe is the world's leading DDD conference. Our mission is to expose the community to new ideas and influences from inside and outside the DDD community, and to spread DDD throughout the software industry. Please visit [dddeurope.com](https://dddeurope.com) to learn more, and we hope to welcome you as a participant soon.
+Domain-Driven Design Europe is the world's leading DDD conference. Our mission is to expose the community to new ideas and influences from inside and outside the DDD community, and to spread DDD throughout the software industry. Please visit the [DDD Europe site](https://dddeurope.com) to learn more, and we hope to welcome you as a participant soon.
