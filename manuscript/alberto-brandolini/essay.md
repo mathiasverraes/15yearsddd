@@ -16,7 +16,7 @@ Here is how it might happen.
 
 * A common concept (like the `Order` in an e-commerce web shop) becomes vital for several business capabilities, raising the need for reliability and availability, up to the unexplored limits of the CAP theorem, where buying more expensive hardware can't help you anymore.
 * Security and access control get more complicated: different roles are accessing the same information, but _not exactly the same_, hence the need for sophisticated filtering.
-* Shared resources require more coordination to be changed: _“we have to be sure”_ we are not breaking anyone else's software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
+* Changing shared resources requires more coordination: _“we have to be sure”_ we are not breaking anyone else's software and plans. The result is usually more and more meetings, more trade-offs, more elapsed time to complete, and less time for proper software development.
 * Since everybody now depends on 'the Order', be it a database table, a microservice or an Order Management System, changing it becomes riskier. Risk aversion slowly starts polluting your culture; necessary changes will be postponed.
 * Developers begin to call the backbone software _“legacy”_ with a shade of resentment. It's not their baby anymore; it's just _the thing that wakes them up in the middle of the night_.
 * Adding refactoring stories to your backlog becomes a farce: since there is no immediate business value to be delivered, refactoring is being postponed or interrupted. Your attempts to explain “technical debt” to your non-technical colleagues always leave you disappointed.
@@ -132,7 +132,7 @@ There are a few strategies to make the emerging structure visible. The most inte
 
 #### Using Pivotal Events
 
-Pivotal Events are specific events which are particularly relevant for the business, and usually set a transition between different business phases.
+Pivotal Events are specific events which are particularly relevant for the business and mark a transition between different business phases.
 
 In our conference organization scenario, we might spot a few candidates.
 
@@ -146,7 +146,7 @@ I usually mark the candidate events with colored tape, so that they're visible a
 
 ![A piece of colored replaceable tape is my favorite tool for marking pivotal events.](images/alberto-brandolini/Pivotal_events_shaded.png)
 
-It actually doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5 candidate events that seem to fit that role. Mostly in order to sort out the internal events faster.
+It doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5 candidate events that seem to fit that role. Mostly to sort out the internal events faster. We can still improve the model later, if needed.
 
 After highlighting pivotal events, sorting becomes a lot faster inside the boundaries, and a more sophisticated structure starts to emerge.
 
@@ -154,7 +154,7 @@ After highlighting pivotal events, sorting becomes a lot faster inside the bound
 
 #### Using Swimlanes
 
-Even in the most trivial businesses, the flow is not linear. There are branches, loops and things that happen in parallel. Sometimes the touch points between different portions of the flow are well-defined, like _billing_ getting triggered only around the events of a sale, or maybe a cancellation. Other times, the relationship can be more complicated: announcing some famous speaker can boost sales, sales can attract sponsors, sponsorships can allow organizers to afford the paycheck for more superstars speakers, which can trigger more sales and eventually trigger a venue upgrade.
+Even in the simplest businesses, the flow is not linear. There are branches, loops and things that happen in parallel. Sometimes the touch points between different portions of the flow are well-defined, like _billing_ getting triggered only around the events of a sale, or maybe a cancellation. Other times, the relationship can be more complicated: announcing some famous speaker can boost sales, sales can attract sponsors, sponsorships can allow organizers to afford the paycheck for more superstars speakers, which can trigger more sales and eventually trigger a venue upgrade.
 
 **Horizontal Swimlanes** is a common way to structure portions of the whole flow. It usually happens after pivotal events, but there's no strict recipe here: the emerging shape of the business suggests the more effective partitioning strategy.
 
@@ -192,7 +192,7 @@ The audience should not be passive. Participants are often challenging the narra
 
 The more we progress along the timeline, the more clarity is provided to the flow, while the narrator is progressing like a _defrag cursor[^IYOETR]_.
 
-![An explicit walkthrough round is our way to validate our understanding](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
+![An explicit walkthrough round is our way to validate our understanding.](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
 
 ### Extra steps
 
@@ -235,7 +235,7 @@ In general, **different phases** usually mean **different problems**, which usua
 
 **Pivotal Events** are usually part of a more general _published language_ shared between the different parties.
 
-![Emerging bounded contexts after a Big Picture EventStorming](images/alberto-brandolini/Emergent_Bounded_Context.png)
+![Emerging bounded contexts after a Big Picture EventStorming.](images/alberto-brandolini/Emergent_Bounded_Context.png)
 
 The picture above shows more or less what I am seeing when looking at the flow with Bounded Contexts in mind.
 
@@ -245,7 +245,7 @@ Swimlanes often show different paths that involve different models.
 
 Not every swimlane is a Bounded Context, sometimes they're just an _if_ statement somewhere, but when swimlanes are emerging for the need to highlight an independent process, possibly _on a different timeline_ , then you might want to give a shot to an independent model.
 
-![Swimlanes are usually a reliable clue for possible different bounded contexts](images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
+![Swimlanes are usually a reliable clue for possible different bounded contexts.](images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
 
 ### Heuristic: look at the people on the paper roll
 
@@ -277,9 +277,11 @@ Once again: **different needs** mean **different models**.
 
 It doesn't end here. A typical conversational pattern that often happens around pivotal or boundary events is the one in the picture below.
 
-[FIXME: conversational comic]
+![A typical competence clash, the persons on the left usually know all the mechanics involved in a given step, while the ones on the right just care about the outcome.](images/alberto-brandolini/Task_list-vs_ignorance.png)
 
-...
+There is complex knowledge about _everything is needed in order to complete something_ and it's often similar to a task list. On the other side of the pivotal event, this complexity should vanish: people usually won't care about the _how_ but only about the _what_.
+
+In or scenario it may be something like: _"I don't care whether you used WordPress to publish the website, I just need to know whether the URL is reachable or not"_ or _"I don't care how did you decide those prices, I just need to know the amount for every ticket type"_.
 
 ### Heuristic: _listen_ to the actual language
 
