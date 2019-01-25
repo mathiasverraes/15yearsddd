@@ -1,4 +1,4 @@
-# Domain Modeling with Algebraic Data Types (by Scott Wlaschin)
+# Domain Modeling with Algebraic Data Types — Scott Wlaschin
 
 *Authors note: It is a privilege to be able to contribute to this project. Even though it has been fifteen years since 'Domain-Driven Design' was published, its insights and wisdom are just as valuable as ever, and continue to influence each new generation of programmers. One thing that has changed since it was written is the rise of functional programming as an alternative paradigm to object-oriented programming. Many articles on functional programming focus on the mathematical aspects, but I believe it has great potential for effective design in conjunction DDD principles. This chapter, condensed from my book "Domain Modeling Made Functional," explains why.*
 
@@ -305,7 +305,7 @@ This can be read as: to use `CreateEmailAddress` you need to provide a `string` 
 
 Now we can define what we mean by an algebraic type *system*.  It's simply a type system where *every* compound type is composed from smaller types by *AND*-ing or *OR*-ing them together. Using *AND* and *OR* to build new data types should feel familiar — we used the same kind of *AND* and *OR* to document our domain earlier. 
 
-This kind of *composable* type system is a great aid in doing domain-driven design because we can quickly create a complex model simply by mixing types together in different combinations, as we'll see next.
+This kind of *composable* type system is a great aid in doing Domain-Driven Design because we can quickly create a complex model simply by mixing types together in different combinations, as we'll see next.
 
 
 ## Modeling with algebraic data types

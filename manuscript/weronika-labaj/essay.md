@@ -1,4 +1,4 @@
-# To DDD or not to DDD... What to do if your domain is boring? (by Weronika Łabaj)
+# To DDD or not to DDD... What to do if your domain is boring? — Weronika Łabaj
 
 I've heard countless times that DDD should ONLY be applied to complex, interesting domains. Even experts I deeply admire say that, so it must be true, right?
 

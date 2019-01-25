@@ -1,4 +1,4 @@
-# Discovering Bounded Contexts with EventStorming (by Alberto Brandolini)
+# Discovering Bounded Contexts with EventStorming — Alberto Brandolini
 
 There's plenty of outcomes from a Big Picture EventStorming, the most obvious being the collective learning that happens throughout the workshop. However, learning is not the only one!
 
@@ -322,7 +322,7 @@ In retrospective, I still wonder why we wasted all those years doing the opposit
 
 [^MINAP]: Management is not a purpose. This is true on so many levels, but talking about bounded contexts this is especially true: _planning_, _designing_, _tracking_, _running_, _supporting_, _choosing_ are more fine-grained purposes, that often require a model on their own.
 
-[^ESR]: The best entry point to start exploring the EventStorming world is probably the official website at [eventstorming.com](https://www.eventstorming.com).
+[^ESR]: The best entry point to start exploring the EventStorming world is probably [the official website](https://www.eventstorming.com).
 
 [^CALM]: Conferences are a little mess, but they are interesting because they often employ fewer people than the required roles: a small team is taking care of various activities spread around months, with a peak of intensity during the conference and the days before. The need for specialization is continuously at odds with the need of having to sync as few people as possible. At the same time, I've never seen two conferences alike, so I won't be revealing special trade secrets here.
 

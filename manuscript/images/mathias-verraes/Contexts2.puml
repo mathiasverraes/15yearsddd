@@ -1,0 +1,52 @@
+@startuml
+!include Shared.puml
+
+
+namespace ProductCatalogContext {
+  class Money
+}
+
+namespace AntiCorruptionLayer {
+  ProductCatalogContext.Money --> Adapter
+  class Adapter
+}
+
+namespace SalesContext {
+  AntiCorruptionLayer.Adapter --> Money
+  interface Money
+  class EUR
+  class USD
+
+  Money <|-- EUR
+  Money <|-- USD
+
+  note top of Money
+    In this context,
+    all Money is
+    assumed precise.
+  end note
+}
+
+namespace ForeignExchangeContext {
+  SalesContext.Money --> ConversionRate
+  class ConversionRate
+  interface ForeignExchange
+  class WebAPIForeignExchange
+  ForeignExchange <|--WebAPIForeignExchange
+  ForeignExchange --> ConversionRate
+}
+
+namespace InternalFinancialReporting {
+  ForeignExchangeContext.ConversionRate --> EUR
+
+  class EUR
+}
+
+namespace USComplianceReporting {
+  ForeignExchangeContext.ConversionRate --> USD
+
+  class USD
+}
+
+
+@enduml

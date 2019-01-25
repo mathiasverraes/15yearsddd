@@ -1,4 +1,4 @@
-# Agents aka Domain objects on steroids (by Einar Landre)
+# Agents aka Domain objects on steroids -- Einar Landre
 
 #### From here to there and back again, Bilbo Baggins
 

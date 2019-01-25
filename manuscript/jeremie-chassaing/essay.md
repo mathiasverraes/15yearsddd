@@ -1,4 +1,4 @@
-# Time (by Jérémie Chassaing)
+# Time — Jérémie Chassaing
 
 ## Buried and scattered
 

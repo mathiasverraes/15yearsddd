@@ -1,4 +1,4 @@
-# Distilling DDD Into First Principles (by Scott Millett)
+# Distilling DDD Into First Principles — Scott Millett
 
 *Parts of this essay first appeared in the book Patterns, Principles, and Practices of Domain-Driven Design (Wrox 2015) by Scott Millett and Nick Tune.*
 
@@ -171,7 +171,7 @@ An impact map, rather obviously, starts with the impact. For example “sell 25%
 
 On many software projects the developers only get the lower tiers of an impact map—what the business thinks they need and how they think the developers should achieve it. With an impact map, though, you can unwind their assumptions and nd out what they really want to achieve. And then you can use your technical expertise to suggest superior alternatives that they would never have thought of.
 
-Some DDD practitioners rate impact mapping very highly, both when applied with DDD or in isolation. You are highly encouraged to investigate impact mapping by browsing the website (http:// www.impactmapping.org/) or picking up a copy of the book: “Impact Mapping,” by Gojko Adzic.
+Some DDD practitioners rate impact mapping very highly, both when applied with DDD or in isolation. You are highly encouraged to investigate impact mapping by browsing the [website](http:// www.impactmapping.org/) or picking up a copy of the book: [“Impact Mapping,” by Gojko Adzic](https://amzn.to/2AXdEgC).
 
 #### Understanding The Business Model
 
@@ -284,7 +284,7 @@ Therefore focus on the parts of the product that make it unique; these will be h
 #### The Core Focus of PotterMore.com
 
 Pottermore.com was the only place on the web where you can buy digital copies of the Harry Potter books. Like any e‐commerce site, it allows you to browse products, store products in a basket, and check out. The core domain of the Pottermore site
-is not what the customer sees, but rather what he does not. Pottermore books aren’t DRM‐locked (http://www.futurebook.net/content/pottermore-finally- delivers-harry-potter-e-books-arrive); they are watermarked. This invisible watermark allows the books that are purchased to be tracked in case they’re hosted illegally on the web. The core domain of the Pottermore system is the subdomain that enables this watermarking technology to deter illegal distribution of a book without infringing on the customer. (The customer can copy the book to any other of his devices.) This is what was most important to the business, what set it apart from other e‐book sellers, and what ensured the system was built rather than being sold on iTunes or other e‐book sellers.
+is not what the customer sees, but rather what he does not. [Pottermore books aren’t DRM‐locked](http://www.futurebook.net/content/pottermore-finally-delivers-harry-potter-e-books-arrive); they are watermarked. This invisible watermark allows the books that are purchased to be tracked in case they’re hosted illegally on the web. The core domain of the Pottermore system is the subdomain that enables this watermarking technology to deter illegal distribution of a book without infringing on the customer. (The customer can copy the book to any other of his devices.) This is what was most important to the business, what set it apart from other e‐book sellers, and what ensured the system was built rather than being sold on iTunes or other e‐book sellers.
 
 ### Ensure Everyone Understands The Vision Of The Solution
 
@@ -292,7 +292,7 @@ A domain vision statement can be created at the start of a project to explicitly
 
 #### Amazon’s Approach To Product Development 
 
-Amazon has a unique approach when it comes to forming a domain vision statement called working backwards (see: http://www.quora.com/What-is- Amazons-approach-to-product-development-and-product-management).
+Amazon has a unique approach when it comes to forming a domain vision statement called [working backwards](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management).
 For new enhancements, a product manager produces an internal press release announcing the finished product, listing the benefits the feature brings. If the intended customer doesn’t feel the benefits are exciting or worthwhile, the product manager refactors the press release until the feature offers real value for the customer. At all times, Amazon is focused on the customer and is clear about the advantage a new feature can bring before it sets out with development.
 
 
@@ -361,7 +361,7 @@ Explore and experiment to reveal insights and offer new solutions. The result of
 #### Model Exploration Whirlpool
 
 
-Eric Evans has created a draft document named the Model Exploration Whirlpool (http://domainlanguage.com/ddd/whirlpool/). This document presents a method of modeling and knowledge crunching that can complement other agile methodologies and be called upon at any time of need throughout the lifetime of application development. It is used not as a modeling methodology but rather for when problems are encountered during the creation of a model. Telltale signs such as breakdowns in communication with the business and overly complex solution designs or when there is a complete lack of domain knowledge are catalysts to jump into the process dened in the Model Exploration Whirlpool and crunch domain knowledge.
+Eric Evans has created a draft document named the [Model Exploration Whirlpool](http://domainlanguage.com/ddd/whirlpool/). This document presents a method of modeling and knowledge crunching that can complement other agile methodologies and be called upon at any time of need throughout the lifetime of application development. It is used not as a modeling methodology but rather for when problems are encountered during the creation of a model. Telltale signs such as breakdowns in communication with the business and overly complex solution designs or when there is a complete lack of domain knowledge are catalysts to jump into the process dened in the Model Exploration Whirlpool and crunch domain knowledge.
 
 
 The whirlpool contains the following activities:

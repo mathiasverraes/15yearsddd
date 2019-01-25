@@ -1,4 +1,4 @@
-# Enhancing DDD (by Prof. David West)
+# Enhancing DDD — Prof. David West
 
 *In celebration of the fifteenth anniversary of Eric Evans’ Domain-Driven Design*
 

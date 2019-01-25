@@ -1,4 +1,4 @@
-# The Captain of the Night Watch (by Indu Alagarsamy)
+# The Captain of the Night Watch — Indu Alagarsamy
 
 *This article is based on a conversation that ensued during a midnight stroll in the streets of Amsterdam with Eric Evans, Paul Rayner, and Mathias Verraes.*
 
@@ -21,13 +21,13 @@ I let that sink in for a moment. So the statue and the painting were the differe
 
 I remembered the evening at the museum where I stood in front of the Night Watch. Light was streaming down on the captain as if to highlight his authority. But at the square, the captain was just one among the 22 individual sculptures. Unless you know about Rembrandt’s Night Watch, you couldn’t tell who was the man with all the authority. At the square there was nothing special about the captain, and definitely no special lighting. The constraints on the light were different in both the painting context and the sculpture context. 
 
-![Comparison of the Captain in the painting vs sculpture](images/indu-alagarsamy/comparison-1.png)
+![Comparison of the Captain in the painting vs sculpture](images/indu-alagarsamy/comparison-1.jpg)
 
 When Rembrandt was painting, he didn't have to worry about how these characters were going to look from behind. 2D was perfectly sufficient. However, when the Russian artists created the sculptures they had to deal with a whole new set of constraints that pertained to creating statues out of bronze in 3D. 
 
 In Rembrandt’s art, the level of detail for each character was different. In the painting, the details on the captain were stunning from the wrinkles on his boots to the stitching on his vest and then some of the other characters were vague, for example the dog. The sculptures however were all equally well defined. There was no difference in the amount of detail in the captain’s statue vs. the dog’s statue. 
 
-![Comparison of the dog in the painting vs sculpture](images/indu-alagarsamy/comparison-2.png)
+![Comparison of the dog in the painting vs sculpture](images/indu-alagarsamy/comparison-2.jpg)
 
 Also, in the painting there is a character hidden in the group, that’s believed to be Rembrandt himself. Whereas at the square, Rembrandt was in plain sight towering over all of his creation from his place on the pedestal. So on the surface, while the art hanging at Rijksmuseum and the sculpture at the city square both represent the Night Watch, they are bound by different constraints, have different goals, and therefore different focus and detail. That makes them different bounded contexts.  
 
@@ -41,4 +41,4 @@ Here is where Eric's Domain-Driven Design forces you to think of individual mode
 
 As all nights do, this one came to an end too. I felt like I had come a full circle. From that first moment when I was in awe of the Captain at Rijksmuseum to seeing him again at the square, both Rembrandt and Eric in their own ways, showed me the nuances of the bounded context. While I had to part my ways with the captain, I walked away with a new learning and appreciation for Bounded Contexts. 
 
-![Group Selfie](images/indu-alagarsamy/group-selfie.png)
+![Group Selfie](images/indu-alagarsamy/group-selfie.jpg)

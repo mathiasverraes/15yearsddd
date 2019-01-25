@@ -1,4 +1,4 @@
-# Domain-Driven Design as Usability for Coders (by Anita Kvamme)
+# Domain-Driven Design as Usability for Coders — Anita Kvamme
 
 ## My Way into Modelling
 
@@ -47,6 +47,6 @@ Sometimes I wonder, if it is this usability aspect of DDD that is the explanatio
 ## References
 
 - The Design of Everyday Things, author: Dan Norman, published in 1988.
-- Jessica Kerr´s Keynote at Explore DDD 2018: <https://www.youtube.com/watch?v=nVRUv30coyA>
-- Jakob Nielsen article about Mental Models: <https://www.nngroup.com/articles/mental-models/>
+- [Jessica Kerr´s Keynote at Explore DDD 2018](https://www.youtube.com/watch?v=nVRUv30coyA)
+- [Jakob Nielsen article about Mental Models](https://www.nngroup.com/articles/mental-models/)
 

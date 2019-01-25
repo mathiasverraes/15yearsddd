@@ -2,25 +2,20 @@
 
 !include Shared.puml
 
-interface PreciseMoney {
+class Money {
 }
-class VATRate {
+class VAT {
 }
 
 class Price {
-   amount : PreciseMoney
-   vat : VATRate
+   amount : Money
+   vat : VAT
 
-   getSubTotal() : PreciseMoney
-   getTotal() : PreciseMoney
+   getSubTotal() : Money
+   getTotal() : Money
 }
 
-class ProductPrice {
-   prices : Map<Int, Price>
-}
-
-Price --o PreciseMoney
-Price --o VATRate
-ProductPrice --o Price
+Price --o Money
+Price --o VAT
 
 @enduml

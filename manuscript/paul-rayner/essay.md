@@ -1,11 +1,11 @@
-# Domain-Driven Design as a Centered Set
+# Domain-Driven Design as a Centered Set — Paul Rayner
 
 *This essay has been adapted from Paul's blog post "BDD is a Centered Community," originally published in 2015.*
 
 Dan North mentioned in the CukeUp 2015 panel the notion
 of a community being a "bounded set," and I pointed out
 that the same theology also talks about the notion of a community being a
-"centered set." The original context of the panel discussion concerned BDD (behaviour-driven development), but I believe the idea applies equally to domain-driven design (DDD). DDD is a centered set, rather than a
+"centered set." The original context of the panel discussion concerned BDD (behaviour-driven development), but I believe the idea applies equally to Domain-Driven Design (DDD). DDD is a centered set, rather than a
 bounded set. To extend this further to the community that has grown around DDD over the last 15 years, we might say _DDD is a centered community, rather than a bounded community._
 
 Let's be clear what is meant by bounded vs. centered set as it applies to a
@@ -112,7 +112,7 @@ Second, because all objects are seen in constant motion, they are moving, fast
 or slowly, towards or away from the center. Something is always happening to an
 object. It is never static.
 
-![Centered Set](centered-set.png)
+![Centered Set](images/paul-rayner/centered-set.png)
 
 Illustrations of centered sets are harder to come by in English, since English tends
 to see the world largely in terms of bounded sets. One example is a magnetic field
@@ -174,8 +174,8 @@ increase the gravitational pull of the principles and values at the center.
 
 ## References
 
-http://thepaulrayner.com/bdd-is-a-centered-rather-than-a-bounded-community
+[BDD is a Centered Community Rather than a Bounded Community](http://thepaulrayner.com/bdd-is-a-centered-rather-than-a-bounded-community)
 
 Paul Hiebert, "Conversion, Culture and Cognitive Categories." In: Gospel in Context 1:4 (October, 1978), 24-29.
 
-Centered set diagram sourced from http://www.academia.edu/6810466/Understanding_Christian_Identity_in_Terms_of_Bounded_and_Centered_Set_Theory_in_the_Writings_of_Paul_G._Hiebert.
+Centered set diagram sourced from [academia.edu](http://www.academia.edu/6810466/Understanding_Christian_Identity_in_Terms_of_Bounded_and_Centered_Set_Theory_in_the_Writings_of_Paul_G._Hiebert).

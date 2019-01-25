@@ -1,4 +1,4 @@
-# Splitting Hot Aggregates (by Jef Claes)
+# Splitting Hot Aggregates — Jef Claes
 
 _Published on jefclaes.be 2014-11-01_
 

@@ -1,11 +1,8 @@
-# Tackling Complexity in ERP Software: a Love Song to Bounded Contexts (by Machiel de Graaf and Michiel Overeem)
+# Tackling Complexity in ERP Software: a Love Song to Bounded Contexts — Machiel de Graaf and Michiel Overeem
 
 Enterprise resource planning (ERP) software offers an integrated solution for the management of core business processes. Different domains (accounting, sales, relation management, payrolling) are handled by a single software system. A well-executed ERP system has the benefit that information is only stored once, and relations between information are easy to follow since it is all in one system.
 
-We, AFAS Software in the Netherlands, have two decades of experience with building ERP software, and not without success. After working on the same codebase for so long, we strategically decided to do a rewrite. Yes, we know that Joel Spolsky said not to do that[^joel]. We are in the DHH-camp[^dhh], because the new version needs to be different. We needed to tackle the complexity in ERP software. Through our discovery of CQRS and event-sourcing we stumbled upon Domain-Driven Design (DDD). And the goal of DDD is to tackle the complexity in software, exactly what we needed. We let DDD inspire us as much as possible. But we also decided to take it a step further. We experienced three major challenges in developing ERP software that we wanted to tackle in this new version. 
-
-[^joel]: <https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/>
-[^dhh]: <https://signalvnoise.com/posts/3856-the-big-rewrite-revisited>
+We, AFAS Software in the Netherlands, have two decades of experience with building ERP software, and not without success. After working on the same codebase for so long, we strategically decided to do a rewrite. Yes, we know that [Joel Spolsky said not to do that](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/). We are in the [DHH-camp](https://signalvnoise.com/posts/3856-the-big-rewrite-revisited), because the new version needs to be different. We needed to tackle the complexity in ERP software. Through our discovery of CQRS and event-sourcing we stumbled upon Domain-Driven Design (DDD). And the goal of DDD is to tackle the complexity in software, exactly what we needed. We let DDD inspire us as much as possible. But we also decided to take it a step further. We experienced three major challenges in developing ERP software that we wanted to tackle in this new version. 
 
 *Disclaimer: although we have quite a journey behind us, we have not arrived yet. The software is not yet in production, and our experiences come solely from testing the system in simulated environments.*
 
@@ -46,9 +43,7 @@ Second, we are not trying to build an MDD platform that allows you to build a la
 
 ## One bounded context
 
-As mentioned, we discovered DDD through CQRS and event-sourcing. And we choose to generate a CQRS, event-sourced system from the model, because we believed in the scale and flexibility it would provide us. However, in the initial versions of our platform we still had two monoliths: our generator, and the generated CQRS application. One of the biggest inspirations that we have found in DDD was the concept of bounded contexts, of different sub-domains, and the idea that the DRY (don’t repeat yourself) rule should only be used within a bounded context[^boundaries].
-
-[^boundaries]: <https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55>
+As mentioned, we discovered DDD through CQRS and event-sourcing. And we choose to generate a CQRS, event-sourced system from the model, because we believed in the scale and flexibility it would provide us. However, in the initial versions of our platform we still had two monoliths: our generator, and the generated CQRS application. One of the biggest inspirations that we have found in DDD was the concept of bounded contexts, of different sub-domains, and the idea that the DRY (don’t repeat yourself) rule [should only be used within a bounded context](https://medium.com/russmiles/on-boundaries-and-microservices-d559ec52bb55).
 
 The resulting application was a monolithic deployment unit. With every change of the model, we needed to generate the complete application, and deploy it. Now, it isn’t impossible to do (we are doing it, and even manage to deploy a new application with zero-downtime through blue-green deployments), but the deployment feels bigger and more cumbersome than necessary. We feel that this kind of upgrades will not scale and that it will become a problem later one, when the model starts evolving at an increased speed. 
 

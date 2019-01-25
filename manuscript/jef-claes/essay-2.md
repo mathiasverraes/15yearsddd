@@ -1,4 +1,4 @@
-# Not About the UI and the Database (by Jef Claes)
+# Not About the UI and the Database — Jef Claes
 
 _Published on jefclaes.be 2014-06-01_
 

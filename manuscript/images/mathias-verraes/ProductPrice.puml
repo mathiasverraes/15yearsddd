@@ -1,0 +1,26 @@
+@startuml
+
+!include Shared.puml
+
+class Money {
+}
+class VAT {
+}
+
+class Price {
+   amount : Money
+   vat : VAT
+
+   getSubTotal() : Money
+   getTotal() : Money
+}
+
+Price --o Money
+Price --o VAT
+ProductPrice --o Price
+
+class ProductPrice {
+   prices : Map<MarketID, Price>
+}
+
+@enduml

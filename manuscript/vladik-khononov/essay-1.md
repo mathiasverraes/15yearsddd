@@ -1,10 +1,10 @@
-# 7 Years of DDD: Tackling Complexity in a Large-Scale Marketing System (by Vladik Khononov)
+# 7 Years of DDD: Tackling Complexity in a Large-Scale Marketing System — Vladik Khononov
 
 One morning, back in 2010, I got a phone call from a friend. He said he was starting a new company. The business was not going to be simple, but if I joined him, from the technical perspective I could do whatever I wanted. I agreed to join him, just like that! 
 
 In this essay I’d like to share what I got myself into. In particular, the Domain-Driven Design (DDD) side of our company’s story, since we employed this methodology from day one. 
 
-I’ll start with a walk through the stories of 5 Bounded Contexts that demonstrate the different approaches to DDD we tried, and the results of our efforts. In the second part, I will use those 5 stories to share some practical advice on domain-driven design, domain modeling, event sourcing, CQRS, and microservices, all based on our experience at Internovus.
+I’ll start with a walk through the stories of 5 Bounded Contexts that demonstrate the different approaches to DDD we tried, and the results of our efforts. In the second part, I will use those 5 stories to share some practical advice on Domain-Driven Design, domain modeling, event sourcing, CQRS, and microservices, all based on our experience at Internovus.
 
 But first, as well-behaved DDD practitioners, we’ll start with the business domain.
 
@@ -24,13 +24,11 @@ Since we were a self-funded company, we had to get rolling as fast as possible. 
 
 The latter meant not only an information management system, but an advertisement serving and hosting solution as well. To be honest, I was overwhelmed and had to find a way to wrap my head around all the complexities of the business domain. Fortunately, not long before we started working, I got a book that promised just that. It described a way to tackle the complexities at the heart of software: Domain-Driven Design.
 
-Surely The Blue Book reads like poetry[^poetry], but it is not an easy book to read. Luckily for me, I got a really strong grasp of domain-driven design just by reading the first four chapters.
+Surely [The Blue Book reads like poetry](https://www.infoq.com/interviews/jimmy-nilsson-linq), but it is not an easy book to read. Luckily for me, I got a really strong grasp of Domain-Driven Design just by reading the first four chapters.
 
 Guess how the system was initially designed? — It would definitely make a certain Kazakhstan based, prominent individual from the DDD community very proud...
 
 ![@DDD_Borat](images/vladikk/hand-drawn/2-borat.png)
-
-[^poetry]: <https://www.infoq.com/interviews/jimmy-nilsson-linq>
 
 ## Part I: 5 Bounded Contexts
 
@@ -43,7 +41,7 @@ And of course, those were no aggregates. They didn’t provide any transactional
 
 ![](images/vladikk/hand-drawn/3-anemic-dm.png)
 
-In hindsight, this design was so terrible it resembled a by-the-book example of what domain-driven design is not. However, things looked quite different from the business standpoint.
+In hindsight, this design was so terrible it resembled a by-the-book example of what Domain-Driven Design is not. However, things looked quite different from the business standpoint.
 
 From the business’s point of view, this project was considered a huge success! Despite the flawed architecture, and despite our unique approach to quality assurance — QA is for cowards — we were able to deliver working software in a very aggressive time to market. How did we do it?
 
@@ -53,20 +51,19 @@ We somehow managed to come up with a robust Ubiquitous Language. None of us had 
 The smooth communication with domain experts allowed us to grasp the business domain in no time and to implement its business logic. Yes, it was a big scary monolith, but for two developers in a garage it was just good enough. Again, we produced working software in a very aggressive time to market.
 
 #### Domain-Driven Design
-Our understanding of domain-driven design at this stage could be represented with this simple diagram:
+Our understanding of Domain-Driven Design at this stage could be represented with this simple diagram:
 
 ![](images/vladikk/hand-drawn/4-ddd.png)
 
 Ubiquitous language and an anemic domain model, in a monolithic bounded context.
 
 ### Bounded Context #2: CRM
-Soon after we deployed the campaign management solution, leads started flowing in, and we were in a rush. Our sales agents needed a robust CRM[^crm] system.
+Soon after we deployed the campaign management solution, leads started flowing in, and we were in a rush. Our sales agents needed a robust [CRM](https://en.wikipedia.org/wiki/Customer-relationship_management) system.
 
 The CRM had to aggregate all incoming leads, group them based on different parameters, and distribute the leads across multiple sales desks around the globe. It also had to integrate with our clients’ internal systems, both to notify the clients about changes in the leads’ lifecycles and to complement our leads with additional information. And, of course, the CRM had to provide as many optimization opportunities as possible. For example, we needed the ability to make sure that the agents were working on the most promising leads, to assign leads to agents based on their qualifications and past performance, and to allow a very flexible solution for calculating agents’ commissions.
 
 Since no off-the-shelf product fit our requirements, we decided to roll out our own CRM system.
 
-[^crm]: <https://en.wikipedia.org/wiki/Customer-relationship_management>
 
 #### More Aggregates!
 The initial implementation approach was the good ol’ DDD Lite. We decided to call every noun an aggregate, and shoehorn them into the same monolith. This time, however, something felt wrong right from the start.
@@ -76,11 +73,10 @@ We noticed that, all too often, we were adding awkward prefixes to those “aggr
 #### Achievement Unlocked: Read the Blue Book
 I learned that bounded contexts solve exactly the same issue we had experienced — they protect the consistency of the ubiquitous language.
 
-By that time, Vaughn Vernon had published his “Effective Aggregate Design”[^vernon] paper. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
+By that time, Vaughn Vernon had published his [“Effective Aggregate Design”](http://dddcommunity.org/library/vernon_2011/) paper. After reading it, I finally understood that aggregates aren’t just data structures; they play a much larger role by protecting the consistency of the data.
 
 We took a step back, and redesigned the CRM solution to reflect these revelations.
 
-[^vernon]: <http://dddcommunity.org/library/vernon_2011/>
 
 #### Solution Design: Take #2
 We started by dividing our monolith into two distinct bounded contexts: Marketing and CRM. We didn’t go all the way to microservices here, or anything like that. We just did the bare minimum to protect the ubiquitous language.
@@ -116,12 +112,12 @@ Needless to say, the project wasn’t delivered anywhere near on time, and it wa
 The only way out of this mess was to completely rewrite the Lead aggregate, this time with proper boundaries, which we did a couple of years later. It wasn’t easy, but the mess was so bad there was no other way around it.
 
 #### Domain-Driven Design
-Even though this project failed pretty miserably by business standards, our understanding of domain-driven design evolved a bit: build a ubiquitous language, protect its integrity using bounded contexts, and instead of implementing an anemic domain model everywhere, implement a proper domain model everywhere.
+Even though this project failed pretty miserably by business standards, our understanding of Domain-Driven Design evolved a bit: build a ubiquitous language, protect its integrity using bounded contexts, and instead of implementing an anemic domain model everywhere, implement a proper domain model everywhere.
 
 ![](images/vladikk/hand-drawn/5-ddd.png)
 
 #### A Missing Piece?
-Of course, a crucial part of domain-driven design was missing here: subdomains, their types, and how they affect a system’s design. 
+Of course, a crucial part of Domain-Driven Design was missing here: subdomains, their types, and how they affect a system’s design. 
 
 Initially we wanted to do the best job possible, but we ended up wasting time and effort on building domain models for supporting subdomains. As Eric Evans put it, not all of a large system will be well designed. We learned it the hard way, and wanted to use the acquired knowledge in the next project.
 
@@ -179,7 +175,7 @@ For the Bonuses project, we had a ubiquitous language. Even though the initial i
 As the domain’s complexity grew, the language used by the domain experts got more and more complicated as well. At some point, it could no longer be modeled using Active Records! This realization allowed us to notice the need for a change in the design much earlier than in the case of the Event Crunchers. We saved a lot of time and effort by not trying to fit a square peg in a round hole, thanks to the ubiquitous language.
 
 #### Domain-Driven Design
-At this point, our understanding of domain-driven design had finally evolved into a classic one: ubiquitous language, bounded contexts, and different types of subdomains, each designed according to its needs.
+At this point, our understanding of Domain-Driven Design had finally evolved into a classic one: ubiquitous language, bounded contexts, and different types of subdomains, each designed according to its needs.
 
 ![](images/vladikk/hand-drawn/8-ddd.png)
 
@@ -223,7 +219,7 @@ I know, it might sound like we’re a bunch of losers who can’t do anything ri
 ## Part II: What We Learned
 
 ### Ubiquitous Language
-In my opinion, ubiquitous language is the “core domain” of domain-driven design. The ability to speak the same language with our domain experts has been indispensable to us. It turned out to be a much more effective way to share knowledge than tests, documents, and “even” Jira.
+In my opinion, ubiquitous language is the “core domain” of Domain-Driven Design. The ability to speak the same language with our domain experts has been indispensable to us. It turned out to be a much more effective way to share knowledge than tests, documents, and “even” Jira.
 
 Moreover, the presence of a ubiquitous language has been a major predictor of a project’s success for us:
 
@@ -238,7 +234,7 @@ Hence, our take on it right now: ubiquitous language is not optional, regardless
 We also learned the importance of investing in the ubiquitous language as early as possible. It is practically impossible to “fix” a language if it has been spoken for a while in a company (as was the case with our CRM system). We were able to fix the implementation. It wasn’t easy, but eventually we did it. That’s not the case, however, for the language. To this day, some people still use the conflicting terms defined in the initial implementation.
 
 ### Subdomains
-We all know that, according to domain-driven design, there are three types of business domains:
+We all know that, according to Domain-Driven Design, there are three types of business domains:
 
 #### Core Subdomains
 Things the company is doing differently from its competitors to gain competitive advantage. In our case, we came up with our unique way to optimize the lifecycle of advertising campaigns. We also built our own CRM solution to make sure that we could measure and optimize each step in the process of handling incoming leads.
@@ -256,7 +252,7 @@ Generic subdomains are all the things that all companies do in the same way. Tho
 #### Tactical Design
 It is a common practice to use this categorization in business domains to drive design decisions:
 
-* For the core subdomains, use the heavy artillery: domain-driven design’s tactical patterns, or Event Sourcing;
+* For the core subdomains, use the heavy artillery: Domain-Driven Design’s tactical patterns, or Event Sourcing;
 * Supporting subdomains can be implemented with a rapid application development framework; and 
 * Generic subdomains, in almost all cases, are cheaper and safer to buy or adopt than to implement yourself.
 
@@ -305,7 +301,7 @@ This pattern calls for implementing the business logic as a simple and straightf
 Here we still have the same procedural code; however, instead of accessing databases directly, it operates on objects that abstract the persistence mechanism - active records.
 
 ##### Domain Model
-I will use Domain Model as an overarching name for domain-driven design’s tactical patterns, such as aggregate, value object, service, etc.
+I will use Domain Model as an overarching name for Domain-Driven Design’s tactical patterns, such as aggregate, value object, service, etc.
 
 ##### Event Sourced Domain Model
 This pattern is based on the domain model, but here we are using event sourcing to represent changes in aggregates’ lifecycles.
@@ -403,7 +399,7 @@ Those are the five pieces of practical advice I wanted to share:
 * Start with wide bounded context boundaries, and decompose them further when more knowledge of the business domain is acquired — but only if you have good reasons to do so.
 
 ### Domain-Driven Design
-Our current way of applying domain-driven design is as follows:
+Our current way of applying Domain-Driven Design is as follows:
 
 ![](images/vladikk/hand-drawn/14-ddd.png)
 
@@ -413,11 +409,11 @@ Our current way of applying domain-driven design is as follows:
 4. From this design, we deduce the types of business domains at play and verify them with the business. Sometimes this dialog leads to changes in the requirements, because we are able to provide a new perspective on the project to the product owners.
 5. As more domain knowledge is acquired, and if needed, we decompose the bounded contexts further into contexts with narrower boundaries.
 
-The main difference between our current vision of domain-driven design and the one we started with is that we went from “Aggregates Everywhere” to *“Ubiquitous Language Everywhere”*.
+The main difference between our current vision of Domain-Driven Design and the one we started with is that we went from “Aggregates Everywhere” to *“Ubiquitous Language Everywhere”*.
 
 ## P.S.
 Since I’ve told you the story of how Internovus started, I want share how it ended.
 
-The company became profitable very quickly, and 7 years after its inception it was acquired by our biggest client. Of course, I cannot attribute its success solely to domain-driven design. However, during those 7 years, we were constantly in “startup mode”. 
+The company became profitable very quickly, and 7 years after its inception it was acquired by our biggest client. Of course, I cannot attribute its success solely to Domain-Driven Design. However, during those 7 years, we were constantly in “startup mode”. 
 
-What we term “startup mode” in Israel, in the rest of the world is called “chaos”: constantly changing business requirements and priorities, aggressive timeframes, and a tiny R&D team. DDD allowed us to tackle all these complexities and keep delivering working software. Hence, when I look back, the bet we placed on domain-driven design 7 years ago paid off in full.
+What we term “startup mode” in Israel, in the rest of the world is called “chaos”: constantly changing business requirements and priorities, aggressive timeframes, and a tiny R&D team. DDD allowed us to tackle all these complexities and keep delivering working software. Hence, when I look back, the bet we placed on Domain-Driven Design 7 years ago paid off in full.
