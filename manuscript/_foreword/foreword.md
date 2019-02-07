@@ -24,3 +24,7 @@ I'd like to thank Anneke Schoonjans, Céline Dursin, Paul Rayner, and Indu Alaga
 ## About DDD Europe
 
 Domain-Driven Design Europe is the world's leading DDD conference. Our mission is to expose the community to new ideas and influences from inside and outside the DDD community, and to spread DDD throughout the software industry. Please visit the [DDD Europe site](https://dddeurope.com) to learn more, and we hope to welcome you as a participant soon.
+
+## Corrections
+
+Corrections or comments can be submitted via [GitHub](https://github.com/mathiasverraes/15yearsddd) or to the authors directly. 
